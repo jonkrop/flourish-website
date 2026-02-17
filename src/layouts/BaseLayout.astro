@@ -23,9 +23,6 @@ const { title, description = "Flourish Legal Well-Being delivers world-class wel
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/lotus.png" />
 
-  <!-- Netlify Identity (for CMS auth) -->
-  <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
   <!-- Fonts (self-hosted) + Global styles -->
   <style is:global>
     @import '../styles/global.css';
@@ -33,19 +30,6 @@ const { title, description = "Flourish Legal Well-Being delivers world-class wel
 </head>
 <body>
   <slot />
-
-  <!-- Netlify Identity redirect after login -->
-  <script is:inline>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function(user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 
   <!-- Scroll reveal observer -->
   <script>
