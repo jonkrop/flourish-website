@@ -1,29 +1,69 @@
 ---
 title: "Cool Under Pressure"
-subtitle: "Evidence-based strategies for high-stakes moments"
-intro: "Thank you for attending. Below you'll find your workshop materials and bonus resources."
+subtitle: "How to Manage Stress, Avoid Burnout, and Navigate Difficult Emotions at Work"
+intro: "Every day, legal professionals face challenges that evoke a storm of emotions, from anger to remorse. But what if you could not just endure these emotions but transform them into fuel for peak performance?"
 sections:
-  - title: "Workshop Materials"
+  - title: "Cheat Sheets"
     collapsed: false
     items:
-      - name: "Cool Under Pressure Handout"
-        description: "Key frameworks and techniques from the session"
+      - name: "How to Meditate"
         type: pdf
-        url: "/uploads/sample-cup-handout.pdf"
-  - title: "Bonus Audio"
-    collapsed: false
-    items:
-      - name: "3-Minute Reset (Guided Audio)"
-        description: "Use this between meetings or before a high-stakes moment"
-        type: audio
-        url: "/uploads/sample-reset-audio.mp3"
-  - title: "CLE Materials"
+        url: "/uploads/Flourish-How-To-Meditate.pdf"
+      - name: "Calming the Nervous System"
+        type: pdf
+        url: "/uploads/Flourish-Calming-The-Nervous-System.pdf"
+      - name: "Seeing Through Negative Thoughts"
+        type: pdf
+        url: "/uploads/Flourish-Thought-Replacement.pdf"
+      - name: "Feelings Wheel"
+        type: pdf
+        url: "/uploads/Flourish-Feelings-Wheel.pdf"
+      - name: "Posture Guide"
+        type: pdf
+        url: "/uploads/Flourish-Posture-Guide.pdf"
+      - name: "Working Mindfully with Emotions"
+        type: pdf
+        url: "/uploads/Flourish-Working-Mindfully.pdf"
+      - name: "Progressive Muscle Relaxation"
+        type: pdf
+        url: "/uploads/Flourish-PMR.pdf"
+  - title: "Articles"
     collapsed: true
     items:
-      - name: "CLE Certificate of Attendance"
+      - name: "Educating Lawyers to Meditate (Magee, UKMC Law Review)"
         type: pdf
-        url: "/uploads/sample-cle-cert.pdf"
-      - name: "CLE Course Materials"
+        url: "/uploads/Magee-Educating-Lawyers-Meditate.pdf"
+      - name: "Capitalizing on Healthy Lawyers: The Business Case for Law Firms"
         type: pdf
-        url: "/uploads/sample-cle-materials.pdf"
+        url: "/uploads/Capitalizing-Healthy-Lawyers.pdf"
+      - name: "Feeling and Thinking Like a Lawyer"
+        type: pdf
+        url: "/uploads/Feeling-Thinking-Like-Lawyer.pdf"
+      - name: "Why Mindfulness Tends to Foster Ethical Behavior"
+        type: pdf
+        url: "/uploads/Mindfulness-Fosters-Ethical-Behavior.pdf"
+      - name: "Martin Seligman on Lawyer Happiness"
+        type: pdf
+        url: "/uploads/Seligman-Lawyer-Happiness.pdf"
+      - name: "Mindfulness Can Improve Legal Ethics"
+        type: pdf
+        url: "/uploads/Mindfulness-Improve-Legal-Ethics.pdf"
+      - name: "The Path to Lawyer Well-Being (National Task Force)"
+        type: pdf
+        url: "/uploads/Path-To-Lawyer-Well-Being.pdf"
+  - title: "Handbooks & Toolkits"
+    collapsed: true
+    items:
+      - name: "Attorney Handbook: Foundations of Mindfulness"
+        type: pdf
+        url: "/uploads/Mindfulness-Attorney-Handbook.pdf"
+      - name: "Well-Being Toolkit for Lawyers and Legal Employers"
+        type: pdf
+        url: "/uploads/Well-Being-Toolkit.pdf"
+  - title: "Further Reading"
+    collapsed: true
+    items:
+      - name: "Recommended Reads and Listens"
+        type: link
+        url: "https://www.teamflourish.com/recommended"
 ---

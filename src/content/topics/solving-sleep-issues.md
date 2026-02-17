@@ -1,28 +1,27 @@
 ---
 title: "Solving Sleep Issues"
-subtitle: "The science of better rest"
-intro: "Thank you for attending. Here are your workshop materials and tools for improving your sleep."
+subtitle: "Evidence-Based Strategies for Better Rest"
+intro: "Sleep: we all need it to function, and we all seem to be getting too little of it. Occasional, short-term sleep issues are no cause for concern, but chronic insomnia can harm a person's health, well-being, and ability to function."
 sections:
-  - title: "Workshop Handouts"
+  - title: "Cheat Sheets"
     collapsed: false
     items:
-      - name: "Sleep Optimization Guide"
-        description: "Evidence-based strategies for better sleep"
+      - name: "Getting to Sleep"
         type: pdf
-        url: "/uploads/sample-sleep-guide.pdf"
-      - name: "Sleep Diary Template"
-        description: "Two-week tracking template"
+        url: "/uploads/Flourish-Getting-To-Sleep.pdf"
+      - name: "Cognitive Reframing"
         type: pdf
-        url: "/uploads/sample-sleep-diary.pdf"
-  - title: "Audio Resources"
-    collapsed: false
+        url: "/uploads/Flourish-Cognitive-Reframing.pdf"
+      - name: "Progressive Muscle Relaxation"
+        type: pdf
+        url: "/uploads/Flourish-Progressive-Muscle-Relaxation.pdf"
+      - name: "Sleep Hygiene Checklist"
+        type: pdf
+        url: "/uploads/Flourish-Sleep-Hygiene-Checklist.pdf"
+  - title: "Handbooks"
+    collapsed: true
     items:
-      - name: "Body Scan for Sleep (15 min)"
-        description: "Guided relaxation practice for bedtime"
-        type: audio
-        url: "/uploads/sample-body-scan.mp3"
-      - name: "Workshop Recording"
-        description: "Full recording of the session"
-        type: video
-        url: "https://vimeo.com/123456789"
+      - name: "Handbook: Solving Sleep Problems"
+        type: pdf
+        url: "/uploads/Solving-Sleep-Problems-Handbook.pdf"
 ---

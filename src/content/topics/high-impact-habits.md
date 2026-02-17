@@ -1,28 +1,42 @@
 ---
 title: "High-Impact Habits"
-subtitle: "Small changes, lasting results"
-intro: "Thank you for attending. Below you'll find all the materials from the workshop, including handouts and supplementary resources."
+subtitle: "Small Changes That Elevate Your Whole Day"
+intro: "Most of us move through our day on autopilot. This workshop offers a different approach: a handful of high-impact habits that deliver big returns on small time investments."
 sections:
-  - title: "Workshop Handouts"
+  - title: "Cheat Sheets"
     collapsed: false
     items:
-      - name: "High-Impact Habits Workbook"
-        description: "Complete workbook with exercises and reflection prompts"
+      - name: "Six Small Habits"
         type: pdf
-        url: "/uploads/sample-habits-workbook.pdf"
-      - name: "Habit Tracker Template"
-        description: "Print-friendly daily habit tracker"
+        url: "/uploads/Flourish-Six-Small-Habits.pdf"
+      - name: "The 10-Minute Mega-Habit for Well-Being"
         type: pdf
-        url: "/uploads/sample-habit-tracker.pdf"
-  - title: "Supplementary Resources"
-    collapsed: false
+        url: "/uploads/Flourish-10-Minute-Mega-Habit.pdf"
+      - name: "Morning Sunlight"
+        type: pdf
+        url: "/uploads/Flourish-Morning-Sunlight.pdf"
+      - name: "Paced Breathing"
+        type: pdf
+        url: "/uploads/Flourish-Paced-Breathing.pdf"
+      - name: "Content-Free Time"
+        type: pdf
+        url: "/uploads/Flourish-Content-Free-Time.pdf"
+      - name: "Physical Movement"
+        type: pdf
+        url: "/uploads/Flourish-Physical-Movement.pdf"
+  - title: "Additional Resources"
+    collapsed: true
     items:
-      - name: "Recommended Reading List"
-        description: "Books and articles for continued learning"
-        type: link
-        url: "https://example.com/reading-list"
-      - name: "5-Minute Morning Routine (Guided)"
-        description: "A short guided audio to start your day"
-        type: audio
-        url: "/uploads/sample-morning-routine.mp3"
+      - name: "Goodwill Meditation"
+        type: pdf
+        url: "/uploads/Flourish-Goodwill-Meditation.pdf"
+      - name: "Progressive Muscle Relaxation"
+        type: pdf
+        url: "/uploads/Flourish-Progressive-Muscle-Relaxation.pdf"
+      - name: "Breathing Practices for Stress and Anxiety Reduction (Bentley et al.)"
+        type: pdf
+        url: "/uploads/Bentley-Breathing-Stress-Anxiety.pdf"
+      - name: "Effect of Breathwork on Stress and Mental Health (Fincham et al.)"
+        type: pdf
+        url: "/uploads/Fincham-Breathwork-Stress-Mental-Health.pdf"
 ---
