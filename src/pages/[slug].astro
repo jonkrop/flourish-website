@@ -1,0 +1,273 @@
+---
+import { getCollection } from 'astro:content';
+import ResourceLayout from '../layouts/ResourceLayout.astro';
+import ResourceSection from '../components/ResourceSection.astro';
+import TopicCard from '../components/TopicCard.astro';
+
+export async function getStaticPaths() {
+  const clients = await getCollection('clients');
+
+  return clients.map((client) => ({
+    params: { slug: client.slug },
+    props: { entry: client },
+  }));
+}
+
+const { entry } = Astro.props;
+const allTopics = await getCollection('topics');
+
+const clientData = entry.data as { name: string; topics: string[] };
+const clientName = clientData.name;
+
+// Resolve topic slugs to entries
+const topicEntries = clientData.topics
+  .map((slug) => allTopics.find((t) => t.slug === slug))
+  .filter((t): t is typeof allTopics[number] => !!t);
+
+const isSingleTopic = topicEntries.length === 1;
+const pageTitle = `${clientName} Resources`;
+---
+
+<ResourceLayout title={pageTitle}>
+  {!isSingleTopic && (
+    <!-- Multi-topic client: card grid -->
+    <div class="resource-page">
+      <div class="resource-page__hero">
+        <div class="hero__bg">
+          <img src="/images/hero-foliage.png" alt="" class="hero__bg-img" loading="eager" />
+        </div>
+        <div class="hero__border" aria-hidden="true"></div>
+        <div class="hero__fg" aria-hidden="true">
+          <img src="/images/foliage-overlay.png" alt="" class="hero__bg-img" />
+        </div>
+        <div class="container hero__content">
+          <p class="resource-page__eyebrow">{clientName}</p>
+          <h1 class="resource-page__title">Workshop Resources</h1>
+          <p class="resource-page__intro">Select a topic below to access your materials.</p>
+        </div>
+      </div>
+      <div class="resource-page__grid-section section">
+        <div class="container">
+          <div class="resource-page__grid">
+            {topicEntries.map((topic, i) => (
+              <TopicCard
+                title={topic.data.title}
+                subtitle={topic.data.subtitle}
+                slug={topic.slug}
+                clientSlug={entry.slug}
+                index={i}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {isSingleTopic && topicEntries[0] && (
+    <!-- Single-topic client: render topic directly -->
+    <div class="resource-page">
+      <div class="resource-page__hero">
+        <div class="hero__bg">
+          <img src="/images/hero-foliage.png" alt="" class="hero__bg-img" loading="eager" />
+        </div>
+        <div class="hero__border" aria-hidden="true"></div>
+        <div class="hero__fg" aria-hidden="true">
+          <img src="/images/foliage-overlay.png" alt="" class="hero__bg-img" />
+        </div>
+        <div class="container hero__content">
+          <p class="resource-page__eyebrow">{clientName}</p>
+          <h1 class="resource-page__title">{topicEntries[0].data.title}</h1>
+          {topicEntries[0].data.subtitle && (
+            <p class="resource-page__subtitle">
+              <span class="accent">{topicEntries[0].data.subtitle}</span>
+            </p>
+          )}
+          {topicEntries[0].data.intro && (
+            <p class="resource-page__intro">{topicEntries[0].data.intro}</p>
+          )}
+        </div>
+      </div>
+      <div class="resource-page__content section">
+        <div class="container container--narrow">
+          <div class="resource-page__sections">
+            {topicEntries[0].data.sections.map((section) => (
+              <ResourceSection
+                title={section.title}
+                collapsed={section.collapsed}
+                items={section.items}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+</ResourceLayout>
+
+<style>
+  /* ---- Hero (foliage, matching experts page) ---- */
+  .resource-page__hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 35% 45%, rgba(5, 5, 5, 0.5) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.05) 40%, rgba(5, 5, 5, 0.4) 100%);
+    z-index: 1;
+  }
+
+  .hero__border {
+    position: absolute;
+    top: 90px;
+    left: 3.5%;
+    right: 3.5%;
+    bottom: 5%;
+    border: 2px solid var(--orange);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero__fg {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    clip-path: polygon(3% 72%, 32% 72%, 32% 100%, 3% 100%);
+  }
+
+  .resource-page__hero .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-left: max(7.5%, 4rem);
+    padding-right: max(7.5%, 4rem);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 4;
+    padding-top: 8rem;
+    padding-bottom: max(7%, 4.5rem);
+  }
+
+  .resource-page__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .resource-page__title {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: var(--space-sm);
+    max-width: 28ch;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .resource-page__subtitle {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .resource-page__intro {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    max-width: 58ch;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- Card grid ---- */
+  .resource-page__grid-section {
+    padding-block: var(--space-lg) var(--space-xl);
+  }
+
+  .resource-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+  }
+
+  /* ---- Content sections ---- */
+  .resource-page__content {
+    padding-block: var(--space-lg) var(--space-xl);
+  }
+
+  .resource-page__sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .resource-page__hero {
+      min-height: 50vh;
+    }
+
+    .hero__border {
+      top: 70px;
+      left: 3%;
+      right: 3%;
+      bottom: 3%;
+    }
+
+    .hero__fg {
+      display: none;
+    }
+
+    .resource-page__hero .container {
+      padding-inline: max(5%, 1.5rem);
+    }
+
+    .hero__content {
+      padding-top: 5.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .resource-page__title {
+      max-width: 100%;
+    }
+
+    .resource-page__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
