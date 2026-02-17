@@ -1,0 +1,1397 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Flourish Legal Well-Being">
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+      </a>
+      <nav class="header__nav">
+        <a href="/experts" class="header__link">Our Experts</a>
+        <a href="/book" class="btn btn--primary">Book a Call</a>
+      </nav>
+      <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav__inner">
+      <a href="/experts" class="mobile-nav__link">Our Experts</a>
+      <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
+    </nav>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- Layer 0: dark foliage background -->
+    <div class="hero__bg">
+      <img src="/images/hero-foliage-alt.png" alt="" class="hero__bg-img" loading="eager" />
+    </div>
+    <!-- Layer 1: CSS orange border (sharp, responsive) -->
+    <div class="hero__border" aria-hidden="true"></div>
+    <!-- Layer 2: foreground foliage (same leaves, white removed for transparency - overlaps border for 3D) -->
+    <div class="hero__fg" aria-hidden="true">
+      <img src="/images/foliage-overlay-alt.png" alt="" class="hero__bg-img" />
+    </div>
+    <!-- Layer 3: content -->
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Trusted by every firm in the AmLaw 10</p>
+      <h1 class="hero__title">
+        Well-being that <em class="accent">actually lands</em> for law firms.
+      </h1>
+      <p class="hero__subtitle">
+        Interactive workshops, led by world-class experts, delivered turnkey.
+      </p>
+      <div class="hero__actions">
+        <a href="/book" class="btn btn--primary">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOGO WALL ===== -->
+  <section class="section logos">
+    <div class="container">
+      <div class="logos__block reveal">
+        <p class="logos__label">Trusted by</p>
+        <div class="logos__row">
+          <img class="logos__img" src="/logos/akin-gump.png" alt="Akin Gump" />
+          <img class="logos__img" src="/logos/autodesk.png" alt="Autodesk" />
+          <img class="logos__img" src="/logos/baker-mckenzie.png" alt="Baker McKenzie" />
+          <img class="logos__img" src="/logos/cleary-gottlieb.png" alt="Cleary Gottlieb" />
+          <img class="logos__img" src="/logos/covington.png" alt="Covington" />
+          <img class="logos__img" src="/logos/cooley.png" alt="Cooley" />
+          <img class="logos__img" src="/logos/crowell-moring.png" alt="Crowell & Moring" />
+          <img class="logos__img" src="/logos/davis-polk.png" alt="Davis Polk" />
+          <img class="logos__img" src="/logos/debevoise.png" alt="Debevoise & Plimpton" />
+          <img class="logos__img" src="/logos/dla-piper.png" alt="DLA Piper" />
+          <img class="logos__img" src="/logos/finnegan.png" alt="Finnegan" />
+          <img class="logos__img" src="/logos/freshfields.png" alt="Freshfields" />
+          <img class="logos__img" src="/logos/fried-frank.png" alt="Fried Frank" />
+          <img class="logos__img" src="/logos/general-electric.png" alt="General Electric" />
+          <img class="logos__img" src="/logos/gibson-dunn.png" alt="Gibson Dunn" />
+          <img class="logos__img" src="/logos/greenberg-traurig.png" alt="Greenberg Traurig" />
+          <img class="logos__img" src="/logos/harvard-law.png" alt="Harvard Law School" />
+          <img class="logos__img" src="/logos/hogan-lovells.png" alt="Hogan Lovells" />
+          <img class="logos__img" src="/logos/kl-gates.png" alt="K&L Gates" />
+          <img class="logos__img" src="/logos/kirkland-ellis.png" alt="Kirkland & Ellis" />
+          <img class="logos__img" src="/logos/mcdermott.png" alt="McDermott Will & Schulte" />
+          <img class="logos__img" src="/logos/morrison-foerster.png" alt="Morrison Foerster" />
+          <img class="logos__img" src="/logos/nbcuniversal.png" alt="NBCUniversal" />
+          <img class="logos__img" src="/logos/nyu-law.png" alt="NYU Law" />
+          <img class="logos__img" src="/logos/omelveny.png" alt="O'Melveny" />
+          <img class="logos__img" src="/logos/orrick.png" alt="Orrick" />
+          <img class="logos__img" src="/logos/paul-weiss.png" alt="Paul Weiss" />
+          <img class="logos__img" src="/logos/penn-law.png" alt="Penn Law" />
+          <img class="logos__img" src="/logos/pillsbury.png" alt="Pillsbury" />
+          <img class="logos__img" src="/logos/proskauer.png" alt="Proskauer" />
+          <img class="logos__img" src="/logos/reed-smith.png" alt="Reed Smith" />
+          <img class="logos__img" src="/logos/ropes-gray.png" alt="Ropes & Gray" />
+          <img class="logos__img" src="/logos/sidley.png" alt="Sidley" />
+          <img class="logos__img" src="/logos/simpson-thacher.png" alt="Simpson Thacher" />
+          <img class="logos__img" src="/logos/stanford-law.png" alt="Stanford Law School" />
+          <img class="logos__img" src="/logos/sullivan-cromwell.png" alt="Sullivan & Cromwell" />
+          <img class="logos__img" src="/logos/white-case.png" alt="White & Case" />
+          <img class="logos__img" src="/logos/wilmerhale.png" alt="WilmerHale" />
+          <img class="logos__img" src="/logos/wilson-sonsini.png" alt="Wilson Sonsini" />
+          <img class="logos__img" src="/logos/winston-strawn.png" alt="Winston & Strawn" />
+          <img class="logos__img" src="/logos/yale-law.png" alt="Yale Law School" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM ===== -->
+  <section class="section problem grain">
+    <div class="container container--narrow">
+      <p class="problem__lead reveal">
+        You already know well-being matters. You don't need to be convinced - you need it to <em class="accent">happen.</em>
+      </p>
+      <div class="problem__list reveal reveal-delay-1">
+        <p>Half the "wellness" content out there feels like it was written for a yoga retreat, not a litigation department.</p>
+        <p>Attendance is mediocre.</p>
+        <p>And every program means more work for you.</p>
+        <p>What if your well-being programming just <em class="accent">ran itself?</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline quote: validates the turnkey pain point -->
+  <div class="pull-quote reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"It required minimal input and effort from my team but was very effective."</p>
+        <footer>Becky Gentry, Director of Professional Development & Training, <span class="text-muted">WilmerHale</span></footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== WORKSHOP PHOTO ===== -->
+  <div class="photo-break reveal">
+    <img src="/images/workshop-room-clean.jpg" alt="Jon Krop leading a well-being workshop at a law firm" class="photo-break__img" loading="lazy" />
+  </div>
+
+  <!-- ===== SOLUTION / DIFFERENTIATORS ===== -->
+  <section class="section diffs">
+    <div class="container">
+      <div class="diffs__header reveal">
+        <h2>A smarter way to do <em class="accent">well-being.</em></h2>
+      </div>
+
+      <div class="diffs__grid">
+        <div class="diffs__card reveal">
+          <div class="diffs__card-accent"></div>
+          <span class="diffs__number">01</span>
+          <h3>We handle <em class="accent">everything.</em></h3>
+          <p>Pre-written emails, CLE applications, internal promotion, logistics, follow-up. You approve the plan. We execute it.</p>
+          <div class="diffs__rating diffs__rating--96">
+            <span class="diffs__rating-number">9.6</span>
+            <span class="diffs__rating-label">AVG. CLIENT<br/>RATING</span>
+          </div>
+        </div>
+
+        <div class="diffs__card reveal reveal-delay-1">
+          <div class="diffs__card-accent"></div>
+          <span class="diffs__number">02</span>
+          <h3>Every topic, <em class="accent">covered.</em></h3>
+          <p>Stress, sleep, resilience, communication, burnout, nutrition, financial wellness - all from one team that already knows your firm.</p>
+        </div>
+
+        <div class="diffs__card diffs__card--expert reveal reveal-delay-2">
+          <div class="diffs__card-accent"></div>
+          <div class="diffs__card-body">
+            <span class="diffs__number">03</span>
+            <h3>Experts your lawyers <em class="accent">will take seriously.</em></h3>
+            <p>Harvard, Yale, Columbia, Oxford - and most are lawyers themselves. The eye-rolls stop before they start.</p>
+          </div>
+          <div class="diffs__card-photo">
+            <img src="/images/jon-headshot-botanical.png" alt="Jon Krop, Founder" loading="lazy" />
+            <span class="diffs__card-caption">Jon Krop, Founder</span>
+          </div>
+        </div>
+
+        <div class="diffs__card reveal reveal-delay-3">
+          <div class="diffs__card-accent"></div>
+          <span class="diffs__number">04</span>
+          <h3>Interactive, <em class="accent">not interminable.</em></h3>
+          <p>Live exercises, real tools, and conversations people actually remember on Monday.</p>
+          <div class="diffs__rating">
+            <span class="diffs__rating-number">9.2</span>
+            <span class="diffs__rating-label">AVG. AUDIENCE<br/>RATING</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline quote: validates expert credibility + engagement -->
+  <div class="pull-quote pull-quote--dark reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"Completely engaging, on point, and quite entertaining."</p>
+        <footer>Adrian Rae Leipsic, Partner, <span class="text-muted">Cleary Gottlieb</span></footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== WHAT WE COVER ===== -->
+  <section class="section topics grain">
+    <div class="container">
+      <div class="topics__header reveal">
+        <h2>Every dimension of <em class="accent">well-being.</em></h2>
+        <p class="topics__subtitle text-muted">One trusted partner covering everything your people need.</p>
+      </div>
+
+      <div class="topics__grid">
+        <div class="topics__item reveal">
+          <span class="topics__icon">&#9670;</span>
+          <h4>Stress & Resilience</h4>
+          <p>Concrete tools for staying sharp under pressure - skills lawyers can use the same day.</p>
+        </div>
+        <div class="topics__item reveal reveal-delay-1">
+          <span class="topics__icon">&#9670;</span>
+          <h4>Burnout Prevention</h4>
+          <p>Recognizing the signs early and building sustainable habits before the damage is done.</p>
+        </div>
+        <div class="topics__item reveal reveal-delay-2">
+          <span class="topics__icon">&#9670;</span>
+          <h4>Sleep</h4>
+          <p>Evidence-based strategies for the sleep-deprived professional. Our most requested topic, for obvious reasons.</p>
+        </div>
+        <div class="topics__item reveal reveal-delay-3">
+          <span class="topics__icon">&#9670;</span>
+          <h4>Communication & Conflict</h4>
+          <p>Navigating difficult conversations, giving feedback, and building stronger team dynamics.</p>
+        </div>
+        <div class="topics__item reveal">
+          <span class="topics__icon">&#9670;</span>
+          <h4>Mindfulness & Focus</h4>
+          <p>Practical attention training for the perpetually distracted. No incense required.</p>
+        </div>
+        <div class="topics__item reveal reveal-delay-1">
+          <span class="topics__icon">&#9670;</span>
+          <h4>Nutrition & Energy</h4>
+          <p>Fueling high performance without fad diets - real science for demanding schedules.</p>
+        </div>
+        <div class="topics__item reveal reveal-delay-2">
+          <span class="topics__icon">&#9670;</span>
+          <h4>Financial Well-Being</h4>
+          <p>Smart money management for high earners - from associates managing debt to partners planning ahead.</p>
+        </div>
+        <div class="topics__item reveal reveal-delay-3">
+          <span class="topics__icon">&#9670;</span>
+          <h4>And More</h4>
+          <p>Work-life balance, emotional intelligence, substance use, parenting, caregiving - whatever your firm needs next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline quote: validates content quality -->
+  <div class="pull-quote reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"The content is excellent, and the Flourish team is at the forefront of some of the most challenging topics that associates have to navigate."</p>
+        <footer>Kara Ford, Professional Development Manager, <span class="text-muted">Davis Polk</span></footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== GUARANTEE ===== -->
+  <section class="section guarantee grain">
+    <div class="container">
+      <div class="guarantee__inner reveal">
+        <div class="bordered-frame">
+          <p class="guarantee__eyebrow">Our guarantee</p>
+          <h2>4.5+ rating or <em class="accent">your money back.</em></h2>
+          <p class="guarantee__body">
+            If your evaluation scores don't hit 4.5 out of 5, we refund the full fee. No questions asked. We've never had to pay.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section how-it-works">
+    <div class="container">
+      <div class="how__header reveal">
+        <h2>What working with us <em class="accent">looks like.</em></h2>
+      </div>
+
+      <div class="how__steps">
+        <div class="how__step reveal">
+          <span class="how__step-number">1</span>
+          <div class="how__step-content">
+            <h4>Discovery call</h4>
+            <p>A 30-minute conversation about your firm's culture and goals.</p>
+          </div>
+        </div>
+        <div class="how__step reveal reveal-delay-1">
+          <span class="how__step-number">2</span>
+          <div class="how__step-content">
+            <h4>Custom program design</h4>
+            <p>We propose a tailored set of workshops matched to your firm's needs and calendar. You shape it until it's right.</p>
+          </div>
+        </div>
+        <div class="how__step reveal reveal-delay-2">
+          <span class="how__step-number">3</span>
+          <div class="how__step-content">
+            <h4>We take it from here</h4>
+            <p>Promotion, logistics, CLE, delivery, follow-up. You get periodic updates and rave reviews. That's it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline quote: validates ease of process -->
+  <div class="pull-quote pull-quote--dark reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"You made it very easy for us, down to a script for messaging."</p>
+        <footer>Aisha Greene, Chief Talent Officer, <span class="text-muted">Cadwalader</span></footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials grain">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <h2>What our clients <em class="accent">say.</em></h2>
+      </div>
+      <div class="testimonials__grid">
+        <blockquote class="testimonial reveal">
+          <p class="testimonial__quote">"I've been doing programming for law firms for 25 years, and I will say that Jon soared to the top of my list of excellent presenters."</p>
+          <footer class="testimonial__attr">
+            <span class="testimonial__name">Professional Development Director</span>
+            <span class="testimonial__firm">AmLaw 50 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial reveal reveal-delay-1">
+          <p class="testimonial__quote">"Attendance was incredible, with 177 participants at one point and over 100 staying for the optional Q&A. Significantly, 99 attorneys joined, which is a huge success for us."</p>
+          <footer class="testimonial__attr">
+            <span class="testimonial__name">Professional Development Director</span>
+            <span class="testimonial__firm">AmLaw 50 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial reveal reveal-delay-2">
+          <p class="testimonial__quote">"Months later, I'm still hearing from lawyers and staff about how much they loved the program."</p>
+          <footer class="testimonial__attr">
+            <span class="testimonial__name">Jennifer Mencarini, Director of Cultural Engagement</span>
+            <span class="testimonial__firm">Fox Rothschild</span>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial reveal reveal-delay-3">
+          <p class="testimonial__quote">"The speakers are all top-notch. The support leading up to the event is white glove with sample emails, which makes our job so much easier."</p>
+          <footer class="testimonial__attr">
+            <span class="testimonial__name">Stacey Pipes, Chief Human Resources Officer</span>
+            <span class="testimonial__firm">Bracewell</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="section cta-final">
+    <div class="container">
+      <div class="cta-final__layout reveal">
+        <div class="cta-final__photo">
+          <img src="/images/jon-speaking.jpg" alt="Jon Krop speaking at NYU" loading="lazy" />
+        </div>
+        <div class="cta-final__inner">
+          <h2>Ready to make well-being <em class="accent">effortless?</em></h2>
+          <p>Book a 30-minute discovery call. We'll listen, learn about your firm, and show you what's possible.</p>
+          <a href="/book" class="btn btn--primary">Book a Discovery Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/images/logo-orange.png" alt="Flourish" width="140" height="37" />
+        <p class="text-sm text-muted">Well-being that works for law firms.</p>
+      </div>
+      <div class="footer__links">
+        <a href="/experts">Our Experts</a>
+        <a href="/book">Book a Call</a>
+      </div>
+      <div class="footer__legal text-sm text-muted">
+        &copy; {new Date().getFullYear()} Flourish Legal Well-Being. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  /* ===================================================================
+     HEADER
+     =================================================================== */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    transition: background var(--transition-base), backdrop-filter var(--transition-base);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .header--scrolled {
+    background: rgba(9, 26, 24, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .header .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(3.5%, 1.5rem);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .header__link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .header__link:hover {
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  .header__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .header__mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(9, 26, 24, 0.97);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-nav__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobile-nav__link {
+    font-size: var(--text-xl);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__mobile-toggle { display: flex; }
+  }
+
+  /* ===================================================================
+     HERO
+     =================================================================== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Layer 0: foliage background image */
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Dark vignette overlay for text readability */
+  .hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 35% 45%, rgba(5, 5, 5, 0.5) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.05) 40%, rgba(5, 5, 5, 0.4) 100%);
+    z-index: 1;
+  }
+
+  /* Layer 1: orange border */
+  .hero__border {
+    position: absolute;
+    top: 90px;
+    left: 3.5%;
+    right: 3.5%;
+    bottom: 5%;
+    border: 2px solid var(--orange);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Layer 2: foreground foliage overlay - same leaves as background, transparent bg.
+     Hard clip to bottom-left area. Only the bottom border line gets overlapped, not the left. */
+  .hero__fg {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    clip-path: polygon(5.5% 60%, 45% 60%, 45% 100%, 5.5% 100%);
+  }
+
+  /* Content sits inside the border - no max-width centering, just left-aligned with padding */
+  .hero .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-left: max(7.5%, 4rem);
+    padding-right: max(7.5%, 4rem);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 4;
+    padding-top: 8rem;
+    padding-bottom: max(7%, 4.5rem);
+  }
+
+  .hero__eyebrow {
+    font-size: var(--text-base);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+    max-width: clamp(16ch, 45vw, 22ch);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero__actions {
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===================================================================
+     CREDIBILITY BAR
+     =================================================================== */
+  .cred-bar {
+    background: var(--green);
+    padding: var(--space-lg) 0;
+    border-top: 1px solid rgba(240, 78, 35, 0.15);
+    border-bottom: 1px solid rgba(240, 78, 35, 0.15);
+  }
+
+  .cred-bar__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .cred-bar__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .cred-bar__number {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    color: var(--orange);
+    line-height: 1.1;
+  }
+
+  .cred-bar__label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .cred-bar__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg) var(--space-md);
+    }
+  }
+
+  /* ===================================================================
+     LOGO WALL
+     =================================================================== */
+  .logos {
+    background: var(--dark);
+    padding-block: var(--space-xl);
+  }
+
+  .logos__block {
+    margin-bottom: var(--space-xl);
+    text-align: center;
+  }
+
+  .logos__block:last-child {
+    margin-bottom: 0;
+  }
+
+  .logos__label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-md);
+    text-align: center;
+    max-width: none;
+  }
+
+  .logos__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .logos__name {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    color: var(--cream);
+    opacity: 0.5;
+    transition: opacity var(--transition-base);
+    white-space: nowrap;
+  }
+
+  .logos__name:hover {
+    opacity: 1;
+  }
+
+  .logos__img {
+    width: 8rem;
+    height: 2.5rem;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity var(--transition-base);
+  }
+
+  .logos__img:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .logos__row {
+      gap: var(--space-sm) var(--space-md);
+    }
+    .logos__name {
+      font-size: var(--text-sm);
+    }
+  }
+
+  /* ===================================================================
+     PROBLEM SECTION
+     =================================================================== */
+  .problem {
+    background:
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(22, 80, 60, 0.2) 0%, transparent 70%),
+      var(--dark);
+  }
+
+  .problem__lead {
+    font-size: var(--text-xl);
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: var(--space-lg);
+    max-width: 100%;
+    color: var(--cream);
+  }
+
+  .problem__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .problem__list p {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    max-width: 100%;
+  }
+
+  /* ===================================================================
+     DIFFERENTIATORS
+     =================================================================== */
+  .diffs {
+    background: var(--green);
+  }
+
+  .diffs__header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .diffs__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .diffs__card {
+    position: relative;
+    padding: var(--space-lg);
+    background: rgba(9, 26, 24, 0.5);
+    transition: background var(--transition-base);
+    overflow: hidden;
+  }
+
+  .diffs__card:hover {
+    background: rgba(9, 26, 24, 0.7);
+  }
+
+  .diffs__card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--orange);
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .diffs__card:hover .diffs__card-accent {
+    height: 100%;
+  }
+
+  .diffs__number {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--orange);
+    margin-bottom: var(--space-sm);
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  .diffs__card h3 {
+    margin-bottom: var(--space-sm);
+    font-weight: 300;
+  }
+
+  .diffs__card p {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+    line-height: 1.7;
+  }
+
+  .diffs__rating {
+    margin-top: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .diffs__rating-number {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    color: var(--orange);
+    line-height: 1;
+  }
+
+  .diffs__rating-label {
+    font-size: var(--text-base);
+    color: var(--cream);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .diffs__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===================================================================
+     WHAT WE COVER / TOPICS
+     =================================================================== */
+  .topics {
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 30%, rgba(22, 80, 60, 0.25) 0%, transparent 60%),
+      var(--dark);
+  }
+
+  .topics__header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .topics__subtitle {
+    margin-top: var(--space-sm);
+    font-size: var(--text-lg);
+    max-width: 50ch;
+  }
+
+  .topics__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+  }
+
+  .topics__item {
+    padding: var(--space-lg) var(--space-md);
+    background: rgba(18, 50, 47, 0.2);
+    border-bottom: 1px solid rgba(245, 240, 234, 0.05);
+    transition: background var(--transition-base);
+  }
+
+  .topics__item:hover {
+    background: rgba(18, 50, 47, 0.4);
+  }
+
+  .topics__icon {
+    display: block;
+    color: var(--orange);
+    font-size: 0.6rem;
+    margin-bottom: var(--space-sm);
+    opacity: 0.6;
+  }
+
+  .topics__item h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    font-size: var(--text-lg);
+  }
+
+  .topics__item p {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .topics__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .topics__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===================================================================
+     GUARANTEE
+     =================================================================== */
+  .guarantee {
+    background:
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(240, 78, 35, 0.06) 0%, transparent 70%),
+      var(--dark);
+  }
+
+  .guarantee__inner {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .guarantee__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-sm);
+  }
+
+  .guarantee__inner h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .guarantee__body {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+    max-width: 55ch;
+    margin-inline: auto;
+  }
+
+  /* ===================================================================
+     HOW IT WORKS
+     =================================================================== */
+  .how-it-works {
+    background: var(--green);
+  }
+
+  .how__header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .how__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 700px;
+  }
+
+  .how__step {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid rgba(245, 240, 234, 0.08);
+  }
+
+  .how__step:last-child { border-bottom: none; }
+
+  .how__step-number {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    color: var(--orange);
+    opacity: 0.5;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+
+  .how__step-content h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  .how__step-content p {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+  }
+
+  /* ===================================================================
+     TESTIMONIALS
+     =================================================================== */
+  .testimonials {
+    background:
+      radial-gradient(ellipse 60% 40% at 30% 70%, rgba(18, 50, 47, 0.3) 0%, transparent 60%),
+      var(--dark);
+  }
+
+  .testimonials__header { margin-bottom: var(--space-xl); }
+
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .testimonial {
+    background: rgba(18, 50, 47, 0.3);
+    padding: var(--space-lg);
+    border-top: 2px solid var(--orange);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .testimonial__quote {
+    font-family: 'Playfair Display', serif;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--cream);
+    max-width: 100%;
+  }
+
+  .testimonial__attr {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .testimonial__name {
+    font-weight: 600;
+    font-size: var(--text-lg);
+    color: var(--cream);
+  }
+
+  .testimonial__firm {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+  }
+
+  .testimonials__note { text-align: center; }
+
+  @media (max-width: 768px) {
+    .testimonials__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===================================================================
+     INLINE PULL QUOTES
+     =================================================================== */
+  .pull-quote {
+    padding: var(--space-xl) 0;
+    background: var(--dark);
+  }
+
+  .pull-quote--dark {
+    background: var(--green);
+  }
+
+  .pull-quote__inner {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .pull-quote__inner p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    color: var(--cream);
+    max-width: 100%;
+    margin-bottom: var(--space-sm);
+  }
+
+  .pull-quote__inner footer {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--cream);
+    opacity: 0.8;
+  }
+
+  /* ===================================================================
+     WORKSHOP PHOTO BREAK
+     =================================================================== */
+  .photo-break {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+  }
+
+  .photo-break__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30% 60%;
+    display: block;
+  }
+
+  /* Subtle top/bottom fade into adjacent sections */
+  .photo-break::before,
+  .photo-break::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .photo-break::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--dark), transparent);
+  }
+
+  .photo-break::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--green), transparent);
+  }
+
+  /* ===================================================================
+     EXPERT CARD WITH HEADSHOT
+     =================================================================== */
+  .diffs__card--expert {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .diffs__card-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .diffs__card-photo {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .diffs__card-photo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 2px solid rgba(240, 78, 35, 0.3);
+  }
+
+  .diffs__card-caption {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* ===================================================================
+     FINAL CTA
+     =================================================================== */
+  .cta-final {
+    background: var(--green);
+  }
+
+  .cta-final__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .cta-final__photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .cta-final__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    display: block;
+  }
+
+  .cta-final__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .cta-final__inner p {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    max-width: 50ch;
+    text-align: left;
+  }
+
+  .cta-final__inner .btn { margin-top: var(--space-sm); }
+
+  /* ===================================================================
+     FOOTER
+     =================================================================== */
+  .footer {
+    background: var(--dark);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .footer__brand img { height: 30px; width: auto; }
+
+  .footer__brand p {
+    font-size: var(--text-base);
+  }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer__links a {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover { color: var(--orange); }
+
+  .footer__legal {
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    width: 100%;
+    font-size: var(--text-base);
+  }
+
+  /* ===================================================================
+     MOBILE REFINEMENTS
+     =================================================================== */
+  @media (max-width: 768px) {
+    .hero__border {
+      top: 70px;
+      left: 3%;
+      right: 3%;
+      bottom: 3%;
+    }
+
+    .hero__fg {
+      display: none;
+    }
+
+    .hero .container {
+      padding-inline: max(5%, 1.5rem);
+    }
+
+    .hero__content {
+      padding-top: 5.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero__eyebrow {
+      display: none;
+    }
+
+    .hero__title {
+      max-width: 100%;
+    }
+
+    .pull-quote {
+      padding: var(--space-lg) 0;
+    }
+
+    .pull-quote__inner footer {
+      line-height: 1.5;
+    }
+
+    .how__step {
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .how__step-number {
+      width: auto;
+    }
+
+    .guarantee__inner {
+      padding-inline: var(--space-sm);
+    }
+
+    .photo-break {
+      height: 280px;
+    }
+
+    .diffs__card--expert {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .diffs__card-photo {
+      order: -1;
+    }
+
+    .cta-final__layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .cta-final__inner {
+      align-items: center;
+      text-align: center;
+    }
+
+    .cta-final__inner p {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.querySelector('.header__mobile-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    });
+  }
+
+  // Header scroll effect
+  const header = document.querySelector('.header');
+  let lastScrollY = window.scrollY;
+
+  function updateHeader() {
+    const scrollY = window.scrollY;
+    if (scrollY > 50) {
+      header?.classList.add('header--scrolled');
+    } else {
+      header?.classList.remove('header--scrolled');
+    }
+    lastScrollY = scrollY;
+  }
+
+  // Run on load
+  updateHeader();
+
+  // Run on scroll
+  window.addEventListener('scroll', updateHeader, { passive: true });
+</script>
