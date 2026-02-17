@@ -63,11 +63,18 @@ if (kind === 'client') {
   {kind === 'client' && !isSingleTopic && (
     <!-- Multi-topic client: card grid -->
     <div class="resource-page">
-      <div class="resource-page__hero section grain">
-        <div class="container">
-          <p class="resource-page__eyebrow reveal">{clientName}</p>
-          <h1 class="resource-page__title reveal reveal-delay-1">Workshop Resources</h1>
-          <p class="resource-page__intro reveal reveal-delay-2">Select a topic below to access your materials.</p>
+      <div class="resource-page__hero">
+        <div class="hero__bg">
+          <img src="/images/hero-foliage.png" alt="" class="hero__bg-img" loading="eager" />
+        </div>
+        <div class="hero__border" aria-hidden="true"></div>
+        <div class="hero__fg" aria-hidden="true">
+          <img src="/images/foliage-overlay.png" alt="" class="hero__bg-img" />
+        </div>
+        <div class="container hero__content">
+          <p class="resource-page__eyebrow">{clientName}</p>
+          <h1 class="resource-page__title">Workshop Resources</h1>
+          <p class="resource-page__intro">Select a topic below to access your materials.</p>
         </div>
       </div>
       <div class="resource-page__grid-section section">
@@ -91,17 +98,24 @@ if (kind === 'client') {
   {kind === 'client' && isSingleTopic && topicEntries[0] && (
     <!-- Single-topic client: render topic directly -->
     <div class="resource-page">
-      <div class="resource-page__hero section grain">
-        <div class="container">
-          <p class="resource-page__eyebrow reveal">{clientName}</p>
-          <h1 class="resource-page__title reveal reveal-delay-1">{topicEntries[0].data.title}</h1>
+      <div class="resource-page__hero">
+        <div class="hero__bg">
+          <img src="/images/hero-foliage.png" alt="" class="hero__bg-img" loading="eager" />
+        </div>
+        <div class="hero__border" aria-hidden="true"></div>
+        <div class="hero__fg" aria-hidden="true">
+          <img src="/images/foliage-overlay.png" alt="" class="hero__bg-img" />
+        </div>
+        <div class="container hero__content">
+          <p class="resource-page__eyebrow">{clientName}</p>
+          <h1 class="resource-page__title">{topicEntries[0].data.title}</h1>
           {topicEntries[0].data.subtitle && (
-            <p class="resource-page__subtitle reveal reveal-delay-2">
+            <p class="resource-page__subtitle">
               <span class="accent">{topicEntries[0].data.subtitle}</span>
             </p>
           )}
           {topicEntries[0].data.intro && (
-            <p class="resource-page__intro reveal reveal-delay-3">{topicEntries[0].data.intro}</p>
+            <p class="resource-page__intro">{topicEntries[0].data.intro}</p>
           )}
         </div>
       </div>
@@ -124,22 +138,29 @@ if (kind === 'client') {
   {kind === 'topic' && (
     <!-- Topic page (accessed directly or via client link) -->
     <div class="resource-page">
-      <div class="resource-page__hero section grain">
-        <div class="container">
+      <div class="resource-page__hero">
+        <div class="hero__bg">
+          <img src="/images/hero-foliage.png" alt="" class="hero__bg-img" loading="eager" />
+        </div>
+        <div class="hero__border" aria-hidden="true"></div>
+        <div class="hero__fg" aria-hidden="true">
+          <img src="/images/foliage-overlay.png" alt="" class="hero__bg-img" />
+        </div>
+        <div class="container hero__content">
           <div id="back-link-container" class="resource-page__back-wrap" style="display: none;">
             <a id="back-link" href="#" class="resource-page__back">
               <span class="resource-page__back-arrow">&#8592;</span>
               <span id="back-link-text">Back to Resources</span>
             </a>
           </div>
-          <h1 class="resource-page__title reveal">{(entry.data as any).title}</h1>
+          <h1 class="resource-page__title">{(entry.data as any).title}</h1>
           {(entry.data as any).subtitle && (
-            <p class="resource-page__subtitle reveal reveal-delay-1">
+            <p class="resource-page__subtitle">
               <span class="accent">{(entry.data as any).subtitle}</span>
             </p>
           )}
           {(entry.data as any).intro && (
-            <p class="resource-page__intro reveal reveal-delay-2">{(entry.data as any).intro}</p>
+            <p class="resource-page__intro">{(entry.data as any).intro}</p>
           )}
         </div>
       </div>
@@ -194,31 +215,80 @@ if (kind === 'client') {
 </ResourceLayout>
 
 <style>
-  /* ---- Hero ---- */
+  /* ---- Hero (foliage, matching experts page) ---- */
   .resource-page__hero {
-    background: var(--green);
-    padding-block: var(--space-xl) var(--space-lg);
     position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
     overflow: hidden;
   }
 
-  .resource-page__hero::before {
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero__bg::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(240, 78, 35, 0.3), transparent);
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 35% 45%, rgba(5, 5, 5, 0.5) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.05) 40%, rgba(5, 5, 5, 0.4) 100%);
+    z-index: 1;
+  }
+
+  .hero__border {
+    position: absolute;
+    top: 90px;
+    left: 3.5%;
+    right: 3.5%;
+    bottom: 5%;
+    border: 2px solid var(--orange);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero__fg {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    clip-path: polygon(3% 72%, 32% 72%, 32% 100%, 3% 100%);
+  }
+
+  .resource-page__hero .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-left: max(7.5%, 4rem);
+    padding-right: max(7.5%, 4rem);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 4;
+    padding-top: 8rem;
+    padding-bottom: max(7%, 4.5rem);
   }
 
   .resource-page__eyebrow {
     font-size: var(--text-sm);
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--orange);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
   }
 
   .resource-page__title {
@@ -228,19 +298,30 @@ if (kind === 'client') {
     letter-spacing: -0.01em;
     color: var(--cream);
     margin-bottom: var(--space-sm);
-    max-width: 700px;
+    max-width: 28ch;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
   }
 
   .resource-page__subtitle {
     font-size: var(--text-lg);
     margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
   }
 
   .resource-page__intro {
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
     color: var(--text-muted);
-    max-width: 600px;
+    max-width: 58ch;
     line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   /* ---- Back link ---- */
@@ -295,7 +376,31 @@ if (kind === 'client') {
 
   @media (max-width: 768px) {
     .resource-page__hero {
-      padding-block: var(--space-lg) var(--space-md);
+      min-height: 50vh;
+    }
+
+    .hero__border {
+      top: 70px;
+      left: 3%;
+      right: 3%;
+      bottom: 3%;
+    }
+
+    .hero__fg {
+      display: none;
+    }
+
+    .resource-page__hero .container {
+      padding-inline: max(5%, 1.5rem);
+    }
+
+    .hero__content {
+      padding-top: 5.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .resource-page__title {
+      max-width: 100%;
     }
 
     .resource-page__grid {
