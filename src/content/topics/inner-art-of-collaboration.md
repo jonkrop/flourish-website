@@ -34,11 +34,9 @@ sections:
     collapsed: false
     items:
       - name: "Progressive Muscle Relaxation"
-        description: "AUDIO FILE PENDING"
         type: audio
         url: "/uploads/pmr-guided.mp3"
       - name: "Goodwill Meditation"
-        description: "AUDIO FILE PENDING"
         type: audio
         url: "/uploads/goodwill-meditation-guided.mp3"
   - title: "Physiological Techniques"
