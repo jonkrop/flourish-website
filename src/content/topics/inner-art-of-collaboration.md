@@ -22,25 +22,25 @@ sections:
     collapsed: false
     items:
       - name: "De-Stress by Saying Four Simple Words"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/822796240"
       - name: "How to Meditate"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/566201126"
       - name: "Mindfulness for Lawyers"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/528914723/1431137d86"
+  - title: "Guided Audio"
+    collapsed: false
+    items:
       - name: "Progressive Muscle Relaxation"
-        description: "VIMEO URL NEEDED"
-        type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        description: "AUDIO FILE PENDING"
+        type: audio
+        url: "/uploads/pmr-guided.mp3"
       - name: "Goodwill Meditation"
-        description: "VIMEO URL NEEDED"
-        type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        description: "AUDIO FILE PENDING"
+        type: audio
+        url: "/uploads/goodwill-meditation-guided.mp3"
   - title: "Physiological Techniques"
     collapsed: false
     items:

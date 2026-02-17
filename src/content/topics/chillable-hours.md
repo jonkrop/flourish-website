@@ -7,63 +7,48 @@ sections:
     collapsed: false
     items:
       - name: "Progressive Muscle Relaxation"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/929120752"
       - name: "Body Scan"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/918904597"
       - name: "Receptivity Meditation"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/907231964"
       - name: "Breath Practice"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/940472707"
       - name: "Breath + Labeling"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/869884539"
       - name: "Vagus Breathing"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/916298538"
       - name: "Noting Discomfort"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/934312853"
       - name: "Congratulations Method"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/835537695"
       - name: "Vipassana Meditation"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/899932746"
       - name: "Breathing Counting"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/926877549"
       - name: "Metta"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/914317628"
       - name: "Walking Meditation"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/931793905"
       - name: "Gratitude"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/887475382"
       - name: "Tonglen"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/921545178"
       - name: "Spotting the Endpoints"
-        description: "VIMEO URL NEEDED"
         type: video
-        url: "https://vimeo.com/PLACEHOLDER"
+        url: "https://vimeo.com/923861478"
 ---
