@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "topics"
+    label: "Topics"
+    folder: "src/content/topics"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Intro", name: "intro", widget: "text", required: false }
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        fields:
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Collapsed by Default", name: "collapsed", widget: "boolean", default: false }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "string", required: false }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options:
+                  - { label: "PDF", value: "pdf" }
+                  - { label: "Audio", value: "audio" }
+                  - { label: "Video", value: "video" }
+                  - { label: "Link", value: "link" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  - name: "clients"
+    label: "Clients"
+    folder: "src/content/clients"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - label: "Topics"
+        name: "topics"
+        widget: "relation"
+        collection: "topics"
+        multiple: true
+        value_field: "{{slug}}"
+        search_fields: ["title"]
+        display_fields: ["title"]

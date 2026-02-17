@@ -1,0 +1,25 @@
+{
+  "name": "site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/jost": "^5.2.8",
+    "@fontsource-variable/manrope": "^5.2.8",
+    "@fontsource-variable/outfit": "^5.2.8",
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+    "@fontsource-variable/raleway": "^5.2.8",
+    "@fontsource-variable/sora": "^5.2.8",
+    "@fontsource-variable/source-serif-4": "^5.2.9",
+    "@fontsource/dm-serif-display": "^5.2.8",
+    "@fontsource/instrument-serif": "^5.2.8",
+    "@fontsource/lora": "^5.2.8",
+    "@fontsource/playfair-display": "^5.2.8",
+    "astro": "^5.17.1"
+  }
+}

@@ -1,0 +1,106 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  slug: string;
+  clientSlug: string;
+  index: number;
+}
+
+const { title, subtitle, slug, clientSlug, index } = Astro.props;
+const delayClass = index < 4 ? `reveal-delay-${index + 1}` : '';
+---
+
+<a href={`/resources/${slug}?client=${clientSlug}`} class={`topic-card reveal ${delayClass}`}>
+  <div class="topic-card__accent"></div>
+  <div class="topic-card__content">
+    <h3 class="topic-card__title">{title}</h3>
+    {subtitle && <p class="topic-card__subtitle">{subtitle}</p>}
+  </div>
+  <span class="topic-card__arrow" aria-hidden="true">&#8594;</span>
+</a>
+
+<style>
+  .topic-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    background: rgba(18, 50, 47, 0.18);
+    border: 1px solid rgba(245, 240, 234, 0.04);
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background var(--transition-base),
+                border-color var(--transition-base),
+                transform var(--transition-base);
+    min-height: 200px;
+  }
+
+  .topic-card:hover {
+    background: rgba(18, 50, 47, 0.3);
+    border-color: rgba(245, 240, 234, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .topic-card__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: var(--orange);
+    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .topic-card:hover .topic-card__accent {
+    height: 3px;
+  }
+
+  .topic-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .topic-card__title {
+    font-size: var(--text-xl);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+  }
+
+  .topic-card__subtitle {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .topic-card__arrow {
+    align-self: flex-end;
+    font-size: 1.4rem;
+    color: var(--orange);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity var(--transition-base),
+                transform var(--transition-base);
+  }
+
+  .topic-card:hover .topic-card__arrow {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 768px) {
+    .topic-card {
+      padding: var(--space-md);
+      min-height: 150px;
+    }
+  }
+</style>

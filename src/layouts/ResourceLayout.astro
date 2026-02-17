@@ -1,0 +1,60 @@
+---
+import '@fontsource-variable/outfit';
+import '@fontsource/playfair-display/400-italic.css';
+import '@fontsource/playfair-display/500-italic.css';
+import ResourceHeader from '../components/ResourceHeader.astro';
+import ResourceFooter from '../components/ResourceFooter.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{title} | Flourish</title>
+  <link rel="icon" type="image/png" href="/images/lotus.png" />
+
+  <style is:global>
+    @import '../styles/global.css';
+  </style>
+</head>
+<body>
+  <ResourceHeader />
+
+  <main class="resource-main">
+    <slot />
+  </main>
+
+  <ResourceFooter />
+
+  <!-- Scroll reveal observer -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
+
+<style>
+  .resource-main {
+    min-height: 60vh;
+  }
+</style>

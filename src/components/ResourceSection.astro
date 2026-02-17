@@ -1,0 +1,111 @@
+---
+import ResourceItem from './ResourceItem.astro';
+
+interface Props {
+  title: string;
+  collapsed: boolean;
+  items: Array<{
+    name: string;
+    description?: string;
+    type: 'pdf' | 'audio' | 'video' | 'link';
+    url: string;
+  }>;
+}
+
+const { title, collapsed, items } = Astro.props;
+---
+
+<div class={`resource-section reveal ${collapsed ? 'resource-section--collapsed' : ''}`}>
+  <button class="resource-section__header" aria-expanded={!collapsed}>
+    <h3 class="resource-section__title">{title}</h3>
+    <span class="resource-section__count">{items.length} {items.length === 1 ? 'item' : 'items'}</span>
+    <span class="resource-section__chevron" aria-hidden="true">&#9662;</span>
+  </button>
+  <div class="resource-section__body" style={collapsed ? 'display: none;' : ''}>
+    <div class="resource-section__items">
+      {items.map((item) => (
+        <ResourceItem
+          name={item.name}
+          description={item.description}
+          type={item.type}
+          url={item.url}
+        />
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .resource-section {
+    border: 1px solid rgba(245, 240, 234, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(9, 26, 24, 0.3);
+  }
+
+  .resource-section__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-md) var(--space-md);
+    background: rgba(18, 50, 47, 0.12);
+    border: none;
+    cursor: pointer;
+    color: var(--cream);
+    font-family: inherit;
+    text-align: left;
+    transition: background var(--transition-base);
+  }
+
+  .resource-section__header:hover {
+    background: rgba(18, 50, 47, 0.25);
+  }
+
+  .resource-section__title {
+    flex: 1;
+    font-size: var(--text-lg);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .resource-section__count {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+
+  .resource-section__chevron {
+    font-size: 1.2rem;
+    color: var(--orange);
+    opacity: 0.6;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    line-height: 1;
+  }
+
+  .resource-section__header:hover .resource-section__chevron {
+    opacity: 1;
+  }
+
+  .resource-section__header[aria-expanded="true"] .resource-section__chevron {
+    transform: rotate(180deg);
+    opacity: 0.8;
+  }
+
+  .resource-section__header[aria-expanded="false"] .resource-section__chevron {
+    transform: rotate(0deg);
+  }
+
+  .resource-section__body {
+    border-top: 1px solid rgba(245, 240, 234, 0.04);
+  }
+
+  .resource-section__items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-sm);
+  }
+</style>

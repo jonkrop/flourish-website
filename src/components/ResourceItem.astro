@@ -1,0 +1,295 @@
+---
+interface Props {
+  name: string;
+  description?: string;
+  type: 'pdf' | 'audio' | 'video' | 'link';
+  url: string;
+}
+
+const { name, description, type, url } = Astro.props;
+
+function getVimeoId(url: string): string | null {
+  const match = url.match(/vimeo\.com\/(\d+)/);
+  return match ? match[1] : null;
+}
+
+const vimeoId = type === 'video' ? getVimeoId(url) : null;
+---
+
+<div class="resource-item" data-type={type}>
+  <div class="resource-item__accent"></div>
+
+  {type === 'pdf' && (
+    <a href={url} class="resource-item__link" download>
+      <div class="resource-item__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="12" y1="18" x2="12" y2="12" />
+          <polyline points="9 15 12 18 15 15" />
+        </svg>
+      </div>
+      <div class="resource-item__text">
+        <span class="resource-item__name">{name}</span>
+        {description && <span class="resource-item__desc">{description}</span>}
+      </div>
+      <span class="resource-item__badge">PDF</span>
+    </a>
+  )}
+
+  {type === 'audio' && (
+    <div class="resource-item__audio-wrap">
+      <div class="resource-item__audio-header">
+        <div class="resource-item__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+          </svg>
+        </div>
+        <div class="resource-item__text">
+          <span class="resource-item__name">{name}</span>
+          {description && <span class="resource-item__desc">{description}</span>}
+        </div>
+      </div>
+      <audio controls preload="none" class="resource-item__player">
+        <source src={url} type="audio/mpeg" />
+        <a href={url} download>Download audio</a>
+      </audio>
+    </div>
+  )}
+
+  {type === 'video' && vimeoId && (
+    <div class="resource-item__video-wrap">
+      <div class="resource-item__video-header">
+        <div class="resource-item__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+        </div>
+        <div class="resource-item__text">
+          <span class="resource-item__name">{name}</span>
+          {description && <span class="resource-item__desc">{description}</span>}
+        </div>
+      </div>
+      <div class="resource-item__embed">
+        <iframe
+          src={`https://player.vimeo.com/video/${vimeoId}?h=0&title=0&byline=0&portrait=0`}
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  )}
+
+  {type === 'video' && !vimeoId && (
+    <a href={url} class="resource-item__link" target="_blank" rel="noopener noreferrer">
+      <div class="resource-item__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3" />
+        </svg>
+      </div>
+      <div class="resource-item__text">
+        <span class="resource-item__name">{name}</span>
+        {description && <span class="resource-item__desc">{description}</span>}
+      </div>
+      <span class="resource-item__badge">VIDEO</span>
+    </a>
+  )}
+
+  {type === 'link' && (
+    <a href={url} class="resource-item__link" target="_blank" rel="noopener noreferrer">
+      <div class="resource-item__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
+      </div>
+      <div class="resource-item__text">
+        <span class="resource-item__name">{name}</span>
+        {description && <span class="resource-item__desc">{description}</span>}
+      </div>
+      <span class="resource-item__badge">LINK</span>
+    </a>
+  )}
+</div>
+
+<style>
+  .resource-item {
+    position: relative;
+    background: rgba(18, 50, 47, 0.18);
+    border: 1px solid rgba(245, 240, 234, 0.04);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: background var(--transition-base),
+                border-color var(--transition-base),
+                transform var(--transition-base);
+  }
+
+  .resource-item:hover {
+    background: rgba(18, 50, 47, 0.3);
+    border-color: rgba(245, 240, 234, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .resource-item__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--orange);
+    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .resource-item:hover .resource-item__accent {
+    height: 100%;
+  }
+
+  /* Link-type items (PDF, link, non-vimeo video) */
+  .resource-item__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-md) var(--space-md) calc(var(--space-md) + 3px);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .resource-item__icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(240, 78, 35, 0.1);
+    border-radius: 4px;
+    color: var(--orange);
+    transition: background var(--transition-base);
+  }
+
+  .resource-item:hover .resource-item__icon {
+    background: rgba(240, 78, 35, 0.18);
+  }
+
+  .resource-item__text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .resource-item__name {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  .resource-item__desc {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .resource-item__badge {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(240, 78, 35, 0.3);
+    border-radius: 2px;
+    color: var(--orange);
+    opacity: 0.7;
+    transition: opacity var(--transition-base);
+  }
+
+  .resource-item:hover .resource-item__badge {
+    opacity: 1;
+  }
+
+  /* Audio items */
+  .resource-item__audio-wrap {
+    padding: var(--space-md) var(--space-md) var(--space-md) calc(var(--space-md) + 3px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .resource-item__audio-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .resource-item__player {
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    opacity: 0.85;
+    transition: opacity var(--transition-base);
+  }
+
+  .resource-item__player:hover {
+    opacity: 1;
+  }
+
+  /* Video embed items */
+  .resource-item__video-wrap {
+    padding: var(--space-md) var(--space-md) var(--space-md) calc(var(--space-md) + 3px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .resource-item__video-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .resource-item__embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background: rgba(9, 26, 24, 0.5);
+  }
+
+  .resource-item__embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .resource-item__link {
+      padding: var(--space-sm) var(--space-sm) var(--space-sm) calc(var(--space-sm) + 3px);
+      gap: var(--space-sm);
+    }
+
+    .resource-item__audio-wrap,
+    .resource-item__video-wrap {
+      padding: var(--space-sm) var(--space-sm) var(--space-sm) calc(var(--space-sm) + 3px);
+    }
+
+    .resource-item__icon {
+      width: 38px;
+      height: 38px;
+    }
+
+    .resource-item__icon svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>

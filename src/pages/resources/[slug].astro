@@ -1,0 +1,305 @@
+---
+import { getCollection } from 'astro:content';
+import ResourceLayout from '../../layouts/ResourceLayout.astro';
+import ResourceSection from '../../components/ResourceSection.astro';
+import TopicCard from '../../components/TopicCard.astro';
+
+export async function getStaticPaths() {
+  const topics = await getCollection('topics');
+  const clients = await getCollection('clients');
+
+  const topicPaths = topics.map((topic) => ({
+    params: { slug: topic.slug },
+    props: { kind: 'topic' as const, entry: topic },
+  }));
+
+  const clientPaths = clients.map((client) => ({
+    params: { slug: client.slug },
+    props: { kind: 'client' as const, entry: client },
+  }));
+
+  return [...topicPaths, ...clientPaths];
+}
+
+type Props =
+  | { kind: 'topic'; entry: Awaited<ReturnType<typeof getCollection<'topics'>>>[number] }
+  | { kind: 'client'; entry: Awaited<ReturnType<typeof getCollection<'clients'>>>[number] };
+
+const { kind, entry } = Astro.props;
+
+// Build data needed for rendering
+const allTopics = await getCollection('topics');
+const allClients = await getCollection('clients');
+
+// Build client lookup for back-link text on topic pages
+const clientLookup: Record<string, string> = {};
+for (const c of allClients) {
+  clientLookup[c.slug] = c.data.name;
+}
+
+let pageTitle: string;
+let clientName: string | undefined;
+let isSingleTopic = false;
+let topicEntries: typeof allTopics = [];
+
+if (kind === 'client') {
+  const clientData = entry.data as { name: string; topics: string[] };
+  pageTitle = `${clientData.name} Resources`;
+  clientName = clientData.name;
+
+  // Resolve topic slugs to entries
+  topicEntries = clientData.topics
+    .map((slug) => allTopics.find((t) => t.slug === slug))
+    .filter((t): t is typeof allTopics[number] => !!t);
+
+  isSingleTopic = topicEntries.length === 1;
+} else {
+  const topicData = entry.data as { title: string; subtitle?: string };
+  pageTitle = topicData.title;
+}
+---
+
+<ResourceLayout title={pageTitle}>
+  {kind === 'client' && !isSingleTopic && (
+    <!-- Multi-topic client: card grid -->
+    <div class="resource-page">
+      <div class="resource-page__hero section grain">
+        <div class="container">
+          <p class="resource-page__eyebrow reveal">{clientName}</p>
+          <h1 class="resource-page__title reveal reveal-delay-1">Workshop Resources</h1>
+          <p class="resource-page__intro reveal reveal-delay-2">Select a topic below to access your materials.</p>
+        </div>
+      </div>
+      <div class="resource-page__grid-section section">
+        <div class="container">
+          <div class="resource-page__grid">
+            {topicEntries.map((topic, i) => (
+              <TopicCard
+                title={topic.data.title}
+                subtitle={topic.data.subtitle}
+                slug={topic.slug}
+                clientSlug={entry.slug}
+                index={i}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {kind === 'client' && isSingleTopic && topicEntries[0] && (
+    <!-- Single-topic client: render topic directly -->
+    <div class="resource-page">
+      <div class="resource-page__hero section grain">
+        <div class="container">
+          <p class="resource-page__eyebrow reveal">{clientName}</p>
+          <h1 class="resource-page__title reveal reveal-delay-1">{topicEntries[0].data.title}</h1>
+          {topicEntries[0].data.subtitle && (
+            <p class="resource-page__subtitle reveal reveal-delay-2">
+              <span class="accent">{topicEntries[0].data.subtitle}</span>
+            </p>
+          )}
+          {topicEntries[0].data.intro && (
+            <p class="resource-page__intro reveal reveal-delay-3">{topicEntries[0].data.intro}</p>
+          )}
+        </div>
+      </div>
+      <div class="resource-page__content section">
+        <div class="container container--narrow">
+          <div class="resource-page__sections">
+            {topicEntries[0].data.sections.map((section) => (
+              <ResourceSection
+                title={section.title}
+                collapsed={section.collapsed}
+                items={section.items}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {kind === 'topic' && (
+    <!-- Topic page (accessed directly or via client link) -->
+    <div class="resource-page">
+      <div class="resource-page__hero section grain">
+        <div class="container">
+          <div id="back-link-container" class="resource-page__back-wrap" style="display: none;">
+            <a id="back-link" href="#" class="resource-page__back">
+              <span class="resource-page__back-arrow">&#8592;</span>
+              <span id="back-link-text">Back to Resources</span>
+            </a>
+          </div>
+          <h1 class="resource-page__title reveal">{(entry.data as any).title}</h1>
+          {(entry.data as any).subtitle && (
+            <p class="resource-page__subtitle reveal reveal-delay-1">
+              <span class="accent">{(entry.data as any).subtitle}</span>
+            </p>
+          )}
+          {(entry.data as any).intro && (
+            <p class="resource-page__intro reveal reveal-delay-2">{(entry.data as any).intro}</p>
+          )}
+        </div>
+      </div>
+      <div class="resource-page__content section">
+        <div class="container container--narrow">
+          <div class="resource-page__sections">
+            {(entry.data as any).sections.map((section: any) => (
+              <ResourceSection
+                title={section.title}
+                collapsed={section.collapsed}
+                items={section.items}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Client lookup data for back-link JS -->
+  <script define:vars={{ clientLookup }}>
+    // Handle ?client= param for back link
+    const params = new URLSearchParams(window.location.search);
+    const clientSlug = params.get('client');
+    if (clientSlug && clientLookup[clientSlug]) {
+      const container = document.getElementById('back-link-container');
+      const link = document.getElementById('back-link');
+      const text = document.getElementById('back-link-text');
+      if (container && link && text) {
+        container.style.display = 'block';
+        link.setAttribute('href', `/resources/${clientSlug}`);
+        text.textContent = `Back to ${clientLookup[clientSlug]} Resources`;
+      }
+    }
+
+    // Collapsible sections
+    document.querySelectorAll('.resource-section__header').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const body = btn.nextElementSibling;
+        if (body) {
+          if (expanded) {
+            body.style.display = 'none';
+          } else {
+            body.style.display = '';
+          }
+        }
+      });
+    });
+  </script>
+</ResourceLayout>
+
+<style>
+  /* ---- Hero ---- */
+  .resource-page__hero {
+    background: var(--green);
+    padding-block: var(--space-xl) var(--space-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resource-page__hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(240, 78, 35, 0.3), transparent);
+  }
+
+  .resource-page__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-sm);
+  }
+
+  .resource-page__title {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: var(--space-sm);
+    max-width: 700px;
+  }
+
+  .resource-page__subtitle {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .resource-page__intro {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* ---- Back link ---- */
+  .resource-page__back-wrap {
+    margin-bottom: var(--space-md);
+  }
+
+  .resource-page__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .resource-page__back:hover {
+    color: var(--orange);
+  }
+
+  .resource-page__back-arrow {
+    font-size: 1.1rem;
+    transition: transform var(--transition-base);
+  }
+
+  .resource-page__back:hover .resource-page__back-arrow {
+    transform: translateX(-3px);
+  }
+
+  /* ---- Card grid ---- */
+  .resource-page__grid-section {
+    padding-block: var(--space-lg) var(--space-xl);
+  }
+
+  .resource-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+  }
+
+  /* ---- Content sections ---- */
+  .resource-page__content {
+    padding-block: var(--space-lg) var(--space-xl);
+  }
+
+  .resource-page__sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .resource-page__hero {
+      padding-block: var(--space-lg) var(--space-md);
+    }
+
+    .resource-page__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

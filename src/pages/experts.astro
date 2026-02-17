@@ -1,0 +1,1150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Our Experts - Flourish Legal Well-Being">
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+      </a>
+      <nav class="header__nav">
+        <a href="/experts" class="header__link header__link--active">Our Experts</a>
+        <a href="/book" class="btn btn--primary">Book a Call</a>
+      </nav>
+      <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav__inner">
+      <a href="/experts" class="mobile-nav__link">Our Experts</a>
+      <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
+    </nav>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- Layer 0: dark foliage background -->
+    <div class="hero__bg">
+      <img src="/images/hero-foliage.png" alt="" class="hero__bg-img" loading="eager" />
+    </div>
+    <!-- Layer 1: CSS orange border -->
+    <div class="hero__border" aria-hidden="true"></div>
+    <!-- Layer 2: foreground foliage overlay (tighter clip than homepage for 70vh hero) -->
+    <div class="hero__fg" aria-hidden="true">
+      <img src="/images/foliage-overlay.png" alt="" class="hero__bg-img" />
+    </div>
+    <!-- Layer 3: content -->
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Our Team</p>
+      <h1 class="hero__title">
+        Experts lawyers <em class="accent">listen to.</em>
+      </h1>
+      <p class="hero__subtitle">
+        Leaders in their fields with elite credentials - and most of them are lawyers themselves.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== EXPERT CARDS ===== -->
+  <section class="section experts-section grain">
+    <div class="container">
+      <div class="experts__grid">
+
+        <!-- Jon Krop -->
+        <div class="expert-card reveal" data-expert="jon" role="button" tabindex="0" aria-expanded="false">
+          <div class="expert-card__accent"></div>
+          <img src="/images/jon-headshot-botanical.png" alt="Jon Krop" class="expert-card__photo" loading="lazy" />
+          <h3 class="expert-card__name">Jon Krop, J.D.</h3>
+          <p class="expert-card__role">Founder & Lead Instructor</p>
+          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
+        </div>
+        <div class="expert-detail" data-for="jon" aria-hidden="true">
+          <div class="expert-detail__inner">
+            <div class="expert-detail__photo-col">
+              <img src="/images/jon-headshot-botanical.png" alt="Jon Krop" class="expert-detail__photo" />
+            </div>
+            <div class="expert-detail__content-col">
+              <h3 class="expert-detail__name">Jon Krop, J.D.</h3>
+              <p class="expert-detail__title">Founder & Lead Instructor</p>
+              <div class="expert-detail__topics">
+                <span class="expert-detail__topic">Mindfulness</span>
+                <span class="expert-detail__topic">Mental & Emotional Well-Being</span>
+              </div>
+              <p class="expert-detail__credentials">
+                <span class="expert-detail__cred-label">Credentials:</span>
+                <span class="expert-detail__cred-item">U.S. Court of Appeals, Ninth Circuit (clerk)</span>
+                <span class="expert-detail__cred-item">Harvard Law School (J.D.)</span>
+                <span class="expert-detail__cred-item">Brown University (B.A.)</span>
+              </p>
+              <p class="expert-detail__bio">
+                Jon has taught at the world's top law firms, Harvard, Stanford, Yale, Fortune 100 companies, and public defenders' offices. Before founding Flourish, he worked as a litigator in Los Angeles and New York. Jon has practiced mindfulness since 2006, studying with teachers from around the world. In 2014, he completed a seven-month silent meditation retreat. He still does two months of silent retreat per year.
+              </p>
+              <blockquote class="expert-detail__quote">
+                <p>"Jon is extremely good at immediately building rapport with biglaw associates, which makes the entire program more credible and valuable. 5/5."</p>
+                <footer>Associate, <span class="text-muted">AmLaw 100 Firm</span></footer>
+              </blockquote>
+            </div>
+            <button class="expert-detail__close" aria-label="Close details">&times;</button>
+          </div>
+        </div>
+
+        <!-- Azeemah Kola -->
+        <div class="expert-card reveal reveal-delay-1" data-expert="azeemah" role="button" tabindex="0" aria-expanded="false">
+          <div class="expert-card__accent"></div>
+          <img src="/images/azeemah-kola.jpg" alt="Azeemah Kola" class="expert-card__photo" loading="lazy" />
+          <h3 class="expert-card__name">Azeemah Kola, J.D., Ph.D.</h3>
+          <p class="expert-card__role">Lawyer & Clinical Psychologist</p>
+          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
+        </div>
+        <div class="expert-detail" data-for="azeemah" aria-hidden="true">
+          <div class="expert-detail__inner">
+            <div class="expert-detail__photo-col">
+              <img src="/images/azeemah-kola.jpg" alt="Azeemah Kola" class="expert-detail__photo" />
+            </div>
+            <div class="expert-detail__content-col">
+              <h3 class="expert-detail__name">Azeemah Kola, J.D., M.Sc., Ph.D.</h3>
+              <p class="expert-detail__title">Lawyer & Clinical Psychologist</p>
+              <div class="expert-detail__topics">
+                <span class="expert-detail__topic">Mental & Emotional Well-Being</span>
+                <span class="expert-detail__topic">D.E.I.</span>
+                <span class="expert-detail__topic">Substance Use</span>
+              </div>
+              <p class="expert-detail__credentials">
+                <span class="expert-detail__cred-label">Credentials:</span>
+                <span class="expert-detail__cred-item">Licensed Clinical Psychologist</span>
+                <span class="expert-detail__cred-item">Yale (J.D.)</span>
+                <span class="expert-detail__cred-item">Harvard</span>
+                <span class="expert-detail__cred-item">Oxford</span>
+                <span class="expert-detail__cred-item">The New School</span>
+              </p>
+              <p class="expert-detail__bio">
+                Knows the lawyer's mind from the inside - before changing careers, she was a biglaw associate. Her graduate work included special focuses on substance use and issues of minority identity.
+              </p>
+              <blockquote class="expert-detail__quote">
+                <p>"I loved Azeemah's honesty and passion - it really makes it easy to pay attention. 5/5."</p>
+                <footer>Associate, <span class="text-muted">AmLaw 100 Firm</span></footer>
+              </blockquote>
+            </div>
+            <button class="expert-detail__close" aria-label="Close details">&times;</button>
+          </div>
+        </div>
+
+        <!-- Taylor Steffan -->
+        <div class="expert-card reveal reveal-delay-2" data-expert="taylor" role="button" tabindex="0" aria-expanded="false">
+          <div class="expert-card__accent"></div>
+          <img src="/images/taylor-steffan.jpg" alt="Taylor Steffan" class="expert-card__photo" loading="lazy" />
+          <h3 class="expert-card__name">Taylor Steffan, J.D., L.C.S.W.</h3>
+          <p class="expert-card__role">Lawyer & Psychotherapist</p>
+          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
+        </div>
+        <div class="expert-detail" data-for="taylor" aria-hidden="true">
+          <div class="expert-detail__inner">
+            <div class="expert-detail__photo-col">
+              <img src="/images/taylor-steffan.jpg" alt="Taylor Steffan" class="expert-detail__photo" />
+            </div>
+            <div class="expert-detail__content-col">
+              <h3 class="expert-detail__name">Taylor Steffan, J.D., L.C.S.W.</h3>
+              <p class="expert-detail__title">Lawyer & Psychotherapist</p>
+              <div class="expert-detail__topics">
+                <span class="expert-detail__topic">Mental & Emotional Well-Being</span>
+                <span class="expert-detail__topic">Substance Use</span>
+              </div>
+              <p class="expert-detail__credentials">
+                <span class="expert-detail__cred-label">Credentials:</span>
+                <span class="expert-detail__cred-item">U.S. Court of Appeals, Fifth Circuit (clerk)</span>
+                <span class="expert-detail__cred-item">L.C.S.W.</span>
+                <span class="expert-detail__cred-item">UVA School of Law</span>
+                <span class="expert-detail__cred-item">Fordham</span>
+                <span class="expert-detail__cred-item">Georgetown</span>
+              </p>
+              <p class="expert-detail__bio">
+                Before changing careers, she practiced at several large law firms. She makes even sensitive topics feel approachable and practical.
+              </p>
+              <blockquote class="expert-detail__quote">
+                <p>"Taylor was amazing. She clearly has the expertise, but more so she came across as kind. 5/5."</p>
+                <footer>Partner, <span class="text-muted">AmLaw 50 Firm</span></footer>
+              </blockquote>
+            </div>
+            <button class="expert-detail__close" aria-label="Close details">&times;</button>
+          </div>
+        </div>
+
+        <!-- Monica Auslander Moreno -->
+        <div class="expert-card reveal reveal-delay-1" data-expert="monica" role="button" tabindex="0" aria-expanded="false">
+          <div class="expert-card__accent"></div>
+          <img src="/images/monica-moreno.jpg" alt="Monica Auslander Moreno" class="expert-card__photo" loading="lazy" />
+          <h3 class="expert-card__name">Monica Auslander Moreno, M.S., R.D.N.</h3>
+          <p class="expert-card__role">Registered Dietitian</p>
+          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
+        </div>
+        <div class="expert-detail" data-for="monica" aria-hidden="true">
+          <div class="expert-detail__inner">
+            <div class="expert-detail__photo-col">
+              <img src="/images/monica-moreno.jpg" alt="Monica Auslander Moreno" class="expert-detail__photo" />
+            </div>
+            <div class="expert-detail__content-col">
+              <h3 class="expert-detail__name">Monica Auslander Moreno, M.S., R.D.N.</h3>
+              <p class="expert-detail__title">Registered Dietitian Nutritionist</p>
+              <div class="expert-detail__topics">
+                <span class="expert-detail__topic">Nutrition</span>
+                <span class="expert-detail__topic">Physical Well-Being</span>
+              </div>
+              <p class="expert-detail__credentials">
+                <span class="expert-detail__cred-label">Credentials:</span>
+                <span class="expert-detail__cred-item">R.D.N.</span>
+                <span class="expert-detail__cred-item">Former in-house dietitian, Miami Marlins</span>
+                <span class="expert-detail__cred-item">Clinical dietitian, Jackson Memorial Hospital</span>
+                <span class="expert-detail__cred-item">Adjunct professor, University of Miami</span>
+              </p>
+              <p class="expert-detail__bio">
+                Makes the science of nutrition accessible and actionable for high-performing professionals. Her sessions cut through fad-diet noise with evidence-based strategies that fit demanding schedules.
+              </p>
+              <blockquote class="expert-detail__quote">
+                <p>"Monica was knowledgeable, engaging, and interactive. 5/5."</p>
+                <footer>Associate, <span class="text-muted">AmLaw 50 Firm</span></footer>
+              </blockquote>
+            </div>
+            <button class="expert-detail__close" aria-label="Close details">&times;</button>
+          </div>
+        </div>
+
+        <!-- Joe Ankus -->
+        <div class="expert-card reveal reveal-delay-2" data-expert="joe" role="button" tabindex="0" aria-expanded="false">
+          <div class="expert-card__accent"></div>
+          <img src="/images/joe-ankus.jpg" alt="Joe Ankus" class="expert-card__photo" loading="lazy" />
+          <h3 class="expert-card__name">Joe Ankus, J.D.</h3>
+          <p class="expert-card__role">Lawyer & Mental Health First Aid Instructor</p>
+          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
+        </div>
+        <div class="expert-detail" data-for="joe" aria-hidden="true">
+          <div class="expert-detail__inner">
+            <div class="expert-detail__photo-col">
+              <img src="/images/joe-ankus.jpg" alt="Joe Ankus" class="expert-detail__photo" />
+            </div>
+            <div class="expert-detail__content-col">
+              <h3 class="expert-detail__name">Joe Ankus, J.D., Certified MHFA Instructor</h3>
+              <p class="expert-detail__title">Lawyer & Mental Health First Aid Instructor</p>
+              <div class="expert-detail__topics">
+                <span class="expert-detail__topic">Mental Health First Aid</span>
+              </div>
+              <p class="expert-detail__credentials">
+                <span class="expert-detail__cred-label">Credentials:</span>
+                <span class="expert-detail__cred-item">Certified MHFA Instructor</span>
+                <span class="expert-detail__cred-item">Florida Bar Special Committee for Mental Health & Wellness</span>
+                <span class="expert-detail__cred-item">UF Levin College of Law</span>
+                <span class="expert-detail__cred-item">University of Pennsylvania</span>
+              </p>
+              <p class="expert-detail__bio">
+                Has taught hundreds of legal professionals on a range of mental health topics.
+              </p>
+            </div>
+            <button class="expert-detail__close" aria-label="Close details">&times;</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PULL QUOTE ===== -->
+  <div class="pull-quote reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"The speakers are all top-notch. The support leading up to the event is white glove with sample emails, which makes our job so much easier."</p>
+        <footer>Stacey Pipes, Chief Human Resources Officer, <span class="text-muted">Bracewell</span></footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="section cta-final">
+    <div class="container">
+      <div class="cta-final__inner reveal" style="text-align:center;align-items:center;">
+        <h2>Ready to bring these experts to your firm?</h2>
+        <p>Book a 30-minute discovery call. We'll learn about your firm and recommend the right experts and topics.</p>
+        <a href="/book" class="btn btn--primary">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/images/logo-orange.png" alt="Flourish" width="140" height="37" />
+        <p class="text-sm text-muted">Well-being that works for law firms.</p>
+      </div>
+      <div class="footer__links">
+        <a href="/">Home</a>
+        <a href="/book">Book a Call</a>
+      </div>
+      <div class="footer__legal text-sm text-muted">
+        &copy; {new Date().getFullYear()} Flourish Legal Well-Being. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  /* ===================================================================
+     HEADER (matches homepage exactly, plus active state)
+     =================================================================== */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    transition: background var(--transition-base), backdrop-filter var(--transition-base);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .header--scrolled {
+    background: rgba(9, 26, 24, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .header .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(3.5%, 1.5rem);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .header__link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .header__link:hover {
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  .header__link--active {
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  .header__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .header__mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(9, 26, 24, 0.97);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-nav__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobile-nav__link {
+    font-size: var(--text-xl);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__mobile-toggle { display: flex; }
+  }
+
+  /* ===================================================================
+     HERO (foliage, matching homepage)
+     =================================================================== */
+  .hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 35% 45%, rgba(5, 5, 5, 0.5) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.05) 40%, rgba(5, 5, 5, 0.4) 100%);
+    z-index: 1;
+  }
+
+  .hero__border {
+    position: absolute;
+    top: 90px;
+    left: 3.5%;
+    right: 3.5%;
+    bottom: 5%;
+    border: 2px solid var(--orange);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero__fg {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    /* Tighter clip than homepage - narrower to avoid gaps in the bottom border at 70vh */
+    clip-path: polygon(3% 72%, 32% 72%, 32% 100%, 3% 100%);
+  }
+
+  .hero .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-left: max(7.5%, 4rem);
+    padding-right: max(7.5%, 4rem);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 4;
+    padding-top: 8rem;
+    padding-bottom: max(7%, 4.5rem);
+  }
+
+  .hero__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero__title {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    max-width: 28ch;
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    max-width: 58ch;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===================================================================
+     EXPERT CARD GRID (3+2 centered via 6-column grid)
+     =================================================================== */
+  .experts-section {
+    background:
+      radial-gradient(ellipse 50% 50% at 30% 60%, rgba(22, 80, 60, 0.15) 0%, transparent 70%),
+      var(--dark);
+  }
+
+  .experts__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* ===================================================================
+     EXPERT CARD (collapsed state)
+     =================================================================== */
+  .expert-card {
+    grid-column: span 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    background: rgba(18, 50, 47, 0.18);
+    border: 1px solid rgba(245, 240, 234, 0.04);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+    overflow: hidden;
+  }
+
+  .expert-card:hover {
+    background: rgba(18, 50, 47, 0.3);
+    border-color: rgba(245, 240, 234, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .expert-card--active {
+    background: rgba(18, 50, 47, 0.35);
+    border-color: rgba(240, 78, 35, 0.15);
+    transform: translateY(0);
+  }
+
+  .expert-card__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: var(--orange);
+    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .expert-card:hover .expert-card__accent,
+  .expert-card--active .expert-card__accent {
+    height: 3px;
+  }
+
+  .expert-card__photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 2px solid rgba(240, 78, 35, 0.3);
+    margin-bottom: var(--space-md);
+    transition: border-color var(--transition-base);
+  }
+
+  .expert-card:hover .expert-card__photo,
+  .expert-card--active .expert-card__photo {
+    border-color: rgba(240, 78, 35, 0.6);
+  }
+
+
+
+  .expert-card__name {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    margin-bottom: 0.25rem;
+  }
+
+  .expert-card__role {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+  }
+
+  .expert-card__caret {
+    display: block;
+    margin-top: var(--space-sm);
+    font-size: 1.4rem;
+    color: var(--orange);
+    opacity: 0.5;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    line-height: 1;
+  }
+
+  .expert-card:hover .expert-card__caret {
+    opacity: 0.8;
+  }
+
+  .expert-card--active .expert-card__caret {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+
+  /* Center the bottom row (Monica = 7th child, Joe = 9th child, due to interleaved detail panels) */
+  .expert-card:nth-child(7) {
+    grid-column: 2 / 4;
+  }
+
+  .expert-card:nth-child(9) {
+    grid-column: 4 / 6;
+  }
+
+  /* ===================================================================
+     EXPERT DETAIL PANEL (expand below row)
+     =================================================================== */
+  .expert-detail {
+    display: none;
+    grid-column: 1 / -1;
+    background: rgba(9, 26, 24, 0.8);
+    border-top: 2px solid var(--orange);
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .expert-detail.open {
+    display: block;
+    animation: panelSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes panelSlideIn {
+    from {
+      opacity: 0;
+      max-height: 0;
+      padding: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 600px;
+      padding: var(--space-xl);
+    }
+  }
+
+  .expert-detail__inner {
+    display: flex;
+    gap: var(--space-xl);
+    position: relative;
+  }
+
+  .expert-detail__photo-col {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 180px;
+  }
+
+  .expert-detail__photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 2px solid rgba(240, 78, 35, 0.4);
+  }
+
+
+  .expert-detail__content-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .expert-detail__name {
+    font-size: var(--text-xl);
+    font-weight: 300;
+    margin-bottom: -0.5rem;
+  }
+
+  .expert-detail__title {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  .expert-detail__bio {
+    font-size: var(--text-base);
+    color: var(--cream);
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .expert-detail__credentials {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.4em;
+    row-gap: 0.2em;
+    align-items: baseline;
+    overflow: hidden;
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .expert-detail__cred-label {
+    color: var(--orange);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: var(--text-base);
+  }
+
+  .expert-detail__cred-item {
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .expert-detail__cred-item + .expert-detail__cred-item::before {
+    content: '\00b7';
+    position: absolute;
+    right: calc(100% + 0.55em);
+    color: var(--orange);
+    transform: scale(1.8);
+  }
+
+  .expert-detail__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .expert-detail__topic {
+    font-size: var(--text-sm);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(240, 78, 35, 0.3);
+    border-radius: 2px;
+    color: var(--cream);
+    opacity: 0.8;
+    white-space: nowrap;
+  }
+
+  .expert-detail__quote {
+    margin-top: var(--space-sm);
+    padding-left: var(--space-md);
+    border-left: 2px solid rgba(240, 78, 35, 0.3);
+  }
+
+  .expert-detail__quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .expert-detail__quote footer {
+    font-size: var(--text-sm);
+    color: var(--cream);
+    opacity: 0.7;
+  }
+
+  .expert-detail__close {
+    position: absolute;
+    top: -2rem;
+    right: -2.5rem;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 1.75rem;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity var(--transition-fast);
+    padding: 0.5rem;
+    line-height: 1;
+  }
+
+  .expert-detail__close:hover {
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  /* ===================================================================
+     PULL QUOTE (matches homepage)
+     =================================================================== */
+  .pull-quote {
+    padding: var(--space-xl) 0;
+    background: var(--dark);
+  }
+
+  .pull-quote__inner {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .pull-quote__inner p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    color: var(--cream);
+    max-width: 100%;
+    margin-bottom: var(--space-sm);
+  }
+
+  .pull-quote__inner footer {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--cream);
+    opacity: 0.8;
+  }
+
+  /* ===================================================================
+     FINAL CTA (simplified, centered)
+     =================================================================== */
+  .cta-final {
+    background: var(--green);
+  }
+
+  .cta-final__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .cta-final__inner p {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    max-width: 50ch;
+  }
+
+  .cta-final__inner .btn { margin-top: var(--space-sm); }
+
+  /* ===================================================================
+     FOOTER (matches homepage)
+     =================================================================== */
+  .footer {
+    background: var(--dark);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .footer__brand img { height: 30px; width: auto; }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer__links a {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover { color: var(--orange); }
+
+  .footer__legal {
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    width: 100%;
+    font-size: var(--text-base);
+  }
+
+  /* ===================================================================
+     RESPONSIVE
+     =================================================================== */
+  @media (max-width: 1024px) {
+    .experts__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .expert-card {
+      grid-column: span 2;
+    }
+
+    /* 5th card centered on its own row */
+    .expert-card:nth-child(7) {
+      grid-column: span 2;
+    }
+
+    .expert-card:nth-child(9) {
+      grid-column: 2 / 4;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero__border {
+      top: 70px;
+      left: 3%;
+      right: 3%;
+      bottom: 3%;
+    }
+
+    .hero__fg {
+      display: none;
+    }
+
+    .hero .container {
+      padding-inline: max(5%, 1.5rem);
+    }
+
+    .hero__content {
+      padding-top: 5.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero__eyebrow {
+      display: none;
+    }
+
+    .hero__title {
+      max-width: 100%;
+    }
+
+    .experts__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+    }
+
+    .expert-card,
+    .expert-card:nth-child(7),
+    .expert-card:nth-child(9) {
+      grid-column: 1;
+    }
+
+    .expert-card__photo {
+      width: 110px;
+      height: 110px;
+    }
+
+    .expert-detail__inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-md);
+    }
+
+    .expert-detail__photo-col {
+      min-width: auto;
+    }
+
+    .expert-detail__photo {
+      width: 120px;
+      height: 120px;
+    }
+
+    .expert-detail__topics {
+      justify-content: center;
+    }
+
+    .expert-detail__quote {
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid rgba(240, 78, 35, 0.2);
+      padding-top: var(--space-sm);
+    }
+
+    .expert-detail__close {
+      top: -0.5rem;
+      right: -0.25rem;
+    }
+
+    .pull-quote {
+      padding: var(--space-lg) 0;
+    }
+
+    .pull-quote__inner footer {
+      line-height: 1.5;
+    }
+
+    @keyframes panelSlideIn {
+      from {
+        opacity: 0;
+        max-height: 0;
+        padding: 0;
+      }
+      to {
+        opacity: 1;
+        max-height: 900px;
+        padding: var(--space-lg);
+      }
+    }
+  }
+</style>
+
+<script>
+  // ===== Card expand/collapse =====
+  const cards = document.querySelectorAll('.expert-card');
+  const panels = document.querySelectorAll('.expert-detail');
+  const grid = document.querySelector('.experts__grid');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const expertId = card.dataset.expert;
+      const panel = document.querySelector(`.expert-detail[data-for="${expertId}"]`);
+      if (!panel) return;
+
+      const isOpen = panel.classList.contains('open');
+
+      // Close all panels first
+      panels.forEach(p => {
+        p.classList.remove('open');
+        p.style.display = 'none';
+        p.setAttribute('aria-hidden', 'true');
+      });
+      cards.forEach(c => {
+        c.classList.remove('expert-card--active');
+        c.setAttribute('aria-expanded', 'false');
+      });
+
+      // Open the clicked one (unless it was already open)
+      if (!isOpen) {
+        // Force reflow so card positions recalculate after closing panels
+        grid.offsetHeight;
+
+        // Find all cards in the same visual row (same offsetTop)
+        const cardTop = card.offsetTop;
+        const rowCards = [...cards].filter(c => Math.abs(c.offsetTop - cardTop) < 10);
+        const lastCardInRow = rowCards[rowCards.length - 1];
+
+        // Move panel in DOM to after the last card's detail panel in this row
+        // This ensures the panel opens between rows, not mid-row
+        const lastCardSibling = lastCardInRow.nextElementSibling;
+        const insertAfter = (lastCardSibling && lastCardSibling.classList.contains('expert-detail'))
+          ? lastCardSibling
+          : lastCardInRow;
+        insertAfter.after(panel);
+
+        panel.style.display = 'block';
+        // Force reflow for animation
+        panel.offsetHeight;
+        panel.classList.add('open');
+        panel.setAttribute('aria-hidden', 'false');
+        card.classList.add('expert-card--active');
+        card.setAttribute('aria-expanded', 'true');
+
+        // Smooth scroll so card + panel are visible
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+    });
+
+    // Keyboard support
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+
+  // Close buttons
+  document.querySelectorAll('.expert-detail__close').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const panel = btn.closest('.expert-detail');
+      if (!panel) return;
+      const expertId = panel.dataset.for;
+      const card = document.querySelector(`.expert-card[data-expert="${expertId}"]`);
+
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      if (card) {
+        card.classList.remove('expert-card--active');
+        card.setAttribute('aria-expanded', 'false');
+      }
+
+      setTimeout(() => {
+        panel.style.display = 'none';
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 400);
+    });
+  });
+
+  // ===== Mobile menu toggle =====
+  const toggle = document.querySelector('.header__mobile-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    });
+  }
+
+  // ===== Header scroll effect =====
+  const header = document.querySelector('.header');
+
+  function updateHeader() {
+    if (window.scrollY > 50) {
+      header?.classList.add('header--scrolled');
+    } else {
+      header?.classList.remove('header--scrolled');
+    }
+  }
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+</script>

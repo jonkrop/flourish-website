@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Book a Call - Flourish Legal Well-Being">
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+      </a>
+      <nav class="header__nav">
+        <a href="/experts" class="header__link">Our Experts</a>
+        <a href="/book" class="btn btn--primary">Book a Call</a>
+      </nav>
+      <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav__inner">
+      <a href="/experts" class="mobile-nav__link">Our Experts</a>
+      <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
+    </nav>
+  </div>
+
+  <!-- ===== BOOKING SECTION ===== -->
+  <section class="booking">
+    <div class="booking__header reveal">
+      <h1 class="booking__title">Let's chat.</h1>
+    </div>
+
+    <div class="booking__embed reveal reveal-delay-1">
+      <!-- Calendly inline widget -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/jonkrop/flourishfm?hide_gdpr_banner=1&hide_event_type_details=1&background_color=091a18&text_color=f5f0ea&primary_color=f04e23" style="min-width:320px;width:100%;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/images/logo-orange.png" alt="Flourish" width="140" height="37" />
+        <p class="text-sm text-muted">Well-being that works for law firms.</p>
+      </div>
+      <div class="footer__links">
+        <a href="/">Home</a>
+        <a href="/experts">Our Experts</a>
+      </div>
+      <div class="footer__legal text-sm text-muted">
+        &copy; {new Date().getFullYear()} Flourish Legal Well-Being. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  /* ===================================================================
+     HEADER (always solid bg since no hero image)
+     =================================================================== */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    transition: background var(--transition-base), backdrop-filter var(--transition-base);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .header--scrolled {
+    background: rgba(9, 26, 24, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .header .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(3.5%, 1.5rem);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .header__link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .header__link:hover {
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  .header__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .header__mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(9, 26, 24, 0.97);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-nav__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobile-nav__link {
+    font-size: var(--text-xl);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__mobile-toggle { display: flex; }
+  }
+
+  /* ===================================================================
+     BOOKING SECTION
+     =================================================================== */
+  .booking {
+    padding-top: calc(70px + var(--space-lg));
+    padding-bottom: var(--space-xl);
+    background:
+      radial-gradient(ellipse 50% 40% at 50% 20%, rgba(22, 80, 60, 0.15) 0%, transparent 70%),
+      var(--dark);
+    min-height: 100vh;
+  }
+
+  .booking__header {
+    text-align: center;
+    margin-bottom: var(--space-md);
+    padding-inline: var(--gutter);
+  }
+
+  .booking__title {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+  }
+
+  .booking__embed {
+    max-width: 1000px;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* Override Calendly widget background to blend with our dark theme */
+  .calendly-inline-widget {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* ===================================================================
+     FOOTER (matches other pages)
+     =================================================================== */
+  .footer {
+    background: var(--dark);
+    padding: var(--space-xl) 0 var(--space-lg);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .footer__brand img { height: 30px; width: auto; }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer__links a {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover { color: var(--orange); }
+
+  .footer__legal {
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    width: 100%;
+    font-size: var(--text-base);
+  }
+
+  /* ===================================================================
+     RESPONSIVE
+     =================================================================== */
+  @media (max-width: 768px) {
+    .booking {
+      padding-top: calc(60px + var(--space-md));
+    }
+
+    .booking__embed {
+      padding-inline: 0;
+    }
+
+    .calendly-inline-widget {
+      height: 750px !important;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.querySelector('.header__mobile-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    });
+  }
+
+  // Header scroll effect
+  const header = document.querySelector('.header');
+
+  function updateHeader() {
+    if (window.scrollY > 50) {
+      header?.classList.add('header--scrolled');
+    } else {
+      header?.classList.remove('header--scrolled');
+    }
+  }
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+</script>

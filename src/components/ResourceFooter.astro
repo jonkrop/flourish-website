@@ -1,0 +1,48 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="resource-footer">
+  <div class="resource-footer__inner">
+    <a href="/" class="resource-footer__logo" aria-label="Flourish home">
+      <img src="/images/logo-orange.png" alt="Flourish" width="120" height="34" />
+    </a>
+    <p class="resource-footer__copy">&copy; {year} Flourish Legal Well-Being. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .resource-footer {
+    padding: var(--space-lg) 0;
+    background: var(--dark);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+  }
+
+  .resource-footer__inner {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .resource-footer__logo img {
+    height: 26px;
+    width: auto;
+    display: block;
+    opacity: 0.6;
+    transition: opacity var(--transition-base);
+  }
+
+  .resource-footer__logo:hover img {
+    opacity: 0.9;
+  }
+
+  .resource-footer__copy {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+</style>
