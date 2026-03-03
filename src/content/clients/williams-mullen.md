@@ -2,5 +2,5 @@
 slug: williams-mullen
 name: Williams Mullen
 topics:
-  - attention
+  - take-back-your-attention
 ---
