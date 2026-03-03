@@ -8,9 +8,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <header class="header">
     <div class="container header__inner">
       <a href="/" class="header__logo">
-        <img src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+        <img src="/images/logo-orange-alt.png" alt="Flourish Legal Well-Being" width="180" height="48" />
       </a>
       <nav class="header__nav">
+        <a href="/#topics" class="header__link">Topics</a>
+        <a href="/#how-it-works" class="header__link">How It Works</a>
         <a href="/experts" class="header__link header__link--active">Our Experts</a>
         <a href="/book" class="btn btn--primary">Book a Call</a>
       </nav>
@@ -24,6 +26,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Mobile nav overlay -->
   <div class="mobile-nav" aria-hidden="true">
     <nav class="mobile-nav__inner">
+      <a href="/#topics" class="mobile-nav__link">Topics</a>
+      <a href="/#how-it-works" class="mobile-nav__link">How It Works</a>
       <a href="/experts" class="mobile-nav__link">Our Experts</a>
       <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
     </nav>
@@ -33,13 +37,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="hero">
     <!-- Layer 0: dark foliage background -->
     <div class="hero__bg">
-      <img src="/images/hero-foliage.png" alt="" class="hero__bg-img" loading="eager" />
+      <img src="/images/hero-foliage-light.png" alt="" class="hero__bg-img" loading="eager" />
     </div>
     <!-- Layer 1: CSS orange border -->
     <div class="hero__border" aria-hidden="true"></div>
     <!-- Layer 2: foreground foliage overlay (tighter clip than homepage for 70vh hero) -->
     <div class="hero__fg" aria-hidden="true">
-      <img src="/images/foliage-overlay.png" alt="" class="hero__bg-img" />
+      <img src="/images/foliage-overlay-light.png" alt="" class="hero__bg-img" />
     </div>
     <!-- Layer 3: content -->
     <div class="container hero__content">
@@ -279,7 +283,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="/images/logo-orange.png" alt="Flourish" width="140" height="37" />
+        <img src="/images/logo-orange-alt.png" alt="Flourish" width="140" height="37" />
         <p class="text-sm text-muted">Well-being that works for law firms.</p>
       </div>
       <div class="footer__links">

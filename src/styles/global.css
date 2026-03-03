@@ -39,13 +39,13 @@ a {
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  /* Core palette */
+  /* Core palette (original orange: #F04E23 / glow: #F47B4A) */
   --dark: #091A18;
   --green: #12322F;
   --green-mid: #1A4A46;
   --green-light: #22605B;
-  --orange: #F04E23;
-  --orange-glow: #F47B4A;
+  --orange: #f05d23;
+  --orange-glow: #F4824A;
   --cream: #F5F0EA;
   --white: #FFFFFF;
 
@@ -53,7 +53,7 @@ a {
   --text-primary: #F5F0EA;
   --text-muted: rgba(245, 240, 234, 0.7);
   --text-on-light: #091A18;
-  --border-accent: #F04E23;
+  --border-accent: #f05d23;
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -228,6 +228,11 @@ p {
   background: var(--orange);
   border: none;
   margin-block: var(--space-md);
+}
+
+/* ---------- Scroll Offset (fixed header clearance) ---------- */
+[id] {
+  scroll-margin-top: 5rem;
 }
 
 /* ---------- Responsive ---------- */
