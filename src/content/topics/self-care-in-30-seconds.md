@@ -1,4 +1,5 @@
 ---
+slug: "self-care-in-30-seconds"
 title: "Self-Care in 30 Seconds"
 intro: "What if you're feeling stressed, anxious, or overwhelmed, and you've got only 30 seconds to do something about it? This workshop teaches evidence-backed methods for managing stress and cultivating positive emotions."
 sections:

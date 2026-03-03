@@ -11,9 +11,11 @@ collections:
     label: "Topics"
     folder: "src/content/topics"
     create: true
+    identifier_field: "slug"
     slug: "{{slug}}"
     extension: "md"
     fields:
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "The URL path for this page (e.g., 'cool-under-pressure' → /resources/cool-under-pressure). Lowercase, hyphens only." }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
       - { label: "Intro", name: "intro", widget: "text", required: false }
@@ -26,32 +28,47 @@ collections:
           - label: "Items"
             name: "items"
             widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "string", required: false }
-              - label: "Type"
-                name: "type"
-                widget: "select"
-                options:
-                  - { label: "PDF", value: "pdf" }
-                  - { label: "Audio", value: "audio" }
-                  - { label: "Video", value: "video" }
-                  - { label: "Link", value: "link" }
-              - { label: "URL", name: "url", widget: "string" }
+            types:
+              - label: "PDF"
+                name: "pdf"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "File", name: "url", widget: "file" }
+              - label: "Audio"
+                name: "audio"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "File", name: "url", widget: "file" }
+              - label: "Video Embed"
+                name: "video"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "Embed URL", name: "url", widget: "string", hint: "Vimeo embed URL (e.g., https://player.vimeo.com/video/12345)" }
+              - label: "Link"
+                name: "link"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "URL", name: "url", widget: "string" }
 
   - name: "clients"
     label: "Clients"
     folder: "src/content/clients"
     create: true
+    identifier_field: "slug"
     slug: "{{slug}}"
     extension: "md"
     fields:
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "The URL path for this page (e.g., 'white-case' → /white-case). Lowercase, hyphens only." }
       - { label: "Name", name: "name", widget: "string" }
       - label: "Topics"
         name: "topics"
         widget: "relation"
         collection: "topics"
         multiple: true
-        value_field: "{{slug}}"
+        value_field: "slug"
         search_fields: ["title"]
         display_fields: ["title"]

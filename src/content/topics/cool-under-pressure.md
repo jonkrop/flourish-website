@@ -1,4 +1,5 @@
 ---
+slug: "cool-under-pressure"
 title: "Cool Under Pressure"
 subtitle: "How to Manage Stress, Avoid Burnout, and Navigate Difficult Emotions at Work"
 intro: "Every day, legal professionals face challenges that evoke a storm of emotions, from anger to remorse. But what if you could not just endure these emotions but transform them into fuel for peak performance?"

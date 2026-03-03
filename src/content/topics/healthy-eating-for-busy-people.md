@@ -1,4 +1,5 @@
 ---
+slug: "healthy-eating-for-busy-people"
 title: "Healthy Eating for Busy People"
 intro: "For legal professionals, eating healthy while juggling a busy schedule can sometimes feel impossible. This program demystifies the art of making nourishing choices amid the hustle and bustle."
 sections:

@@ -1,4 +1,5 @@
 ---
+slug: "robinson-cole"
 name: "Robinson & Cole"
 topics:
   - healthy-eating-for-busy-people

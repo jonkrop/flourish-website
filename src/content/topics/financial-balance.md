@@ -1,4 +1,5 @@
 ---
+slug: "financial-balance"
 title: "Financial Balance for Legal Professionals"
 subtitle: "A Simple Framework"
 intro: "Most financial advice doesn't work for busy legal professionals. This workshop takes a different approach: a simple framework that eliminates time-intensive tracking while still helping you achieve financial clarity and peace of mind."

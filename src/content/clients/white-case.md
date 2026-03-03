@@ -1,4 +1,5 @@
 ---
+slug: "white-case"
 name: "White & Case"
 topics:
   - self-care-in-30-seconds

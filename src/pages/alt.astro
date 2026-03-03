@@ -11,6 +11,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <img src="/images/logo-orange-alt.png" alt="Flourish Legal Well-Being" width="180" height="48" />
       </a>
       <nav class="header__nav">
+        <a href="#topics" class="header__link">Topics</a>
+        <a href="#how-it-works" class="header__link">How It Works</a>
         <a href="/experts" class="header__link">Our Experts</a>
         <a href="/book" class="btn btn--primary">Book a Call</a>
       </nav>
@@ -24,6 +26,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Mobile nav overlay -->
   <div class="mobile-nav" aria-hidden="true">
     <nav class="mobile-nav__inner">
+      <a href="#topics" class="mobile-nav__link">Topics</a>
+      <a href="#how-it-works" class="mobile-nav__link">How It Works</a>
       <a href="/experts" class="mobile-nav__link">Our Experts</a>
       <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
     </nav>
@@ -210,7 +214,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
   <!-- ===== WHAT WE COVER ===== -->
-  <section class="section topics grain">
+  <section id="topics" class="section topics grain">
     <div class="container">
       <div class="topics__header reveal">
         <h2>Every dimension of <em class="accent">well-being.</em></h2>
@@ -278,9 +282,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="guarantee__inner reveal">
         <div class="bordered-frame">
           <p class="guarantee__eyebrow">Our guarantee</p>
-          <h2>4.5+ rating or <em class="accent">your money back.</em></h2>
+          <h2>100% satisfied or <em class="accent">100% refunded.</em></h2>
           <p class="guarantee__body">
-            If your evaluation scores don't hit 4.5 out of 5, we refund the full fee. No questions asked. We've never had to pay.
+            If you're not happy with any Flourish program, we refund the full fee. No questions asked. We've never had to pay.
           </p>
         </div>
       </div>
@@ -288,7 +292,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section class="section how-it-works">
+  <section id="how-it-works" class="section how-it-works">
     <div class="container">
       <div class="how__header reveal">
         <h2>What working with us <em class="accent">looks like.</em></h2>
@@ -909,7 +913,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--orange);
     font-size: 0.6rem;
     margin-bottom: var(--space-sm);
-    opacity: 0.6;
   }
 
   .topics__item h4 {
@@ -975,7 +978,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .how__header {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
 
   .how__steps {
@@ -1000,7 +1003,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: var(--text-2xl);
     font-weight: 500;
     color: var(--orange);
-    opacity: 0.5;
     line-height: 1;
     flex-shrink: 0;
     width: 2.5rem;
@@ -1380,6 +1382,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       const isOpen = mobileNav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(isOpen));
       mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    // Close mobile nav on anchor link click
+    mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+      });
     });
   }
 

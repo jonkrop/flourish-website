@@ -1,4 +1,5 @@
 ---
+slug: "cleary-gottlieb"
 name: "Cleary Gottlieb"
 topics:
   - high-impact-habits

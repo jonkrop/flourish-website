@@ -1,4 +1,5 @@
 ---
+slug: "solving-sleep-issues"
 title: "Solving Sleep Issues"
 subtitle: "Evidence-Based Strategies for Better Rest"
 intro: "Sleep: we all need it to function, and we all seem to be getting too little of it. Occasional, short-term sleep issues are no cause for concern, but chronic insomnia can harm a person's health, well-being, and ability to function."

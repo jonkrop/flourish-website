@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const topics = await getCollection('topics');
 
   return topics.map((topic) => ({
-    params: { slug: topic.slug },
+    params: { slug: topic.data.slug || topic.slug },
     props: { entry: topic },
   }));
 }
@@ -18,7 +18,7 @@ const allClients = await getCollection('clients');
 // Build client lookup for back-link text on topic pages
 const clientLookup: Record<string, string> = {};
 for (const c of allClients) {
-  clientLookup[c.slug] = c.data.name;
+  clientLookup[c.data.slug || c.slug] = c.data.name;
 }
 
 const topicData = entry.data as { title: string; subtitle?: string; intro?: string; sections: any[] };

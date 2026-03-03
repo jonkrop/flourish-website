@@ -1,4 +1,5 @@
 ---
+slug: "above-the-influence"
 title: "Above the Influence"
 subtitle: "Navigating Substance Use in the Legal Profession"
 intro: "The legal world can be demanding, and studies show that substance-use issues are a challenge among legal professionals."
