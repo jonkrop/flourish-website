@@ -19,9 +19,9 @@ const allTopics = await getCollection('topics');
 const clientData = entry.data as { name: string; topics: string[] };
 const clientName = clientData.name;
 
-// Resolve topic slugs to entries
+// Resolve topic slugs to entries (match against both frontmatter slug and filename)
 const topicEntries = clientData.topics
-  .map((slug) => allTopics.find((t) => (t.data.slug || t.slug) === slug))
+  .map((slug) => allTopics.find((t) => t.data.slug === slug || t.slug === slug))
   .filter((t): t is typeof allTopics[number] => !!t);
 
 const isSingleTopic = topicEntries.length === 1;

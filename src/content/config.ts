@@ -15,7 +15,7 @@ const topics = defineCollection({
         description: z.string().optional(),
         type: z.enum(['pdf', 'audio', 'video', 'link']),
         url: z.string(),
-      })),
+      })).default([]),
     })),
   }),
 });
