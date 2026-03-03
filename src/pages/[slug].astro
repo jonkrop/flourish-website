@@ -105,6 +105,24 @@ const pageTitle = `${clientName} Resources`;
   )}
 </ResourceLayout>
 
+<script>
+  // Collapsible sections
+  document.querySelectorAll('.resource-section__header').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      const body = btn.nextElementSibling;
+      if (body) {
+        if (expanded) {
+          (body as HTMLElement).style.display = 'none';
+        } else {
+          (body as HTMLElement).style.display = '';
+        }
+      }
+    });
+  });
+</script>
+
 <style>
   /* ---- Hero (foliage, matching experts page) ---- */
   .resource-page__hero {
