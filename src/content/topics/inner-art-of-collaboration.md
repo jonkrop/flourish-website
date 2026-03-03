@@ -40,6 +40,9 @@ sections:
       - name: "Goodwill Meditation"
         type: audio
         url: "/uploads/goodwill-meditation-guided.mp3"
+      - name: "Meditation Posture Guide"
+        type: audio
+        url: "/uploads/meditation-posture-guide.mp3"
   - title: "Physiological Techniques"
     collapsed: false
     items:

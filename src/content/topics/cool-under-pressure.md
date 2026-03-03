@@ -46,6 +46,9 @@ sections:
       - name: "Progressive Muscle Relaxation"
         type: audio
         url: "/uploads/progressive-muscle-relaxation.mp3"
+      - name: "Meditation Posture Guide"
+        type: audio
+        url: "/uploads/meditation-posture-guide.mp3"
   - title: "Articles"
     collapsed: true
     items:
