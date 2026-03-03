@@ -1,5 +1,5 @@
 ---
-slug: attention
+slug: take-back-your-attention
 title: Take Back Your Attention
 subtitle: How to Protect Your Focus in a World That Wants to Steal It
 sections:
