@@ -27,8 +27,8 @@ sections:
         url: "https://vimeo.com/822796240"
       - name: "How to Meditate"
         type: video
-        url: "https://vimeo.com/566201126"
-      - name: "Mindfulness for Lawyers"
+        url: "https://vimeo.com/440017003/72953843da"
+      - name: "Mindfulness in Daily Life"
         type: video
         url: "https://vimeo.com/528914723/1431137d86"
   - title: "Guided Audio"

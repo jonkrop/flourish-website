@@ -12,16 +12,16 @@ sections:
         url: "https://vimeo.com/929120752"
       - name: "Body Scan"
         type: video
-        url: "https://vimeo.com/918904597"
+        url: "https://vimeo.com/869884539"
       - name: "Receptivity Meditation"
         type: video
-        url: "https://vimeo.com/907231964"
+        url: "https://vimeo.com/918904597"
       - name: "Breath Practice"
         type: video
         url: "https://vimeo.com/940472707"
       - name: "Breath + Labeling"
         type: video
-        url: "https://vimeo.com/869884539"
+        url: "https://vimeo.com/907231964"
       - name: "Vagus Breathing"
         type: video
         url: "https://vimeo.com/916298538"
