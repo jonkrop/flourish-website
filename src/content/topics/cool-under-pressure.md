@@ -28,6 +28,24 @@ sections:
       - name: "Progressive Muscle Relaxation"
         type: pdf
         url: "/uploads/Flourish-PMR.pdf"
+  - title: "Videos"
+    collapsed: false
+    items:
+      - name: "Mindfulness in Daily Life"
+        type: video
+        url: "https://vimeo.com/528914723/1431137d86"
+      - name: "How to Meditate"
+        type: video
+        url: "https://vimeo.com/440017003/72953843da"
+  - title: "Guided Audio"
+    collapsed: false
+    items:
+      - name: "Five-Minute Meditation"
+        type: audio
+        url: "/uploads/five-minute-meditation.mp3"
+      - name: "Progressive Muscle Relaxation"
+        type: audio
+        url: "/uploads/progressive-muscle-relaxation.mp3"
   - title: "Articles"
     collapsed: true
     items:

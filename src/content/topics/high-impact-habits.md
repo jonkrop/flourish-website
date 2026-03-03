@@ -25,6 +25,15 @@ sections:
       - name: "Physical Movement"
         type: pdf
         url: "/uploads/Flourish-Physical-Movement.pdf"
+  - title: "Guided Audio"
+    collapsed: false
+    items:
+      - name: "Progressive Muscle Relaxation"
+        type: audio
+        url: "/uploads/progressive-muscle-relaxation.mp3"
+      - name: "Goodwill Meditation"
+        type: audio
+        url: "/uploads/goodwill-meditation-guided.mp3"
   - title: "Additional Resources"
     collapsed: true
     items:
