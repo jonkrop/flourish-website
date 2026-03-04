@@ -1,9 +1,9 @@
 ---
-slug: "mbhb"
-name: "McDonnell Boehnen Hulbert & Berghoff LLP"
+slug: mbhb
+name: McDonnell Boehnen Hulbert & Berghoff LLP
 topics:
-  - above-the-influence
   - mental-health
+  - above-the-influence
   - cool-under-pressure
   - inner-art-of-leadership
 ---
