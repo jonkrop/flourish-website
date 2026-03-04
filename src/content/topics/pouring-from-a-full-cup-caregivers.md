@@ -3,8 +3,8 @@ slug: "pouring-from-a-full-cup-caregivers"
 title: "Pouring from a Full Cup: For Caregivers"
 defaultPresenters:
   - "azeemah"
-subtitle: "Practical Self-Care for Lawyer Caregivers"
-intro: "Caring for aging parents, ill family members, or loved ones with disabilities while maintaining a legal career takes an enormous toll. This program gives you practical, science-backed tools to sustain yourself through caregiving demands."
+subtitle: "Sustainable Caregiving Without Sacrificing Your Well-Being"
+intro: "Caring for a loved one who is ill, elderly, or living with special needs is challenging enough on its own. Balancing it with a legal career can feel overwhelming. You'll learn evidence-backed strategies to manage stress, set realistic expectations, and build the support systems you need. Whether you're caring for a loved one who is ill, elderly, or living with special needs, this program offers practical tools for sustainable caregiving without sacrificing your own well-being."
 sections:
   - title: "Cheat Sheets"
     collapsed: false

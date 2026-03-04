@@ -3,8 +3,8 @@ slug: "pouring-from-a-full-cup-parents"
 title: "Pouring from a Full Cup: For Parents"
 defaultPresenters:
   - "azeemah"
-subtitle: "Practical Self-Care for Lawyer Parents"
-intro: "Parenting while practicing law is one of the toughest balancing acts there is. This program gives you practical, science-backed tools to take care of yourself so you can show up for your kids, your clients, and yourself."
+subtitle: "Managing the Dual Pressures of Parenting and a Legal Career"
+intro: "Working parents often feel pulled in too many directions. This interactive workshop will help you manage the dual pressures of parenting and building a career in the legal field without burning out. Led by a lawyer-turned-psychotherapist, it explores strategies to handle stress, combat feelings of insecurity and overwhelm, and build a support system. You'll leave with practical tools to care for yourself while excelling both at work and at home."
 sections:
   - title: "Cheat Sheets"
     collapsed: false
