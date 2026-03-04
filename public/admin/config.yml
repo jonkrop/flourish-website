@@ -62,7 +62,7 @@ collections:
     slug: "{{slug}}"
     extension: "md"
     fields:
-      - { label: "URL Slug", name: "slug", widget: "string", hint: "The URL path for this page (e.g., 'denver-pdc' → /events/denver-pdc). Lowercase, hyphens only." }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "The URL path for this page (e.g., 'denver-pdc' → /denver-pdc). Lowercase, hyphens only." }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
       - { label: "Intro", name: "intro", widget: "text", required: false }

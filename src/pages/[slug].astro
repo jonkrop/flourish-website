@@ -6,26 +6,40 @@ import TopicCard from '../components/TopicCard.astro';
 
 export async function getStaticPaths() {
   const clients = await getCollection('clients');
+  const events = await getCollection('events');
 
-  return clients.map((client) => ({
+  const clientPaths = clients.map((client) => ({
     params: { slug: client.data.slug || client.slug },
-    props: { entry: client },
+    props: { entry: client, type: 'client' as const },
   }));
+
+  const eventPaths = events.map((event) => ({
+    params: { slug: event.data.slug || event.slug },
+    props: { entry: event, type: 'event' as const },
+  }));
+
+  return [...clientPaths, ...eventPaths];
 }
 
-const { entry } = Astro.props;
+const { entry, type } = Astro.props;
+const isEvent = type === 'event';
+
 const allTopics = await getCollection('topics');
 
-const clientData = entry.data as { name: string; topics: string[] };
-const clientName = clientData.name;
-
-// Resolve topic slugs to entries (match against both frontmatter slug and filename)
-const topicEntries = clientData.topics
-  .map((slug) => allTopics.find((t) => t.data.slug === slug || t.slug === slug))
-  .filter((t): t is typeof allTopics[number] => !!t);
-
+// Client-specific data
+const clientData = !isEvent ? entry.data as { name: string; topics: string[] } : null;
+const clientName = clientData?.name || '';
+const topicEntries = clientData
+  ? clientData.topics
+      .map((slug) => allTopics.find((t) => t.data.slug === slug || t.slug === slug))
+      .filter((t): t is typeof allTopics[number] => !!t)
+  : [];
 const isSingleTopic = topicEntries.length === 1;
-const pageTitle = `${clientName} Resources`;
+
+// Event-specific data
+const eventData = isEvent ? entry.data as { title: string; subtitle?: string; intro?: string; sections: any[] } : null;
+
+const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
 ---
 
 <ResourceLayout title={pageTitle}>
@@ -92,6 +106,45 @@ const pageTitle = `${clientName} Resources`;
         <div class="container container--narrow">
           <div class="resource-page__sections">
             {topicEntries[0].data.sections.map((section) => (
+              <ResourceSection
+                title={section.title}
+                collapsed={section.collapsed}
+                items={section.items}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {isEvent && eventData && (
+    <!-- Event page: standalone resource page -->
+    <div class="resource-page">
+      <div class="resource-page__hero">
+        <div class="hero__bg">
+          <img src="/images/hero-foliage-light.webp" alt="" class="hero__bg-img" loading="eager" />
+        </div>
+        <div class="hero__border" aria-hidden="true"></div>
+        <div class="hero__fg" aria-hidden="true">
+          <img src="/images/foliage-overlay-light.webp" alt="" class="hero__bg-img" />
+        </div>
+        <div class="container hero__content">
+          <h1 class="resource-page__title">{eventData.title}</h1>
+          {eventData.subtitle && (
+            <p class="resource-page__subtitle">
+              <span class="accent">{eventData.subtitle}</span>
+            </p>
+          )}
+          {eventData.intro && (
+            <p class="resource-page__intro">{eventData.intro}</p>
+          )}
+        </div>
+      </div>
+      <div class="resource-page__content section">
+        <div class="container container--narrow">
+          <div class="resource-page__sections">
+            {eventData.sections.map((section: any) => (
               <ResourceSection
                 title={section.title}
                 collapsed={section.collapsed}
