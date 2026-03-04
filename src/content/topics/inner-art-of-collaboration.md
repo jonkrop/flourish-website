@@ -1,6 +1,8 @@
 ---
 slug: "inner-art-of-collaboration"
 title: "The Inner Art of Collaboration"
+defaultPresenters:
+  - "jon"
 subtitle: "How to Have Positive, Proactive Interactions with Colleagues and Clients"
 intro: "When it comes to workplace interactions, mindset matters; the way we engage with others has a major impact on our emotions, well-being, and work."
 sections:

@@ -1,6 +1,8 @@
 ---
 slug: "optimizing-performance"
 title: "Optimizing Performance"
+defaultPresenters:
+  - "jon"
 subtitle: "Proven Tools for High-Pressure Situations"
 intro: "Every day, legal professionals face challenges that evoke a storm of emotions, from anger to remorse. But what if you could not just endure these emotions but transform them into fuel for peak performance?"
 sections:

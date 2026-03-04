@@ -1,6 +1,8 @@
 ---
 slug: "mental-health"
 title: "How to Talk About Mental Health"
+defaultPresenters:
+  - "azeemah"
 subtitle: "Spot Warning Signs and Take Helpful Action"
 intro: "Addressing mental health is crucial in the fast-paced legal world, yet it often feels like uncharted territory. This interactive workshop equips you with skills to navigate mental health discussions, spot early warning signs, break stigma, and offer or seek support."
 sections:

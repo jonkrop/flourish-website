@@ -1,6 +1,8 @@
 ---
 slug: "chillable-hours"
 title: "Chillable Hours"
+defaultPresenters:
+  - "jon"
 subtitle: "Video Library"
 intro: "Chillable Hours was a weekly, 20-minute well-being break offered via live video. After a fantastic four-year run, we wrapped up the program in May 2024. Each session featured a short talk on a well-being topic relevant to legal professionals, a guided meditation, and Q&A."
 sections:

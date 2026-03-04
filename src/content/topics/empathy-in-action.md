@@ -1,6 +1,8 @@
 ---
 slug: "empathy-in-action"
 title: "Empathy in Action"
+defaultPresenters:
+  - "azeemah"
 subtitle: "How to Be an Effective Ally in a Diverse Workplace and World"
 intro: "Navigating race, gender, diversity, and social justice topics can feel daunting. This workshop clarifies identity and privilege concepts, explains how well-intentioned speech can cause inadvertent harm, and provides actionable allyship strategies - all in a non-judgmental, supportive environment."
 sections:

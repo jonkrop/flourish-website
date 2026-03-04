@@ -1,6 +1,8 @@
 ---
 slug: "defeating-digital-distractions"
 title: "Defeating Digital Distractions"
+defaultPresenters:
+  - "jon"
 intro: "Modern technology often feels addictive, and this is no accident. These devices were precision-engineered to grab and hold our attention. This program teaches participants to minimize device disruption while maintaining productivity and well-being."
 sections:
   - title: "Cheat Sheets"

@@ -1,6 +1,8 @@
 ---
 slug: "high-impact-habits"
 title: "High-Impact Habits"
+defaultPresenters:
+  - "jon"
 subtitle: "Small Changes That Elevate Your Whole Day"
 intro: "Most of us move through our day on autopilot. This workshop offers a different approach: a handful of high-impact habits that deliver big returns on small time investments."
 sections:
