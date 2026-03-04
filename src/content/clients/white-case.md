@@ -1,6 +1,6 @@
 ---
-slug: "white-case"
-name: "White & Case"
+slug: whitecase
+name: White & Case
 topics:
   - 30-second-stress-busters-and-mood-boosters
   - defeating-digital-distractions
