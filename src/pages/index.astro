@@ -164,7 +164,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>We handle <em class="accent">everything.</em></h3>
           <p>Pre-written emails, CLE applications, internal promotion, logistics, follow-up. You approve the plan. We execute it.</p>
           <div class="diffs__rating diffs__rating--96">
-            <span class="diffs__rating-number">9.6</span>
+            <span class="diffs__rating-number">9.6<span class="diffs__rating-of">/10</span></span>
             <span class="diffs__rating-label">AVG. CLIENT<br/>RATING</span>
           </div>
         </div>
@@ -195,7 +195,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>Interactive, <em class="accent">not interminable.</em></h3>
           <p>Live exercises, real tools, and conversations people actually remember on Monday.</p>
           <div class="diffs__rating">
-            <span class="diffs__rating-number">9.2</span>
+            <span class="diffs__rating-number">9.2<span class="diffs__rating-of">/10</span></span>
             <span class="diffs__rating-label">AVG. AUDIENCE<br/>RATING</span>
           </div>
         </div>
@@ -858,6 +858,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 1;
   }
 
+  .diffs__rating-of {
+    font-size: 0.45em;
+  }
+
   .diffs__rating-label {
     font-size: var(--text-base);
     color: var(--cream);
@@ -1082,7 +1086,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      INLINE PULL QUOTES
      =================================================================== */
   .pull-quote {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0 var(--space-xl);
     background: var(--dark);
   }
 
