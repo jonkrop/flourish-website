@@ -1,5 +1,5 @@
 ---
-slug: "latham"
+slug: "lathamselfcare"
 name: "Latham & Watkins"
 topics:
   - solving-sleep-issues

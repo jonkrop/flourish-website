@@ -1,5 +1,5 @@
 ---
-slug: "womble-bond-dickinson"
+slug: "wbd"
 name: "Womble Bond Dickinson"
 topics:
   - healthy-eating-for-busy-people

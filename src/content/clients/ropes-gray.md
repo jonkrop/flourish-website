@@ -1,5 +1,5 @@
 ---
-slug: "ropes-gray"
+slug: "ropesgray"
 name: "Ropes & Gray"
 topics:
   - empathy-in-action
