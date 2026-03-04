@@ -38,13 +38,17 @@ const topicEntries = clientData
   : [];
 const isSingleTopic = topicEntries.length === 1;
 
-// Resolve presenters for single-topic client pages (from client's presenters array)
-const clientPresentersData = (!isEvent && isSingleTopic && topicEntries[0])
+// Resolve presenters for single-topic client pages
+// Check client's explicit assignment first, then fall back to topic defaults
+const singleTopicSlug = (isSingleTopic && topicEntries[0]) ? (topicEntries[0].data.slug || topicEntries[0].slug) : '';
+const clientPresentersData = (!isEvent && isSingleTopic)
   ? ((entry.data as any).presenters as Array<{ topic: string; speakers: string[] }> | undefined)
   : undefined;
-const singleTopicSlug = (isSingleTopic && topicEntries[0]) ? (topicEntries[0].data.slug || topicEntries[0].slug) : '';
 const matchingPresenterEntry = clientPresentersData?.find((p) => p.topic === singleTopicSlug);
-const singleTopicPresenters = (matchingPresenterEntry?.speakers || [])
+const explicitSpeakers = matchingPresenterEntry?.speakers || [];
+const topicDefaults = (isSingleTopic && topicEntries[0]) ? ((topicEntries[0].data as any).defaultPresenters as string[] || []) : [];
+const speakerSlugs = explicitSpeakers.length ? explicitSpeakers : topicDefaults;
+const singleTopicPresenters = speakerSlugs
   .map((slug) => allExperts.find((e) => (e.data.slug || e.slug) === slug))
   .filter((e): e is typeof allExperts[number] => !!e)
   .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));

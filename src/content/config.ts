@@ -7,6 +7,7 @@ const topics = defineCollection({
     title: z.string(),
     subtitle: z.string().optional(),
     intro: z.string().optional(),
+    defaultPresenters: z.array(z.string()).optional(),
     sections: z.array(z.object({
       title: z.string(),
       collapsed: z.boolean().default(false),

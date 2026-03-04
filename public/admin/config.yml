@@ -19,6 +19,16 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
       - { label: "Intro", name: "intro", widget: "text", required: false }
+      - label: "Default Presenters"
+        name: "defaultPresenters"
+        widget: "relation"
+        collection: "experts"
+        multiple: true
+        required: false
+        value_field: "slug"
+        search_fields: ["name"]
+        display_fields: ["name"]
+        hint: "Presenters who always deliver this topic. Shows automatically unless a client overrides with a specific assignment."
       - label: "Sections"
         name: "sections"
         widget: "list"

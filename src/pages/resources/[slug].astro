@@ -25,24 +25,40 @@ for (const c of allClients) {
   clientLookup[c.data.slug || c.slug] = c.data.name;
 }
 
-const topicData = entry.data as { title: string; subtitle?: string; intro?: string; sections: any[] };
+const topicData = entry.data as { title: string; subtitle?: string; intro?: string; defaultPresenters?: string[]; sections: any[] };
 const pageTitle = topicData.title;
+
+// Resolve default presenters from the topic itself
+const defaultPresenterEntries = (topicData.defaultPresenters || [])
+  .map((slug) => allExperts.find((e) => (e.data.slug || e.slug) === slug))
+  .filter((e): e is typeof allExperts[number] => !!e)
+  .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 
 // Build per-client presenter map for this topic
 // { clientSlug: expertEntry[] }
+// Clients with explicit assignments get their own block;
+// clients without explicit assignments fall back to defaultPresenters
 const clientPresenterMap: Record<string, typeof allExperts> = {};
 for (const client of allClients) {
   const cSlug = client.data.slug || client.slug;
+  const clientTopics = (client.data as any).topics as string[] | undefined;
+  if (!clientTopics?.includes(topicSlug)) continue;
+
   const presentersData = (client.data as any).presenters as Array<{ topic: string; speakers: string[] }> | undefined;
-  if (!presentersData) continue;
-  const match = presentersData.find((p) => p.topic === topicSlug);
-  if (!match || !match.speakers.length) continue;
-  const resolved = match.speakers
-    .map((slug) => allExperts.find((e) => (e.data.slug || e.slug) === slug))
-    .filter((e): e is typeof allExperts[number] => !!e)
-    .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
-  if (resolved.length) {
-    clientPresenterMap[cSlug] = resolved;
+  const match = presentersData?.find((p) => p.topic === topicSlug);
+
+  if (match?.speakers.length) {
+    // Explicit assignment
+    const resolved = match.speakers
+      .map((slug) => allExperts.find((e) => (e.data.slug || e.slug) === slug))
+      .filter((e): e is typeof allExperts[number] => !!e)
+      .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+    if (resolved.length) {
+      clientPresenterMap[cSlug] = resolved;
+    }
+  } else if (defaultPresenterEntries.length) {
+    // Fall back to topic defaults
+    clientPresenterMap[cSlug] = defaultPresenterEntries;
   }
 }
 const hasAnyPresenters = Object.keys(clientPresenterMap).length > 0;
