@@ -43,7 +43,7 @@ const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
 ---
 
 <ResourceLayout title={pageTitle}>
-  {!isSingleTopic && (
+  {!isEvent && !isSingleTopic && (
     <!-- Multi-topic client: card grid -->
     <div class="resource-page">
       <div class="resource-page__hero">
@@ -78,7 +78,7 @@ const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
     </div>
   )}
 
-  {isSingleTopic && topicEntries[0] && (
+  {!isEvent && isSingleTopic && topicEntries[0] && (
     <!-- Single-topic client: render topic directly -->
     <div class="resource-page">
       <div class="resource-page__hero">
