@@ -1,6 +1,6 @@
 ---
-slug: "self-care-in-30-seconds"
-title: "Self-Care in 30 Seconds"
+slug: "30-second-stress-busters-and-mood-boosters"
+title: "30-Second Stress Busters and Mood Boosters"
 intro: "What if you're feeling stressed, anxious, or overwhelmed, and you've got only 30 seconds to do something about it? This workshop teaches evidence-backed methods for managing stress and cultivating positive emotions."
 sections:
   - title: "Cheat Sheets"

@@ -2,7 +2,7 @@
 slug: "wilmerhale"
 name: "WilmerHale"
 topics:
-  - self-care-in-30-seconds
+  - 30-second-stress-busters-and-mood-boosters
   - defeating-digital-distractions
   - solving-sleep-issues
 ---

@@ -2,7 +2,7 @@
 slug: "white-case"
 name: "White & Case"
 topics:
-  - self-care-in-30-seconds
+  - 30-second-stress-busters-and-mood-boosters
   - defeating-digital-distractions
   - cool-under-pressure
   - solving-sleep-issues

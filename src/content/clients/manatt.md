@@ -1,7 +1,6 @@
 ---
-slug: "crowell"
-name: "Crowell"
+slug: "manatt"
+name: "Manatt"
 topics:
-  - mental-health
   - 30-second-stress-busters-and-mood-boosters
 ---

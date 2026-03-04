@@ -3,5 +3,5 @@ slug: "lathamselfcare"
 name: "Latham & Watkins"
 topics:
   - solving-sleep-issues
-  - self-care-in-30-seconds
+  - 30-second-stress-busters-and-mood-boosters
 ---
