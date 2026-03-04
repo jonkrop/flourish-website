@@ -54,6 +54,53 @@ collections:
                   - { label: "Description", name: "description", widget: "string", required: false }
                   - { label: "URL", name: "url", widget: "string" }
 
+  - name: "events"
+    label: "Event Pages"
+    folder: "src/content/events"
+    create: true
+    identifier_field: "slug"
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "The URL path for this page (e.g., 'denver-pdc' → /events/denver-pdc). Lowercase, hyphens only." }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Intro", name: "intro", widget: "text", required: false }
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        fields:
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Collapsed by Default", name: "collapsed", widget: "boolean", default: false }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            types:
+              - label: "PDF"
+                name: "pdf"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "File", name: "url", widget: "file" }
+              - label: "Audio"
+                name: "audio"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "File", name: "url", widget: "file" }
+              - label: "Video Embed"
+                name: "video"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "Embed URL", name: "url", widget: "string", hint: "Vimeo embed URL (e.g., https://player.vimeo.com/video/12345)" }
+              - label: "Link"
+                name: "link"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string", required: false }
+                  - { label: "URL", name: "url", widget: "string" }
+
   - name: "clients"
     label: "Clients"
     folder: "src/content/clients"

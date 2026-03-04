@@ -1,0 +1,220 @@
+---
+import { getCollection } from 'astro:content';
+import ResourceLayout from '../../layouts/ResourceLayout.astro';
+import ResourceSection from '../../components/ResourceSection.astro';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events');
+
+  return events.map((event) => ({
+    params: { slug: event.data.slug || event.slug },
+    props: { entry: event },
+  }));
+}
+
+const { entry } = Astro.props;
+const eventData = entry.data as { title: string; subtitle?: string; intro?: string; sections: any[] };
+const pageTitle = eventData.title;
+---
+
+<ResourceLayout title={pageTitle}>
+  <div class="resource-page">
+    <div class="resource-page__hero">
+      <div class="hero__bg">
+        <img src="/images/hero-foliage-light.webp" alt="" class="hero__bg-img" loading="eager" />
+      </div>
+      <div class="hero__border" aria-hidden="true"></div>
+      <div class="hero__fg" aria-hidden="true">
+        <img src="/images/foliage-overlay-light.webp" alt="" class="hero__bg-img" />
+      </div>
+      <div class="container hero__content">
+        <h1 class="resource-page__title">{eventData.title}</h1>
+        {eventData.subtitle && (
+          <p class="resource-page__subtitle">
+            <span class="accent">{eventData.subtitle}</span>
+          </p>
+        )}
+        {eventData.intro && (
+          <p class="resource-page__intro">{eventData.intro}</p>
+        )}
+      </div>
+    </div>
+    <div class="resource-page__content section">
+      <div class="container container--narrow">
+        <div class="resource-page__sections">
+          {eventData.sections.map((section: any) => (
+            <ResourceSection
+              title={section.title}
+              collapsed={section.collapsed}
+              items={section.items}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Collapsible sections
+    document.querySelectorAll('.resource-section__header').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const body = btn.nextElementSibling;
+        if (body) {
+          if (expanded) {
+            (body as HTMLElement).style.display = 'none';
+          } else {
+            (body as HTMLElement).style.display = '';
+          }
+        }
+      });
+    });
+  </script>
+</ResourceLayout>
+
+<style>
+  /* ---- Hero (foliage, matching experts page) ---- */
+  .resource-page__hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 35% 45%, rgba(5, 5, 5, 0.5) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.05) 40%, rgba(5, 5, 5, 0.4) 100%);
+    z-index: 1;
+  }
+
+  .hero__border {
+    position: absolute;
+    top: 90px;
+    left: 3.5%;
+    right: 3.5%;
+    bottom: 5%;
+    border: 2px solid var(--orange);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero__fg {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    clip-path: polygon(3% 72%, 32% 72%, 32% 100%, 3% 100%);
+  }
+
+  .resource-page__hero .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-left: max(7.5%, 4rem);
+    padding-right: max(7.5%, 4rem);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 4;
+    padding-top: 8rem;
+    padding-bottom: max(7%, 4.5rem);
+  }
+
+  .resource-page__title {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: var(--space-sm);
+    max-width: 28ch;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .resource-page__subtitle {
+    font-size: var(--text-xl);
+    color: var(--cream);
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .resource-page__subtitle .accent {
+    color: inherit;
+  }
+
+  .resource-page__intro {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    max-width: 58ch;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- Content sections ---- */
+  .resource-page__content {
+    padding-block: var(--space-lg) var(--space-xl);
+  }
+
+  .resource-page__sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .resource-page__hero {
+      min-height: 50vh;
+    }
+
+    .hero__border {
+      top: 70px;
+      left: 3%;
+      right: 3%;
+      bottom: 3%;
+    }
+
+    .hero__fg {
+      display: none;
+    }
+
+    .resource-page__hero .container {
+      padding-inline: max(5%, 1.5rem);
+    }
+
+    .hero__content {
+      padding-top: 5.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .resource-page__title {
+      max-width: 100%;
+    }
+  }
+</style>

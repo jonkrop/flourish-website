@@ -29,4 +29,24 @@ const clients = defineCollection({
   }),
 });
 
-export const collections = { topics, clients };
+const events = defineCollection({
+  type: 'content',
+  schema: z.object({
+    slug: z.string().optional(),
+    title: z.string(),
+    subtitle: z.string().optional(),
+    intro: z.string().optional(),
+    sections: z.array(z.object({
+      title: z.string(),
+      collapsed: z.boolean().default(false),
+      items: z.array(z.object({
+        name: z.string(),
+        description: z.string().optional(),
+        type: z.enum(['pdf', 'audio', 'video', 'link']),
+        url: z.string(),
+      })).default([]),
+    })),
+  }),
+});
+
+export const collections = { topics, clients, events };
