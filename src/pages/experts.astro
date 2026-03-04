@@ -1,5 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 ---
 
 <BaseLayout title="Our Experts - Flourish Legal Well-Being">
@@ -61,199 +64,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section experts-section grain">
     <div class="container">
       <div class="experts__grid">
-
-        <!-- Jon Krop -->
-        <div class="expert-card reveal" data-expert="jon" role="button" tabindex="0" aria-expanded="false">
-          <div class="expert-card__accent"></div>
-          <img src="/images/jon-headshot-botanical.webp" alt="Jon Krop" class="expert-card__photo" loading="lazy" />
-          <h3 class="expert-card__name">Jon Krop, J.D.</h3>
-          <p class="expert-card__role">Founder & Lead Instructor</p>
-          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
-        </div>
-        <div class="expert-detail" data-for="jon" aria-hidden="true">
-          <div class="expert-detail__inner">
-            <div class="expert-detail__photo-col">
-              <img src="/images/jon-headshot-botanical.webp" alt="Jon Krop" class="expert-detail__photo" />
-            </div>
-            <div class="expert-detail__content-col">
-              <h3 class="expert-detail__name">Jon Krop, J.D.</h3>
-              <p class="expert-detail__title">Founder & Lead Instructor</p>
-              <div class="expert-detail__topics">
-                <span class="expert-detail__topic">Mindfulness</span>
-                <span class="expert-detail__topic">Mental & Emotional Well-Being</span>
+        {experts.map((expert, i) => {
+          const delayClass = i < 3 ? '' : `reveal-delay-${((i - 3) % 2) + 1}`;
+          return (
+            <>
+              <div class={`expert-card reveal ${delayClass}`} data-expert={expert.data.slug || expert.slug} role="button" tabindex="0" aria-expanded="false">
+                <div class="expert-card__accent"></div>
+                <img src={expert.data.photo} alt={expert.data.name} class="expert-card__photo" loading="lazy" />
+                <h3 class="expert-card__name">{expert.data.name}</h3>
+                <p class="expert-card__role">{expert.data.role}</p>
+                <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
               </div>
-              <p class="expert-detail__credentials">
-                <span class="expert-detail__cred-label">Credentials:</span>
-                <span class="expert-detail__cred-item">U.S. Court of Appeals, Ninth Circuit (clerk)</span>
-                <span class="expert-detail__cred-item">Harvard Law School (J.D.)</span>
-                <span class="expert-detail__cred-item">Brown University (B.A.)</span>
-              </p>
-              <p class="expert-detail__bio">
-                Jon has taught at the world's top law firms, Harvard, Stanford, Yale, Fortune 100 companies, and public defenders' offices. Before founding Flourish, he worked as a litigator in Los Angeles and New York. Jon has practiced mindfulness since 2006, studying with teachers from around the world. In 2014, he completed a seven-month silent meditation retreat. He still does two months of silent retreat per year.
-              </p>
-              <blockquote class="expert-detail__quote">
-                <p>"Jon is extremely good at immediately building rapport with biglaw associates, which makes the entire program more credible and valuable. 5/5."</p>
-                <footer>Associate, <span class="text-muted">AmLaw 100 Firm</span></footer>
-              </blockquote>
-            </div>
-            <button class="expert-detail__close" aria-label="Close details">&times;</button>
-          </div>
-        </div>
-
-        <!-- Azeemah Kola -->
-        <div class="expert-card reveal reveal-delay-1" data-expert="azeemah" role="button" tabindex="0" aria-expanded="false">
-          <div class="expert-card__accent"></div>
-          <img src="/images/azeemah-kola.webp" alt="Azeemah Kola" class="expert-card__photo" loading="lazy" />
-          <h3 class="expert-card__name">Azeemah Kola, J.D., Ph.D.</h3>
-          <p class="expert-card__role">Lawyer & Clinical Psychologist</p>
-          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
-        </div>
-        <div class="expert-detail" data-for="azeemah" aria-hidden="true">
-          <div class="expert-detail__inner">
-            <div class="expert-detail__photo-col">
-              <img src="/images/azeemah-kola.webp" alt="Azeemah Kola" class="expert-detail__photo" />
-            </div>
-            <div class="expert-detail__content-col">
-              <h3 class="expert-detail__name">Azeemah Kola, J.D., M.Sc., Ph.D.</h3>
-              <p class="expert-detail__title">Lawyer & Clinical Psychologist</p>
-              <div class="expert-detail__topics">
-                <span class="expert-detail__topic">Mental & Emotional Well-Being</span>
-                <span class="expert-detail__topic">D.E.I.</span>
-                <span class="expert-detail__topic">Substance Use</span>
+              <div class="expert-detail" data-for={expert.data.slug || expert.slug} aria-hidden="true">
+                <div class="expert-detail__inner">
+                  <div class="expert-detail__photo-col">
+                    <img src={expert.data.photo} alt={expert.data.name} class="expert-detail__photo" />
+                  </div>
+                  <div class="expert-detail__content-col">
+                    <h3 class="expert-detail__name">{expert.data.fullName}</h3>
+                    <p class="expert-detail__title">{expert.data.role}</p>
+                    <div class="expert-detail__topics">
+                      {expert.data.topicTags.map((tag) => (
+                        <span class="expert-detail__topic">{tag}</span>
+                      ))}
+                    </div>
+                    <p class="expert-detail__credentials">
+                      <span class="expert-detail__cred-label">Credentials:</span>
+                      {expert.data.credentials.map((cred) => (
+                        <span class="expert-detail__cred-item">{cred}</span>
+                      ))}
+                    </p>
+                    <p class="expert-detail__bio">{expert.data.bio}</p>
+                    {expert.data.quote && (
+                      <blockquote class="expert-detail__quote">
+                        <p>"{expert.data.quote}"</p>
+                        <footer>{expert.data.quoteAttribution}</footer>
+                      </blockquote>
+                    )}
+                  </div>
+                  <button class="expert-detail__close" aria-label="Close details">&times;</button>
+                </div>
               </div>
-              <p class="expert-detail__credentials">
-                <span class="expert-detail__cred-label">Credentials:</span>
-                <span class="expert-detail__cred-item">Licensed Clinical Psychologist</span>
-                <span class="expert-detail__cred-item">Yale (J.D.)</span>
-                <span class="expert-detail__cred-item">Harvard</span>
-                <span class="expert-detail__cred-item">Oxford</span>
-                <span class="expert-detail__cred-item">The New School</span>
-              </p>
-              <p class="expert-detail__bio">
-                Knows the lawyer's mind from the inside - before changing careers, she was a biglaw associate. Her graduate work included special focuses on substance use and issues of minority identity.
-              </p>
-              <blockquote class="expert-detail__quote">
-                <p>"I loved Azeemah's honesty and passion - it really makes it easy to pay attention. 5/5."</p>
-                <footer>Associate, <span class="text-muted">AmLaw 100 Firm</span></footer>
-              </blockquote>
-            </div>
-            <button class="expert-detail__close" aria-label="Close details">&times;</button>
-          </div>
-        </div>
-
-        <!-- Taylor Steffan -->
-        <div class="expert-card reveal reveal-delay-2" data-expert="taylor" role="button" tabindex="0" aria-expanded="false">
-          <div class="expert-card__accent"></div>
-          <img src="/images/taylor-steffan.webp" alt="Taylor Steffan" class="expert-card__photo" loading="lazy" />
-          <h3 class="expert-card__name">Taylor Steffan, J.D., L.C.S.W.</h3>
-          <p class="expert-card__role">Lawyer & Psychotherapist</p>
-          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
-        </div>
-        <div class="expert-detail" data-for="taylor" aria-hidden="true">
-          <div class="expert-detail__inner">
-            <div class="expert-detail__photo-col">
-              <img src="/images/taylor-steffan.webp" alt="Taylor Steffan" class="expert-detail__photo" />
-            </div>
-            <div class="expert-detail__content-col">
-              <h3 class="expert-detail__name">Taylor Steffan, J.D., L.C.S.W.</h3>
-              <p class="expert-detail__title">Lawyer & Psychotherapist</p>
-              <div class="expert-detail__topics">
-                <span class="expert-detail__topic">Mental & Emotional Well-Being</span>
-                <span class="expert-detail__topic">Substance Use</span>
-              </div>
-              <p class="expert-detail__credentials">
-                <span class="expert-detail__cred-label">Credentials:</span>
-                <span class="expert-detail__cred-item">U.S. Court of Appeals, Fifth Circuit (clerk)</span>
-                <span class="expert-detail__cred-item">L.C.S.W.</span>
-                <span class="expert-detail__cred-item">UVA School of Law</span>
-                <span class="expert-detail__cred-item">Fordham</span>
-                <span class="expert-detail__cred-item">Georgetown</span>
-              </p>
-              <p class="expert-detail__bio">
-                Before changing careers, she practiced at several large law firms. She makes even sensitive topics feel approachable and practical.
-              </p>
-              <blockquote class="expert-detail__quote">
-                <p>"Taylor was amazing. She clearly has the expertise, but more so she came across as kind. 5/5."</p>
-                <footer>Partner, <span class="text-muted">AmLaw 50 Firm</span></footer>
-              </blockquote>
-            </div>
-            <button class="expert-detail__close" aria-label="Close details">&times;</button>
-          </div>
-        </div>
-
-        <!-- Monica Auslander Moreno -->
-        <div class="expert-card reveal reveal-delay-1" data-expert="monica" role="button" tabindex="0" aria-expanded="false">
-          <div class="expert-card__accent"></div>
-          <img src="/images/monica-moreno.webp" alt="Monica Auslander Moreno" class="expert-card__photo" loading="lazy" />
-          <h3 class="expert-card__name">Monica Auslander Moreno, M.S., R.D.N.</h3>
-          <p class="expert-card__role">Registered Dietitian</p>
-          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
-        </div>
-        <div class="expert-detail" data-for="monica" aria-hidden="true">
-          <div class="expert-detail__inner">
-            <div class="expert-detail__photo-col">
-              <img src="/images/monica-moreno.webp" alt="Monica Auslander Moreno" class="expert-detail__photo" />
-            </div>
-            <div class="expert-detail__content-col">
-              <h3 class="expert-detail__name">Monica Auslander Moreno, M.S., R.D.N.</h3>
-              <p class="expert-detail__title">Registered Dietitian Nutritionist</p>
-              <div class="expert-detail__topics">
-                <span class="expert-detail__topic">Nutrition</span>
-                <span class="expert-detail__topic">Physical Well-Being</span>
-              </div>
-              <p class="expert-detail__credentials">
-                <span class="expert-detail__cred-label">Credentials:</span>
-                <span class="expert-detail__cred-item">R.D.N.</span>
-                <span class="expert-detail__cred-item">Former in-house dietitian, Miami Marlins</span>
-                <span class="expert-detail__cred-item">Clinical dietitian, Jackson Memorial Hospital</span>
-                <span class="expert-detail__cred-item">Adjunct professor, University of Miami</span>
-              </p>
-              <p class="expert-detail__bio">
-                Makes the science of nutrition accessible and actionable for high-performing professionals. Her sessions cut through fad-diet noise with evidence-based strategies that fit demanding schedules.
-              </p>
-              <blockquote class="expert-detail__quote">
-                <p>"Monica was knowledgeable, engaging, and interactive. 5/5."</p>
-                <footer>Associate, <span class="text-muted">AmLaw 50 Firm</span></footer>
-              </blockquote>
-            </div>
-            <button class="expert-detail__close" aria-label="Close details">&times;</button>
-          </div>
-        </div>
-
-        <!-- Joe Ankus -->
-        <div class="expert-card reveal reveal-delay-2" data-expert="joe" role="button" tabindex="0" aria-expanded="false">
-          <div class="expert-card__accent"></div>
-          <img src="/images/joe-ankus.webp" alt="Joe Ankus" class="expert-card__photo" loading="lazy" />
-          <h3 class="expert-card__name">Joe Ankus, J.D.</h3>
-          <p class="expert-card__role">Lawyer & Mental Health First Aid Instructor</p>
-          <span class="expert-card__caret" aria-hidden="true">&#8964;</span>
-        </div>
-        <div class="expert-detail" data-for="joe" aria-hidden="true">
-          <div class="expert-detail__inner">
-            <div class="expert-detail__photo-col">
-              <img src="/images/joe-ankus.webp" alt="Joe Ankus" class="expert-detail__photo" />
-            </div>
-            <div class="expert-detail__content-col">
-              <h3 class="expert-detail__name">Joe Ankus, J.D., Certified MHFA Instructor</h3>
-              <p class="expert-detail__title">Lawyer & Mental Health First Aid Instructor</p>
-              <div class="expert-detail__topics">
-                <span class="expert-detail__topic">Mental Health First Aid</span>
-              </div>
-              <p class="expert-detail__credentials">
-                <span class="expert-detail__cred-label">Credentials:</span>
-                <span class="expert-detail__cred-item">Certified MHFA Instructor</span>
-                <span class="expert-detail__cred-item">Florida Bar Special Committee for Mental Health & Wellness</span>
-                <span class="expert-detail__cred-item">UF Levin College of Law</span>
-                <span class="expert-detail__cred-item">University of Pennsylvania</span>
-              </p>
-              <p class="expert-detail__bio">
-                Has taught hundreds of legal professionals on a range of mental health topics.
-              </p>
-            </div>
-            <button class="expert-detail__close" aria-label="Close details">&times;</button>
-          </div>
-        </div>
-
+            </>
+          );
+        })}
       </div>
     </div>
   </section>

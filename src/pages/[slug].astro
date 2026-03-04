@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import ResourceLayout from '../layouts/ResourceLayout.astro';
 import ResourceSection from '../components/ResourceSection.astro';
 import TopicCard from '../components/TopicCard.astro';
+import SpeakerBio from '../components/SpeakerBio.astro';
 
 export async function getStaticPaths() {
   const clients = await getCollection('clients');
@@ -25,6 +26,7 @@ const { entry, type } = Astro.props;
 const isEvent = type === 'event';
 
 const allTopics = await getCollection('topics');
+const allExperts = await getCollection('experts');
 
 // Client-specific data
 const clientData = !isEvent ? entry.data as { name: string; topics: string[] } : null;
@@ -36,8 +38,25 @@ const topicEntries = clientData
   : [];
 const isSingleTopic = topicEntries.length === 1;
 
+// Resolve presenters for single-topic client pages (from client's presenters array)
+const clientPresentersData = (!isEvent && isSingleTopic && topicEntries[0])
+  ? ((entry.data as any).presenters as Array<{ topic: string; speakers: string[] }> | undefined)
+  : undefined;
+const singleTopicSlug = (isSingleTopic && topicEntries[0]) ? (topicEntries[0].data.slug || topicEntries[0].slug) : '';
+const matchingPresenterEntry = clientPresentersData?.find((p) => p.topic === singleTopicSlug);
+const singleTopicPresenters = (matchingPresenterEntry?.speakers || [])
+  .map((slug) => allExperts.find((e) => (e.data.slug || e.slug) === slug))
+  .filter((e): e is typeof allExperts[number] => !!e)
+  .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+
 // Event-specific data
-const eventData = isEvent ? entry.data as { title: string; subtitle?: string; intro?: string; sections: any[] } : null;
+const eventData = isEvent ? entry.data as { title: string; subtitle?: string; intro?: string; presenters?: string[]; sections: any[] } : null;
+
+// Resolve presenters for event pages
+const eventPresenters = (eventData?.presenters || [])
+  .map((slug) => allExperts.find((e) => (e.data.slug || e.slug) === slug))
+  .filter((e): e is typeof allExperts[number] => !!e)
+  .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 
 const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
 ---
@@ -113,6 +132,22 @@ const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
               />
             ))}
           </div>
+          {singleTopicPresenters.length > 0 && (
+            <div class="presenters-section">
+              <h3 class="presenters-section__heading">Your Presenters</h3>
+              <div class="presenters-section__list">
+                {singleTopicPresenters.map((expert: typeof allExperts[number]) => (
+                  <SpeakerBio
+                    name={expert.data.name}
+                    role={expert.data.role}
+                    photo={expert.data.photo}
+                    bio={expert.data.bio}
+                    credentials={expert.data.credentials}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -152,6 +187,22 @@ const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
               />
             ))}
           </div>
+          {eventPresenters.length > 0 && (
+            <div class="presenters-section">
+              <h3 class="presenters-section__heading">Your Presenters</h3>
+              <div class="presenters-section__list">
+                {eventPresenters.map((expert) => (
+                  <SpeakerBio
+                    name={expert.data.name}
+                    role={expert.data.role}
+                    photo={expert.data.photo}
+                    bio={expert.data.bio}
+                    credentials={expert.data.credentials}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -308,6 +359,24 @@ const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
   }
 
   .resource-page__sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* ---- Presenters ---- */
+  .presenters-section {
+    margin-top: var(--space-xl);
+  }
+
+  .presenters-section__heading {
+    font-size: var(--text-xl);
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: var(--space-md);
+  }
+
+  .presenters-section__list {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);

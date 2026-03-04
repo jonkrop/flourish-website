@@ -1,0 +1,120 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  photo: string;
+  bio: string;
+  credentials: string[];
+}
+
+const { name, role, photo, bio, credentials } = Astro.props;
+---
+
+<div class="speaker-bio">
+  <img src={photo} alt={name} class="speaker-bio__photo" loading="lazy" />
+  <div class="speaker-bio__content">
+    <h4 class="speaker-bio__name">{name}</h4>
+    <p class="speaker-bio__role">{role}</p>
+    <p class="speaker-bio__text">{bio}</p>
+    {credentials.length > 0 && (
+      <p class="speaker-bio__credentials">
+        {credentials.map((cred, i) => (
+          <span class="speaker-bio__cred">{cred}</span>
+        ))}
+      </p>
+    )}
+  </div>
+</div>
+
+<style>
+  .speaker-bio {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    padding: var(--space-lg);
+    background: rgba(18, 50, 47, 0.12);
+    border: 1px solid rgba(245, 240, 234, 0.06);
+    border-radius: 4px;
+  }
+
+  .speaker-bio__photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 2px solid rgba(240, 78, 35, 0.3);
+    flex-shrink: 0;
+  }
+
+  .speaker-bio__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .speaker-bio__name {
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+
+  .speaker-bio__role {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .speaker-bio__text {
+    font-size: var(--text-base);
+    color: var(--cream);
+    opacity: 0.85;
+    line-height: 1.7;
+    margin-top: 0.25rem;
+  }
+
+  .speaker-bio__credentials {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.2em;
+    row-gap: 0.1em;
+    align-items: baseline;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-top: 0.25rem;
+  }
+
+  .speaker-bio__cred {
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .speaker-bio__cred + .speaker-bio__cred::before {
+    content: '\00b7';
+    position: absolute;
+    right: calc(100% + 0.45em);
+    color: var(--orange);
+    transform: scale(1.6);
+  }
+
+  @media (max-width: 768px) {
+    .speaker-bio {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-md);
+    }
+
+    .speaker-bio__photo {
+      width: 90px;
+      height: 90px;
+    }
+
+    .speaker-bio__credentials {
+      justify-content: center;
+    }
+  }
+</style>

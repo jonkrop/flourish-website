@@ -8,4 +8,8 @@ topics:
   - caffeine
   - cool-under-pressure
   - solving-sleep-issues
+presenters:
+  - topic: "solving-sleep-issues"
+    speakers:
+      - "jon"
 ---

@@ -66,6 +66,16 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
       - { label: "Intro", name: "intro", widget: "text", required: false }
+      - label: "Presenters"
+        name: "presenters"
+        widget: "relation"
+        collection: "experts"
+        multiple: true
+        required: false
+        value_field: "slug"
+        search_fields: ["name"]
+        display_fields: ["name"]
+        hint: "Select the experts who presented at this event."
       - label: "Sections"
         name: "sections"
         widget: "list"
@@ -119,3 +129,44 @@ collections:
         value_field: "slug"
         search_fields: ["title"]
         display_fields: ["title"]
+      - label: "Presenters"
+        name: "presenters"
+        widget: "list"
+        required: false
+        hint: "Assign presenters to each topic this client received."
+        fields:
+          - label: "Topic"
+            name: "topic"
+            widget: "relation"
+            collection: "topics"
+            value_field: "slug"
+            search_fields: ["title"]
+            display_fields: ["title"]
+          - label: "Speakers"
+            name: "speakers"
+            widget: "relation"
+            collection: "experts"
+            multiple: true
+            value_field: "slug"
+            search_fields: ["name"]
+            display_fields: ["name"]
+
+  - name: "experts"
+    label: "Experts"
+    folder: "src/content/experts"
+    create: true
+    identifier_field: "slug"
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "Unique identifier (e.g., 'jon', 'azeemah'). Lowercase, no spaces." }
+      - { label: "Name (Card)", name: "name", widget: "string", hint: "Name as shown on card (e.g., 'Jon Krop, J.D.')" }
+      - { label: "Name (Full)", name: "fullName", widget: "string", hint: "Full name with all credentials for detail panel" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - { label: "Credentials", name: "credentials", widget: "list", field: { label: "Credential", name: "credential", widget: "string" } }
+      - { label: "Topic Tags", name: "topicTags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+      - { label: "Testimonial Quote", name: "quote", widget: "text", required: false }
+      - { label: "Quote Attribution", name: "quoteAttribution", widget: "string", required: false, hint: "e.g., 'Associate, AmLaw 100 Firm'" }
+      - { label: "Display Order", name: "order", widget: "number", default: 99, hint: "Lower numbers appear first" }

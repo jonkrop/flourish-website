@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ResourceLayout from '../../layouts/ResourceLayout.astro';
 import ResourceSection from '../../components/ResourceSection.astro';
+import SpeakerBio from '../../components/SpeakerBio.astro';
 
 export async function getStaticPaths() {
   const topics = await getCollection('topics');
@@ -14,6 +15,9 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const allClients = await getCollection('clients');
+const allExperts = await getCollection('experts');
+
+const topicSlug = entry.data.slug || entry.slug;
 
 // Build client lookup for back-link text on topic pages
 const clientLookup: Record<string, string> = {};
@@ -23,6 +27,25 @@ for (const c of allClients) {
 
 const topicData = entry.data as { title: string; subtitle?: string; intro?: string; sections: any[] };
 const pageTitle = topicData.title;
+
+// Build per-client presenter map for this topic
+// { clientSlug: expertEntry[] }
+const clientPresenterMap: Record<string, typeof allExperts> = {};
+for (const client of allClients) {
+  const cSlug = client.data.slug || client.slug;
+  const presentersData = (client.data as any).presenters as Array<{ topic: string; speakers: string[] }> | undefined;
+  if (!presentersData) continue;
+  const match = presentersData.find((p) => p.topic === topicSlug);
+  if (!match || !match.speakers.length) continue;
+  const resolved = match.speakers
+    .map((slug) => allExperts.find((e) => (e.data.slug || e.slug) === slug))
+    .filter((e): e is typeof allExperts[number] => !!e)
+    .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+  if (resolved.length) {
+    clientPresenterMap[cSlug] = resolved;
+  }
+}
+const hasAnyPresenters = Object.keys(clientPresenterMap).length > 0;
 ---
 
 <ResourceLayout title={pageTitle}>
@@ -64,13 +87,29 @@ const pageTitle = topicData.title;
             />
           ))}
         </div>
+        {hasAnyPresenters && Object.entries(clientPresenterMap).map(([cSlug, experts]) => (
+          <div class="presenters-section" data-presenters-client={cSlug} style="display: none;">
+            <h3 class="presenters-section__heading">Your Presenters</h3>
+            <div class="presenters-section__list">
+              {experts.map((expert) => (
+                <SpeakerBio
+                  name={expert.data.name}
+                  role={expert.data.role}
+                  photo={expert.data.photo}
+                  bio={expert.data.bio}
+                  credentials={expert.data.credentials}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </div>
 
-  <!-- Client lookup data for back-link JS -->
+  <!-- Client lookup data for back-link and presenters JS -->
   <script define:vars={{ clientLookup }}>
-    // Handle ?client= param for back link
+    // Handle ?client= param for back link and presenters
     const params = new URLSearchParams(window.location.search);
     const clientSlug = params.get('client');
     if (clientSlug && clientLookup[clientSlug]) {
@@ -81,6 +120,12 @@ const pageTitle = topicData.title;
         container.style.display = 'block';
         link.setAttribute('href', `/${clientSlug}`);
         text.textContent = `Back to ${clientLookup[clientSlug]} Resources`;
+      }
+
+      // Show the matching presenters block
+      const presenterBlock = document.querySelector(`[data-presenters-client="${clientSlug}"]`);
+      if (presenterBlock) {
+        presenterBlock.style.display = '';
       }
     }
 
@@ -262,6 +307,24 @@ const pageTitle = topicData.title;
   }
 
   .resource-page__sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* ---- Presenters ---- */
+  .presenters-section {
+    margin-top: var(--space-xl);
+  }
+
+  .presenters-section__heading {
+    font-size: var(--text-xl);
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: var(--space-md);
+  }
+
+  .presenters-section__list {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
