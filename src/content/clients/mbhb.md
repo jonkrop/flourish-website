@@ -6,4 +6,11 @@ topics:
   - above-the-influence
   - cool-under-pressure
   - inner-art-of-leadership
+presenters:
+  - topic: above-the-influence
+    speakers:
+      - taylor
+  - topic: mental-health
+    speakers:
+      - taylor
 ---
