@@ -1,5 +1,5 @@
 ---
-slug: dentons-canada
+slug: dentonscanada
 name: Dentons Canada
 topics:
   - cool-under-pressure
