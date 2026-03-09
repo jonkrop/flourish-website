@@ -1,6 +1,6 @@
 ---
-slug: "tpg"
-name: "TPG"
+slug: tpg
+name: TPG
 topics:
-  - 30-second-stress-busters-and-mood-boosters
+  - self-care-in-30-seconds
 ---
