@@ -20,6 +20,12 @@ sections:
       - type: pdf
         url: /uploads/flourish_emailmanagement.pdf
         name: Email Management for Lawyers
+      - type: pdf
+        url: /uploads/flourish_distractionblockers.pdf
+        name: Distraction Blockers
+      - type: pdf
+        name: Distance From Distractions
+        url: /uploads/flourish_distancefromdistractions.pdf
   - collapsed: false
     title: Video
   - collapsed: false
