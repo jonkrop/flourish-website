@@ -17,6 +17,9 @@ sections:
       - type: pdf
         url: /uploads/flourish_slotmachine.pdf
         name: Make Your Phone Less of a Slot Machine
+      - type: pdf
+        url: /uploads/flourish_emailmanagement.pdf
+        name: Email Management for Lawyers
   - collapsed: false
     title: Video
   - collapsed: false
