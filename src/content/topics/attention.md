@@ -14,6 +14,9 @@ sections:
       - type: pdf
         url: /uploads/flourish_mindfulinternetuse.pdf
         name: Mindful Internet Use
+      - type: pdf
+        url: /uploads/flourish_slotmachine.pdf
+        name: Make Your Phone Less of a Slot Machine
   - collapsed: false
     title: Video
   - collapsed: false
