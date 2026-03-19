@@ -11,6 +11,9 @@ sections:
       - type: pdf
         url: /uploads/flourish_protectyourfocus.pdf
         name: Protect Your Focus
+      - type: pdf
+        url: /uploads/flourish_mindfulinternetuse.pdf
+        name: Mindful Internet Use
   - collapsed: false
     title: Video
   - collapsed: false
