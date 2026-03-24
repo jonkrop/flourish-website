@@ -23,4 +23,25 @@ sections:
       - type: pdf
         name: Seeing Through Negative Thoughts
         url: /uploads/Flourish-Thought-Replacement.pdf
+  - collapsed: false
+    title: Articles
+    items:
+      - type: pdf
+        name: Breath of Life (Gerritsen & Band)
+        url: /uploads/Breath-of-Life-Gerritsen-Band.pdf
+      - type: pdf
+        name: Martin Seligman on Lawer Happiness
+        url: /uploads/Seligman-Lawyer-Happiness.pdf
+      - type: pdf
+        name: Positive Psychology Progress (Seligman et al.)
+        url: /uploads/Positive-Psychology-Progress-Seligman.pdf
+  - collapsed: false
+    title: Handbooks & Toolkits
+    items:
+      - type: pdf
+        name: Well-Being Toolkit for Lawyers and Legal Employers
+        url: /uploads/Well-Being-Toolkit.pdf
+      - type: pdf
+        name: "Handbook: Foundations of Mindfulness"
+        url: /uploads/Mindfulness-Attorney-Handbook.pdf
 ---
