@@ -1,9 +1,12 @@
 ---
 slug: 30-second-stress-busters
 title: 30-Second Stress Busters
-intro: What if you're feeling stressed, anxious, or overwhelmed, and you've got
-  only 30 seconds to do something about it? This workshop teaches
-  evidence-backed methods for managing stress and cultivating positive emotions.
+intro: "This session answers the question: “What if I’m really struggling, and
+  I’ve got only 30 seconds to do something about it?” We explore a series of
+  techniques that are uncomplicated, quick enough to do in 30 seconds, and
+  remarkably effective at dealing with stress and anxiety."
+defaultPresenters:
+  - jon
 sections:
   - collapsed: false
     title: Cheat Sheets
@@ -17,4 +20,7 @@ sections:
       - type: pdf
         name: Deconstructing Anxiety
         url: /uploads/Flourish-Deconstructing-Anxiety-Noting.pdf
+      - type: pdf
+        name: Seeing Through Negative Thoughts
+        url: /uploads/Flourish-Thought-Replacement.pdf
 ---
