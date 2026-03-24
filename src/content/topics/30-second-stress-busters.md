@@ -5,8 +5,7 @@ intro: "This session answers the question: “What if I’m really struggling, a
   I’ve got only 30 seconds to do something about it?” We explore a series of
   techniques that are uncomplicated, quick enough to do in 30 seconds, and
   remarkably effective at dealing with stress and anxiety."
-defaultPresenters:
-  - jon
+defaultPresenters: []
 sections:
   - collapsed: true
     title: Cheat Sheets
