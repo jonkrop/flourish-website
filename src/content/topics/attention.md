@@ -1,6 +1,6 @@
 ---
-slug: take-back-your-attention
-title: Take Back Your Attention
+slug: attentional-self-defense
+title: Attentional Self-Defense
 subtitle: How to Protect Your Focus in a World That Wants to Steal It
 defaultPresenters:
   - jon
@@ -28,6 +28,10 @@ sections:
         url: /uploads/flourish_distancefromdistractions.pdf
   - collapsed: false
     title: Video
+    items:
+      - type: video
+        name: How To Meditate
+        url: https://vimeo.com/566201126?share=copy&fl=sv&fe=ci
   - collapsed: false
     title: Guided Audio Practices
 ---
