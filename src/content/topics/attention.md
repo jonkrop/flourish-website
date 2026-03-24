@@ -34,4 +34,8 @@ sections:
         url: https://vimeo.com/566201126?share=copy&fl=sv&fe=ci
   - collapsed: false
     title: Guided Audio Practices
+    items:
+      - type: audio
+        url: /uploads/five-minute-meditation.mp3
+        name: Five-Minute Meditation
 ---
