@@ -8,7 +8,7 @@ intro: "This session answers the question: “What if I’m really struggling, a
 defaultPresenters:
   - jon
 sections:
-  - collapsed: false
+  - collapsed: true
     title: Cheat Sheets
     items:
       - type: pdf
@@ -23,7 +23,7 @@ sections:
       - type: pdf
         name: Seeing Through Negative Thoughts
         url: /uploads/Flourish-Thought-Replacement.pdf
-  - collapsed: false
+  - collapsed: true
     title: Articles
     items:
       - type: pdf
@@ -35,7 +35,7 @@ sections:
       - type: pdf
         name: Positive Psychology Progress (Seligman et al.)
         url: /uploads/Positive-Psychology-Progress-Seligman.pdf
-  - collapsed: false
+  - collapsed: true
     title: Handbooks & Toolkits
     items:
       - type: pdf
