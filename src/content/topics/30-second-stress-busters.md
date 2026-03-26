@@ -33,7 +33,7 @@ sections:
         name: Breath of Life (Gerritsen & Band)
         url: /uploads/Breath-of-Life-Gerritsen-Band.pdf
       - type: pdf
-        name: Martin Seligman on Lawer Happiness
+        name: Martin Seligman on Lawyer Happiness
         url: /uploads/Seligman-Lawyer-Happiness.pdf
       - type: pdf
         name: Positive Psychology Progress (Seligman et al.)
