@@ -23,6 +23,9 @@ sections:
       - type: pdf
         name: Seeing Through Negative Thoughts
         url: /uploads/Flourish-Thought-Replacement.pdf
+      - type: pdf
+        name: Getting To Sleep
+        url: /uploads/Flourish-Getting-To-Sleep.pdf
   - collapsed: true
     title: Articles
     items:
