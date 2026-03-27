@@ -2,6 +2,13 @@
 slug: attentional-self-defense
 title: Attentional Self-Defense
 subtitle: How to Protect Your Focus in a World That Wants to Steal It
+intro: >-
+  You miss half the movie you're watching because you've been scrolling your
+  phone. You're in a meeting and suddenly realize you've zoned out. Our
+  attention is under siege, affecting our work, relationships, and our ability
+  to enjoy our lives.
+
+  This interactive workshop teaches attentional self-defense. Participants will learn practical ways to make their devices less distracting, exercises to strengthen focus over time, and mindset shifts that make them less susceptible to distraction in the first place. The result: better work product, greater productivity, and the ability to actually enjoy downtime.
 defaultPresenters:
   - jon
 sections:
