@@ -1,7 +1,11 @@
 ---
-slug: "dykema"
-name: "Dykema"
+slug: dykema
+name: Dykema
 topics:
-  - 30-second-stress-busters-and-mood-boosters
+  - self-care-in-30-seconds
   - defeating-digital-distractions
+presenters:
+  - topic: self-care-in-30-seconds
+    speakers:
+      - jon
 ---
