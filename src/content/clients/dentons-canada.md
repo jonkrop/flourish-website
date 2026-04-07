@@ -2,9 +2,9 @@
 slug: dentons-canada
 name: Dentons Canada
 topics:
-  - cool-under-pressure
-  - inner-art-of-collaboration
   - pouring-from-a-full-cup-caregivers
+  - inner-art-of-collaboration
+  - cool-under-pressure
 presenters:
   - topic: cool-under-pressure
     speakers:
