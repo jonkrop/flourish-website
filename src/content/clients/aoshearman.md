@@ -2,9 +2,9 @@
 slug: aoshearman
 name: A&O Shearman
 topics:
+  - take-back-your-attention
   - above-the-influence
   - defeating-digital-distractions
-  - take-back-your-attention
 presenters:
   - topic: above-the-influence
     speakers:
