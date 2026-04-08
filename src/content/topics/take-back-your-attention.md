@@ -12,7 +12,7 @@ intro: >-
 defaultPresenters:
   - jon
 sections:
-  - collapsed: false
+  - collapsed: true
     title: Cheat Sheets
     items:
       - type: pdf
@@ -45,7 +45,7 @@ sections:
       - type: audio
         url: /uploads/five-minute-meditation.mp3
         name: Five-Minute Meditation
-  - collapsed: false
+  - collapsed: true
     title: Articles
     items:
       - type: pdf
