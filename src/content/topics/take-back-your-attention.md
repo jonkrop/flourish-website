@@ -45,4 +45,31 @@ sections:
       - type: audio
         url: /uploads/five-minute-meditation.mp3
         name: Five-Minute Meditation
+  - collapsed: false
+    title: Articles
+    items:
+      - type: pdf
+        url: /uploads/goldsmith-sanner-distraction-or-necessity.pdf
+        name: Goldsmith & Sanner - Distraction or Necessity
+      - type: pdf
+        url: /uploads/Slow-Lawyering.pdf
+        name: Greene - Slow Lawyering
+      - type: pdf
+        url: /uploads/Stress-Drink-Leave.pdf
+        name: Krill et al - Stress, Drink, Leave
+      - type: pdf
+        url: /uploads/george-the-cure-for-the-distracted-mind.pdf
+        name: George - The Cure for the Distracted Mind
+      - type: pdf
+        url: /uploads/baker-brown-learning-to-pay-attention.pdf
+        name: Baker & Brown - Learning to Pay Attention
+      - type: pdf
+        url: /uploads/krill-et-al-stressed-lonely-and-overcommitted.pdf
+        name: Krill et al - Stressed, Lonely, and Overcommitted
+      - type: pdf
+        url: /uploads/newell-redefining-attention.pdf
+        name: Newell - Redefining Attention
+      - type: pdf
+        url: /uploads/ward-et-al-brain-drain.pdf
+        name: Ward et al - Brain Drain
 ---
