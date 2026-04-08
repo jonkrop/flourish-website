@@ -105,7 +105,7 @@ const hasAnyPresenters = Object.keys(clientPresenterMap).length > 0;
         </div>
         {hasAnyPresenters && Object.entries(clientPresenterMap).map(([cSlug, experts]) => (
           <div class="presenters-section" data-presenters-client={cSlug} style="display: none;">
-            <h3 class="presenters-section__heading">Your Presenters</h3>
+            <h3 class="presenters-section__heading">{experts.length === 1 ? 'Your Presenter' : 'Your Presenters'}</h3>
             <div class="presenters-section__list">
               {experts.map((expert) => (
                 <SpeakerBio

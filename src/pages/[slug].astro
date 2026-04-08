@@ -138,7 +138,7 @@ const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
           </div>
           {singleTopicPresenters.length > 0 && (
             <div class="presenters-section">
-              <h3 class="presenters-section__heading">Your Presenters</h3>
+              <h3 class="presenters-section__heading">{singleTopicPresenters.length === 1 ? 'Your Presenter' : 'Your Presenters'}</h3>
               <div class="presenters-section__list">
                 {singleTopicPresenters.map((expert: typeof allExperts[number]) => (
                   <SpeakerBio
