@@ -1,15 +1,19 @@
 ---
-slug: "cleary-gottlieb"
-name: "Cleary Gottlieb"
+slug: cleary-gottlieb
+name: Cleary Gottlieb
 topics:
-  - high-impact-habits
+  - positive-productive-collaboration
   - chillable-hours
+  - high-impact-habits
   - inner-art-of-collaboration
   - caffeine
   - cool-under-pressure
   - solving-sleep-issues
 presenters:
-  - topic: "solving-sleep-issues"
+  - topic: solving-sleep-issues
     speakers:
-      - "jon"
+      - jon
+  - topic: positive-productive-collaboration
+    speakers:
+      - jon
 ---
