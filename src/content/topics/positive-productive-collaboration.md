@@ -107,6 +107,9 @@ sections:
         name: Calvard et al - Building Perspective-Taking as an Organizational
           Capability
         url: /uploads/calvard-et-al-2021-building-perspective-taking-as-an-organizational-capability-a-change-intervention-in-a-health-care.pdf
+      - type: pdf
+        name: Harrison & Longmire - Seeing Their Side Versus Feeling Their Pain
+        url: /uploads/harrison-longmire-seeing-their-side-versus-feeling-their-pain.pdf
   - title: Handbooks & Toolkits
     collapsed: true
     items:
