@@ -103,6 +103,10 @@ sections:
       - type: pdf
         name: Porath & Pearson - The Price of Incivility
         url: /uploads/hbr-thepriceofincivility.pdf
+      - type: pdf
+        name: Calvard et al - Building Perspective-Taking as an Organizational
+          Capability
+        url: /uploads/calvard-et-al-2021-building-perspective-taking-as-an-organizational-capability-a-change-intervention-in-a-health-care.pdf
   - title: Handbooks & Toolkits
     collapsed: true
     items:
