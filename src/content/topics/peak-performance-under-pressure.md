@@ -2,9 +2,13 @@
 slug: peak-performance-under-pressure
 title: Peak Performance Under Pressure
 subtitle: ""
-intro: Every day, legal professionals face challenges that evoke a storm of
-  emotions, from anger to remorse. But what if you could not just endure these
-  emotions but transform them into fuel for peak performance?
+intro: "In high-stakes environments, the ability to stay sharp and lead
+  effectively under pressure is more than just a personal asset: it’s what keeps
+  teams performing and clients well-served. This interactive program gives
+  partners practical, evidence-backed tools to maintain focus and emotional
+  balance in demanding moments, stay engaged and available when their teams need
+  them most, and build the kind of long-term resilience that sustains both
+  leadership effectiveness and well-being."
 defaultPresenters:
   - jon
 sections:
