@@ -13,7 +13,7 @@ defaultPresenters:
   - jon
 sections:
   - title: Cheat Sheets
-    collapsed: false
+    collapsed: true
     items:
       - name: How to Meditate
         type: pdf
@@ -37,7 +37,7 @@ sections:
         type: pdf
         url: /uploads/Flourish-PMR.pdf
   - title: Videos
-    collapsed: false
+    collapsed: true
     items:
       - name: Mindfulness in Daily Life
         type: video
@@ -46,7 +46,7 @@ sections:
         type: video
         url: https://vimeo.com/440017003/72953843da
   - title: Guided Audio
-    collapsed: false
+    collapsed: true
     items:
       - name: Five-Minute Meditation
         type: audio
