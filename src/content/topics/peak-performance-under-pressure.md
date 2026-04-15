@@ -85,6 +85,10 @@ sections:
       - name: The Path to Lawyer Well-Being (National Task Force)
         type: pdf
         url: /uploads/Path-To-Lawyer-Well-Being.pdf
+      - type: pdf
+        name: "Austin & Durr - Emotion Regulation for Lawyers: A Mind Is a Challenging
+          Thing to Tame"
+        url: /uploads/emotion-regulation-for-lawyers_-a-mind-is-a-challenging-thing-to.pdf
   - title: Handbooks & Toolkits
     collapsed: true
     items:
