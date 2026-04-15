@@ -60,22 +60,26 @@ sections:
   - title: Articles
     collapsed: true
     items:
-      - name: Educating Lawyers to Meditate (Magee, UKMC Law Review)
+      - name: Magee - Educating Lawyers to Meditate (UKMC Law Review)
         type: pdf
         url: /uploads/Magee-Educating-Lawyers-Meditate.pdf
-      - name: "Capitalizing on Healthy Lawyers: The Business Case for Law Firms"
+      - name: "Reich - Capitalizing on Healthy Lawyers: The Business Case for Law Firms
+          to Promote and Prioritize Lawyer Well-Being"
         type: pdf
         url: /uploads/Capitalizing-Healthy-Lawyers.pdf
-      - name: Feeling and Thinking Like a Lawyer
+      - name: "Bandes - Feeling and Thinking Like a Lawyer: Cognition, Emotion, and the
+          Practice and Progress of Law"
         type: pdf
         url: /uploads/Feeling-Thinking-Like-Lawyer.pdf
-      - name: Why Mindfulness Tends to Foster Ethical Behavior
+      - name: "Riskin - Awareness and Ethics in Dispute Resolution and Law: Why
+          Mindfulness Tends to Foster Ethical Behavior"
         type: pdf
         url: /uploads/Mindfulness-Fosters-Ethical-Behavior.pdf
-      - name: Martin Seligman on Lawyer Happiness
+      - name: Seligman et al - Why Lawyers Are Unhappy
         type: pdf
         url: /uploads/Seligman-Lawyer-Happiness.pdf
-      - name: Mindfulness Can Improve Legal Ethics
+      - name: Huang - How Improving Decision-Making and Mindfulness Can Improve Legal
+          Ethics and Professionalism
         type: pdf
         url: /uploads/Mindfulness-Improve-Legal-Ethics.pdf
       - name: The Path to Lawyer Well-Being (National Task Force)
