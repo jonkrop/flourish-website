@@ -1,6 +1,6 @@
 ---
 slug: nalp
-name: Take Back Your Attention
+name: Attentional Self Defense
 topics:
   - attentional-self-defense
 presenters:
