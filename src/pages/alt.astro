@@ -1,18 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import '@fontsource/playfair-display/400-italic.css';
-import '@fontsource/playfair-display/500-italic.css';
-import '@fontsource/playfair-display/600-italic.css';
-import '@fontsource/playfair-display/700-italic.css';
 ---
 
 <BaseLayout title="Flourish Legal Well-Being">
+
+  <script is:inline>
+    document.documentElement.style.setProperty('--orange', '#FD7D00');
+    document.documentElement.style.setProperty('--orange-glow', '#E0750A');
+  </script>
 
   <!-- ===== HEADER / NAV ===== -->
   <header class="header">
     <div class="container header__inner">
       <a href="/" class="header__logo">
-        <img src="/images/logo-orange-alt.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+        <img src="/images/logo-orange-alt2.png" alt="Flourish Legal Well-Being" width="180" height="48" />
       </a>
       <nav class="header__nav">
         <a href="#topics" class="header__link">Topics</a>
@@ -144,7 +145,7 @@ import '@fontsource/playfair-display/700-italic.css';
     <div class="container">
       <blockquote class="pull-quote__inner">
         <p>"It required minimal input and effort from my team but was very effective."</p>
-        <footer>Director of Professional Development & Training, <span class="text-muted">AmLaw 50 Firm</span></footer>
+        <footer><span class="text-muted">Director of Professional Development & Training,</span> AmLaw 50 Firm</footer>
       </blockquote>
     </div>
   </div>
@@ -168,7 +169,7 @@ import '@fontsource/playfair-display/700-italic.css';
           <h3>We handle <em class="accent">everything.</em></h3>
           <p>Pre-written emails, CLE applications, internal promotion, logistics, follow-up. You approve the plan. We execute it.</p>
           <div class="diffs__rating diffs__rating--96">
-            <span class="diffs__rating-number">9.6</span>
+            <span class="diffs__rating-number">9.6<span class="diffs__rating-of">/10</span></span>
             <span class="diffs__rating-label">AVG. CLIENT<br/>RATING</span>
           </div>
         </div>
@@ -199,7 +200,7 @@ import '@fontsource/playfair-display/700-italic.css';
           <h3>Interactive, <em class="accent">not interminable.</em></h3>
           <p>Live exercises, real tools, and conversations people actually remember on Monday.</p>
           <div class="diffs__rating">
-            <span class="diffs__rating-number">9.2</span>
+            <span class="diffs__rating-number">9.2<span class="diffs__rating-of">/10</span></span>
             <span class="diffs__rating-label">AVG. AUDIENCE<br/>RATING</span>
           </div>
         </div>
@@ -212,7 +213,7 @@ import '@fontsource/playfair-display/700-italic.css';
     <div class="container">
       <blockquote class="pull-quote__inner">
         <p>"Completely engaging, on point, and quite entertaining."</p>
-        <footer>Adrian Rae Leipsic, Partner, <span class="text-muted">Cleary Gottlieb</span></footer>
+        <footer><span class="text-muted">Adrian Rae Leipsic, Partner,</span> Cleary Gottlieb</footer>
       </blockquote>
     </div>
   </div>
@@ -275,7 +276,7 @@ import '@fontsource/playfair-display/700-italic.css';
     <div class="container">
       <blockquote class="pull-quote__inner">
         <p>"The content is excellent, and the Flourish team is at the forefront of some of the most challenging topics that associates have to navigate."</p>
-        <footer>Professional Development Manager, <span class="text-muted">AmLaw 50 Firm</span></footer>
+        <footer><span class="text-muted">Professional Development Manager,</span> AmLaw 50 Firm</footer>
       </blockquote>
     </div>
   </div>
@@ -333,7 +334,7 @@ import '@fontsource/playfair-display/700-italic.css';
     <div class="container">
       <blockquote class="pull-quote__inner">
         <p>"You made it very easy for us, down to a script for messaging."</p>
-        <footer>Chief Talent Officer, <span class="text-muted">AmLaw 100 Firm</span></footer>
+        <footer><span class="text-muted">Chief Talent Officer,</span> AmLaw 100 Firm</footer>
       </blockquote>
     </div>
   </div>
@@ -397,7 +398,7 @@ import '@fontsource/playfair-display/700-italic.css';
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="/images/logo-orange-alt.png" alt="Flourish" width="140" height="37" />
+        <img src="/images/logo-orange-alt2.png" alt="Flourish" width="140" height="37" />
         <p class="text-sm text-muted">Well-being that works for law firms.</p>
       </div>
       <div class="footer__links">
@@ -862,6 +863,10 @@ import '@fontsource/playfair-display/700-italic.css';
     line-height: 1;
   }
 
+  .diffs__rating-of {
+    font-size: 0.45em;
+  }
+
   .diffs__rating-label {
     font-size: var(--text-base);
     color: var(--cream);
@@ -1066,14 +1071,15 @@ import '@fontsource/playfair-display/700-italic.css';
   }
 
   .testimonial__name {
-    font-weight: 600;
+    font-weight: 300;
     font-size: var(--text-lg);
-    color: var(--cream);
+    color: var(--text-muted);
   }
 
   .testimonial__firm {
+    font-weight: 600;
     font-size: var(--text-lg);
-    color: var(--text-muted);
+    color: var(--cream);
   }
 
   .testimonials__note { text-align: center; }
@@ -1086,7 +1092,7 @@ import '@fontsource/playfair-display/700-italic.css';
      INLINE PULL QUOTES
      =================================================================== */
   .pull-quote {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0 var(--space-xl);
     background: var(--dark);
   }
 
@@ -1116,7 +1122,6 @@ import '@fontsource/playfair-display/700-italic.css';
     font-size: var(--text-lg);
     font-weight: 500;
     color: var(--cream);
-    opacity: 0.8;
   }
 
   /* ===================================================================
