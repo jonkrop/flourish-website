@@ -1,6 +1,6 @@
 ---
 slug: nalp
-name: Attentional Self Defense
+name: For NALP
 topics:
   - attentional-self-defense
 presenters:
