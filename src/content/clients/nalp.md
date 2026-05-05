@@ -2,9 +2,9 @@
 slug: nalp
 name: Take Back Your Attention
 topics:
-  - take-back-your-attention
+  - attentional-self-defense
 presenters:
-  - topic: take-back-your-attention
+  - topic: attentional-self-defense
     speakers:
       - jon
 ---
