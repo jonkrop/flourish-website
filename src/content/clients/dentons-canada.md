@@ -2,6 +2,7 @@
 slug: dentons-canada
 name: Dentons Canada
 topics:
+  - mental-health
   - pouring-from-a-full-cup-caregivers
   - inner-art-of-collaboration
   - cool-under-pressure
@@ -13,6 +14,9 @@ presenters:
     speakers:
       - jon
   - topic: pouring-from-a-full-cup-caregivers
+    speakers:
+      - azeemah
+  - topic: mental-health
     speakers:
       - azeemah
 ---
