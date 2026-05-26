@@ -16,4 +16,7 @@ presenters:
   - topic: take-back-your-attention
     speakers:
       - jon
+  - topic: peak-performance-under-pressure-partners
+    speakers:
+      - jon
 ---
