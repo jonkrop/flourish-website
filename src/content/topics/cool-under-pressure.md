@@ -56,27 +56,31 @@ sections:
   - title: Articles
     collapsed: true
     items:
-      - name: Educating Lawyers to Meditate (Magee, UKMC Law Review)
+      - name: Austin & Durr - Emotion Regulation for Lawyers
+        type: pdf
+        url: /uploads/austin-durr-emotion-regulation-for-lawyers_-a-mind-is-a-challenging-thing-to.pdf
+      - name: Bandes - Feeling and Thinking Like a Lawyer
+        type: pdf
+        url: /uploads/bandes-feeling-and-thinking-like-a-lawyer-cognition-emotion-and-the-practice-and-progress-of-law.pdf
+      - name: Huang - Can Practicing Mindfulness Improve Lawyer Decision-Making, Ethics,
+          and Leadership?
+        type: pdf
+        url: /uploads/huang-how-improving-decision-making-and-mindfulness-can-improve-legal-ethics-and-professionalism.pdf
+      - name: Magee - Educating Lawyers to Meditate?
         type: pdf
         url: /uploads/Magee-Educating-Lawyers-Meditate.pdf
-      - name: "Capitalizing on Healthy Lawyers: The Business Case for Law Firms"
-        type: pdf
-        url: /uploads/Capitalizing-Healthy-Lawyers.pdf
-      - name: Feeling and Thinking Like a Lawyer
-        type: pdf
-        url: /uploads/Feeling-Thinking-Like-Lawyer.pdf
-      - name: Why Mindfulness Tends to Foster Ethical Behavior
-        type: pdf
-        url: /uploads/Mindfulness-Fosters-Ethical-Behavior.pdf
-      - name: Martin Seligman on Lawyer Happiness
-        type: pdf
-        url: /uploads/Seligman-Lawyer-Happiness.pdf
-      - name: Mindfulness Can Improve Legal Ethics
-        type: pdf
-        url: /uploads/Mindfulness-Improve-Legal-Ethics.pdf
-      - name: The Path to Lawyer Well-Being (National Task Force)
+      - name: National Task Force on Lawyer Well-Being - The Path to Lawyer Well-Being
         type: pdf
         url: /uploads/Path-To-Lawyer-Well-Being.pdf
+      - name: Reich - Capitalizing on Healthy Lawyers
+        type: pdf
+        url: /uploads/Capitalizing-Healthy-Lawyers.pdf
+      - name: Riskin - Awareness and Ethics in Dispute Resolution and Law
+        type: pdf
+        url: /uploads/riskin-awareness-and-ethics-in-dispute-resolution-and-law-why-mindfulness-tends-to-foster-ethical-behavior.pdf
+      - type: pdf
+        name: Seligman, Verkuil & Kang - Lawyer Happiness
+        url: /uploads/Seligman-Lawyer-Happiness.pdf
   - title: Handbooks & Toolkits
     collapsed: true
     items:
