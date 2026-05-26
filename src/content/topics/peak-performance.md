@@ -90,10 +90,4 @@ sections:
       - name: Well-Being Toolkit for Lawyers and Legal Employers
         type: pdf
         url: /uploads/Well-Being-Toolkit.pdf
-  - title: Further Reading
-    collapsed: true
-    items:
-      - name: Recommended Reads and Listens
-        type: link
-        url: https://www.teamflourish.com/recommended
 ---
