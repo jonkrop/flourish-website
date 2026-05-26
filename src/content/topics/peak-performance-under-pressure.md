@@ -1,5 +1,5 @@
 ---
-slug: peak-performance-under-pressure
+slug: peak-performance-under-pressure-partners
 title: Peak Performance Under Pressure
 subtitle: ""
 intro: "In high-stakes environments, the ability to stay sharp and lead
