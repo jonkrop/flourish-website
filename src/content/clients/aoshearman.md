@@ -2,10 +2,10 @@
 slug: aoshearman
 name: A&O Shearman
 topics:
+  - peak-performance
   - take-back-your-attention
   - above-the-influence
   - defeating-digital-distractions
-  - peak-performance-under-pressure-partners
 presenters:
   - topic: above-the-influence
     speakers:
@@ -16,7 +16,7 @@ presenters:
   - topic: take-back-your-attention
     speakers:
       - jon
-  - topic: peak-performance-under-pressure-partners
+  - topic: peak-performance
     speakers:
       - jon
 ---
