@@ -4,6 +4,13 @@ title: The Inner Art of Collaboration
 subtitle: How to Have Positive, Proactive Interactions with Colleagues and Clients
 intro: When it comes to workplace interactions, mindset matters; the way we
   engage with others has a major impact on our emotions, well-being, and work.
+  In this interactive program, we explore simple, evidence-based ways to
+  cultivate positive, effective interactions so that you and your colleagues can
+  produce your best work while avoiding burnout and conflict. You'll learn
+  concrete methods for navigating challenging interactions with calm,
+  non-reactive presence, helping you produce the best outcome while also
+  preserving your own well-being. We won't just discuss those methods; we'll try
+  them out together.
 defaultPresenters:
   - jon
 sections:
