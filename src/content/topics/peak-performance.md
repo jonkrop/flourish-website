@@ -32,6 +32,9 @@ sections:
       - name: Progressive Muscle Relaxation
         type: pdf
         url: /uploads/Flourish-PMR.pdf
+      - type: pdf
+        name: Paced Breathing
+        url: /uploads/Flourish-Paced-Breathing.pdf
   - title: Videos
     collapsed: true
     items:
