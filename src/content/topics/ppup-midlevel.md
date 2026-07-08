@@ -7,8 +7,8 @@ intro: "The midlevel years are a genuine hinge point: more autonomy, less
   partners above you and the juniors below. This program gives you practical,
   evidence-backed tools to regulate your own internal state under pressure,
   protect your capacity as you work with the partners, and cultivate the kind of
-  relationships with your junior associates that make the work more sustainable -
-  and more effective."
+  relationships with your junior associates that make the work more sustainable
+  - and more effective."
 defaultPresenters:
   - jon
 sections:
@@ -42,6 +42,9 @@ sections:
       - name: Progressive Muscle Relaxation
         type: pdf
         url: /uploads/Flourish-PMR.pdf
+      - type: pdf
+        name: Paced Breathing
+        url: /uploads/Flourish-Paced-Breathing.pdf
   - title: Videos
     collapsed: true
     items:
