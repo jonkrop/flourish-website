@@ -2,7 +2,7 @@
 slug: aoshearman
 name: A&O Shearman
 topics:
-  - peak-performance
+  - ppup-midlevel
   - take-back-your-attention
   - above-the-influence
   - defeating-digital-distractions
@@ -16,7 +16,7 @@ presenters:
   - topic: take-back-your-attention
     speakers:
       - jon
-  - topic: peak-performance
+  - topic: ppup-midlevel
     speakers:
       - jon
 ---
