@@ -12,7 +12,7 @@ intro: "The midlevel years are a genuine hinge point: more autonomy, less
 defaultPresenters:
   - jon
 sections:
-  - title: The Midlevel Toolkit
+  - title: "AI Tool: The Midlevel Toolkit"
     collapsed: false
     items:
       - name: Open the Midlevel Toolkit
