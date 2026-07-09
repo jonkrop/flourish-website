@@ -1,6 +1,15 @@
 ---
 slug: inspire-a-game-performance
 title: How To Inspire A-Game Performance
+intro: >-
+  This interactive workshop gives partners practical, research-backed tools to
+  close the gap between grudging compliance and genuine, enthusiastic effort
+  from associates. Rather than treating disengagement as a generational issue,
+  the session reframes it as a relationship and management challenge, one
+  partners can address without adding to an already full plate.
+
+
+  Participants learn how to make high-pressure asks in ways that strengthen the working relationship, build simple habits of relational investment that earn real commitment, and recognize associate contributions in ways that actually land. Every skill is delivered through a simple, memorable framework designed to fit into a busy practice, so participants leave with tools they can use immediately.
 defaultPresenters:
   - jon
 sections:
