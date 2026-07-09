@@ -25,6 +25,9 @@ sections:
       - type: pdf
         name: "TRIP: Making a Difficult Ask"
         url: /uploads/flourish_trip.pdf
+      - type: pdf
+        name: Small Moves that Build Big Relationships
+        url: /uploads/flourish_smallmoves.pdf
   - collapsed: true
     title: Articles
     items:
