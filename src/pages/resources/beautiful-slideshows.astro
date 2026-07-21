@@ -1,0 +1,194 @@
+---
+// Standalone resource page - intentionally NOT wrapped in the site layout.
+// This is the "field guide" handout from Jon's PDC webinar on slide design,
+// rendered exactly as designed (Flourish handout/paper palette).
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Make Beautiful, Engaging Slideshows | Flourish</title>
+  <meta name="description" content="A field guide to minimalist slide design from Flourish Legal Well-Being - the whole method, no design background required." />
+  <meta property="og:title" content="How to Make Beautiful, Engaging Slideshows" />
+  <meta property="og:description" content="A field guide to minimalist slide design - the whole method, no design background required." />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="/images/lotus.png" />
+  <style is:global>
+    :root{
+      --ground:#E7E1D6;
+      --paper:#FEFCFA;
+      --ink:#12322F;
+      --body:#2B403A;
+      --dim:#5C6E67;
+      --accent:#F05D23;
+      --accent-deep:#D24E1C;
+      --glow:#F4824A;
+      --peach:#FCEEE9;
+      --peach-line:#F2D8CC;
+      --hair:rgba(18,50,47,.14);
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+      --sans:"Avenir Next","Avenir","Segoe UI","Helvetica Neue",Helvetica,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{background:var(--ground);color:var(--body);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+    body{padding:44px 20px 72px;display:flex;justify-content:center;align-items:flex-start;}
+
+    .doc{
+      width:100%;max-width:760px;background:var(--paper);position:relative;
+      border:1px solid rgba(240,93,35,.38);
+      box-shadow:0 20px 60px rgba(18,50,47,.20);
+      padding:64px 66px 50px;
+    }
+
+    .eyebrow{font-weight:700;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent-deep);}
+    .title{font-family:var(--serif);font-weight:600;font-size:47px;line-height:1.03;letter-spacing:-.01em;color:var(--ink);margin-top:18px;text-wrap:balance;}
+    .sub{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--dim);margin-top:12px;}
+
+    .hero{
+      margin:32px 0 26px;padding:26px 30px;background:var(--peach);
+      border-left:3px solid var(--accent);
+      font-family:var(--serif);font-style:italic;font-weight:500;font-size:27px;line-height:1.3;
+      color:var(--ink);text-wrap:balance;
+    }
+    .intro{font-size:16.5px;line-height:1.62;color:var(--dim);max-width:62ch;}
+
+    .hr.orange{height:2px;background:linear-gradient(90deg,var(--accent),rgba(240,93,35,0));margin:38px 0;border:0;}
+
+    section{margin:0 0 36px;}
+    h2{
+      display:flex;align-items:center;gap:14px;
+      font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.12;letter-spacing:-.005em;
+      color:var(--ink);margin-bottom:16px;text-wrap:balance;
+    }
+    h2 .rn{
+      flex:none;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.04em;
+      color:var(--accent-deep);background:var(--peach);border:1px solid var(--peach-line);
+      border-radius:3px;padding:5px 9px;line-height:1;min-width:36px;text-align:center;
+      position:relative;top:1px;
+    }
+    h2 .q{font-family:var(--serif);font-style:italic;font-weight:400;font-size:20px;color:var(--dim);}
+    ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    li{position:relative;padding-left:26px;font-size:17px;line-height:1.54;color:var(--body);}
+    li::before{content:"";position:absolute;left:0;top:12px;width:13px;height:2px;background:var(--accent);}
+    li b{font-weight:600;color:var(--ink);}
+    li i{font-style:italic;color:var(--accent-deep);}
+
+    .resources{margin-top:4px;background:var(--peach);border:1px solid var(--peach-line);padding:32px 36px;}
+    .resources h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:20px;}
+    .rgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 40px;}
+    .rgrid .rl{display:block;font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);margin-bottom:5px;}
+    .rgrid .rt{font-size:15.5px;line-height:1.5;color:var(--body);}
+
+    .foot{margin-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--dim);border-top:1px solid var(--hair);padding-top:20px;}
+    .foot .mark{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);}
+    .foot a{color:var(--accent-deep);text-decoration:none;}
+    .foot a:hover{text-decoration:underline;}
+
+    @media (max-width:560px){
+      .doc{padding:42px 26px 36px;}
+      .title{font-size:36px;}
+      .hero{font-size:22px;padding:20px 22px;}
+      .rgrid{grid-template-columns:1fr;}
+      h2{font-size:24px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="doc">
+    <div class="eyebrow">Flourish &middot; A Field Guide</div>
+    <h1 class="title">How to Make Beautiful, Engaging Slideshows</h1>
+    <div class="sub">No design background required</div>
+
+    <div class="hero">If you want your audience alive, don&rsquo;t riddle them with bullets.</div>
+
+    <p class="intro">Most of us were never taught slide design, so we default to bullet points and hope for the best. This is the whole method from the webinar, gathered here so you don&rsquo;t have to lean on the slides to remember it.</p>
+
+    <div class="hr orange"></div>
+
+    <section>
+      <h2><span class="rn">i</span> Keep your slides text-minimal</h2>
+      <ul>
+        <li>Your slides are a visual accompaniment, not an independent source of information.</li>
+        <li>If someone could just read your slides instead of showing up, <i>this could have been an email.</i></li>
+        <li>Don&rsquo;t ask people to read and listen at the same time.</li>
+        <li>Write your slides, then take a second pass and cut more. Whatever felt minimal the first time wasn&rsquo;t.</li>
+        <li>Two gut checks: if your deck works as a standalone handout, you messed up. If your talk falls apart the moment the projector dies, you messed up.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="rn">ii</span> Fake it with minimalism</h2>
+      <ul>
+        <li>Minimalism is the only design aesthetic a non-designer can pull off convincingly.</li>
+        <li>The classic Flourish minimalist slide: one coherent, high-res, full-bleed image per slide, plus an optional short headline.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="rn">iii</span> What to avoid</h2>
+      <ul>
+        <li>Collages of disconnected images &mdash; use one anchor image instead.</li>
+        <li>Clip art. It&rsquo;s not 1996; we&rsquo;re off Windows 95.</li>
+        <li>Background clash &mdash; images that drag their own box of background onto your white slide. Strip it with PowerPoint&rsquo;s built-in Remove Background, though a full-bleed image sidesteps the problem entirely.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="rn">iv</span> Finding the image <span class="q">(the hard part)</span></h2>
+      <ul>
+        <li>High-res, high-quality images only.</li>
+        <li><b>Free:</b> Unsplash, Pexels. <b>Paid:</b> Unsplash+, iStock, Getty, Adobe Stock, Shutterstock &mdash; functionally identical, so pick one.</li>
+        <li>Skip faces, and above all smiles, when feasible &mdash; posed stock smiles read as fake (nobody is that happy about a salad). If you can&rsquo;t avoid a face, one turned away or mid-activity feels more candid.</li>
+        <li>Watch for AI &ldquo;slop&rdquo; creeping onto the stock sites. Filter for uploads before ~2024, or use a site&rsquo;s exclude-AI filter where it has one.</li>
+        <li>Stuck for an idea? Search a broad word and scroll through the results to inspire a narrower search.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="rn">v</span> Where AI helps, and where it doesn&rsquo;t</h2>
+      <ul>
+        <li>Don&rsquo;t let it build the deck. Today&rsquo;s tools produce well-executed versions of bad slides &mdash; polished, but riddled with bullets.</li>
+        <li>Do use it to brainstorm images: ask for 20 concepts at once. Most are useless; one usually sparks something.</li>
+        <li>Do use it for one specific image you can&rsquo;t find in stock. If the resolution isn&rsquo;t high enough for full-bleed, request the image on a flat white background you can easily remove in PowerPoint.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="rn">vi</span> Text and readability</h2>
+      <ul>
+        <li>Readability beats everything else. Never dark text on a dark background, or light on light.</li>
+        <li>The reliable fix: white text inside a black box, so it reads over anything. Or duplicate the slide and dim the image&rsquo;s brightness on the second slide (right-click, Format Picture, brightness slider), then lay the text over the shade.</li>
+        <li>One font is best; two at most.</li>
+        <li>Use icons as visual bullet points (The Noun Project, about $2 each).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="rn">vii</span> Layouts and motion</h2>
+      <ul>
+        <li>Pick the most minimalist layout your content actually needs: full-bleed image alone, image plus headline, or image plus headline plus a little text.</li>
+        <li>Stuck with a firm template? Make the image as big as you can on one side, text clean on the other.</li>
+        <li>The advanced hack: instead of a bulleted list on one slide, give each point its own full-bleed image and headline.</li>
+        <li>Animation: fades only, revealing points one at a time so no one reads ahead. Anything fancier is corny.</li>
+        <li>Video and sound: don&rsquo;t &mdash; it&rsquo;s an IT headache and your slides don&rsquo;t need it.</li>
+      </ul>
+    </section>
+
+    <div class="resources">
+      <h3>A few resources</h3>
+      <div class="rgrid">
+        <div><span class="rl">Read</span><span class="rt">Presentation Zen by Garr Reynolds &mdash; the bible for this style</span></div>
+        <div><span class="rl">Images</span><span class="rt">Unsplash, Pexels (free); Unsplash+, iStock, Getty, Adobe Stock, Shutterstock (paid)</span></div>
+        <div><span class="rl">Icons</span><span class="rt">The Noun Project</span></div>
+        <div><span class="rl">Fonts</span><span class="rt">Browse at fonts.google.com; pairings at fontpair.com</span></div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="mark">Flourish Legal Well-Being</span>
+      <a href="https://teamflourish.com">teamflourish.com</a>
+    </div>
+  </div>
+</body>
+</html>
