@@ -1,7 +1,14 @@
 ---
 // Standalone resource page - intentionally NOT wrapped in the site layout.
 // This is the "field guide" handout from Jon's PDC webinar on slide design,
-// rendered exactly as designed (Flourish handout/paper palette).
+// rendered in the Flourish handout/paper palette.
+// Self-hosted fonts (identical on Mac + Windows): Manrope (body) + Newsreader (serif).
+import '@fontsource-variable/manrope';
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/500.css';
+import '@fontsource/newsreader/600.css';
+import '@fontsource/newsreader/400-italic.css';
+import '@fontsource/newsreader/500-italic.css';
 ---
 <!doctype html>
 <html lang="en">
@@ -27,8 +34,8 @@
       --peach:#FCEEE9;
       --peach-line:#F2D8CC;
       --hair:rgba(18,50,47,.14);
-      --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
-      --sans:"Avenir Next","Avenir","Segoe UI","Helvetica Neue",Helvetica,sans-serif;
+      --serif:"Newsreader",Georgia,"Times New Roman",serif;
+      --sans:"Manrope Variable","Manrope","Segoe UI",system-ui,sans-serif;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{background:var(--ground);color:var(--body);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
@@ -41,8 +48,9 @@
       padding:64px 66px 50px;
     }
 
-    .eyebrow{font-weight:700;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent-deep);}
-    .title{font-family:var(--serif);font-weight:600;font-size:47px;line-height:1.03;letter-spacing:-.01em;color:var(--ink);margin-top:18px;text-wrap:balance;}
+    .logo{display:block;width:188px;height:auto;margin-bottom:26px;}
+    .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);}
+    .title{font-family:var(--serif);font-weight:600;font-size:47px;line-height:1.04;letter-spacing:-.005em;color:var(--ink);margin-top:12px;text-wrap:balance;}
     .sub{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--dim);margin-top:12px;}
 
     .hero{
@@ -96,7 +104,8 @@
 </head>
 <body>
   <div class="doc">
-    <div class="eyebrow">Flourish &middot; A Field Guide</div>
+    <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="188" />
+    <div class="eyebrow">A Field Guide</div>
     <h1 class="title">How to Make Beautiful, Engaging Slideshows</h1>
     <div class="sub">No design background required</div>
 
