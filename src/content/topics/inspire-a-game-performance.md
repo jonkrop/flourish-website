@@ -22,7 +22,7 @@ sections:
           associates' best work, in under a minute. Nothing you type is stored,
           and identifying details are stripped in your browser before anything
           is sent.
-        url: https://agame-tool.pages.dev/aos
+        url: https://agame-tool.pages.dev/
   - collapsed: true
     title: Cheat Sheets
     items:
