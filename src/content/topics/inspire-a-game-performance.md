@@ -13,6 +13,16 @@ intro: >-
 defaultPresenters:
   - jon
 sections:
+  - collapsed: false
+    title: The A-Game AI Tool
+    items:
+      - type: link
+        name: Open the tool
+        description: Framework-aligned drafts for the moments that shape your
+          associates' best work, in under a minute. Nothing you type is stored,
+          and identifying details are stripped in your browser before anything
+          is sent.
+        url: https://agame-tool.pages.dev/aos
   - collapsed: true
     title: Cheat Sheets
     items:
