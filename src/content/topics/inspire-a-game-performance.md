@@ -28,6 +28,9 @@ sections:
       - type: pdf
         name: Small Moves that Build Big Relationships
         url: /uploads/flourish_smallmoves.pdf
+      - type: pdf
+        name: Relationship-Building for Managers
+        url: /uploads/flourish_relationshipbuilding.pdf
   - collapsed: true
     title: Articles
     items:
