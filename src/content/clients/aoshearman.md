@@ -2,6 +2,7 @@
 slug: aoshearman
 name: A&O Shearman
 topics:
+  - inspire-a-game-performance
   - ppup-midlevel
   - take-back-your-attention
   - above-the-influence
@@ -17,6 +18,9 @@ presenters:
     speakers:
       - jon
   - topic: ppup-midlevel
+    speakers:
+      - jon
+  - topic: inspire-a-game-performance
     speakers:
       - jon
 ---
