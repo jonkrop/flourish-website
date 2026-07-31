@@ -14,47 +14,8 @@ intro: When it comes to workplace interactions, mindset matters; the way we
 defaultPresenters:
   - jon
 sections:
-  - title: Meditation Guides
-    collapsed: false
-    items:
-      - name: "Cheat Sheet: How to Meditate"
-        type: pdf
-        url: /uploads/Flourish-How-To-Meditate.pdf
-      - name: Meditation Posture Guide
-        type: pdf
-        url: /uploads/Flourish-Posture-Guide.pdf
-      - name: Posture for Meditation (Stephanie Nash)
-        type: pdf
-        url: /uploads/Posture-for-Meditation-Nash.pdf
-      - name: How to Stick to a Daily Meditation Practice
-        type: pdf
-        url: /uploads/How-to-Stick-Daily-Meditation.pdf
-  - title: Videos
-    collapsed: false
-    items:
-      - name: De-Stress by Saying Four Simple Words
-        type: video
-        url: https://vimeo.com/822796240
-      - name: How to Meditate
-        type: video
-        url: https://vimeo.com/440017003/72953843da
-      - name: Mindfulness in Daily Life
-        type: video
-        url: https://vimeo.com/528914723/1431137d86
-  - title: Guided Audio
-    collapsed: false
-    items:
-      - name: Progressive Muscle Relaxation
-        type: audio
-        url: /uploads/pmr-guided.mp3
-      - name: Goodwill Meditation
-        type: audio
-        url: /uploads/goodwill-meditation-guided.mp3
-      - name: Meditation Posture Guide
-        type: audio
-        url: /uploads/meditation-posture-guide.mp3
   - title: Physiological Techniques
-    collapsed: false
+    collapsed: true
     items:
       - name: Body Scan
         type: pdf
@@ -77,6 +38,54 @@ sections:
       - name: Goodwill Meditation
         type: pdf
         url: /uploads/Flourish-Goodwill-Meditation.pdf
+  - title: Handbooks & Toolkits
+    collapsed: true
+    items:
+      - name: Well-Being Toolkit for Lawyers and Legal Employers
+        type: pdf
+        url: /uploads/Well-Being-Toolkit.pdf
+      - name: "Handbook: Foundations of Mindfulness"
+        type: pdf
+        url: /uploads/Mindfulness-Attorney-Handbook.pdf
+  - title: Meditation Guides
+    collapsed: true
+    items:
+      - name: "Cheat Sheet: How to Meditate"
+        type: pdf
+        url: /uploads/Flourish-How-To-Meditate.pdf
+      - name: Meditation Posture Guide
+        type: pdf
+        url: /uploads/Flourish-Posture-Guide.pdf
+      - name: Posture for Meditation (Stephanie Nash)
+        type: pdf
+        url: /uploads/Posture-for-Meditation-Nash.pdf
+      - name: How to Stick to a Daily Meditation Practice
+        type: pdf
+        url: /uploads/How-to-Stick-Daily-Meditation.pdf
+  - title: Videos
+    collapsed: true
+    items:
+      - name: De-Stress by Saying Four Simple Words
+        type: video
+        url: https://vimeo.com/822796240
+      - name: How to Meditate
+        type: video
+        url: https://vimeo.com/440017003/72953843da
+      - name: Mindfulness in Daily Life
+        type: video
+        url: https://vimeo.com/528914723/1431137d86
+  - title: Guided Audio
+    collapsed: true
+    items:
+      - name: Progressive Muscle Relaxation
+        type: audio
+        url: /uploads/pmr-guided.mp3
+      - name: Goodwill Meditation
+        type: audio
+        url: /uploads/goodwill-meditation-guided.mp3
+      - name: Meditation Posture Guide
+        type: audio
+        url: /uploads/meditation-posture-guide.mp3
   - title: Articles
     collapsed: true
     items:
@@ -117,13 +126,4 @@ sections:
       - type: pdf
         name: Harrison & Longmire - Seeing Their Side Versus Feeling Their Pain
         url: /uploads/harrison-longmire-seeing-their-side-versus-feeling-their-pain.pdf
-  - title: Handbooks & Toolkits
-    collapsed: true
-    items:
-      - name: Well-Being Toolkit for Lawyers and Legal Employers
-        type: pdf
-        url: /uploads/Well-Being-Toolkit.pdf
-      - name: "Handbook: Foundations of Mindfulness"
-        type: pdf
-        url: /uploads/Mindfulness-Attorney-Handbook.pdf
 ---
