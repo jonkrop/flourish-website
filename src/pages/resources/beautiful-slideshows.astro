@@ -52,6 +52,7 @@ import '@fontsource/newsreader/500-italic.css';
     .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);}
     .title{font-family:var(--serif);font-weight:600;font-size:47px;line-height:1.04;letter-spacing:-.005em;color:var(--ink);margin-top:12px;text-wrap:balance;}
     .sub{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--dim);margin-top:12px;}
+    .sub-title{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.08;letter-spacing:-.005em;color:var(--ink);margin-top:4px;text-wrap:balance;}
 
     .hero{
       margin:32px 0 26px;padding:26px 30px;background:var(--peach);
@@ -60,6 +61,13 @@ import '@fontsource/newsreader/500-italic.css';
       color:var(--ink);text-wrap:balance;
     }
     .intro{font-size:16.5px;line-height:1.62;color:var(--dim);max-width:62ch;}
+
+    .hero-inline{
+      margin:0 0 20px;padding:20px 24px;background:var(--peach);
+      border-left:3px solid var(--accent);
+      font-family:var(--serif);font-style:italic;font-weight:500;font-size:21px;line-height:1.3;
+      color:var(--ink);text-wrap:balance;
+    }
 
     .hr.orange{height:2px;background:linear-gradient(90deg,var(--accent),rgba(240,93,35,0));margin:38px 0;border:0;}
 
@@ -81,6 +89,19 @@ import '@fontsource/newsreader/500-italic.css';
     li::before{content:"";position:absolute;left:0;top:12px;width:13px;height:2px;background:var(--accent);}
     li b{font-weight:600;color:var(--ink);}
     li i{font-style:italic;color:var(--accent-deep);}
+
+    .slide-example{margin:20px 0 8px;border-radius:4px;overflow:hidden;box-shadow:0 2px 12px rgba(18,50,47,.12);}
+    .slide-example img{display:block;width:100%;height:auto;}
+    .slide-caption{font-size:13.5px;color:var(--dim);font-style:italic;margin:6px 0 18px;line-height:1.45;}
+    .slide-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 8px;}
+    .slide-pair .slide-example{margin:0;}
+    .slide-trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:20px 0 8px;}
+    .slide-trio .slide-example{margin:0;position:relative;}
+    .slide-label{display:block;text-align:center;font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:6px 0;color:var(--paper);}
+    .slide-label.bad{background:#c0392b;}
+    .slide-label.better{background:#e67e22;}
+    .slide-label.best{background:#27ae60;}
+    @media (max-width:560px){.slide-pair{grid-template-columns:1fr;}.slide-trio{grid-template-columns:1fr;}}
 
     .resources{margin-top:4px;background:var(--peach);border:1px solid var(--peach-line);padding:32px 36px;}
     .resources h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:20px;}
@@ -106,23 +127,24 @@ import '@fontsource/newsreader/500-italic.css';
   <div class="doc">
     <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="188" />
     <div class="eyebrow">A Field Guide</div>
-    <h1 class="title">How to Make Beautiful, Engaging Slideshows</h1>
-    <div class="sub">No design background required</div>
+    <h1 class="title">How to Make Beautiful, Engaging Slideshows:</h1>
+    <div class="sub-title">No Design Background Required</div>
 
-    <div class="hero">If you want your audience alive, don&rsquo;t riddle them with bullets.</div>
+    <div style="height:36px"></div>
 
-    <p class="intro">Most of us were never taught slide design, so we default to bullet points and hope for the best. This is the whole method from the webinar, gathered here so you don&rsquo;t have to lean on the slides to remember it.</p>
+    <p class="intro">Most of us were never taught slide design, so we default to bullet points and hope for the best. Here&rsquo;s what you can do instead.</p>
 
     <div class="hr orange"></div>
 
     <section>
       <h2><span class="rn">i</span> Keep your slides text-minimal</h2>
+      <div class="hero-inline">If you want your audience alive, don&rsquo;t riddle them with bullets.</div>
       <ul>
         <li>Your slides are a visual accompaniment, not an independent source of information.</li>
         <li>If someone could just read your slides instead of showing up, <i>this could have been an email.</i></li>
         <li>Don&rsquo;t ask people to read and listen at the same time.</li>
-        <li>Write your slides, then take a second pass and cut more. Whatever felt minimal the first time wasn&rsquo;t.</li>
-        <li>Two gut checks: if your deck works as a standalone handout, you messed up. If your talk falls apart the moment the projector dies, you messed up.</li>
+        <li>Write your slides, then take a second pass and cut more.</li>
+        <li>If your deck works as a standalone handout, you messed up.</li>
       </ul>
     </section>
 
@@ -132,6 +154,11 @@ import '@fontsource/newsreader/500-italic.css';
         <li>Minimalism is the only aesthetic a non-designer can pull off convincingly.</li>
         <li>The classic Flourish minimalist slide: one coherent, high-res, full-bleed image per slide, plus an optional short headline.</li>
       </ul>
+      <div class="slide-pair">
+        <div class="slide-example"><img src="/images/slide-guide/slide-05.png" alt="Minimalist slide: headline plus full-bleed image of paint splotches" loading="lazy" /></div>
+        <div class="slide-example"><img src="/images/slide-guide/slide-09.png" alt="Minimalist slide: full-bleed image only, no text" loading="lazy" /></div>
+      </div>
+      <div class="slide-caption">Left: headline plus image. Right: image alone. Both work.</div>
     </section>
 
     <section>
@@ -141,6 +168,12 @@ import '@fontsource/newsreader/500-italic.css';
         <li>Clip art. It&rsquo;s not 1996; we&rsquo;re off Windows 95.</li>
         <li>Background clash &mdash; images that drag their own box of background onto your white slide. Strip it with PowerPoint&rsquo;s built-in Remove Background, though a full-bleed image sidesteps the problem entirely.</li>
       </ul>
+      <div class="slide-pair">
+        <div class="slide-example"><img src="/images/slide-guide/slide-08.png" alt="Bad example: a collage of disconnected stock images" loading="lazy" /></div>
+        <div class="slide-example"><img src="/images/slide-guide/slide-11.png" alt="Bad example: clip art icons" loading="lazy" /></div>
+      </div>
+      <div class="slide-example"><img src="/images/slide-guide/slide-12.png" alt="Bad example: images with clashing backgrounds on a slide" loading="lazy" /></div>
+      <div class="slide-caption">Background clash &mdash; each image drags its own rectangle onto the slide.</div>
     </section>
 
     <section>
@@ -152,15 +185,22 @@ import '@fontsource/newsreader/500-italic.css';
         <li>Watch for AI &ldquo;slop&rdquo; creeping onto the stock sites. Filter for uploads before ~2024, or use a site&rsquo;s exclude-AI filter where it has one.</li>
         <li>Stuck for an idea? Search a broad word and scroll through the results to inspire a narrower search.</li>
       </ul>
+      <div class="slide-trio"><div class="slide-example"><img src="/images/slide-guide/slide-17.png" alt="Posed smiling group - stock photo cliche" loading="lazy" /><span class="slide-label bad">Avoid</span></div><div class="slide-example"><img src="/images/slide-guide/slide-19.png" alt="Woman painting, face visible but mid-activity" loading="lazy" /><span class="slide-label better">Better</span></div><div class="slide-example"><img src="/images/slide-guide/slide-20.png" alt="Just the hand and paintbrush - no face" loading="lazy" /><span class="slide-label best">Best</span></div></div>
+      <div class="slide-caption">Posed smiles read as fake. A face mid-activity is better. No face at all is best.</div>
     </section>
 
     <section>
       <h2><span class="rn">v</span> Where AI helps, and where it doesn&rsquo;t</h2>
       <ul>
-        <li>Don&rsquo;t let it build the deck. Today&rsquo;s tools produce well-executed versions of bad slides &mdash; polished, but riddled with bullets.</li>
+        <li>Don&rsquo;t let it build the deck. Today&rsquo;s tools produce well-executed versions of bad slides: polished, but riddled with bullets.</li>
         <li>Do use it to brainstorm images: ask for 20 concepts at once. Most are useless; one usually sparks something.</li>
         <li>Do use it for one specific image you can&rsquo;t find in stock. If the resolution isn&rsquo;t high enough for full-bleed, request the image on a flat white background you can easily remove in PowerPoint.</li>
       </ul>
+      <div class="slide-pair">
+        <div class="slide-example"><img src="/images/slide-guide/slide-22.png" alt="Screenshot of ChatGPT being prompted to brainstorm an image concept" loading="lazy" /></div>
+        <div class="slide-example"><img src="/images/slide-guide/slide-23.png" alt="The resulting AI-generated image: a brain surrounded by construction scaffolding" loading="lazy" /></div>
+      </div>
+      <div class="slide-caption">When you can&rsquo;t find what you need in stock, describe the image you want and ask for it against a flat white background.</div>
     </section>
 
     <section>
@@ -171,6 +211,8 @@ import '@fontsource/newsreader/500-italic.css';
         <li>One font is best; two at most.</li>
         <li>Use icons as visual bullet points (The Noun Project, about $2 each).</li>
       </ul>
+      <div class="slide-example"><img src="/images/slide-guide/slide-24.png" alt="Icons from The Noun Project used as visual bullet points on a slide" loading="lazy" /></div>
+      <div class="slide-caption">Icons as bullet points: cleaner than text bullets, and just a couple dollars each on The Noun Project.</div>
     </section>
 
     <section>
@@ -180,7 +222,7 @@ import '@fontsource/newsreader/500-italic.css';
         <li>Stuck with a firm template? Make the image as big as you can on one side, text clean on the other.</li>
         <li>The advanced hack: instead of a bulleted list on one slide, give each point its own full-bleed image and headline.</li>
         <li>Animation: fades only, revealing points one at a time so no one reads ahead. Anything fancier is corny.</li>
-        <li>Video and sound: don&rsquo;t &mdash; it&rsquo;s an IT headache and your slides don&rsquo;t need it.</li>
+        <li>Video and sound: don&rsquo;t. It&rsquo;s an IT headache, and your slides don&rsquo;t need it.</li>
       </ul>
     </section>
 
