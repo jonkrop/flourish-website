@@ -16,7 +16,10 @@ sections:
     collapsed: false
     items:
       - name: Open the Midlevel Toolkit
-        description: "Your AI-powered companion for the frameworks in this program: draft a capacity-protecting reply to a partner (Yes And), TRIP-ify an ask to a junior, rehearse a tough conversation, and more. Nothing you type is stored or visible to your firm."
+        description: "Your AI-powered companion for the frameworks in this program:
+          draft a capacity-protecting reply to a partner (Yes And), TRIP-ify an
+          ask to a junior, rehearse a tough conversation, and more. Nothing you
+          type is stored or visible to your firm."
         type: link
         url: https://midlevel-toolkit.pages.dev/
   - title: Cheat Sheets
@@ -52,6 +55,12 @@ sections:
       - type: pdf
         name: Paced Breathing
         url: /uploads/Flourish-Paced-Breathing.pdf
+      - type: pdf
+        name: The Yes And
+        url: /uploads/260713_flourish_theyesand.pdf
+      - type: pdf
+        name: The Capacity Check-In
+        url: /uploads/260713_flourish_capacitycheckin.pdf
   - title: Videos
     collapsed: true
     items:
