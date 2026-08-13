@@ -28,7 +28,7 @@ sections:
         type: pdf
         url: /uploads/Flourish-Emotional-Regulation.pdf
   - title: Psychological Techniques
-    collapsed: false
+    collapsed: true
     items:
       - name: Deconstructing Anxiety
         type: pdf
