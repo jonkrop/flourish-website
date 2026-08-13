@@ -5,6 +5,7 @@ topics:
   - inner-art-of-collaboration
   - self-care-in-30-seconds
   - defeating-digital-distractions
+  - inner-art-of-collaboration-dykema
 presenters:
   - topic: self-care-in-30-seconds
     speakers:
