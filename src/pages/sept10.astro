@@ -1,0 +1,201 @@
+---
+import '@fontsource-variable/outfit';
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/600.css';
+import '@fontsource/newsreader/400-italic.css';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Webinar: Getting Partners to Actually Show Up for Programming | Flourish</title>
+  <meta name="description" content="Join Jon Krop, Manar Morales, and Aisha Greene for a free webinar on getting partners genuinely engaged in development programming. Thursday, September 10 at 3 PM ET." />
+  <link rel="icon" href="/images/lotus.png" />
+  <style is:global>
+    :root {
+      --paper: #FEFCFA;
+      --ink: #12322F;
+      --body: #2B403A;
+      --dim: #4A5F58;
+      --orange: #F05D23;
+      --sage: #E8F0ED;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Outfit Variable", "Outfit", system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--sans); color: var(--body); background: var(--sage); line-height: 1.6; min-height: 100vh; }
+    img { max-width: 100%; display: block; }
+
+    .page { max-width: 1080px; margin: 0 auto; padding: 32px 32px 48px; }
+
+    .logo-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .logo-bar img { height: 30px; }
+    .logo-bar span { font-size: 13px; color: var(--dim); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .top-line {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .badge { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); }
+    .top-line__sep { width: 2px; height: 16px; background: var(--orange); border-radius: 1px; }
+    .top-line__date { font-size: 16px; font-weight: 600; color: var(--ink); }
+    .top-line__time { font-size: 16px; font-weight: 600; color: var(--orange); }
+
+    h1 {
+      font-family: var(--sans); font-size: 42px; font-weight: 800;
+      line-height: 1.06; color: var(--ink); margin-bottom: 6px;
+    }
+    h1 em { font-family: var(--serif); font-weight: 600; font-style: italic; color: var(--orange); }
+    .sub { font-family: var(--serif); font-size: 19px; font-style: italic; color: var(--dim); margin-bottom: 20px; }
+
+    .hook { font-size: 16px; line-height: 1.7; color: var(--body); margin-bottom: 28px; max-width: 540px; }
+
+    /* Speakers - vertical layout, bigger photos */
+    .panelists { display: flex; gap: 20px; }
+    .pan { text-align: center; flex: 1; background: rgba(18,50,47,0.07); border-radius: 14px; padding: 24px 16px 20px; }
+    .pan__img {
+      width: 100px; height: 100px; border-radius: 50%; overflow: hidden;
+      border: 3px solid var(--orange); margin: 0 auto 10px;
+    }
+    .pan__img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .pan__name { font-size: 17px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .pan__org { font-size: 14px; color: var(--dim); line-height: 1.3; margin-top: 2px; }
+
+    /* Form card */
+    .form-card {
+      background: white; border-radius: 14px; padding: 32px 28px;
+      box-shadow: 0 2px 16px rgba(18,50,47,0.06);
+      position: sticky; top: 24px;
+    }
+    .form-card h2 { font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+    .form-card__sub {
+      font-size: 14px; color: var(--dim);
+      margin-bottom: 20px; padding-bottom: 16px;
+      border-bottom: 1px solid var(--sage);
+    }
+    .ff { margin-bottom: 14px; }
+    .ff label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .ff input {
+      width: 100%; padding: 11px 13px; font-family: var(--sans); font-size: 15px;
+      border: 1.5px solid #D0D9D4; border-radius: 6px; background: var(--paper); color: var(--ink);
+      transition: border-color 0.15s;
+    }
+    .ff input:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(240,93,35,0.08); }
+    .ff input::placeholder { color: #A8B5AE; }
+    .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .fbtn {
+      width: 100%; padding: 13px; font-family: var(--sans); font-size: 16px; font-weight: 700;
+      color: white; background: var(--orange); border: none; border-radius: 8px;
+      cursor: pointer; transition: background 0.15s; margin-top: 6px;
+    }
+    .fbtn:hover { background: #d44f1a; }
+    .fnote { font-size: 13px; color: var(--dim); text-align: center; margin-top: 10px; }
+
+    .form-success { display: none; text-align: center; padding: 20px 0; }
+    .form-success h3 { font-size: 20px; color: var(--ink); margin-bottom: 6px; }
+    .form-success p { font-size: 14px; color: var(--dim); }
+
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; gap: 28px; }
+      h1 { font-size: 32px; }
+      .panelists { gap: 16px; }
+      .pan__img { width: 80px; height: 80px; }
+      .fr { grid-template-columns: 1fr; }
+      .form-card { position: static; }
+      .logo-bar span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="logo-bar">
+      <a href="https://teamflourish.com"><img src="/images/logo-orange-alt.png" alt="Flourish" /></a>
+      <span>In partnership with the Diversity & Flexibility Alliance</span>
+    </div>
+
+    <div class="grid">
+      <div>
+        <div class="top-line">
+          <span class="badge">Free Webinar</span>
+          <span class="top-line__sep"></span>
+          <span class="top-line__date">Thursday, Sept. 10</span>
+          <span class="top-line__sep"></span>
+          <span class="top-line__time">3:00 PM ET</span>
+        </div>
+
+        <h1>Getting Partners to <em>Actually</em><br>Show Up for Programming</h1>
+        <p class="sub">and Making It Worth Their Time</p>
+
+        <p class="hook">You design a valuable program, get the logistics right - and the partners just skip it. Or show up checked out.</p>
+        <p class="hook" style="margin-top: -16px;">Three people who've worked this problem across dozens of firms share what actually moves the needle.</p>
+
+        <div class="panelists">
+          <div class="pan">
+            <div class="pan__img"><img src="/images/webinar-sept10/jon-krop.png" alt="Jon Krop" /></div>
+            <div class="pan__name">Jon Krop</div>
+            <div class="pan__org">Flourish Legal Well-Being</div>
+          </div>
+          <div class="pan">
+            <div class="pan__img"><img src="/images/webinar-sept10/manar-morales.jpeg" alt="Manar Morales" style="object-position:center 20%" /></div>
+            <div class="pan__name">Manar Morales</div>
+            <div class="pan__org">Diversity & Flexibility Alliance</div>
+          </div>
+          <div class="pan">
+            <div class="pan__img"><img src="/images/webinar-sept10/aisha-greene.jpg" alt="Aisha Greene" /></div>
+            <div class="pan__name">Aisha Greene</div>
+            <div class="pan__org">Hogan Lovells Cadwalader</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>Reserve Your Spot</h2>
+        <div class="form-card__sub">Free &middot; 45 min &middot; Live panel + Q&A</div>
+        <form id="reg-form" name="webinar-sept10" method="POST" data-netlify="true">
+          <div class="fr">
+            <div class="ff"><label for="first">First Name</label><input type="text" id="first" name="first_name" required placeholder="First" /></div>
+            <div class="ff"><label for="last">Last Name</label><input type="text" id="last" name="last_name" required placeholder="Last" /></div>
+          </div>
+          <div class="ff"><label for="email">Work Email</label><input type="email" id="email" name="email" required placeholder="you@firm.com" /></div>
+          <div class="ff"><label for="company">Firm / Organization</label><input type="text" id="company" name="company" placeholder="Your firm or organization" /></div>
+          <button type="submit" class="fbtn">Register Free</button>
+          <p class="fnote">You'll get a Zoom link and calendar invite by email.</p>
+        </form>
+        <div class="form-success" id="success">
+          <h3>You're registered!</h3>
+          <p>Check your email for the Zoom link and calendar invite.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('reg-form');
+    const success = document.getElementById('success');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.fbtn');
+      btn.textContent = 'Registering...'; btn.disabled = true;
+      const data = new FormData(form);
+      try {
+        await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
+        await fetch('/api/register-webinar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ first_name: data.get('first_name'), last_name: data.get('last_name'), email: data.get('email'), company: data.get('company') }) }).catch(() => {});
+        form.style.display = 'none'; success.style.display = 'block';
+      } catch { btn.textContent = 'Register Free'; btn.disabled = false; }
+    });
+  </script>
+</body>
+</html>
