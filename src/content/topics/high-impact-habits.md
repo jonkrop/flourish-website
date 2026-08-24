@@ -100,4 +100,10 @@ sections:
       - type: pdf
         url: /uploads/ward-et-al-brain-drain.pdf
         name: Ward et al - Brain Drain
+  - collapsed: false
+    items:
+      - type: link
+        url: https://www.americanbar.org/groups/lawyer_assistance/
+        name: Lawyer Assistance Resources
+    title: ABA's Commission on Lawyer Assistance Programs Website
 ---
