@@ -4,3 +4,8 @@
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/agame"
+  to = "https://agame-tool.pages.dev"
+  status = 301
