@@ -3,14 +3,9 @@ slug: high-impact-habits-stinson
 title: High-Impact Habits
 subtitle: Small Changes That Elevate Your Whole Day
 intro: >
-  Most of us move through our day on autopilot - grabbing our phones, jumping
-  into email, getting pulled in a dozen directions before we've even decided how
-  we want to show up. That sets a precedent: reactivity rather than intention.
-  Lawyers face disproportionately high rates of stress, burnout, and cognitive
-  fatigue, yet the daily habits that contribute to or mitigate these conditions
-  often go unexamined. Research confirms that reactive work patterns diminish
-  focus, impair decision-making, and erode the sustained attention essential to
-  competent legal practice. 
+  
+  Most of us move through our day on autopilot - grabbing our phones, jumping into email, getting pulled in a dozen directions before we've even decided how we want to show up. That sets a precedent: reactivity rather than intention. Lawyers face disproportionately high rates of stress, burnout, and cognitive fatigue, yet the daily habits that contribute to or mitigate these conditions often go unexamined. Research confirms that reactive work patterns diminish focus, impair decision-making, and erode the sustained attention essential to competent legal practice. 
+
 
 
   This program equips attorneys with evidence-based strategies designed to sustain cognitive performance, improve mental health, and support the ethical obligation of competence throughout the workday. Drawing on ancient wisdom, modern science, and a dash of 90s cartoon nostalgia, we explore high-impact, low-time-investment habits that legal professionals can integrate into existing routines.
