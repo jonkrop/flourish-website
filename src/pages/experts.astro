@@ -17,6 +17,7 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
         <a href="/#topics" class="header__link">Topics</a>
         <a href="/#how-it-works" class="header__link">How It Works</a>
         <a href="/experts" class="header__link header__link--active">Our Experts</a>
+        <a href="/what-clients-say" class="header__link">What Clients Say</a>
         <a href="/book" class="btn btn--primary">Book a Call</a>
       </nav>
       <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
@@ -32,6 +33,7 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
       <a href="/#topics" class="mobile-nav__link">Topics</a>
       <a href="/#how-it-works" class="mobile-nav__link">How It Works</a>
       <a href="/experts" class="mobile-nav__link">Our Experts</a>
+      <a href="/what-clients-say" class="mobile-nav__link">What Clients Say</a>
       <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
     </nav>
   </div>
@@ -158,6 +160,7 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
       </div>
       <div class="footer__links">
         <a href="/">Home</a>
+        <a href="/what-clients-say">What Clients Say</a>
         <a href="/book">Book a Call</a>
       </div>
       <div class="footer__legal text-sm text-muted">

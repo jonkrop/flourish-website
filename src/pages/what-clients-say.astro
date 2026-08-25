@@ -1,0 +1,866 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="What Clients Say - Flourish Legal Well-Being" description="What it's like to work with Flourish - from the partnership experience through delivery and impact. Hear from the people who hire us and the lawyers in the room.">
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/images/logo-orange-alt.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+      </a>
+      <nav class="header__nav">
+        <a href="/#topics" class="header__link">Topics</a>
+        <a href="/#how-it-works" class="header__link">How It Works</a>
+        <a href="/experts" class="header__link">Our Experts</a>
+        <a href="/what-clients-say" class="header__link header__link--active">What Clients Say</a>
+        <a href="/book" class="btn btn--primary">Book a Call</a>
+      </nav>
+      <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav__inner">
+      <a href="/#topics" class="mobile-nav__link">Topics</a>
+      <a href="/#how-it-works" class="mobile-nav__link">How It Works</a>
+      <a href="/experts" class="mobile-nav__link">Our Experts</a>
+      <a href="/what-clients-say" class="mobile-nav__link">What Clients Say</a>
+      <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
+    </nav>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero hero--short">
+    <div class="hero__bg">
+      <img src="/images/hero-foliage-light.webp" alt="" class="hero__bg-img" loading="eager" />
+    </div>
+    <div class="hero__border" aria-hidden="true"></div>
+    <div class="hero__fg" aria-hidden="true">
+      <img src="/images/foliage-overlay-light.webp" alt="" class="hero__bg-img" />
+    </div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">In Their Words</p>
+      <h1 class="hero__title hero__title--wide">
+        What clients <em class="accent">say.</em>
+      </h1>
+      <p class="hero__subtitle">
+        From the people who hire us - and the lawyers in the room.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="section stats-section">
+    <div class="container">
+      <div class="stats-cards reveal">
+        <div class="stats-card">
+          <span class="stats-card__number">9.8<span class="stats-card__of">/10</span></span>
+          <span class="stats-card__label">Avg. Client Rating</span>
+        </div>
+        <div class="stats-card">
+          <span class="stats-card__number">95<span class="stats-card__of">%</span></span>
+          <span class="stats-card__label">Of Participants Would Attend Again</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 1: THE PARTNERSHIP EXPERIENCE ===== -->
+  <section class="section wcs-section grain">
+    <div class="container">
+      <div class="wcs-section__header reveal">
+        <span class="wcs-section__number">01</span>
+        <h2>The partnership <em class="accent">experience.</em></h2>
+        <p class="wcs-section__desc text-muted">What it's like to work with us - from first conversation through delivery.</p>
+      </div>
+
+      <div class="wcs-grid">
+        <blockquote class="wcs-quote wcs-quote--featured reveal">
+          <p>"The speakers are all top-notch. The support leading up to the event is white glove with sample emails, which makes our job so much easier."</p>
+          <footer>
+            <span class="wcs-quote__name">Chief Human Resources Officer</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote wcs-quote--featured reveal reveal-delay-1">
+          <p>"It required minimal input and effort from my team but was very effective."</p>
+          <footer>
+            <span class="wcs-quote__name">Director of Professional Development & Training</span>
+            <span class="wcs-quote__firm">Am Law 50 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal">
+          <p>"You made it very easy for us, down to a script for messaging."</p>
+          <footer>
+            <span class="wcs-quote__name">Chief Talent Officer</span>
+            <span class="wcs-quote__firm">Am Law 100 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal reveal-delay-1">
+          <p>"The high caliber of programming, the flawless level of professionalism, and the ability to bring multiple programs to our firm has been worth the investment. The breadth of subject matter and the experts to deliver is unmatched."</p>
+          <footer>
+            <span class="wcs-quote__name">Sr. Manager, Attorney Career Development</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal">
+          <p>"I appreciated the team's willingness to talk to us about the program, help understand how to tailor to the audience, and walking through the important topics that would be covered during the session. I also loved the additional resources that the Flourish team provided, including helpful one-pagers."</p>
+          <footer>
+            <span class="wcs-quote__name">Professional Development Manager</span>
+            <span class="wcs-quote__firm">Am Law 50 Firm</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline pull quote -->
+  <div class="pull-quote pull-quote--dark reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"Months later, I'm still hearing from lawyers and staff about how much they loved the program."</p>
+        <footer><span class="text-muted">Jennifer Mencarini, Director of Cultural Engagement,</span> Fox Rothschild</footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 2: LEGAL EXPERTISE & CREDIBILITY ===== -->
+  <section class="section wcs-section">
+    <div class="container">
+      <div class="wcs-section__header reveal">
+        <span class="wcs-section__number">02</span>
+        <h2>Legal expertise & <em class="accent">credibility.</em></h2>
+        <p class="wcs-section__desc text-muted">Why it matters that our team has lived the life your lawyers live.</p>
+      </div>
+
+      <div class="wcs-grid">
+        <blockquote class="wcs-quote wcs-quote--featured reveal">
+          <p>"I've been doing programming for law firms for 25 years, and Jon soared to the top of my list of excellent presenters."</p>
+          <footer>
+            <span class="wcs-quote__name">Professional Development Director</span>
+            <span class="wcs-quote__firm">Am Law 50 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal reveal-delay-1">
+          <p>"You get it. You've worked in law firms yourself, you're working with law firms, you understand the different dynamics that we're operating within. And it just makes everything go so much more smoothly and be so much more impactful for our audience at the end of the day when that foundation is there."</p>
+          <footer>
+            <span class="wcs-quote__name">Director of Well-Being</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline pull quote -->
+  <div class="pull-quote reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"Completely engaging, on point, and quite entertaining."</p>
+        <footer><span class="text-muted">Adrian Rae Leipsic, Partner,</span> Cleary Gottlieb</footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: OUR PRESENTERS ===== -->
+  <section class="section wcs-section grain">
+    <div class="container">
+      <div class="wcs-section__header reveal">
+        <span class="wcs-section__number">03</span>
+        <h2>Our <em class="accent">presenters.</em></h2>
+      </div>
+
+      <div class="wcs-grid">
+        <blockquote class="wcs-quote wcs-quote--featured reveal">
+          <p>"Jon is extremely good at immediately building rapport with biglaw associates, which makes the entire program more credible and valuable."</p>
+          <footer>
+            <span class="wcs-quote__name">Associate</span>
+            <span class="wcs-quote__firm">Am Law 100 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote wcs-quote--featured reveal reveal-delay-1">
+          <p>"Taylor handled the subject matter in a really gentle and kind way, without judgment. I've been sober for almost 23 years and this was one of the better substance abuse CLEs I've attended."</p>
+          <footer>
+            <span class="wcs-quote__name">Associate</span>
+            <span class="wcs-quote__firm">Am Law 50 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal">
+          <p>"Jon was excellent and engaging! It was helpful that he had the context of what life is like at a big law firm. The quick tips to help with anxiety were practical and realistic."</p>
+          <footer>
+            <span class="wcs-quote__name">Associate</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal reveal-delay-1">
+          <p>"Taylor was amazing. She clearly has the expertise, and she came across as kind, which is key for people who might be struggling with substance abuse."</p>
+          <footer>
+            <span class="wcs-quote__name">Partner</span>
+            <span class="wcs-quote__firm">Am Law 50 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal">
+          <p>"Taylor was great. She was a really impressive presenter. Very natural, obviously had given a lot of forethought, but not so much forethought that it came across as inauthentic. She didn't shy away from talking about the way things really are, but didn't put it in a way that created any sort of tension. Can't say enough good things about her presentation style."</p>
+          <footer>
+            <span class="wcs-quote__name">Director of Wellness</span>
+            <span class="wcs-quote__firm">Am Law 20 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal reveal-delay-1">
+          <p>"Monica was a great presenter. She was engaging, shared practical tips, and did a nice job asking questions of the group. We will definitely be booking another event with her."</p>
+          <footer>
+            <span class="wcs-quote__name">HR Manager</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inline pull quote -->
+  <div class="pull-quote pull-quote--dark reveal">
+    <div class="container">
+      <blockquote class="pull-quote__inner">
+        <p>"The content is excellent, and the Flourish team is at the forefront of some of the most challenging topics that associates have to navigate."</p>
+        <footer><span class="text-muted">Professional Development Manager,</span> Am Law 50 Firm</footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: PROGRAM QUALITY & IMPACT ===== -->
+  <section class="section wcs-section">
+    <div class="container">
+      <div class="wcs-section__header reveal">
+        <span class="wcs-section__number">04</span>
+        <h2>Program quality & <em class="accent">impact.</em></h2>
+        <p class="wcs-section__desc text-muted">What participants and program administrators say about the content itself.</p>
+      </div>
+
+      <div class="wcs-grid">
+        <blockquote class="wcs-quote wcs-quote--featured reveal">
+          <p>"What stood out about your session was how different it felt: concise, practical, and immediately usable. There wasn't the usual filler that tends to make it hard to stay engaged."</p>
+          <footer>
+            <span class="wcs-quote__name">Partner</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote wcs-quote--featured reveal reveal-delay-1">
+          <p>"I thought it reflected a grounded understanding of attorneys and the pressures of the law firm environment, so the advice felt particularly actionable."</p>
+          <footer>
+            <span class="wcs-quote__name">Associate</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal">
+          <p>"This was a great session - maybe my favorite so far! Attendance was incredible, with 177 participants at one point and over 100 staying for the optional Q&A. Significantly, 99 attorneys joined, which is a huge success for us."</p>
+          <footer>
+            <span class="wcs-quote__name">Professional Development Director</span>
+            <span class="wcs-quote__firm">Am Law 50 Firm</span>
+          </footer>
+        </blockquote>
+        <blockquote class="wcs-quote reveal reveal-delay-1">
+          <p>"It was the most practical, real-world program on mental health I've ever attended. The speaker was excellent and the content both informative and useful."</p>
+          <footer>
+            <span class="wcs-quote__name">Business Professional</span>
+            <span class="wcs-quote__firm">Am Law 200 Firm</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="section cta-final">
+    <div class="container">
+      <div class="cta-final__inner cta-final__inner--centered reveal">
+        <h2>Ready to make well-being <em class="accent">effortless?</em></h2>
+        <p>Book a 30-minute discovery call. We'll listen, learn about your firm, and show you what's possible.</p>
+        <a href="/book" class="btn btn--primary">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/images/logo-orange-alt.png" alt="Flourish" width="140" height="37" />
+        <p class="text-sm text-muted">Well-being that works for law firms.</p>
+      </div>
+      <div class="footer__links">
+        <a href="/experts">Our Experts</a>
+        <a href="/book">Book a Call</a>
+      </div>
+      <div class="footer__legal text-sm text-muted">
+        &copy; {new Date().getFullYear()} Flourish Legal Well-Being. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  /* ===================================================================
+     HEADER (shared pattern)
+     =================================================================== */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    transition: background var(--transition-base), backdrop-filter var(--transition-base);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .header--scrolled {
+    background: rgba(9, 26, 24, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .header .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(3.5%, 1.5rem);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .header__link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .header__link:hover {
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  .header__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .header__mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(9, 26, 24, 0.97);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-nav__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobile-nav__link {
+    font-size: var(--text-xl);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__mobile-toggle { display: flex; }
+  }
+
+  /* ===================================================================
+     HERO (shorter variant for inner pages)
+     =================================================================== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero--short {
+    min-height: 70vh;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero__bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 35% 45%, rgba(5, 5, 5, 0.5) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.05) 40%, rgba(5, 5, 5, 0.4) 100%);
+    z-index: 1;
+  }
+
+  .hero__border {
+    position: absolute;
+    top: 90px;
+    left: 3.5%;
+    right: 3.5%;
+    bottom: 5%;
+    border: 2px solid var(--orange);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero__fg {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    clip-path: polygon(5.5% 65%, 40% 65%, 40% 100%, 5.5% 100%);
+  }
+
+  .hero .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-left: max(7.5%, 4rem);
+    padding-right: max(7.5%, 4rem);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 4;
+    padding-top: 8rem;
+    padding-bottom: max(7%, 4.5rem);
+  }
+
+  .hero__eyebrow {
+    font-size: var(--text-base);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-md);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+    max-width: clamp(16ch, 45vw, 22ch);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero__title--wide {
+    max-width: clamp(16ch, 50vw, 28ch);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===================================================================
+     STATS CARDS
+     =================================================================== */
+  .stats-section {
+    padding-block: var(--space-xl);
+    background: var(--dark);
+  }
+
+  .stats-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .stats-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--space-lg) var(--space-md);
+    background: rgba(18, 50, 47, 0.3);
+    border-top: 2px solid var(--orange);
+  }
+
+  .stats-card__number {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+    font-weight: 500;
+    color: var(--orange);
+    line-height: 1;
+  }
+
+  .stats-card__of {
+    font-size: 0.4em;
+  }
+
+  .stats-card__label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .stats-cards {
+      flex-direction: column;
+      max-width: 240px;
+    }
+  }
+
+  /* ===================================================================
+     TESTIMONIAL SECTIONS
+     =================================================================== */
+  .wcs-section {
+    padding-block: var(--space-xl);
+  }
+
+  .wcs-section:nth-child(odd) {
+    background:
+      radial-gradient(ellipse 60% 40% at 30% 70%, rgba(18, 50, 47, 0.3) 0%, transparent 60%),
+      var(--dark);
+  }
+
+  .wcs-section__header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .wcs-section__number {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--orange);
+    margin-bottom: var(--space-sm);
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  .wcs-section__desc {
+    margin-top: var(--space-sm);
+    font-size: var(--text-lg);
+    max-width: 55ch;
+  }
+
+  /* Quote grid */
+  .wcs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .wcs-quote {
+    background: rgba(18, 50, 47, 0.3);
+    padding: var(--space-lg);
+    border-top: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: background var(--transition-base);
+  }
+
+  .wcs-quote:hover {
+    background: rgba(18, 50, 47, 0.45);
+  }
+
+  .wcs-quote--featured {
+    border-top-color: var(--orange);
+  }
+
+  .wcs-quote p {
+    font-family: 'Outfit Variable', 'Outfit', sans-serif;
+    font-size: var(--text-lg);
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.6;
+    color: var(--cream);
+    max-width: 100%;
+  }
+
+  .wcs-quote footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .wcs-quote__name {
+    font-weight: 300;
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+  }
+
+  .wcs-quote__firm {
+    font-weight: 600;
+    font-size: var(--text-lg);
+    color: var(--cream);
+  }
+
+  @media (max-width: 768px) {
+    .wcs-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===================================================================
+     INLINE PULL QUOTES
+     =================================================================== */
+  .pull-quote {
+    padding: var(--space-lg) 0 var(--space-xl);
+    background: var(--dark);
+  }
+
+  .pull-quote--dark {
+    background: var(--green);
+  }
+
+  .pull-quote__inner {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .pull-quote__inner p {
+    font-family: 'Outfit Variable', 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    color: var(--cream);
+    max-width: 100%;
+    margin-bottom: var(--space-sm);
+  }
+
+  .pull-quote__inner footer {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  @media (max-width: 768px) {
+    .pull-quote {
+      padding: var(--space-lg) 0;
+    }
+
+    .pull-quote__inner footer {
+      line-height: 1.5;
+    }
+  }
+
+  /* ===================================================================
+     FINAL CTA (centered variant)
+     =================================================================== */
+  .cta-final {
+    background: var(--green);
+  }
+
+  .cta-final__inner--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .cta-final__inner--centered p {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    max-width: 50ch;
+  }
+
+  .cta-final__inner--centered .btn { margin-top: var(--space-sm); }
+
+  /* ===================================================================
+     FOOTER
+     =================================================================== */
+  .footer {
+    background: var(--dark);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .footer__brand img { height: 30px; width: auto; }
+
+  .footer__brand p {
+    font-size: var(--text-base);
+  }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer__links a {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover { color: var(--orange); }
+
+  .footer__legal {
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    width: 100%;
+    font-size: var(--text-base);
+  }
+
+  /* ===================================================================
+     MOBILE REFINEMENTS
+     =================================================================== */
+  @media (max-width: 768px) {
+    .hero__border {
+      top: 70px;
+      left: 3%;
+      right: 3%;
+      bottom: 3%;
+    }
+
+    .hero__fg {
+      display: none;
+    }
+
+    .hero .container {
+      padding-inline: max(5%, 1.5rem);
+    }
+
+    .hero__content {
+      padding-top: 5.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero__eyebrow {
+      display: none;
+    }
+
+    .hero__title {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.querySelector('.header__mobile-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    mobileNav.querySelectorAll('a[href^="#"], a[href^="/"]').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+      });
+    });
+  }
+
+  // Header scroll effect
+  const header = document.querySelector('.header');
+
+  function updateHeader() {
+    if (window.scrollY > 50) {
+      header?.classList.add('header--scrolled');
+    } else {
+      header?.classList.remove('header--scrolled');
+    }
+  }
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+</script>
