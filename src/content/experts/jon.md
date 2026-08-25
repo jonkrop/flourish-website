@@ -14,5 +14,9 @@ topicTags:
   - "Mental & Emotional Well-Being"
 quote: "Jon is extremely good at immediately building rapport with biglaw associates, which makes the entire program more credible and valuable. 5/5."
 quoteAttribution: "Associate, AmLaw 100 Firm"
+videos:
+  - file: "jon-trip-excerpt.mp4"
+    title: "Making a Difficult Ask"
+    duration: "2:05"
 order: 1
 ---

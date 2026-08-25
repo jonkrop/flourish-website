@@ -101,6 +101,22 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
                         <footer>{expert.data.quoteAttribution}</footer>
                       </blockquote>
                     )}
+                    {expert.data.videos && expert.data.videos.length > 0 && (
+                      <div class="expert-detail__videos">
+                        <p class="expert-detail__videos-label">Watch <em class="accent">in action</em></p>
+                        <div class="expert-detail__video-grid" data-count={expert.data.videos.length}>
+                          {expert.data.videos.map((v) => (
+                            <div class="expert-detail__video">
+                              <video controls preload="metadata" src={`/media/excerpts/${v.file}${v.poster ? `#t=${v.poster}` : ''}`}></video>
+                              <div class="expert-detail__video-meta">
+                                <span class="expert-detail__video-title">{v.title}</span>
+                                <span class="expert-detail__video-duration">{v.duration}</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <button class="expert-detail__close" aria-label="Close details">&times;</button>
                 </div>
@@ -516,7 +532,7 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
     }
     to {
       opacity: 1;
-      max-height: 600px;
+      max-height: 1600px; /* must exceed the tallest panel (videos included) or content clips */
       padding: var(--space-xl);
     }
   }
@@ -629,9 +645,9 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
   }
 
   .expert-detail__quote p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 500;
+    font-family: 'Outfit Variable', 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--cream);
@@ -642,6 +658,61 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
     font-size: var(--text-sm);
     color: var(--cream);
     opacity: 0.7;
+  }
+
+  .expert-detail__videos {
+    margin-top: var(--space-md);
+  }
+
+  .expert-detail__videos-label {
+    font-size: var(--text-md);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+  }
+
+  .expert-detail__video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .expert-detail__video-grid[data-count="1"] {
+    grid-template-columns: minmax(0, 420px);
+  }
+
+  .expert-detail__video {
+    background: rgba(18, 50, 47, 0.35);
+    border: 1px solid rgba(245, 240, 234, 0.08);
+    border-radius: 8px;
+    padding: 0.6rem;
+  }
+
+  .expert-detail__video video {
+    width: 100%;
+    border-radius: 5px;
+    background: #000;
+    display: block;
+  }
+
+  .expert-detail__video-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-top: 0.55rem;
+  }
+
+  .expert-detail__video-title {
+    font-size: var(--text-sm);
+    font-weight: 500;
+  }
+
+  .expert-detail__video-duration {
+    font-size: var(--text-sm);
+    color: var(--cream);
+    opacity: 0.6;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
 
   .expert-detail__close {
@@ -680,9 +751,9 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
   }
 
   .pull-quote__inner p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 500;
+    font-family: 'Outfit Variable', 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
     font-size: var(--text-xl);
     line-height: 1.6;
     color: var(--cream);
@@ -855,6 +926,15 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
       justify-content: center;
     }
 
+    .expert-detail__video-grid,
+    .expert-detail__video-grid[data-count="1"] {
+      grid-template-columns: 1fr;
+    }
+
+    .expert-detail__video-meta {
+      text-align: left;
+    }
+
     .expert-detail__quote {
       border-left: none;
       padding-left: 0;
@@ -883,7 +963,7 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
       }
       to {
         opacity: 1;
-        max-height: 900px;
+        max-height: 2800px; /* stacked mobile layout with videos runs tall */
         padding: var(--space-lg);
       }
     }
@@ -904,8 +984,9 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
 
       const isOpen = panel.classList.contains('open');
 
-      // Close all panels first
+      // Close all panels first (pausing any playing video)
       panels.forEach(p => {
+        p.querySelectorAll('video').forEach(v => v.pause());
         p.classList.remove('open');
         p.style.display = 'none';
         p.setAttribute('aria-hidden', 'true');
@@ -966,6 +1047,7 @@ const experts = (await getCollection('experts')).sort((a, b) => (a.data.order ??
       const expertId = panel.dataset.for;
       const card = document.querySelector(`.expert-card[data-expert="${expertId}"]`);
 
+      panel.querySelectorAll('video').forEach(v => v.pause());
       panel.classList.remove('open');
       panel.setAttribute('aria-hidden', 'true');
       if (card) {

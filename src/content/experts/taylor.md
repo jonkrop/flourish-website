@@ -14,7 +14,16 @@ credentials:
 topicTags:
   - "Mental & Emotional Well-Being"
   - "Substance Use"
-quote: "Taylor was amazing. She clearly has the expertise, but more so she came across as kind. 5/5."
-quoteAttribution: "Partner, AmLaw 50 Firm"
+quote: "Taylor handled the subject matter in a really gentle and kind way, without judgment. I've been sober for almost 23 years and this was one of the better substance abuse CLEs I've attended."
+quoteAttribution: "Associate, AmLaw 50 Firm"
+videos:
+  - file: "taylor-lawyers-paradox-excerpt.mp4"
+    title: "The Lawyer's Paradox"
+    duration: "1:24"
+    poster: 2
+  - file: "taylor-urge-surfing-excerpt.mp4"
+    title: "Urge Surfing - Live Guided Exercise"
+    duration: "3:25"
+    poster: 3
 order: 3
 ---

@@ -13,7 +13,14 @@ credentials:
 topicTags:
   - "Nutrition"
   - "Physical Well-Being"
-quote: "Monica was knowledgeable, engaging, and interactive. 5/5."
-quoteAttribution: "Associate, AmLaw 50 Firm"
+quote: "Monica was a great presenter. She was engaging, shared practical tips and did a nice job asking questions of the group. We will definitely be booking another event with her."
+quoteAttribution: "HR Manager, AmLaw 100 Firm"
+videos:
+  - file: "monica-dining-out-intro-excerpt.mp4"
+    title: "Eating Well in the Real World"
+    duration: "0:46"
+  - file: "monica-two-of-four-excerpt.mp4"
+    title: "The Two-of-Four Method"
+    duration: "1:32"
 order: 4
 ---

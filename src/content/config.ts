@@ -68,6 +68,12 @@ const experts = defineCollection({
     topicTags: z.array(z.string()),
     quote: z.string().optional(),
     quoteAttribution: z.string().optional(),
+    videos: z.array(z.object({
+      file: z.string(),
+      title: z.string(),
+      duration: z.string(),
+      poster: z.number().optional(),
+    })).optional(),
     order: z.number().default(99),
   }),
 });
