@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Unlisted page (noindex, not linked from navigation). Shared with prospects
+// in post-discovery follow-up emails - see sales/clip-index.md for the clip
+// catalog and the call-follow-up skill for how links get picked.
+const speakers = [
+  {
+    name: 'Jon Krop',
+    program: 'Inner Art of Collaboration',
+    clips: [
+      { id: 'making-a-difficult-ask', title: 'Making a Difficult Ask', duration: '2:05', file: 'jon-trip-excerpt.mp4' },
+    ],
+  },
+  {
+    name: 'Taylor Steffan',
+    program: 'Above the Influence',
+    clips: [
+      { id: 'when-success-masks-burnout', title: 'When Success Masks Burnout', duration: '0:46', file: 'taylor-high-performers-excerpt.mp4' },
+      { id: 'the-lawyers-paradox', title: "The Lawyer's Paradox", duration: '1:24', file: 'taylor-lawyers-paradox-excerpt.mp4' },
+      { id: 'urge-surfing', title: 'Urge Surfing - Live Guided Exercise', duration: '3:25', file: 'taylor-urge-surfing-excerpt.mp4', poster: 3 },
+    ],
+  },
+  {
+    name: 'Jessica Medina',
+    program: 'Financial Balance for Legal Professionals',
+    clips: [
+      { id: 'lawyers-and-personal-finance', title: 'Lawyers and Personal Finance', duration: '1:00', file: 'jessica-personal-story-excerpt.mp4' },
+      { id: 'needs-wants-and-shoulds', title: 'Needs, Wants, and Shoulds', duration: '1:02', file: 'jessica-balanced-budget-excerpt.mp4' },
+    ],
+  },
+  {
+    name: 'Monica Auslander Moreno',
+    program: 'Healthy Eating for Busy People',
+    clips: [
+      { id: 'eating-well-in-the-real-world', title: 'Eating Well in the Real World', duration: '0:46', file: 'monica-dining-out-intro-excerpt.mp4' },
+      { id: 'the-two-of-four-method', title: 'The Two-of-Four Method', duration: '1:32', file: 'monica-two-of-four-excerpt.mp4' },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Video Excerpts - Flourish Legal Well-Being" noindex={true}>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/images/logo-orange-alt.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+      </a>
+      <nav class="header__nav">
+        <a href="/book" class="btn btn--primary">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== EXCERPTS ===== -->
+  <section class="excerpts">
+    <div class="excerpts__intro reveal">
+      <h1>See it <em class="accent">in action.</em></h1>
+      <p class="excerpts__sub">Short excerpts from real Flourish workshops.</p>
+    </div>
+
+    <div class="excerpts__body">
+      {speakers.map((speaker) => (
+        <div class="speaker reveal">
+          <div class="speaker__head">
+            <h2 class="speaker__name">{speaker.name}</h2>
+            <span class="speaker__rule"></span>
+            <span class="speaker__program">{speaker.program}</span>
+          </div>
+          <div class="speaker__clips" data-count={speaker.clips.length}>
+            {speaker.clips.map((clip) => (
+              <div class="clip" id={clip.id}>
+                <video controls preload="metadata" src={`/media/excerpts/${clip.file}${clip.poster ? `#t=${clip.poster}` : ''}`}></video>
+                <div class="clip__meta">
+                  <span class="clip__title">{clip.title}</span>
+                  <span class="clip__duration">{clip.duration}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="excerpts__cta reveal">
+      <p>Want to see what this looks like at your firm?</p>
+      <a href="/book" class="btn btn--primary">Book a Call</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="/images/logo-orange-alt.png" alt="Flourish" width="140" height="37" />
+      <div class="footer__legal text-sm text-muted">
+        &copy; {new Date().getFullYear()} Flourish Legal Well-Being. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    background: rgba(9, 26, 24, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .header .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(3.5%, 1.5rem);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .excerpts {
+    padding-top: calc(70px + var(--space-lg));
+    padding-bottom: var(--space-xl);
+    background:
+      radial-gradient(ellipse 50% 40% at 50% 10%, rgba(22, 80, 60, 0.18) 0%, transparent 70%),
+      var(--dark);
+    min-height: 100vh;
+  }
+
+  .excerpts__intro {
+    text-align: center;
+    padding-inline: var(--gutter);
+    margin-bottom: var(--space-xl);
+  }
+
+  .excerpts__intro h1 {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+  }
+
+  .excerpts__sub {
+    margin-top: 0.75rem;
+    margin-inline: auto;
+    color: var(--text-muted);
+    font-size: var(--text-md);
+  }
+
+  .excerpts__body {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .speaker {
+    margin-bottom: var(--space-xl);
+  }
+
+  .speaker__head {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .speaker__name {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    white-space: nowrap;
+  }
+
+  .speaker__rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(245, 240, 234, 0.12);
+  }
+
+  .speaker__program {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--orange);
+    font-size: var(--text-base);
+    white-space: nowrap;
+  }
+
+  .speaker__clips {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .speaker__clips[data-count="1"] {
+    grid-template-columns: minmax(0, 640px);
+  }
+
+  .speaker__clips[data-count="3"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .clip {
+    background: rgba(18, 50, 47, 0.35);
+    border: 1px solid rgba(245, 240, 234, 0.08);
+    border-radius: 8px;
+    padding: 0.9rem;
+    scroll-margin-top: 90px;
+    transition: border-color var(--transition-base);
+  }
+
+  .clip:hover {
+    border-color: rgba(240, 93, 35, 0.45);
+  }
+
+  .clip:target {
+    border-color: var(--orange);
+  }
+
+  .clip video {
+    width: 100%;
+    border-radius: 5px;
+    background: #000;
+    display: block;
+  }
+
+  .clip__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+
+  .clip__title {
+    font-weight: 500;
+    font-size: var(--text-base);
+  }
+
+  .clip__duration {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .excerpts__cta {
+    text-align: center;
+    margin-top: var(--space-xl);
+    padding-inline: var(--gutter);
+  }
+
+  .excerpts__cta p {
+    font-size: var(--text-md);
+    margin-bottom: var(--space-sm);
+    margin-inline: auto;
+  }
+
+  .footer {
+    background: var(--dark);
+    padding: var(--space-lg) 0;
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__inner img { height: 30px; width: auto; }
+
+  @media (max-width: 900px) {
+    .speaker__clips,
+    .speaker__clips[data-count="3"] {
+      grid-template-columns: 1fr;
+    }
+
+    .speaker__head {
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+
+    .speaker__rule { display: none; }
+  }
+</style>
