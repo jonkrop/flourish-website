@@ -1,0 +1,554 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Well-Being in Law Starter Kit - Flourish Legal Well-Being"
+  description="A free 30-page starter kit for launching a well-being initiative at your law firm. 7-step implementation guide, checklists, and sample handouts."
+>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/images/logo-orange-alt.png" alt="Flourish Legal Well-Being" width="180" height="48" />
+      </a>
+      <nav class="header__nav">
+        <a href="/experts" class="header__link">Our Experts</a>
+        <a href="/what-clients-say" class="header__link">What Clients Say</a>
+        <a href="/book" class="btn btn--primary">Book a Call</a>
+      </nav>
+      <button class="header__mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" aria-hidden="true">
+    <nav class="mobile-nav__inner">
+      <a href="/experts" class="mobile-nav__link">Our Experts</a>
+      <a href="/what-clients-say" class="mobile-nav__link">What Clients Say</a>
+      <a href="/book" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Call</a>
+    </nav>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">FREE DOWNLOAD</p>
+        <h1 class="hero__title">The Well-Being in Law <span class="accent">Starter Kit</span></h1>
+        <p class="hero__subtitle">You've been handed the job of launching a well-being initiative. This 30-page kit gives you the strategy, the checklists, and the tools to do it well.</p>
+
+        <!-- Email capture form (Netlify Forms) -->
+        <form
+          class="hero__form"
+          name="starter-kit"
+          method="POST"
+          data-netlify="true"
+          action="/starter-kit-thank-you"
+        >
+          <input type="hidden" name="form-name" value="starter-kit" />
+          <div class="hero__form-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your work email"
+              required
+              class="hero__input"
+            />
+            <button type="submit" class="btn btn--primary hero__submit">Get the Kit</button>
+          </div>
+        </form>
+
+        <p class="hero__trust text-sm text-muted">From the team trusted by more than half the Am Law 100.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT'S INSIDE ===== -->
+  <section class="inside section">
+    <div class="container">
+      <h2 class="inside__heading reveal">What's <span class="accent">inside</span></h2>
+      <hr class="divider reveal" />
+
+      <div class="inside__grid">
+
+        <div class="inside__card reveal reveal-delay-1">
+          <div class="inside__number">01</div>
+          <h3 class="inside__card-title">The Guide</h3>
+          <p class="inside__card-body">A 7-step playbook for building a well-being initiative that actually sticks, drawn from interviews with well-being leaders at Am Law firms.</p>
+        </div>
+
+        <div class="inside__card reveal reveal-delay-2">
+          <div class="inside__number">02</div>
+          <h3 class="inside__card-title">Quick-Reference Tools</h3>
+          <p class="inside__card-body">A one-page action checklist distilling all seven steps, plus a needs-assessment starter with survey and focus-group questions.</p>
+        </div>
+
+        <div class="inside__card reveal reveal-delay-3">
+          <div class="inside__number">03</div>
+          <h3 class="inside__card-title">Sample Handouts</h3>
+          <p class="inside__card-body">Three ready-to-distribute resources your people can use immediately: stress management, capacity check-ins, and saying no gracefully.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO IT'S FOR ===== -->
+  <section class="who section" style="background: var(--green);">
+    <div class="container who__inner">
+      <div class="who__text reveal">
+        <h2>Built for the person who has to <span class="accent">make it happen</span></h2>
+        <p>Whether you're in professional development, HR, or the well-being committee, this kit gives you a concrete starting point: what to prioritize, what to ask, and what to hand out on day one.</p>
+      </div>
+      <div class="who__cta reveal reveal-delay-1">
+        <form
+          class="who__form"
+          name="starter-kit-bottom"
+          method="POST"
+          data-netlify="true"
+          action="/starter-kit-thank-you"
+        >
+          <input type="hidden" name="form-name" value="starter-kit-bottom" />
+          <div class="hero__form-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your work email"
+              required
+              class="hero__input"
+            />
+            <button type="submit" class="btn btn--primary hero__submit">Get the Kit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOK CTA ===== -->
+  <section class="cta section">
+    <div class="container" style="text-align: center;">
+      <p class="reveal text-muted" style="margin-inline: auto;">Want help building your initiative?</p>
+      <h2 class="reveal" style="margin-bottom: var(--space-md);">Let's <span class="accent">talk</span></h2>
+      <a href="/book" class="btn btn--primary reveal reveal-delay-1">Book a Call</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="/images/logo-orange-alt.png" alt="Flourish" width="140" height="37" />
+        <p class="text-sm text-muted">Well-being that works for law firms.</p>
+      </div>
+      <div class="footer__links">
+        <a href="/">Home</a>
+        <a href="/experts">Our Experts</a>
+        <a href="/what-clients-say">What Clients Say</a>
+        <a href="/book">Book a Call</a>
+      </div>
+      <div class="footer__legal text-sm text-muted">
+        &copy; {new Date().getFullYear()} Flourish Legal Well-Being. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  /* ===================================================================
+     HEADER
+     =================================================================== */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 0;
+    transition: background var(--transition-base), backdrop-filter var(--transition-base);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .header--scrolled {
+    background: rgba(9, 26, 24, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .header .container {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: max(3.5%, 1.5rem);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo img {
+    height: 36px;
+    width: auto;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .header__link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .header__link:hover {
+    opacity: 1;
+    color: var(--orange);
+  }
+
+  .header__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .header__mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(9, 26, 24, 0.97);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-nav__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobile-nav__link {
+    font-size: var(--text-xl);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .header__nav { display: none; }
+    .header__mobile-toggle { display: flex; }
+  }
+
+  /* ===================================================================
+     HERO
+     =================================================================== */
+  .hero {
+    padding-top: calc(70px + var(--space-xl));
+    padding-bottom: var(--space-xl);
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 40%, rgba(22, 80, 60, 0.2) 0%, transparent 70%),
+      var(--dark);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__inner {
+    max-width: 700px;
+  }
+
+  .hero__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+    max-width: 55ch;
+  }
+
+  .hero__form {
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__form-row {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+  }
+
+  .hero__input {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    font-family: 'Outfit Variable', 'Outfit', sans-serif;
+    font-size: var(--text-base);
+    background: rgba(245, 240, 234, 0.08);
+    border: 1px solid rgba(245, 240, 234, 0.15);
+    border-right: none;
+    color: var(--cream);
+    outline: none;
+    transition: border-color var(--transition-fast);
+  }
+
+  .hero__input::placeholder {
+    color: rgba(245, 240, 234, 0.4);
+  }
+
+  .hero__input:focus {
+    border-color: var(--orange);
+  }
+
+  .hero__submit {
+    white-space: nowrap;
+    border-radius: 0;
+  }
+
+  .hero__trust {
+    max-width: 40ch;
+  }
+
+  /* ===================================================================
+     WHAT'S INSIDE
+     =================================================================== */
+  .inside {
+    background: var(--dark);
+  }
+
+  .inside__heading {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+  }
+
+  .inside__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+  }
+
+  .inside__card {
+    padding: var(--space-lg) var(--space-md);
+    border: 1px solid rgba(245, 240, 234, 0.06);
+    background: rgba(18, 50, 47, 0.3);
+    transition: border-color var(--transition-base);
+  }
+
+  .inside__card:hover {
+    border-color: rgba(240, 93, 35, 0.3);
+  }
+
+  .inside__number {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: var(--text-2xl);
+    color: var(--orange);
+    margin-bottom: var(--space-sm);
+  }
+
+  .inside__card-title {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    margin-bottom: var(--space-sm);
+  }
+
+  .inside__card-body {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+  }
+
+  /* ===================================================================
+     WHO IT'S FOR
+     =================================================================== */
+  .who__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .who__text h2 {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+    margin-bottom: var(--space-md);
+  }
+
+  .who__text p {
+    color: var(--text-muted);
+    margin-inline: auto;
+    max-width: 55ch;
+  }
+
+  .who__form .hero__form-row {
+    margin-inline: auto;
+  }
+
+  /* ===================================================================
+     BOOK CTA
+     =================================================================== */
+  .cta {
+    background: var(--dark);
+  }
+
+  .cta h2 {
+    font-size: var(--text-2xl);
+    font-weight: 300;
+  }
+
+  /* ===================================================================
+     FOOTER
+     =================================================================== */
+  .footer {
+    background: var(--dark);
+    padding: var(--space-xl) 0 var(--space-lg);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .footer__brand img { height: 30px; width: auto; }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer__links a {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover { color: var(--orange); }
+
+  .footer__legal {
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    width: 100%;
+    font-size: var(--text-base);
+  }
+
+  /* ===================================================================
+     RESPONSIVE
+     =================================================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: calc(60px + var(--space-lg));
+      min-height: auto;
+      padding-bottom: var(--space-lg);
+    }
+
+    .hero__form-row {
+      flex-direction: column;
+      max-width: 100%;
+    }
+
+    .hero__input {
+      border-right: 1px solid rgba(245, 240, 234, 0.15);
+      border-bottom: none;
+    }
+
+    .hero__submit {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .inside__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .who__form .hero__form-row {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.querySelector('.header__mobile-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    });
+  }
+
+  // Header scroll effect
+  const header = document.querySelector('.header');
+
+  function updateHeader() {
+    if (window.scrollY > 50) {
+      header?.classList.add('header--scrolled');
+    } else {
+      header?.classList.remove('header--scrolled');
+    }
+  }
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+</script>
