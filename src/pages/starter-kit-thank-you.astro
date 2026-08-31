@@ -2,10 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Book a Call - Flourish Legal Well-Being">
+<BaseLayout
+  title="Your Starter Kit - Flourish Legal Well-Being"
+  description="Download the Well-Being in Law Starter Kit."
+  noindex={true}
+>
 
   <!-- ===== HEADER / NAV ===== -->
-  <header class="header">
+  <header class="header header--scrolled">
     <div class="container header__inner">
       <a href="/" class="header__logo">
         <img src="/images/logo-orange-alt.png" alt="Flourish Legal Well-Being" width="180" height="48" />
@@ -31,16 +35,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </nav>
   </div>
 
-  <!-- ===== BOOKING SECTION ===== -->
-  <section class="booking">
-    <div class="booking__header reveal">
-      <h1 class="booking__title">Let's chat.</h1>
-    </div>
+  <!-- ===== DOWNLOAD SECTION ===== -->
+  <section class="download">
+    <div class="container download__inner">
+      <div class="download__check">&#10003;</div>
+      <h1 class="download__title">Your kit is <span class="accent">ready</span></h1>
+      <p class="download__body text-muted">Click below to download the Well-Being in Law Starter Kit.</p>
+      <a
+        href="/uploads/well-being-in-law-starter-kit.pdf"
+        class="btn btn--primary download__btn"
+        target="_blank"
+        rel="noopener"
+      >
+        Download the Kit (PDF)
+      </a>
 
-    <div class="booking__embed reveal reveal-delay-1">
-      <!-- Calendly inline widget -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/jonkrop/flourishfm?hide_gdpr_banner=1&hide_event_type_details=1&background_color=091a18&text_color=f5f0ea&primary_color=f04e23" style="min-width:320px;width:100%;height:700px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <hr class="divider" style="margin-inline: auto; margin-top: var(--space-xl);" />
+
+      <p class="download__next text-muted">Want help putting it into action?</p>
+      <a href="/book" class="btn btn--outline">Book a Call</a>
     </div>
   </section>
 
@@ -55,7 +68,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="/">Home</a>
         <a href="/experts">Our Experts</a>
         <a href="/what-clients-say">What Clients Say</a>
-        <a href="/starter-kit">Free Starter Kit</a>
       </div>
       <div class="footer__legal text-sm text-muted">
         &copy; {new Date().getFullYear()} Flourish Legal Well-Being. All rights reserved.
@@ -67,7 +79,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   /* ===================================================================
-     HEADER (always solid bg since no hero image)
+     HEADER
      =================================================================== */
   .header {
     position: fixed;
@@ -76,13 +88,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     right: 0;
     z-index: 100;
     padding: 1.25rem 0;
-    transition: background var(--transition-base), backdrop-filter var(--transition-base);
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-
-  .header--scrolled {
     background: rgba(9, 26, 24, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -180,42 +185,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   /* ===================================================================
-     BOOKING SECTION
+     DOWNLOAD SECTION
      =================================================================== */
-  .booking {
-    padding-top: calc(70px + var(--space-lg));
-    padding-bottom: var(--space-xl);
+  .download {
+    padding-top: calc(70px + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
     background:
-      radial-gradient(ellipse 50% 40% at 50% 20%, rgba(22, 80, 60, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 50% 30%, rgba(22, 80, 60, 0.2) 0%, transparent 70%),
       var(--dark);
     min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
 
-  .booking__header {
+  .download__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: var(--space-md);
-    padding-inline: var(--gutter);
+    gap: var(--space-md);
   }
 
-  .booking__title {
+  .download__check {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: var(--orange);
+    margin-bottom: var(--space-sm);
+  }
+
+  .download__title {
     font-size: var(--text-2xl);
     font-weight: 300;
   }
 
-  .booking__embed {
-    max-width: 1000px;
+  .download__body {
     margin-inline: auto;
-    padding-inline: var(--gutter);
   }
 
-  /* Override Calendly widget background to blend with our dark theme */
-  .calendly-inline-widget {
-    border-radius: 4px;
-    overflow: hidden;
+  .download__btn {
+    margin-top: var(--space-sm);
+    padding: 1.15rem 3rem;
+    font-size: var(--text-base);
+  }
+
+  .download__next {
+    margin-inline: auto;
+    margin-bottom: var(--space-xs);
   }
 
   /* ===================================================================
-     FOOTER (matches other pages)
+     FOOTER
      =================================================================== */
   .footer {
     background: var(--dark);
@@ -264,16 +289,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      RESPONSIVE
      =================================================================== */
   @media (max-width: 768px) {
-    .booking {
-      padding-top: calc(60px + var(--space-md));
-    }
-
-    .booking__embed {
-      padding-inline: 0;
-    }
-
-    .calendly-inline-widget {
-      height: 750px !important;
+    .download {
+      padding-top: calc(60px + var(--space-xl));
+      min-height: auto;
     }
   }
 </style>
@@ -290,18 +308,4 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       mobileNav.setAttribute('aria-hidden', String(!isOpen));
     });
   }
-
-  // Header scroll effect
-  const header = document.querySelector('.header');
-
-  function updateHeader() {
-    if (window.scrollY > 50) {
-      header?.classList.add('header--scrolled');
-    } else {
-      header?.classList.remove('header--scrolled');
-    }
-  }
-
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
 </script>
