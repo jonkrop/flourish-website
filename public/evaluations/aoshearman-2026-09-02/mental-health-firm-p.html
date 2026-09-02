@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How to Talk About Mental Health — Evaluation Results | Flourish Legal Well-Being</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --paper: #f7f4ee;
+    --ink: #22301f;
+    --ink-soft: #5c6656;
+    --leaf: #2e5d3b;
+    --leaf-bright: #3f7d50;
+    --leaf-wash: #e4ecdd;
+    --gold: #c9a227;
+    --hairline: #d9d3c5;
+    --card: #fffdf8;
+    --shadow: 0 1px 2px rgba(34,48,31,.05), 0 4px 14px rgba(34,48,31,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 8% -6%, #edf2e2 0%, transparent 42%),
+      radial-gradient(circle at 104% 24%, #f3eee1 0%, transparent 38%),
+      radial-gradient(circle at -4% 78%, #eef0e3 0%, transparent 30%);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.55;
+  }
+  header.masthead { text-align: center; margin-bottom: 26px; animation: rise .55s ease both; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--leaf-bright); }
+  h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(34px, 5.2vw, 52px); letter-spacing: -.015em; line-height: 1.08; margin: 10px auto 12px; max-width: 18ch; }
+  .sub { color: var(--ink-soft); font-size: 16.5px; }
+  .sub b { color: var(--ink); font-weight: 700; }
+  .rule { display: flex; align-items: center; gap: 12px; justify-content: center; margin: 22px 0 0; color: var(--gold); }
+  .rule::before, .rule::after { content: ''; height: 1px; width: 120px; background: linear-gradient(90deg, transparent, var(--hairline)); }
+  .rule::after { background: linear-gradient(90deg, var(--hairline), transparent); }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  footer { margin-top: 70px; color: var(--ink-soft); font-size: 12.5px; text-align: center; }
+  footer .rule { margin-bottom: 14px; }
+
+  main { max-width: 880px; margin: 0 auto; padding: 56px 28px 110px; }
+
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 700; color: var(--leaf); text-decoration: none; margin-bottom: 20px; transition: gap .15s ease; }
+  .back-link:hover { gap: 10px; }
+
+  nav.jump { position: sticky; top: 0; z-index: 5; display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
+    padding: 10px 8px; margin: 8px -8px 34px; border-radius: 0 0 14px 14px;
+    background: color-mix(in srgb, var(--paper) 82%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--hairline); animation: rise .55s .12s ease both; }
+  nav.jump a { text-decoration: none; color: var(--ink-soft); font-size: 13.5px; font-weight: 700; letter-spacing: .02em;
+    padding: 6px 13px; border-radius: 999px; transition: all .15s ease; }
+  nav.jump a:hover { color: var(--leaf); background: var(--leaf-wash); }
+
+  section { margin-bottom: 52px; scroll-margin-top: 70px; }
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+  h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; margin-bottom: 18px; display: flex; align-items: baseline; gap: 12px; }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+
+  .rating-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+  .rating-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 22px; box-shadow: var(--shadow);
+    transition: transform .18s ease, box-shadow .18s ease; }
+  .rating-card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(34,48,31,.06), 0 10px 26px rgba(34,48,31,.1); }
+  .rating-top { display: flex; align-items: baseline; gap: 10px; }
+  .big { font-family: 'Fraunces', serif; font-weight: 700; font-size: 44px; line-height: 1; }
+  .big .of { font-size: 17px; font-weight: 400; color: var(--ink-soft); }
+  .stars { position: relative; display: inline-block; color: #ddd6c4; font-size: 16px; letter-spacing: 2px; margin: 8px 0 2px; }
+  .stars .fill { position: absolute; top: 0; left: 0; white-space: nowrap; overflow: hidden; color: var(--gold); }
+  .rating-label { font-weight: 700; font-size: 15.5px; margin: 2px 0 12px; }
+  .dist { display: grid; grid-template-columns: 34px 1fr 26px; gap: 6px 8px; align-items: center; }
+  .dist .dl { font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
+  .dist .db { height: 8px; background: #ece7da; border-radius: 999px; overflow: hidden; }
+  .dist .db i { display: block; height: 100%; width: 0; background: var(--leaf-bright); border-radius: 999px; transition: width .7s cubic-bezier(.2,.7,.3,1); }
+  .dist .dn { font-size: 12px; color: var(--ink-soft); text-align: right; font-variant-numeric: tabular-nums; }
+
+  .expect-row { max-width: 520px; display: flex; flex-direction: column; gap: 14px; }
+  .expect-bar { display: grid; grid-template-columns: 90px 1fr 48px; align-items: center; gap: 12px; }
+  .expect-label { font-weight: 700; font-size: 14px; }
+  .expect-track { height: 12px; background: #ece7da; border-radius: 999px; overflow: hidden; }
+  .expect-fill { height: 100%; border-radius: 999px; width: 0; transition: width .7s cubic-bezier(.2,.7,.3,1); }
+  .expect-fill.exceeded { background: var(--leaf-bright); }
+  .expect-fill.met { background: var(--gold); }
+  .expect-fill.fell { background: #c47a5a; }
+  .expect-val { font-size: 14px; font-weight: 700; color: var(--ink-soft); text-align: right; font-variant-numeric: tabular-nums; }
+
+  .highlights-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .highlight-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 22px 28px; box-shadow: var(--shadow); text-align: center; }
+  .highlight-num { font-family: 'Fraunces', serif; font-weight: 700; font-size: 38px; line-height: 1.05; color: var(--leaf); }
+  .highlight-num .of { font-size: 16px; font-weight: 400; opacity: .75; }
+  .highlight-label { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin-top: 4px; color: var(--ink-soft); }
+
+  .quotes { column-width: 250px; column-gap: 14px; }
+  .quote { break-inside: avoid; page-break-inside: avoid; margin: 0 0 14px; background: var(--card); border: 1px solid var(--hairline);
+    border-radius: 12px; padding: 18px 18px 16px 20px; font-size: 15.5px; box-shadow: var(--shadow); position: relative; }
+  .quote::before { content: '\201C'; position: absolute; top: 2px; left: 8px; font-family: 'Fraunces', serif; font-size: 34px; line-height: 1;
+    color: var(--leaf-bright); opacity: .35; }
+  .quote p { position: relative; }
+
+  @media print {
+    @page { margin: 0; }
+    body { background: var(--paper) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    main { padding: 48px 44px 60px; max-width: none; }
+    nav.jump { display: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .dist .db i, .expect-fill { transition: none !important; }
+    .rating-row { page-break-inside: avoid; }
+    .quote { page-break-inside: avoid; }
+    .rating-card:hover { transform: none; }
+    .back-link { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a href="./" class="back-link">← All evaluations</a>
+  <header class="masthead">
+    <div class="kicker">Flourish Legal Well-Being · Evaluation Results</div>
+    <h1>How to Talk About Mental Health</h1>
+    <div class="sub"><b>Firm P</b> · 8 responses</div>
+    <div class="rule">❦</div>
+  </header>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#ratings">Ratings</a>
+    <a href="#expectations">Expectations</a>
+    <a href="#comments">Comments</a>
+  </nav>
+
+  <section id="ratings" class="reveal">
+    <h2>Ratings</h2>
+    <div class="rating-row">
+      <div class="rating-card">
+        <div class="rating-top"><div class="big">5<span class="of"> / 5</span></div></div>
+        <div class="stars">★★★★★<span class="fill" style="width:100%">★★★★★</span></div>
+        <div class="rating-label">Instructor</div>
+        <div class="dist">
+          <span class="dl">5 ★</span><span class="db"><i data-w="100%"></i></span><span class="dn">8</span>
+          <span class="dl">4 ★</span><span class="db"><i data-w="0%"></i></span><span class="dn">0</span>
+          <span class="dl">3 ★</span><span class="db"><i data-w="0%"></i></span><span class="dn">0</span>
+          <span class="dl">2 ★</span><span class="db"><i data-w="0%"></i></span><span class="dn">0</span>
+          <span class="dl">1 ★</span><span class="db"><i data-w="0%"></i></span><span class="dn">0</span>
+        </div>
+      </div>
+      <div class="rating-card">
+        <div class="rating-top"><div class="big">4.8<span class="of"> / 5</span></div></div>
+        <div class="stars">★★★★★<span class="fill" style="width:96%">★★★★★</span></div>
+        <div class="rating-label">Content</div>
+        <div class="dist">
+          <span class="dl">5 ★</span><span class="db"><i data-w="100%"></i></span><span class="dn">6</span>
+          <span class="dl">4 ★</span><span class="db"><i data-w="33%"></i></span><span class="dn">2</span>
+          <span class="dl">3 ★</span><span class="db"><i data-w="0%"></i></span><span class="dn">0</span>
+          <span class="dl">2 ★</span><span class="db"><i data-w="0%"></i></span><span class="dn">0</span>
+          <span class="dl">1 ★</span><span class="db"><i data-w="0%"></i></span><span class="dn">0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expectations" class="reveal">
+    <h2>Did the program meet expectations?</h2>
+    <div class="expect-row">
+      <div class="expect-bar">
+        <div class="expect-label">Exceeded</div>
+        <div class="expect-track"><div class="expect-fill exceeded" data-w="38%"></div></div>
+        <div class="expect-val">38%</div>
+      </div>
+      <div class="expect-bar">
+        <div class="expect-label">Met</div>
+        <div class="expect-track"><div class="expect-fill met" data-w="63%"></div></div>
+        <div class="expect-val">63%</div>
+      </div>
+      <div class="expect-bar">
+        <div class="expect-label">Fell short</div>
+        <div class="expect-track"><div class="expect-fill fell" data-w="0%"></div></div>
+        <div class="expect-val">0%</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Highlights</h2>
+    <div class="highlights-row">
+      <div class="highlight-card">
+        <div class="highlight-num">100<span class="of">%</span></div>
+        <div class="highlight-label">Learned something they'll use</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-num">100<span class="of">%</span></div>
+        <div class="highlight-label">Would attend again</div>
+      </div>
+    </div>
+  </section>
+  <section id="comments" class="reveal">
+    <h2>What attendees liked most</h2>
+    <div class="quotes">
+      <div class="quote"><p>I appreciated the presenting/identification of skills & signs, and then how to practice them (e.g., presenting signs and then tips for reviewing signs; breathing technique)</p></div>
+      <div class="quote"><p>The techniques to help with anxiety were very useful.</p></div>
+      <div class="quote"><p>Very informative and learned another breathing technique.</p></div>
+      <div class="quote"><p>The content and the way it was presented.  Everything</p></div>
+      <div class="quote"><p>practical approaches</p></div>
+      <div class="quote"><p>Breathing strategies, audience questions</p></div>
+      <div class="quote"><p>Tips to identify my own signs.</p></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Suggestions for improvement</h2>
+    <div class="quotes">
+      <div class="quote"><p>I think an additional program about what to do if someone approaches you in need of help would be helpful.</p></div>
+      <div class="quote"><p>Not sure, was pretty engaging as is.</p></div>
+      <div class="quote"><p>more examples of what to do when you're experiencing burnout- real success stories from attorneys</p></div>
+      <div class="quote"><p>add a few minutes for questions</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="rule">❦</div>
+    Flourish Legal Well-Being · Evaluation collected via post-program survey · 8 responses
+  </footer>
+</main>
+
+<script>
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fill = function(root) { root.querySelectorAll('.dist .db i, .expect-fill').forEach(function(el) { el.style.width = el.dataset.w; }); };
+  if (reduced || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function(s) { s.classList.add('in'); });
+    fill(document);
+  } else {
+    var io = new IntersectionObserver(function(entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (!entries[i].isIntersecting) continue;
+        entries[i].target.classList.add('in');
+        fill(entries[i].target);
+        io.unobserve(entries[i].target);
+      }
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(function(s) { io.observe(s); });
+  }
+  addEventListener('beforeprint', function() { document.querySelectorAll('.reveal').forEach(function(s) { s.classList.add('in'); }); fill(document); });
+</script>
+</body>
+</html>
