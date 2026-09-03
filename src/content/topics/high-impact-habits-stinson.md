@@ -52,7 +52,7 @@ sections:
         type: pdf
         url: /uploads/Flourish-Progressive-Muscle-Relaxation.pdf
   - collapsed: true
-    title: Articles
+    title: Supporting Materials - Articles
     items:
       - type: pdf
         url: /uploads/austin-durr-emotion-regulation-for-lawyers_-a-mind-is-a-challenging-thing-to.pdf
