@@ -1,6 +1,6 @@
 ---
-slug: peak-performance-under-pressure-partners
-title: Peak Performance Under Pressure
+slug: peak-performance-partners
+title: Partner Workshop
 subtitle: ""
 intro: "In high-stakes environments, the ability to stay sharp and lead
   effectively under pressure is more than just a personal asset: it’s what keeps
