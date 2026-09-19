@@ -39,7 +39,7 @@ a {
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  /* Core palette (original orange: #F04E23 / glow: #F47B4A) */
+  /* Core palette */
   --dark: #091A18;
   --green: #12322F;
   --green-mid: #1A4A46;
@@ -54,6 +54,37 @@ a {
   --text-muted: rgba(245, 240, 234, 0.7);
   --text-on-light: #091A18;
   --border-accent: #f05d23;
+
+  /* Surfaces - translucent greens over the two grounds */
+  --surface-card: rgba(18, 50, 47, 0.18);
+  --surface-card-hover: rgba(18, 50, 47, 0.3);
+  --surface-panel: rgba(18, 50, 47, 0.12);
+  --surface-panel-hover: rgba(18, 50, 47, 0.25);
+  --surface-tile: rgba(18, 50, 47, 0.2);
+  --surface-tile-hover: rgba(18, 50, 47, 0.4);
+  --surface-sunken: rgba(9, 26, 24, 0.5);
+  --surface-sunken-hover: rgba(9, 26, 24, 0.7);
+  --surface-recessed: rgba(9, 26, 24, 0.3);
+  --surface-scrim: rgba(9, 26, 24, 0.8);
+  --surface-scrim-heavy: rgba(9, 26, 24, 0.97);
+
+  /* Hairlines */
+  --line-faint: rgba(245, 240, 234, 0.04);
+  --line-subtle: rgba(245, 240, 234, 0.06);
+  --line-soft: rgba(245, 240, 234, 0.08);
+  --line-strong: rgba(245, 240, 234, 0.15);
+  --line-outline: rgba(245, 240, 234, 0.3);
+
+  /* Accent tints - all mixed from --orange */
+  --accent-wash: rgba(240, 93, 35, 0.1);
+  --accent-wash-hover: rgba(240, 93, 35, 0.18);
+  --accent-edge: rgba(240, 93, 35, 0.3);
+  --accent-hairline: rgba(240, 93, 35, 0.15);
+  --accent-glow: rgba(240, 93, 35, 0.06);
+
+  /* Form */
+  --input-surface: rgba(245, 240, 234, 0.08);
+  --input-placeholder: rgba(245, 240, 234, 0.4);
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -82,6 +113,7 @@ a {
   --transition-fast: 150ms ease;
   --transition-base: 300ms ease;
   --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-cta: 0 8px 30px rgba(240, 93, 35, 0.3);
 }
 
 /* ---------- Typography ---------- */
@@ -168,19 +200,19 @@ p {
 
 .btn--primary {
   background: var(--orange);
-  color: var(--white);
+  color: var(--dark);
 }
 
 .btn--primary:hover {
   background: var(--orange-glow);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(240, 78, 35, 0.3);
+  box-shadow: var(--shadow-cta);
 }
 
 .btn--outline {
   background: transparent;
   color: var(--cream);
-  border: 1px solid rgba(245, 240, 234, 0.3);
+  border: 1px solid var(--line-outline);
 }
 
 .btn--outline:hover {
@@ -204,22 +236,47 @@ p {
 }
 
 /* ---------- Scroll Reveal Animations ---------- */
-.reveal {
+html.js .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.visible {
+html.js .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 100ms; }
-.reveal-delay-2 { transition-delay: 200ms; }
-.reveal-delay-3 { transition-delay: 300ms; }
-.reveal-delay-4 { transition-delay: 400ms; }
+html.js .reveal-delay-1 { transition-delay: 100ms; }
+html.js .reveal-delay-2 { transition-delay: 200ms; }
+html.js .reveal-delay-3 { transition-delay: 300ms; }
+html.js .reveal-delay-4 { transition-delay: 400ms; }
+
+/* ---------- Focus ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--orange-glow);
+  outline-offset: 3px;
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* never let a scroll-triggered entrance hide content */
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
 
 /* ---------- Divider ---------- */
 .divider {

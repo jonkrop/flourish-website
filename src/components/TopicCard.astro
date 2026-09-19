@@ -27,8 +27,8 @@ const delayClass = index < 4 ? `reveal-delay-${index + 1}` : '';
     flex-direction: column;
     justify-content: space-between;
     padding: var(--space-lg);
-    background: rgba(18, 50, 47, 0.18);
-    border: 1px solid rgba(245, 240, 234, 0.04);
+    background: var(--surface-card);
+    border: 1px solid var(--line-faint);
     border-radius: 4px;
     text-decoration: none;
     color: inherit;
@@ -41,8 +41,8 @@ const delayClass = index < 4 ? `reveal-delay-${index + 1}` : '';
   }
 
   .topic-card:hover {
-    background: rgba(18, 50, 47, 0.3);
-    border-color: rgba(245, 240, 234, 0.08);
+    background: var(--surface-card-hover);
+    border-color: var(--line-soft);
     transform: translateY(-2px);
   }
 

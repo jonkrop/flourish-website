@@ -329,8 +329,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 1rem 1.25rem;
     font-family: 'Outfit Variable', 'Outfit', sans-serif;
     font-size: var(--text-base);
-    background: rgba(245, 240, 234, 0.08);
-    border: 1px solid rgba(245, 240, 234, 0.15);
+    background: var(--input-surface);
+    border: 1px solid var(--line-strong);
     border-right: none;
     color: var(--cream);
     outline: none;
@@ -338,11 +338,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .hero__input::placeholder {
-    color: rgba(245, 240, 234, 0.4);
+    color: var(--input-placeholder);
   }
 
   .hero__input:focus {
     border-color: var(--orange);
+  }
+
+  .hero__input:focus-visible {
+    outline: 2px solid var(--orange-glow);
+    outline-offset: -2px;
   }
 
   .hero__submit {
@@ -375,7 +380,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .inside__card {
     padding: var(--space-lg) var(--space-md);
-    border: 1px solid rgba(245, 240, 234, 0.06);
+    border: 1px solid var(--line-subtle);
     background: rgba(18, 50, 47, 0.3);
     transition: border-color var(--transition-base);
   }
@@ -484,7 +489,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .footer__legal {
     padding-top: var(--space-md);
-    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    border-top: 1px solid var(--line-subtle);
     width: 100%;
     font-size: var(--text-base);
   }
@@ -505,7 +510,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .hero__input {
-      border-right: 1px solid rgba(245, 240, 234, 0.15);
+      border-right: 1px solid var(--line-strong);
       border-bottom: none;
     }
 

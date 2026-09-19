@@ -431,7 +431,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .header--scrolled {
-    background: rgba(9, 26, 24, 0.8);
+    background: var(--surface-scrim);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -494,7 +494,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     position: fixed;
     inset: 0;
     z-index: 99;
-    background: rgba(9, 26, 24, 0.97);
+    background: var(--surface-scrim-heavy);
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
@@ -645,8 +645,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .cred-bar {
     background: var(--green);
     padding: var(--space-lg) 0;
-    border-top: 1px solid rgba(240, 78, 35, 0.15);
-    border-bottom: 1px solid rgba(240, 78, 35, 0.15);
+    border-top: 1px solid var(--accent-hairline);
+    border-bottom: 1px solid var(--accent-hairline);
   }
 
   .cred-bar__grid {
@@ -804,13 +804,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .diffs__card {
     position: relative;
     padding: var(--space-lg);
-    background: rgba(9, 26, 24, 0.5);
+    background: var(--surface-sunken);
     transition: background var(--transition-base);
     overflow: hidden;
   }
 
   .diffs__card:hover {
-    background: rgba(9, 26, 24, 0.7);
+    background: var(--surface-sunken-hover);
   }
 
   .diffs__card-accent {
@@ -833,7 +833,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--orange);
     margin-bottom: var(--space-sm);
     font-weight: 400;
-    opacity: 0.7;
   }
 
   .diffs__card h3 {
@@ -908,13 +907,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .topics__item {
     padding: var(--space-lg) var(--space-md);
-    background: rgba(18, 50, 47, 0.2);
-    border-bottom: 1px solid rgba(245, 240, 234, 0.05);
+    background: var(--surface-tile);
+    border-bottom: 1px solid var(--line-subtle);
     transition: background var(--transition-base);
   }
 
   .topics__item:hover {
-    background: rgba(18, 50, 47, 0.4);
+    background: var(--surface-tile-hover);
   }
 
   .topics__icon {
@@ -949,7 +948,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      =================================================================== */
   .guarantee {
     background:
-      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(240, 78, 35, 0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, var(--accent-glow) 0%, transparent 70%),
       var(--dark);
   }
 
@@ -1001,7 +1000,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: flex;
     gap: var(--space-md);
     padding: var(--space-lg) 0;
-    border-bottom: 1px solid rgba(245, 240, 234, 0.08);
+    border-bottom: 1px solid var(--line-soft);
   }
 
   .how__step:last-child { border-bottom: none; }
@@ -1032,7 +1031,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      =================================================================== */
   .testimonials {
     background:
-      radial-gradient(ellipse 60% 40% at 30% 70%, rgba(18, 50, 47, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 30% 70%, var(--surface-card-hover) 0%, transparent 60%),
       var(--dark);
   }
 
@@ -1046,7 +1045,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .testimonial {
-    background: rgba(18, 50, 47, 0.3);
+    background: var(--surface-card-hover);
     padding: var(--space-lg);
     border-top: 2px solid var(--orange);
     display: flex;
@@ -1192,7 +1191,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-radius: 50%;
     object-fit: cover;
     object-position: center 15%;
-    border: 2px solid rgba(240, 78, 35, 0.3);
+    border: 2px solid var(--accent-edge);
   }
 
   .diffs__card-caption {
@@ -1254,7 +1253,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .footer {
     background: var(--dark);
     padding: var(--space-xl) 0 var(--space-lg);
-    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    border-top: 1px solid var(--line-subtle);
   }
 
   .footer__inner {
@@ -1294,7 +1293,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .footer__legal {
     padding-top: var(--space-md);
-    border-top: 1px solid rgba(245, 240, 234, 0.06);
+    border-top: 1px solid var(--line-subtle);
     width: 100%;
     font-size: var(--text-base);
   }

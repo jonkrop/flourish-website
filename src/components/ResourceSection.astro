@@ -37,10 +37,10 @@ const { title, collapsed, items } = Astro.props;
 
 <style>
   .resource-section {
-    border: 1px solid rgba(245, 240, 234, 0.06);
+    border: 1px solid var(--line-subtle);
     border-radius: 4px;
     overflow: hidden;
-    background: rgba(9, 26, 24, 0.3);
+    background: var(--surface-recessed);
   }
 
   .resource-section__header {
@@ -49,7 +49,7 @@ const { title, collapsed, items } = Astro.props;
     gap: var(--space-sm);
     width: 100%;
     padding: var(--space-md) var(--space-md);
-    background: rgba(18, 50, 47, 0.12);
+    background: var(--surface-panel);
     border: none;
     cursor: pointer;
     color: var(--cream);
@@ -59,7 +59,7 @@ const { title, collapsed, items } = Astro.props;
   }
 
   .resource-section__header:hover {
-    background: rgba(18, 50, 47, 0.25);
+    background: var(--surface-panel-hover);
   }
 
   .resource-section__title {
@@ -80,7 +80,7 @@ const { title, collapsed, items } = Astro.props;
   .resource-section__chevron {
     font-size: 1.2rem;
     color: var(--orange);
-    opacity: 0.6;
+    opacity: 0.8;
     transition: transform var(--transition-base), opacity var(--transition-base);
     line-height: 1;
   }
@@ -91,7 +91,7 @@ const { title, collapsed, items } = Astro.props;
 
   .resource-section__header[aria-expanded="true"] .resource-section__chevron {
     transform: rotate(180deg);
-    opacity: 0.8;
+    opacity: 1;
   }
 
   .resource-section__header[aria-expanded="false"] .resource-section__chevron {
@@ -99,7 +99,7 @@ const { title, collapsed, items } = Astro.props;
   }
 
   .resource-section__body {
-    border-top: 1px solid rgba(245, 240, 234, 0.04);
+    border-top: 1px solid var(--line-faint);
   }
 
   .resource-section__items {

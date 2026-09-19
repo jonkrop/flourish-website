@@ -120,8 +120,8 @@ const vimeoId = type === 'video' ? getVimeoId(url) : null;
 <style>
   .resource-item {
     position: relative;
-    background: rgba(18, 50, 47, 0.18);
-    border: 1px solid rgba(245, 240, 234, 0.04);
+    background: var(--surface-card);
+    border: 1px solid var(--line-faint);
     border-radius: 4px;
     overflow: hidden;
     transition: background var(--transition-base),
@@ -130,8 +130,8 @@ const vimeoId = type === 'video' ? getVimeoId(url) : null;
   }
 
   .resource-item:hover {
-    background: rgba(18, 50, 47, 0.3);
-    border-color: rgba(245, 240, 234, 0.08);
+    background: var(--surface-card-hover);
+    border-color: var(--line-soft);
     transform: translateY(-2px);
   }
 
@@ -166,14 +166,14 @@ const vimeoId = type === 'video' ? getVimeoId(url) : null;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(240, 78, 35, 0.1);
+    background: var(--accent-wash);
     border-radius: 4px;
     color: var(--orange);
     transition: background var(--transition-base);
   }
 
   .resource-item:hover .resource-item__icon {
-    background: rgba(240, 78, 35, 0.18);
+    background: var(--accent-wash-hover);
   }
 
   .resource-item__text {
@@ -203,15 +203,14 @@ const vimeoId = type === 'video' ? getVimeoId(url) : null;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 0.25rem 0.6rem;
-    border: 1px solid rgba(240, 78, 35, 0.3);
+    border: 1px solid var(--accent-edge);
     border-radius: 2px;
     color: var(--orange);
-    opacity: 0.7;
-    transition: opacity var(--transition-base);
+    transition: border-color var(--transition-base);
   }
 
   .resource-item:hover .resource-item__badge {
-    opacity: 1;
+    border-color: var(--orange);
   }
 
   /* Audio items */
@@ -260,7 +259,7 @@ const vimeoId = type === 'video' ? getVimeoId(url) : null;
     height: 0;
     overflow: hidden;
     border-radius: 4px;
-    background: rgba(9, 26, 24, 0.5);
+    background: var(--surface-sunken);
   }
 
   .resource-item__embed iframe {
