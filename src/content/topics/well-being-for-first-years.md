@@ -28,13 +28,19 @@ sections:
       - type: pdf
         url: /uploads/Flourish-Cognitive-Reframing.pdf
         name: Cognitive Reframing
-      - type: pdf
-        url: /uploads/Flourish-Goodwill-Meditation.pdf
-        name: Goodwill Meditation
   - collapsed: true
     title: "Part 2: The Inner Art of Collaboration and Connection - Cheat Sheets"
     items:
       - type: pdf
         url: /uploads/Flourish-Two-Step-Conflict.pdf
         name: The Two-Step Technique for Navigating Difficult Interactions
+      - type: pdf
+        name: "TRIP: Making a Difficult Ask"
+        url: /uploads/Flourish-TRIP.pdf
+      - type: pdf
+        name: The “Yes And”
+        url: /uploads/260713_flourish_theyesand.pdf
+      - type: pdf
+        name: Goodwill Meditation
+        url: /uploads/Flourish-Goodwill-Meditation.pdf
 ---
