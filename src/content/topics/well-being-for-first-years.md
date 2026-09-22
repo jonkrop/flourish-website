@@ -11,7 +11,7 @@ defaultPresenters:
   - jon
 sections:
   - collapsed: true
-    title: 30-Second Stress Busters and Mood Boosters - Cheat Sheets
+    title: "Part 1: 30-Second Stress Busters and Mood Boosters - Cheat Sheets"
     items:
       - type: pdf
         url: /uploads/Flourish-Thought-Replacement.pdf
@@ -31,4 +31,10 @@ sections:
       - type: pdf
         url: /uploads/Flourish-Goodwill-Meditation.pdf
         name: Goodwill Meditation
+  - collapsed: true
+    title: "Part 2: The Inner Art of Collaboration and Connection - Cheat Sheets"
+    items:
+      - type: pdf
+        url: /uploads/Flourish-Two-Step-Conflict.pdf
+        name: The Two-Step Technique for Navigating Difficult Interactions
 ---
