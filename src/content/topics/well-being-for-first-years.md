@@ -44,15 +44,6 @@ sections:
         name: Goodwill Meditation
         url: /uploads/Flourish-Goodwill-Meditation.pdf
   - collapsed: true
-    title: Handbooks and Toolkits
-    items:
-      - type: pdf
-        url: /uploads/Well-Being-Toolkit.pdf
-        name: Well-Being Toolkit for Lawyers and Legal Employers
-      - type: pdf
-        name: "Handbook: Foundations of Mindfulness"
-        url: /uploads/Mindfulness-Attorney-Handbook.pdf
-  - collapsed: true
     title: Meditation Guides
     items:
       - type: pdf
@@ -67,4 +58,25 @@ sections:
       - type: pdf
         name: How to Stick to a Daily Meditation Practice
         url: /uploads/How-to-Stick-Daily-Meditation.pdf
+  - collapsed: true
+    title: Handbooks and Toolkits
+    items:
+      - type: pdf
+        url: /uploads/Well-Being-Toolkit.pdf
+        name: Well-Being Toolkit for Lawyers and Legal Employers
+      - type: pdf
+        name: "Handbook: Foundations of Mindfulness"
+        url: /uploads/Mindfulness-Attorney-Handbook.pdf
+  - collapsed: true
+    title: Videos
+    items:
+      - type: video
+        url: https://vimeo.com/822796240?fl=pl&fe=sh
+        name: De-Stress by Saying Four Simple Words
+      - type: video
+        url: https://vimeo.com/440017003/72953843da?fl=pl&fe=sh
+        name: How to Meditate
+      - type: video
+        name: Mindfulness in Daily Life
+        url: https://vimeo.com/528914723/1431137d86?fl=pl&fe=sh
 ---
