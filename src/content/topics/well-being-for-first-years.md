@@ -79,4 +79,16 @@ sections:
       - type: video
         name: Mindfulness in Daily Life
         url: https://vimeo.com/528914723/1431137d86?fl=pl&fe=sh
+  - collapsed: true
+    title: Guided Audio
+    items:
+      - type: audio
+        url: /uploads/progressive-muscle-relaxation.mp3
+        name: Progressive Muscle Relaxation
+      - type: audio
+        url: /uploads/goodwill-meditation-guided.mp3
+        name: Goodwill Meditation
+      - type: audio
+        name: Meditation Posture Guide
+        url: /uploads/meditation-posture-guide.mp3
 ---
