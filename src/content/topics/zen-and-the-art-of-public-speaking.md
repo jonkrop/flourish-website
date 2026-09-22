@@ -30,4 +30,13 @@ sections:
       - type: pdf
         name: Progressive Muscle Relaxation
         url: /uploads/Flourish-Progressive-Muscle-Relaxation.pdf
+  - collapsed: true
+    title: Handbooks and Toolkits
+    items:
+      - type: pdf
+        url: /uploads/Mindfulness-Attorney-Handbook.pdf
+        name: Foundations of Mindfulness
+      - type: pdf
+        name: Well-Being Toolkit for Lawyers and Legal Employers
+        url: /uploads/Well-Being-Toolkit.pdf
 ---
