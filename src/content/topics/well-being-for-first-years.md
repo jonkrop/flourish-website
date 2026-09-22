@@ -52,4 +52,19 @@ sections:
       - type: pdf
         name: "Handbook: Foundations of Mindfulness"
         url: /uploads/Mindfulness-Attorney-Handbook.pdf
+  - collapsed: true
+    title: Meditation Guides
+    items:
+      - type: pdf
+        name: "Cheat Sheet: How to Meditate"
+        url: /uploads/Flourish-How-To-Meditate.pdf
+      - type: pdf
+        name: Meditation Posture Guide
+        url: /uploads/Flourish-Posture-Guide.pdf
+      - type: pdf
+        name: Posture for Meditation (Stephanie Nash)
+        url: /uploads/Posture-for-Meditation-Nash.pdf
+      - type: pdf
+        name: How to Stick to a Daily Meditation Practice
+        url: /uploads/How-to-Stick-Daily-Meditation.pdf
 ---
