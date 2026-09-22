@@ -59,15 +59,6 @@ sections:
         name: How to Stick to a Daily Meditation Practice
         url: /uploads/How-to-Stick-Daily-Meditation.pdf
   - collapsed: true
-    title: Handbooks and Toolkits
-    items:
-      - type: pdf
-        url: /uploads/Well-Being-Toolkit.pdf
-        name: Well-Being Toolkit for Lawyers and Legal Employers
-      - type: pdf
-        name: "Handbook: Foundations of Mindfulness"
-        url: /uploads/Mindfulness-Attorney-Handbook.pdf
-  - collapsed: true
     title: Videos
     items:
       - type: video
@@ -91,4 +82,13 @@ sections:
       - type: audio
         name: Meditation Posture Guide
         url: /uploads/meditation-posture-guide.mp3
+  - collapsed: true
+    title: Handbooks and Toolkits
+    items:
+      - type: pdf
+        url: /uploads/Well-Being-Toolkit.pdf
+        name: Well-Being Toolkit for Lawyers and Legal Employers
+      - type: pdf
+        name: "Handbook: Foundations of Mindfulness"
+        url: /uploads/Mindfulness-Attorney-Handbook.pdf
 ---
