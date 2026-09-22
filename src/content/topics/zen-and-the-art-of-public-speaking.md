@@ -21,4 +21,13 @@ sections:
       - type: pdf
         url: /uploads/Flourish-Cognitive-Reframing.pdf
         name: Cognitive Reframing
+      - type: pdf
+        name: Calming the Nervous System
+        url: /uploads/Flourish-Calming-The-Nervous-System.pdf
+      - type: pdf
+        name: Deconstructing Anxiety (Noting)
+        url: /uploads/Flourish-Deconstructing-Anxiety-Noting.pdf
+      - type: pdf
+        name: Progressive Muscle Relaxation
+        url: /uploads/Flourish-Progressive-Muscle-Relaxation.pdf
 ---
