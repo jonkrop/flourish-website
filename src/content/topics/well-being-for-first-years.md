@@ -43,4 +43,13 @@ sections:
       - type: pdf
         name: Goodwill Meditation
         url: /uploads/Flourish-Goodwill-Meditation.pdf
+  - collapsed: true
+    title: Handbooks and Toolkits
+    items:
+      - type: pdf
+        url: /uploads/Well-Being-Toolkit.pdf
+        name: Well-Being Toolkit for Lawyers and Legal Employers
+      - type: pdf
+        name: "Handbook: Foundations of Mindfulness"
+        url: /uploads/Mindfulness-Attorney-Handbook.pdf
 ---
