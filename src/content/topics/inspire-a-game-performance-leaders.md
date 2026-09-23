@@ -1,7 +1,12 @@
 ---
 slug: inspire-a-game-performance-leaders
 title: How To Inspire A-Game Performance
-intro: An interactive workshop for law firm partners
+intro: This interactive program gives leaders practical, research-backed tools
+  to close the gap between grudging compliance and genuine, enthusiastic effort.
+  Participants will learn how to make high-pressure asks in ways that motivate
+  and strengthen the working relationship, build simple, sustainable approaches
+  to relational investment that earn real commitment without adding to an
+  already full plate, and recognize contributions in ways that land.
 defaultPresenters:
   - jon
 sections:
