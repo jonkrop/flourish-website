@@ -2,16 +2,16 @@
 interface Props {
   title: string;
   subtitle?: string;
-  slug: string;
+  href: string; // topic page path from src/lib/topicUrl.ts
   clientSlug: string;
   index: number;
 }
 
-const { title, subtitle, slug, clientSlug, index } = Astro.props;
+const { title, subtitle, href, clientSlug, index } = Astro.props;
 const delayClass = index < 4 ? `reveal-delay-${index + 1}` : '';
 ---
 
-<a href={`/resources/${slug}?client=${clientSlug}`} class={`topic-card reveal ${delayClass}`}>
+<a href={`${href}?client=${clientSlug}`} class={`topic-card reveal ${delayClass}`}>
   <div class="topic-card__accent"></div>
   <div class="topic-card__content">
     <h3 class="topic-card__title">{title}</h3>

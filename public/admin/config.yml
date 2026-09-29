@@ -16,6 +16,7 @@ collections:
     extension: "md"
     fields:
       - { label: "URL Slug", name: "slug", widget: "string", hint: "The URL path for this page (e.g., 'cool-under-pressure' → /resources/cool-under-pressure). Lowercase, hyphens only." }
+      - { label: "URL Suffix", name: "urlSuffix", widget: "hidden", required: false }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
       - { label: "Intro", name: "intro", widget: "text", required: false }

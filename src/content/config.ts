@@ -4,6 +4,11 @@ const topics = defineCollection({
   type: 'content',
   schema: z.object({
     slug: z.string().optional(),
+    // Public path is /resources/<slug>-<urlSuffix> when set (src/lib/topicUrl.ts).
+    // Written by scripts/access-windows/rotate-topic.mjs; never edited by hand.
+    urlSuffix: z.string().regex(/^[a-z0-9]*$/).nullish(),
+    // false = never rotate this topic's URL (webinar pages, shared links).
+    rotate: z.boolean().default(true),
     title: z.string(),
     subtitle: z.string().optional(),
     intro: z.string().optional(),

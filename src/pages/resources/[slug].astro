@@ -3,12 +3,13 @@ import { getCollection } from 'astro:content';
 import ResourceLayout from '../../layouts/ResourceLayout.astro';
 import ResourceSection from '../../components/ResourceSection.astro';
 import SpeakerBio from '../../components/SpeakerBio.astro';
+import { topicKey, topicPathSlug } from '../../lib/topicUrl';
 
 export async function getStaticPaths() {
   const topics = await getCollection('topics');
 
   return topics.map((topic) => ({
-    params: { slug: topic.data.slug || topic.slug },
+    params: { slug: topicPathSlug(topic) },
     props: { entry: topic },
   }));
 }
@@ -17,7 +18,7 @@ const { entry } = Astro.props;
 const allClients = await getCollection('clients');
 const allExperts = await getCollection('experts');
 
-const topicSlug = entry.data.slug || entry.slug;
+const topicSlug = topicKey(entry);
 
 // Build client lookup for back-link text on topic pages
 const clientLookup: Record<string, string> = {};

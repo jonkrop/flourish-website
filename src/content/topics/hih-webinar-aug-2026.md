@@ -1,5 +1,6 @@
 ---
 slug: "hih-webinar-aug-2026"
+rotate: false
 title: "High-Impact Habits"
 defaultPresenters:
   - "jon"

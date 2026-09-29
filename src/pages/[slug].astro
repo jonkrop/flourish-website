@@ -4,6 +4,7 @@ import ResourceLayout from '../layouts/ResourceLayout.astro';
 import ResourceSection from '../components/ResourceSection.astro';
 import TopicCard from '../components/TopicCard.astro';
 import SpeakerBio from '../components/SpeakerBio.astro';
+import { topicKey, topicPath } from '../lib/topicUrl';
 
 export async function getStaticPaths() {
   const clients = await getCollection('clients');
@@ -40,7 +41,7 @@ const isSingleTopic = topicEntries.length === 1;
 
 // Resolve presenters for single-topic client pages
 // Check client's explicit assignment first, then fall back to topic defaults
-const singleTopicSlug = (isSingleTopic && topicEntries[0]) ? (topicEntries[0].data.slug || topicEntries[0].slug) : '';
+const singleTopicSlug = (isSingleTopic && topicEntries[0]) ? topicKey(topicEntries[0]) : '';
 const clientPresentersData = (!isEvent && isSingleTopic)
   ? ((entry.data as any).presenters as Array<{ topic: string; speakers: string[] }> | undefined)
   : undefined;
@@ -90,7 +91,7 @@ const pageTitle = isEvent ? eventData!.title : `${clientName} Resources`;
               <TopicCard
                 title={topic.data.title}
                 subtitle={topic.data.subtitle}
-                slug={topic.data.slug || topic.slug}
+                href={topicPath(topic)}
                 clientSlug={entry.data.slug || entry.slug}
                 index={i}
               />
