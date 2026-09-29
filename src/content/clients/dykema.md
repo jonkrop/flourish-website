@@ -2,6 +2,7 @@
 slug: dykema
 name: Dykema
 topics:
+  - zen-and-the-art-of-public-speaking
   - inner-art-of-collaboration-dykema
   - self-care-in-30-seconds
   - defeating-digital-distractions

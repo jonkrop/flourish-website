@@ -33,13 +33,13 @@ sections:
       - type: pdf
         name: Distance From Distractions
         url: /uploads/flourish_distancefromdistractions.pdf
-  - collapsed: false
+  - collapsed: true
     title: Video
     items:
       - type: video
         name: How To Meditate
         url: https://vimeo.com/566201126?share=copy&fl=sv&fe=ci
-  - collapsed: false
+  - collapsed: true
     title: Guided Audio Practices
     items:
       - type: audio
