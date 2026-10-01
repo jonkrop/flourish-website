@@ -61,4 +61,8 @@ sections:
       - type: pdf
         name: McRae et al - The Neural Bases of Distraction and Reappraisal
         url: /uploads/mcrae-et-al-the-neural-bases-of-distraction-and-reappraisal.pdf
+      - type: pdf
+        url: /uploads/stress-and-health-2026-nascimento-the-effects-of-caffeine-on-anxiety-behavior-in-healthy-individuals-a-systematic.pdf
+        name: "Nascimiento et al - The Effects of Caffeine on Anxiety Behavior in
+          Healthy Individuals: A Systematic Review of the Literature"
 ---
