@@ -39,4 +39,23 @@ sections:
       - type: pdf
         name: Well-Being Toolkit for Lawyers and Legal Employers
         url: /uploads/Well-Being-Toolkit.pdf
+  - collapsed: true
+    title: Supporting Articles
+    items:
+      - type: pdf
+        url: /uploads/reeves-et-al-a-meta-analysis-of-the-efficacy-of-virtual-reality-and-in-vivo-exposure-therapy-as-psychological.pdf
+        name: Reeves et al - A Meta-Analysis of the Efficacy of Virtual Reality and In
+          Vivo Exposure Therapy as Psychological Interventions for Public
+          Speaking Anxiety
+      - type: pdf
+        name: Elsey et al - Reconsolidation-based treatment for fear of public speaking
+        url: /uploads/elsey-et-al-reconsolidation-based-treatment-for-fear-of-public-speaking.pdf
+      - type: pdf
+        url: /uploads/Breath-of-Life-Gerritsen-Band.pdf
+        name: "Gerritsen and Band, Breath of Life: The Respiratory Vagal Stimulation
+          Model of Contemplative Activity"
+      - type: pdf
+        url: /uploads/when-demands-equal-distress-an-updated-understanding-of-lawyer-mental-health-and-well-being-krill-anker.pdf
+        name: "Krill & Anker, When demands equal distress: An updated understanding of
+          lawyer mental health and well-being"
 ---
