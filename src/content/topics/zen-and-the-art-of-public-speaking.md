@@ -58,4 +58,7 @@ sections:
         url: /uploads/when-demands-equal-distress-an-updated-understanding-of-lawyer-mental-health-and-well-being-krill-anker.pdf
         name: "Krill & Anker, When demands equal distress: An updated understanding of
           lawyer mental health and well-being"
+      - type: pdf
+        name: McRae et al - The Neural Bases of Distraction and Reappraisal
+        url: /uploads/mcrae-et-al-the-neural-bases-of-distraction-and-reappraisal.pdf
 ---
