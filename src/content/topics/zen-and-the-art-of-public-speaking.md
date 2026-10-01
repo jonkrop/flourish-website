@@ -43,11 +43,6 @@ sections:
     title: Supporting Articles
     items:
       - type: pdf
-        url: /uploads/reeves-et-al-a-meta-analysis-of-the-efficacy-of-virtual-reality-and-in-vivo-exposure-therapy-as-psychological.pdf
-        name: Reeves et al - A Meta-Analysis of the Efficacy of Virtual Reality and In
-          Vivo Exposure Therapy as Psychological Interventions for Public
-          Speaking Anxiety
-      - type: pdf
         name: Elsey et al - Reconsolidation-based treatment for fear of public speaking
         url: /uploads/elsey-et-al-reconsolidation-based-treatment-for-fear-of-public-speaking.pdf
       - type: pdf
@@ -65,4 +60,9 @@ sections:
         url: /uploads/stress-and-health-2026-nascimento-the-effects-of-caffeine-on-anxiety-behavior-in-healthy-individuals-a-systematic.pdf
         name: "Nascimiento et al - The Effects of Caffeine on Anxiety Behavior in
           Healthy Individuals: A Systematic Review of the Literature"
+      - type: pdf
+        url: /uploads/reeves-et-al-a-meta-analysis-of-the-efficacy-of-virtual-reality-and-in-vivo-exposure-therapy-as-psychological.pdf
+        name: Reeves et al - A Meta-Analysis of the Efficacy of Virtual Reality and In
+          Vivo Exposure Therapy as Psychological Interventions for Public
+          Speaking Anxiety
 ---
