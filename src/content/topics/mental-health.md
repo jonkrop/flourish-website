@@ -10,7 +10,7 @@ defaultPresenters:
   - azeemah
 sections:
   - title: Cheat Sheets
-    collapsed: false
+    collapsed: true
     items:
       - name: "Finding the Right Therapist: A Simple Guide"
         type: pdf
