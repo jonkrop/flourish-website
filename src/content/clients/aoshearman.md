@@ -24,4 +24,7 @@ presenters:
   - topic: inspire-a-game-performance
     speakers:
       - jon
+  - topic: mental-health
+    speakers:
+      - taylor
 ---
