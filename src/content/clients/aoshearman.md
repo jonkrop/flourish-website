@@ -2,6 +2,7 @@
 slug: aoshearman
 name: A&O Shearman
 topics:
+  - mental-health
   - inspire-a-game-performance
   - ppup-midlevel
   - take-back-your-attention
