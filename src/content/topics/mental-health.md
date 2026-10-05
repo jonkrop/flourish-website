@@ -42,23 +42,28 @@ sections:
   - title: Articles
     collapsed: true
     items:
-      - name: Depressive Symptoms and Suicidal Ideation Among Lawyers
+      - name: Thiese & Allen, Depressive Symptoms and Suicidal Ideation Among Lawyers
         type: pdf
         url: /uploads/Depressive-Symptoms-Lawyers.pdf
-      - name: Inoculating the Next Generation of Lawyers
+      - name: Stearns, Inoculating the Next Generation of Lawyers
         type: pdf
         url: /uploads/Inoculating-Next-Gen-Lawyers.pdf
-      - name: Lawyer Wellbeing as a Crisis of the Profession
+      - name: Krause & Chong, Lawyer Wellbeing as a Crisis of the Profession
         type: pdf
         url: /uploads/Lawyer-Wellbeing-Crisis.pdf
-      - name: Managing Stress, Grief, and Mental Health Challenges in the Legal
+      - name: Rhode, Managing Stress, Grief, and Mental Health Challenges in the Legal
           Profession
         type: pdf
         url: /uploads/Managing-Stress-Grief-Legal.pdf
-      - name: Measuring Lawyer Well-Being Systematically
-        type: pdf
-        url: /uploads/Measuring-Lawyer-Well-Being.pdf
-      - name: Stress, Drink, Leave
-        type: pdf
-        url: /uploads/Stress-Drink-Leave.pdf
+      - type: pdf
+        url: /uploads/when-demands-equal-distress-an-updated-understanding-of-lawyer-mental-health-and-well-being-krill-anker.pdf
+        name: "Krill & Anker, When demands equal distress: An updated understanding of
+          lawyer mental health and well-being"
+      - type: pdf
+        name: National Task Force, Path to Lawyer Well-Being
+        url: /uploads/Path-To-Lawyer-Well-Being.pdf
+      - type: pdf
+        name: "Austin & Durr, Emotion Regulation for Lawyers: A Mind Is a Challenging
+          Thing to Tame"
+        url: /uploads/austin-durr-emotion-regulation-for-lawyers_-a-mind-is-a-challenging-thing-to.pdf
 ---
