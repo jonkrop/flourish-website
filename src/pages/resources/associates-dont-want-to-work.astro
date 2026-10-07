@@ -13,7 +13,7 @@ import '@fontsource/newsreader/600.css';
 import '@fontsource/newsreader/400-italic.css';
 import '@fontsource/newsreader/500-italic.css';
 
-const HANDOUTS_PDF = '/uploads/Flourish-A-Game-Cheat-Sheets-for-Partners.pdf';
+const PARTNER_PAGE = '/resources/a-game-for-partners-fc10e6/';
 const CHAPTERS = [
   { id: 'commiserate', n: '1', short: 'Commiserate', title: 'Commiserate first' },
   { id: 'frameworks', n: '2', short: 'Frameworks', title: 'Use simple, memorable frameworks' },
@@ -223,7 +223,7 @@ const CHAPTERS = [
     .kit-index a:hover{border-color:var(--ink);}
     .dl{display:flex;gap:26px;align-items:center;margin:34px 0 0;padding:22px 26px;background:var(--ink);color:#DCE5E1;text-decoration:none;transition:box-shadow .15s,transform .15s;}
     .dl:hover{box-shadow:0 14px 34px rgba(18,50,47,.25);transform:translateY(-2px);}
-    .dl img{width:92px;height:auto;flex:none;box-shadow:0 6px 18px rgba(0,0,0,.35);transform:rotate(-3deg);}
+    .dl img{width:200px;height:auto;flex:none;border-radius:4px;box-shadow:0 6px 18px rgba(0,0,0,.35);}
     .dl .name{display:block;font-family:var(--serif);font-weight:600;font-size:25px;color:#fff;margin-bottom:4px;}
     .dl .desc{font-size:15.5px;}
     .dl .go{margin-left:auto;flex:none;font-weight:800;font-size:14px;color:#fff;background:var(--accent-deep);padding:12px 18px;border-radius:999px;}
@@ -431,7 +431,7 @@ const CHAPTERS = [
         ))}
       </ol>
       <div class="contents-tools">
-        <a class="btn solid" href="#share">&darr; Cheat sheets to share with partners</a>
+        <a class="btn solid" href="#share">&darr; A page to share with partners</a>
         <a class="btn" href="#toolkit">The toolkit: each method in detail</a>
         <button class="btn" type="button" onclick="window.print()">Print or save as PDF</button>
       </div>
@@ -601,7 +601,7 @@ const CHAPTERS = [
     <div class="wide" style="max-width:calc(980px + 2*var(--gutter))">
       <div class="kit-head">
         <h2>The toolkit: each method, in detail</h2>
-        <p>This is how we teach them to partners. Each is also a one-page cheat sheet you can forward.</p>
+        <p>This is how we teach them to partners. Each is also on a page written for partners, which you can forward.</p>
         <ol class="kit-index">
           <li><a href="#tool-invest">Invest before you withdraw</a></li>
           <li><a href="#tool-pause">One before speaking, three before sending</a></li>
@@ -611,20 +611,20 @@ const CHAPTERS = [
         </ol>
       </div>
 
-      <a class="dl" id="share" href={HANDOUTS_PDF} target="_blank" rel="noopener">
-        <img src="/images/partners-listen/thumb-cheat-sheets.jpg" alt="" width="560" height="725" loading="lazy" />
+      <a class="dl" id="share" href={PARTNER_PAGE} target="_blank" rel="noopener">
+        <img src="/images/partners-listen/thumb-partner-page.jpg" alt="" width="800" height="342" loading="lazy" />
         <div>
-          <span class="name">Cheat sheets to share with partners</span>
-          <span class="desc">All five methods, one page each.</span>
+          <span class="name">A page to share with partners</span>
+          <span class="desc">All five methods, written for partners. Just forward the link.</span>
         </div>
-        <span class="go">Download the PDF &rarr;</span>
+        <span class="go">Open the page &rarr;</span>
       </a>
 
       <div class="tool" id="tool-invest">
         <div class="tool-meta">
           <h3>Invest before you withdraw</h3>
           <span class="for">The principle underneath everything</span>
-          <a class="sheet" href="/uploads/flourish_relationshipbuilding.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10"/></svg>One-page cheat sheet (PDF)</a>
+          <a class="sheet" href={PARTNER_PAGE + "#invest"} target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12"/></svg>On the partner page</a>
         </div>
         <div class="tool-body">
           <p>Every interaction is a deposit or a withdrawal. Before a hard ask, make sure there are enough deposits to absorb it.</p>
@@ -636,7 +636,7 @@ const CHAPTERS = [
         <div class="tool-meta">
           <h3>One before speaking, three before sending</h3>
           <span class="for">For keeping stress from spilling over</span>
-          <a class="sheet" href="/uploads/flourish_stressspillover.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10"/></svg>One-page cheat sheet (PDF)</a>
+          <a class="sheet" href={PARTNER_PAGE + "#spillover"} target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12"/></svg>On the partner page</a>
         </div>
         <div class="tool-body">
           <div class="breath" aria-hidden="true">
@@ -651,7 +651,7 @@ const CHAPTERS = [
         <div class="tool-meta">
           <h3>TRIP</h3>
           <span class="for">For making a difficult ask</span>
-          <a class="sheet" href="/uploads/flourish_trip.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10"/></svg>One-page cheat sheet (PDF)</a>
+          <a class="sheet" href={PARTNER_PAGE + "#trip"} target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12"/></svg>On the partner page</a>
         </div>
         <div class="tool-body">
           <ul class="letters">
@@ -672,7 +672,7 @@ const CHAPTERS = [
         <div class="tool-meta">
           <h3>The Recognition Ladder</h3>
           <span class="for">For recognizing effort</span>
-          <a class="sheet" href="/uploads/flourish_ladder.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10"/></svg>One-page cheat sheet (PDF)</a>
+          <a class="sheet" href={PARTNER_PAGE + "#ladder"} target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12"/></svg>On the partner page</a>
         </div>
         <div class="tool-body">
           <p>Work that gets no recognition can hit them as a withdrawal: the partner has moved on, but the associate hasn&rsquo;t. Each rung asks a little more of the partner.</p>
@@ -695,7 +695,7 @@ const CHAPTERS = [
         <div class="tool-meta">
           <h3>The Three In&rsquo;s</h3>
           <span class="for">For small, steady deposits</span>
-          <a class="sheet" href="/uploads/flourish_smallmoves.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10"/></svg>One-page cheat sheet (PDF)</a>
+          <a class="sheet" href={PARTNER_PAGE + "#ins"} target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h7v7M13 3L4 12"/></svg>On the partner page</a>
         </div>
         <div class="tool-body">
           <ul class="ins">

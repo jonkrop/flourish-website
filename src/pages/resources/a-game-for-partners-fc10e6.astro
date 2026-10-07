@@ -1,0 +1,343 @@
+---
+// DRAFT (2026-10-07), hidden: unguessable slug, noindex (PlaybookLayout default), linked from nowhere yet.
+// Partner-facing technique page: the five A-Game one-pagers (public/uploads/flourish_*.pdf),
+// compiled and web-native, so PD people can forward partners a link instead of PDFs.
+// Copy stays close to the one-pagers' wording; supporting lines come from the delivered
+// A-Game script.md and the approved toolkit on associates-dont-want-to-work.astro.
+// Never from the bold additions in script-v2.md. Rules: ../../../../playbook-guide.md
+// (no eyebrows, no copy buttons, no print button, no downloads of our one-pagers;
+// orange/peach only for lines a partner would say word for word).
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const CHAPTERS = [
+  { id: 'invest', n: '1', short: 'Invest first', title: 'Invest before you withdraw' },
+  { id: 'spillover', n: '2', short: 'Spillover', title: 'One before speaking, three before sending' },
+  { id: 'ins', n: '3', short: 'Three In’s', title: 'The Three In’s' },
+  { id: 'trip', n: '4', short: 'TRIP', title: 'TRIP: Making a difficult ask' },
+  { id: 'ladder', n: '5', short: 'Ladder', title: 'The Recognition Ladder' },
+];
+---
+<PlaybookLayout
+  title="How to Inspire A-Game Performance"
+  description="Five simple frameworks for partners: invest before you withdraw, one before speaking and three before sending, the Three In’s, TRIP, and the Recognition Ladder."
+  chapters={CHAPTERS.map(({ id, n, short }) => ({ id, n, short }))}
+>
+  <style is:global>
+    /* ---------- page-specific (a-game-for-partners) ---------- */
+    .txt{font-size:18px;line-height:1.62;margin:0 0 16px;}
+    .txt b{color:var(--ink);}
+    .sub-h{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.15;color:var(--ink);margin:56px 0 14px;}
+
+    /* hero: the running account */
+    .acct{width:100%;max-width:560px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(0,0,0,.35);}
+    .acct-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#F3F1EC;border-bottom:1px solid var(--hair);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
+    .acct ol{list-style:none;}
+    .acct li{display:grid;grid-template-columns:28px 1fr 34%;gap:14px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--hair);}
+    .acct li:last-child{border-bottom:0;}
+    .acct .sg{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font:800 15px/1 var(--sans);}
+    .acct li.out .sg{background:#B23A2E;}
+    .acct .what{font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink);}
+    .acct .kind{display:block;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--dim);margin-top:2px;}
+    .acct .bal{position:relative;height:12px;border-radius:99px;background:var(--sage);overflow:hidden;}
+    .acct .bal i{position:absolute;left:0;top:0;bottom:0;width:var(--w);border-radius:99px;background:var(--ink);transform-origin:0 50%;transform:scaleX(0);animation:acct-grow .6s ease forwards;animation-delay:var(--d);}
+    .acct li.out .bal::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:25%;background:repeating-linear-gradient(135deg,rgba(178,58,46,.55) 0 3px,transparent 3px 6px);}
+    @keyframes acct-grow{to{transform:scaleX(1);}}
+    @media (prefers-reduced-motion:reduce){.acct .bal i{animation:none;transform:none;}}
+
+    /* 1: seen, valued, trusted + tough/tender */
+    .svt{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 22px;}
+    .svt li{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:18px 18px 16px;font-size:16px;line-height:1.45;}
+    .svt b{display:block;font-family:var(--serif);font-size:30px;font-weight:600;line-height:1;color:var(--ink);margin-bottom:8px;}
+    .tt{display:grid;grid-template-columns:1fr 1fr;margin:8px 0 12px;border:1px solid var(--hair);}
+    .tt > div{padding:24px 24px 22px;}
+    .tt .tough{background:var(--ink);color:#DCE5E1;}
+    .tt .tender{background:#fff;}
+    .tt b{display:block;font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.05;margin-bottom:10px;}
+    .tt .tough b{color:#fff;}
+    .tt .tender b{color:var(--ink);}
+    .tt span{font-size:16.5px;line-height:1.5;}
+    .credit{font-size:14.5px;color:var(--dim);margin:0;}
+
+    /* 2: one breath / three breaths */
+    .rule{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:6px 0 0;}
+    .rule > div{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:24px 24px 22px;}
+    .rule .count{display:flex;gap:9px;height:24px;align-items:center;margin-bottom:14px;}
+    .rule .count i{display:block;width:16px;height:16px;border-radius:50%;background:var(--ink);}
+    .rule b{display:block;font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.1;color:var(--ink);}
+    .rule .when{display:block;font-size:16.5px;color:var(--body);margin-top:4px;}
+    .rule p{font-size:16px;line-height:1.55;color:var(--dim);margin-top:16px;padding-top:14px;border-top:1px dashed var(--hair);}
+
+    /* 3: the Three In's, interest as the base */
+    .tier-l{font-size:14.5px;font-weight:700;color:var(--dim);margin:0 0 10px;}
+    .ins2{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .ins2 > li,.ins-base{padding:22px 22px 20px;font-size:16.5px;line-height:1.5;}
+    .ins2 > li{background:#fff;border:1px solid var(--hair);}
+    .in-w{font-family:var(--serif);font-size:30px;line-height:1;color:var(--ink);margin-bottom:12px;}
+    .in-w span{font-weight:600;color:var(--accent-deep);}
+    .ins2 .borrow-line,.ins-base .borrow-line{font-size:19px;margin:12px 0 0;padding:12px 16px;}
+    .ins-base{margin-top:12px;background:var(--ink);color:#DCE5E1;}
+    .ins-base .tier-l{color:#9FB3AD;}
+    .ins-base .in-w{color:#fff;}
+    .ins-base .in-w span{color:var(--accent-soft);}
+    .ins-base .after{display:block;margin-top:10px;}
+
+    /* 4: TRIP rows */
+    .ba-label{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1;color:var(--dim);margin:0 0 12px;padding-bottom:10px;border-bottom:3px solid var(--hair);}
+    .ba-label.after{color:var(--ink);border-bottom-color:var(--accent);}
+    .trip-rows{list-style:none;display:grid;gap:10px;margin:6px 0 18px;}
+    .trip-rows li{display:grid;grid-template-columns:64px 210px 1fr;gap:18px;align-items:center;background:#fff;border:1px solid var(--hair);padding:12px 20px 12px 12px;}
+    .trip-rows .L{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;border:2px solid var(--ink);font-family:var(--serif);font-size:38px;font-weight:500;line-height:1;color:var(--ink);}
+    .trip-rows b{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.15;color:var(--ink);}
+    .trip-rows .L{border-color:var(--accent-deep);color:var(--accent-deep);}
+    .trip-rows .kw{color:var(--accent-deep);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:rgba(240,93,35,.35);}
+    .trip-rows span.d{font-size:16.5px;line-height:1.5;}
+    .email .seg .sp{display:block;}
+    .trip-watch{margin-top:36px;}
+
+    /* 5: ladder */
+    .ladder-wrap{margin-top:8px;}
+    .ladder .rung{background:#fff;font-size:15px;}
+    .ladder .rung b{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.15;}
+    .watch p{font-size:15.5px;line-height:1.55;}
+    #ladder .watch{margin-top:16px;}
+
+    /* where to start: neutral band (peach is reserved for borrowable lines) */
+    .start{background:linear-gradient(180deg,var(--sage),var(--paper));}
+
+    @media (max-width:900px){
+      .ladder{grid-template-columns:1fr 1fr;}
+      .rung{margin-top:0 !important;}
+      .ladder-axis{display:none;}
+    }
+    @media (max-width:700px){
+      .txt{font-size:17px;}
+      .sub-h{font-size:24px;margin-top:44px;}
+      .acct li{grid-template-columns:26px 1fr 28%;gap:12px;padding:12px 16px;}
+      .acct .what{font-size:16.5px;}
+      .svt,.rule,.ins2,.tt{grid-template-columns:1fr;}
+      .trip-rows li{grid-template-columns:52px 1fr;gap:4px 14px;padding:12px 14px 12px 10px;}
+      .trip-rows .L{width:52px;height:52px;font-size:30px;grid-row:span 2;}
+      .trip-rows b{font-size:20px;}
+      .ladder{grid-template-columns:1fr;}
+    }
+    @media print{
+      .acct{box-shadow:none;border:1px solid var(--hair);}
+      .acct .bal i{animation:none;transform:none;}
+      .acct .sg,.acct .bal,.acct .bal i,.acct li.out .bal::after,.tt .tough,.ins-base,.rule .count i{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+      .svt,.rule,.ins2,.ins-base,.tt,.trip-rows li,.emails,.watch{break-inside:avoid;}
+    }
+  </style>
+
+  {/* ============ Hero ============ */}
+  <section class="hero" id="top">
+    <div class="wide hero-in">
+      <div>
+        <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="168" />
+        <div class="backlink" id="backlink"><a></a></div>
+        <h1>How to Inspire A&#8209;Game Performance</h1>
+        <p class="sub-title">Five simple frameworks for getting associates’ best work</p>
+        <p class="from">From the partner program by Jon Krop of <a href="https://teamflourish.com">Flourish</a></p>
+      </div>
+      <div class="acct" role="img" aria-label="A running account: three deposits, then one withdrawal, and the balance stays positive.">
+        <div class="acct-bar"><span>The account</span><span>Balance</span></div>
+        <ol>
+          <li><span class="sg" aria-hidden="true">+</span><span class="what">Invite them to a client call<span class="kind">Deposit</span></span><span class="bal"><i style="--w:25%;--d:.3s"></i></span></li>
+          <li><span class="sg" aria-hidden="true">+</span><span class="what">“How are you holding up?”<span class="kind">Deposit</span></span><span class="bal"><i style="--w:50%;--d:.6s"></i></span></li>
+          <li><span class="sg" aria-hidden="true">+</span><span class="what">Praise them in an email<span class="kind">Deposit</span></span><span class="bal"><i style="--w:75%;--d:.9s"></i></span></li>
+          <li class="out"><span class="sg" aria-hidden="true">&minus;</span><span class="what">Weekend work<span class="kind">Withdrawal</span></span><span class="bal"><i style="--w:50%;--d:1.2s"></i></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <main>
+  {/* ============ Intro ============ */}
+  <section class="intro">
+    <div class="col">
+      <p class="big">You’ve probably noticed that today’s associates think about work differently than you did.</p>
+      <p class="txt">Here’s how to inspire their best work from them: five simple frameworks that don’t add a lot to what you already do.</p>
+      <p class="legend"><span class="chip" aria-hidden="true"></span>Lines in orange are yours to borrow verbatim.</p>
+    </div>
+  </section>
+
+  <nav class="contents" aria-label="The five frameworks">
+    <div class="wide">
+      <div class="toc-head">The five frameworks</div>
+      <ol class="cards5">
+        {CHAPTERS.map((c) => (
+          <li><a href={`#${c.id}`}><span class="n">{c.n}</span><span class="t">{c.title}</span></a></li>
+        ))}
+      </ol>
+    </div>
+  </nav>
+
+  {/* ============ 1: Invest before you withdraw (flourish_relationshipbuilding.pdf) ============ */}
+  <section class="principle alt" id="invest">
+    <div class="col">
+      <header class="ph"><span class="num" aria-hidden="true">1</span><h2>Invest before you withdraw</h2></header>
+      <p class="lead">Associates today think of their work in terms of their <em>working relationships.</em></p>
+      <p class="lead">Think of your relationship with an associate as an account with a balance. Before you make a hard ask (a withdrawal), make sure there’s enough in the account to absorb it.</p>
+
+      <h3 class="sub-h">What counts as a deposit in the account</h3>
+      <p class="txt">An action counts as a deposit only if it makes the associate feel:</p>
+      <ul class="svt">
+        <li><b>Seen</b>as a person, not just labor</li>
+        <li><b>Valued</b>for their contribution</li>
+        <li><b>Trusted</b>with responsibility and judgment</li>
+      </ul>
+      <p class="txt">It only counts if they perceive it. And a deposit isn’t the same as “being nice.” Hollow praise makes them feel patronized. Honest, specific critique can be a deposit.</p>
+
+      <h3 class="sub-h">You don’t have to lower your standards</h3>
+      <p class="txt">You can be:</p>
+      <div class="tt">
+        <div class="tough"><b>Tough on results</b><span>Demand excellence on the work.</span></div>
+        <div class="tender"><b>Tender on people</b><span>Treat the person doing it like a person.</span></div>
+      </div>
+      <p class="credit">A line from leadership coach Urs Koenig.</p>
+    </div>
+  </section>
+
+  {/* ============ 2: One before speaking, three before sending (flourish_stressspillover.pdf) ============ */}
+  <section class="principle" id="spillover">
+    <div class="col">
+      <header class="ph"><span class="num" aria-hidden="true">2</span><h2>One before speaking, three before sending</h2></header>
+      <p class="lead">It’s easy to let stress or frustration bleed into an email or a comment in a meeting. This practice keeps that from happening.</p>
+      <p class="move-h">When you feel stressed, frustrated, or keyed up:</p>
+      <div class="rule">
+        <div>
+          <span class="count" aria-hidden="true"><i></i></span>
+          <b>Take one breath</b><span class="when">before speaking.</span>
+          <p>In a live conversation, a one-breath pause is discreet. Three might seem odd.</p>
+        </div>
+        <div>
+          <span class="count" aria-hidden="true"><i></i><i></i><i></i></span>
+          <b>Take three breaths</b><span class="when">before sending an email.</span>
+          <p>With email, you have privacy to take longer. Plus, email leaves a record, so it’s worth taking the extra time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ============ 3: The Three In's (flourish_smallmoves.pdf) ============ */}
+  <section class="principle alt" id="ins">
+    <div class="col">
+      <header class="ph"><span class="num" aria-hidden="true">3</span><h2>The Three In’s</h2></header>
+      <p class="lead">Strong working relationships are built through consistent, small moves. The Three In’s are a framework for those moves.</p>
+    </div>
+    <div class="wide" style="max-width:calc(820px + 2*var(--gutter))">
+      <p class="tier-l">Situational: deploy when the opportunity arises.</p>
+      <ul class="ins2">
+        <li>
+          <div class="in-w"><span>In</span>troduction</div>
+          Connect them to someone valuable.
+          <p class="borrow-line">“I want to get you on X’s radar.”</p>
+        </li>
+        <li>
+          <div class="in-w"><span>In</span>vitation</div>
+          Invite them to something valuable: a client call, a strategy meeting, a lunch.
+        </li>
+      </ul>
+      <div class="ins-base">
+        <p class="tier-l">The baseline: use it regularly.</p>
+        <div class="in-w"><span>In</span>terest</div>
+        Take an interest in how they’re doing. In the middle of a hard week:
+        <p class="borrow-line">“How are you holding up?”</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ============ 4: TRIP (flourish_trip.pdf) ============ */}
+  <section class="principle" id="trip">
+    <div class="col">
+      <header class="ph"><span class="num" aria-hidden="true">4</span><h2>TRIP: Making a difficult ask</h2></header>
+      <p class="lead">Sometimes you have to make a tough ask: a late night, weekend work, etc. The way you ask shapes how it’s received.</p>
+      <p class="txt">Here’s a framework for asking well. Include all four, in any order.</p>
+      <ol class="trip-rows">
+        <li><span class="L" aria-hidden="true">T</span><b><span class="kw">Thank</span> them</b><span class="d">It goes a long way.</span></li>
+        <li><span class="L" aria-hidden="true">R</span><b>Give a <span class="kw">reason</span></b><span class="d">Why are you asking for this, and why now?</span></li>
+        <li><span class="L" aria-hidden="true">I</span><b>Acknowledge the <span class="kw">impact</span></b><span class="d">Show that you see what this costs them.</span></li>
+        <li><span class="L" aria-hidden="true">P</span><b>Include <span class="kw">praise</span></b><span class="d">Affirm what makes them right for this ask.</span></li>
+      </ol>
+    </div>
+    <div class="wide" style="max-width:calc(900px + 2*var(--gutter))">
+      <div class="emails">
+        <div class="ba-col"><p class="ba-label">Before</p>
+        <div class="email before">
+          <div class="ebar"><span>New message</span></div>
+          <div class="meta">To: Associate</div>
+          <div class="ebody">Need this tonight, thanks.</div>
+        </div></div>
+        <div class="ba-col"><p class="ba-label after">After</p>
+        <div class="email after">
+          <div class="ebar"><span>New message</span></div>
+          <div class="meta">To: Associate</div>
+          <div class="ebody">
+            <span class="seg"><span class="lt">I: Impact</span><span>I know this might mess up your evening,</span></span>
+            <span class="seg"><span class="lt">R: Reason</span><span>but the client moved up their deadline and it took me by surprise.</span></span>
+            <span class="seg"><span class="sp"></span><span>I’ll need that memo tonight.</span></span>
+            <span class="seg"><span class="lt">P: Praise</span><span>Coming to you with this because I know you have the skills to handle this the right way.</span></span>
+            <span class="seg"><span class="lt">T: Thanks</span><span>Thanks for your help.</span></span>
+          </div>
+        </div></div>
+      </div>
+      <p class="cap">It’s an extra two minutes, and it makes all the difference in the world.</p>
+    </div>
+    <div class="col">
+      <div class="watch trip-watch"><div class="wk">Common misses</div><ul>
+        <li><b>Praise that insults everyone else.</b> <i>“You’re the most thorough researcher on the team”</i> just demoted the rest of the team.</li>
+        <li><b>Over-apologizing.</b> Five sentences of “I feel awful” makes the ask about you.</li>
+        <li><b>“Get back to me if you can.”</b> Don’t give them an option you don’t want them to have. Give a deadline.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  {/* ============ 5: The Recognition Ladder (flourish_ladder.pdf) ============ */}
+  <section class="principle alt" id="ladder">
+    <div class="col">
+      <header class="ph"><span class="num" aria-hidden="true">5</span><h2>The Recognition Ladder</h2></header>
+      <p class="lead">When someone on your team does great work, the way you recognize it shapes how it’s received.</p>
+      <p class="txt">Here’s a four-rung ladder, ordered from low effort to high effort.</p>
+    </div>
+    <div class="wide ladder-wrap" style="max-width:calc(980px + 2*var(--gutter))">
+      <ol class="ladder">
+        <li class="rung"><span class="r">1</span><b>Praise privately</b>A short message, a quick word in the hallway, a thank-you at the end of a call. Takes 30 seconds.</li>
+        <li class="rung"><span class="r">2</span><b>Praise publicly</b>Mention them in a meeting, an email thread, a Teams channel, an all-hands. Skip this if others contributed comparably, or make sure to name them too.</li>
+        <li class="rung"><span class="r">3</span><b>Praise upward</b>Speak well of them to someone whose opinion carries weight: the practice group leader, the office managing partner, a client. For this to count as a deposit, the associate has to know it happened.</li>
+        <li class="rung"><span class="r">4</span><b>Entrust with responsibility</b>Give them a bigger piece: lead a project, run a meeting, own a deliverable. Your trust is the highest form of recognition.</li>
+      </ol>
+      <div class="ladder-axis" aria-hidden="true"><span>Low effort</span><span class="line"></span><span>High effort</span></div>
+    </div>
+    <div class="col">
+      <div class="watch"><div class="wk">Check the fit</div>
+        <p>Higher rungs aren’t always better. An introvert may dread public praise. Someone already overloaded may hear “more responsibility” as punishment. Match the move to the person.</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ============ Start ============ */}
+  <section class="start">
+    <div class="col">
+      <p class="big">Where to start: one associate, one move, this week.</p>
+      <p>You don’t have to do it all at once. Set up a recurring calendar reminder, and that’s one less thing for you to remember.</p>
+    </div>
+  </section>
+  </main>
+
+  {/* ============ Close ============ */}
+  <footer class="close" aria-label="Contact">
+    <div class="wide close-in" style="max-width:calc(880px + 2*var(--gutter))">
+      <img src="/images/jon-headshot-botanical.webp" alt="Jon Krop" width="600" height="744" loading="lazy" />
+      <div>
+        <h2>Let’s keep talking</h2>
+        <p>Questions, ideas to bounce around, or any way I can be helpful? Never hesitate to drop me a line: <a href="mailto:jon@teamflourish.com">jon@teamflourish.com</a></p>
+        <p class="sig">Jon Krop &middot; Founder and CEO, Flourish Legal Well-Being</p>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="wide foot-in">
+        <img src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="120" />
+        <a href="https://teamflourish.com">teamflourish.com</a>
+      </div>
+    </div>
+  </footer>
+</PlaybookLayout>
