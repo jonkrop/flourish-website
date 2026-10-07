@@ -1,0 +1,584 @@
+---
+// Standalone resource page - intentionally NOT wrapped in the site layout.
+// The web-native playbook from Jon's NALP webinar (2026-10-06),
+// "Associates Don't Want to Work Anymore": Helping Partners Motivate Today's Associates.
+// Written from the delivery transcript, in Jon's voice. Paper palette shared with beautiful-slideshows.
+import '@fontsource-variable/manrope';
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/500.css';
+import '@fontsource/newsreader/600.css';
+import '@fontsource/newsreader/400-italic.css';
+import '@fontsource/newsreader/500-italic.css';
+
+const HANDOUTS_PDF = '/uploads/Flourish-A-Game-Cheat-Sheets-for-Partners.pdf';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Associates Don&rsquo;t Want to Work Anymore: Helping Partners Motivate Today&rsquo;s Associates | Flourish</title>
+  <meta name="description" content="A playbook for PD professionals: five principles for helping partners get associates' A-game, plus the lines to borrow and cheat sheets to share." />
+  <meta property="og:title" content="&ldquo;Associates Don&rsquo;t Want to Work Anymore&rdquo;: Helping Partners Motivate Today&rsquo;s Associates" />
+  <meta property="og:description" content="Five principles for helping partners get associates' A-game, plus the lines to borrow." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://teamflourish.com/images/partners-listen/og.jpg" />
+  <link rel="icon" href="/images/lotus.png" />
+  <style is:global>
+    :root{
+      --ground:#E7E1D6;
+      --paper:#FEFCFA;
+      --ink:#12322F;
+      --body:#2B403A;
+      --dim:#5C6E67;
+      --accent:#F05D23;
+      --accent-deep:#C4471A;
+      --peach:#FCEEE9;
+      --peach-line:#F2D8CC;
+      --sage:#EDF3F1;
+      --sage-line:#D3E1DC;
+      --hair:rgba(18,50,47,.14);
+      --serif:"Newsreader",Georgia,"Times New Roman",serif;
+      --sans:"Manrope Variable","Manrope","Segoe UI",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;}
+    html,body{background:var(--ground);color:var(--body);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+    body{padding:44px 20px 72px;display:flex;justify-content:center;align-items:flex-start;}
+    a{color:var(--accent-deep);}
+
+    .doc{
+      width:100%;max-width:780px;background:var(--paper);position:relative;
+      border:1px solid rgba(240,93,35,.38);
+      box-shadow:0 20px 60px rgba(18,50,47,.20);
+      padding:64px 66px 50px;
+    }
+
+    /* ---------- masthead ---------- */
+    .logo{display:block;width:188px;height:auto;margin-bottom:26px;}
+    .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);}
+    .title{font-family:var(--serif);font-weight:600;font-size:46px;line-height:1.06;letter-spacing:-.005em;color:var(--ink);text-wrap:balance;}
+    .sub-title{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.15;color:var(--ink);margin-top:8px;text-wrap:balance;}
+    .sub{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35;color:var(--dim);margin-top:14px;text-wrap:balance;}
+    .from{font-size:13.5px;color:var(--dim);margin-top:16px;line-height:1.5;}
+    .from b{font-weight:600;color:var(--body);}
+
+    /* ---------- opening chat ---------- */
+    .chat{margin:36px 0 30px;border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 2px 14px rgba(18,50,47,.08);}
+    .chat-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#F3F1EC;border-bottom:1px solid var(--hair);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);}
+    .chat-bar .dot{width:8px;height:8px;border-radius:50%;background:#E05A4E;box-shadow:12px 0 0 #E8B54A,24px 0 0 #6BBF6A;margin-right:28px;}
+    .chat-q{padding:18px 20px 6px;font-family:var(--serif);font-size:19px;line-height:1.35;color:var(--ink);}
+    .chat-q small{display:block;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:6px;}
+    .chat-feed{padding:10px 20px 20px;display:flex;flex-wrap:wrap;gap:8px;}
+    .msg{font-size:14.5px;line-height:1.35;padding:7px 12px;border-radius:14px 14px 14px 4px;background:var(--sage);color:var(--ink);opacity:0;transform:translateY(6px);animation:pop .45s ease forwards;}
+    .msg.yes{font-weight:700;}
+    .msg.long{flex-basis:100%;max-width:max-content;font-style:italic;}
+    @keyframes pop{to{opacity:1;transform:none;}}
+    @media (prefers-reduced-motion:reduce){.msg{animation:none;opacity:1;transform:none;}}
+
+    .intro p{font-size:17px;line-height:1.62;color:var(--body);max-width:64ch;margin-bottom:14px;}
+    .intro p.big{font-family:var(--serif);font-size:24px;line-height:1.3;color:var(--ink);font-weight:500;}
+    .howto{display:flex;gap:12px;align-items:center;margin-top:6px;font-size:14.5px;color:var(--dim);}
+    .howto .chip{flex:none;display:inline-block;width:26px;height:18px;border-radius:3px;background:var(--peach);border:1px solid var(--peach-line);border-left:3px solid var(--accent);}
+
+    /* ---------- contents ---------- */
+    .toc{margin:30px 0 4px;background:var(--sage);border-top:2px solid var(--ink);padding:20px 24px 18px;}
+    .toc-head{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}
+    .toc ol{list-style:none;counter-reset:t;}
+    .toc li{border-bottom:1px solid var(--sage-line);}
+    .toc li:last-child{border-bottom:0;}
+    .toc a{display:flex;gap:14px;align-items:baseline;padding:8px 0;text-decoration:none;color:var(--ink);font-family:var(--serif);font-size:18px;}
+    .toc a:hover .t{text-decoration:underline;text-decoration-color:var(--accent);}
+    .toc .n{font-family:var(--sans);font-weight:800;font-size:13px;color:var(--accent-deep);min-width:14px;}
+    .toc-tools{display:flex;flex-wrap:wrap;gap:18px;margin-top:12px;padding-top:12px;border-top:1px solid var(--sage-line);}
+    .toc-tools a,.toc-tools button{font:600 13.5px var(--sans);color:var(--accent-deep);background:none;border:0;cursor:pointer;text-decoration:none;display:inline-flex;gap:6px;align-items:center;padding:0;}
+    .toc-tools a:hover,.toc-tools button:hover{text-decoration:underline;}
+
+    .hr{height:2px;background:linear-gradient(90deg,var(--accent),rgba(240,93,35,0));margin:44px 0 40px;border:0;}
+
+    /* ---------- principles ---------- */
+    .principle{margin:0;}
+    .ph{display:flex;align-items:center;gap:18px;margin-bottom:18px;}
+    .ph .num{font-family:var(--serif);font-weight:500;font-size:64px;line-height:.8;color:var(--accent);flex:none;margin-top:2px;}
+    
+    .ph h2{font-family:var(--serif);font-weight:600;font-size:32px;line-height:1.1;letter-spacing:-.005em;color:var(--ink);text-wrap:balance;}
+    .lead{margin:0 0 18px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:23px;line-height:1.32;color:var(--ink);text-wrap:balance;}
+
+    ul.pts{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0 0 6px;}
+    ul.pts li{position:relative;padding-left:26px;font-size:17px;line-height:1.56;color:var(--body);}
+    ul.pts li::before{content:"";position:absolute;left:0;top:12px;width:13px;height:2px;background:var(--accent);}
+    ul.pts b{font-weight:700;color:var(--ink);}
+    q,.qt{font-style:normal;}
+
+    h3.sub3{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin:30px 0 10px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+    h3.sub3 .for{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);}
+    p.txt{font-size:17px;line-height:1.56;margin:0 0 12px;}
+    p.txt b{color:var(--ink);}
+    .cap{font-size:14px;color:var(--dim);font-style:italic;margin:8px 0 0;line-height:1.45;}
+
+    /* ---------- lines to borrow ---------- */
+    .borrow{margin:26px 0 0;background:var(--peach);border:1px solid var(--peach-line);border-left:3px solid var(--accent);padding:18px 22px 10px;}
+    .borrow-head{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+    .borrow ul{list-style:none;}
+    .borrow li{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;padding:10px 0;border-top:1px solid var(--peach-line);}
+    .borrow li:first-child{border-top:0;}
+    .borrow .line{font-family:var(--serif);font-size:19.5px;line-height:1.38;color:var(--ink);}
+    .borrow .tag{display:block;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--accent-deep);margin-bottom:3px;}
+    .borrow .credit{display:block;font-family:var(--sans);font-size:13px;font-style:italic;color:var(--dim);margin-top:3px;}
+
+    /* ---------- email before/after ---------- */
+    .emails{display:grid;grid-template-columns:1fr 1.35fr;gap:16px;margin:18px 0 0;align-items:start;}
+    .email{background:#fff;border:1px solid var(--hair);border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(18,50,47,.07);}
+    .email .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:#2F3A38;color:#fff;font-size:12px;font-weight:600;}
+    .email .st{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:3px;}
+    .email.before .st{background:#B23A2E;}
+    .email.after .st{background:var(--accent-deep);}
+    .email .meta{font-size:12.5px;color:var(--dim);padding:8px 14px;border-bottom:1px solid var(--hair);}
+    .email .body{padding:14px 14px 16px;font-size:15px;line-height:1.55;color:var(--ink);}
+    .email .seg{display:block;margin-bottom:6px;}
+    .email .lt{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:3px;background:var(--accent);color:#fff;font-size:11px;font-weight:800;margin-right:7px;position:relative;top:-1px;}
+
+    /* ---------- ladder ---------- */
+    .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:end;margin:16px 0 0;}
+    .rung{background:var(--sage);border:1px solid var(--sage-line);border-top:3px solid var(--ink);padding:12px 12px 12px;font-size:14px;line-height:1.4;color:var(--body);}
+    .rung:nth-child(1){min-height:120px;}
+    .rung:nth-child(2){min-height:150px;}
+    .rung:nth-child(3){min-height:180px;}
+    .rung:nth-child(4){min-height:210px;border-top-color:var(--accent);}
+    .rung .r{display:block;font-family:var(--serif);font-size:26px;line-height:1;color:var(--accent-deep);margin-bottom:6px;}
+    .rung b{display:block;font-size:14.5px;color:var(--ink);margin-bottom:4px;}
+    .ladder-axis{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-top:8px;}
+
+    /* ---------- blame cards ---------- */
+    .cards{display:flex;flex-direction:column;gap:18px;margin:22px 0 0;}
+    .card{border:1px solid var(--hair);background:#fff;padding:22px 24px 20px;}
+    .card .k{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:6px;}
+    .card h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.2;color:var(--ink);margin-bottom:6px;}
+    .card .hears{font-family:var(--serif);font-style:italic;font-size:17.5px;color:var(--dim);margin-bottom:14px;}
+    .card p{font-size:16.5px;line-height:1.56;margin-bottom:12px;}
+    .card p b{color:var(--ink);}
+    .say{margin:6px 0 14px;padding:14px 18px;background:var(--sage);border-radius:4px 14px 14px 14px;font-family:var(--serif);font-size:18.5px;line-height:1.4;color:var(--ink);position:relative;}
+    .say::before{content:"How we put it";display:block;font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+
+    /* ---------- objections dialogue ---------- */
+    .dialog{display:flex;flex-direction:column;gap:22px;margin:24px 0 0;}
+    .ex{display:flex;flex-direction:column;gap:8px;}
+    .bub{max-width:86%;padding:12px 16px;line-height:1.45;}
+    .bub .who{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;}
+    .bub.they{align-self:flex-start;background:#fff;border:1px solid var(--hair);border-radius:4px 16px 16px 16px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink);}
+    .bub.they .who{color:var(--dim);font-family:var(--sans);font-style:normal;}
+    .bub.you{align-self:flex-end;background:var(--peach);border:1px solid var(--peach-line);border-right:3px solid var(--accent);border-radius:16px 4px 16px 16px;font-family:var(--serif);font-size:18px;color:var(--ink);}
+    .bub.you .who{color:var(--accent-deep);font-family:var(--sans);}
+    .ex .note{align-self:flex-end;max-width:86%;font-size:14.5px;line-height:1.5;color:var(--dim);}
+    .ex .note b{color:var(--ink);}
+
+    .biggest{margin:30px 0 0;background:var(--ink);color:#E9EFEC;padding:26px 28px 24px;}
+    .biggest .k{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#F4A07A;margin-bottom:8px;}
+    .biggest .q{font-family:var(--serif);font-style:italic;font-size:25px;line-height:1.25;color:#fff;margin-bottom:16px;}
+    .biggest .ans{display:flex;gap:20px;align-items:center;margin-bottom:16px;}
+    .biggest .ans img{width:112px;height:112px;border-radius:50%;object-fit:cover;flex:none;border:2px solid rgba(255,255,255,.25);}
+    .biggest .ans .big{font-family:var(--serif);font-size:30px;line-height:1.15;color:#fff;}
+    .biggest .ans .big small{display:block;font-family:var(--sans);font-size:13px;color:#B9C8C3;margin-top:8px;font-style:italic;}
+    .biggest p{font-size:16.5px;line-height:1.56;margin-bottom:12px;color:#DCE5E1;}
+    .biggest p b{color:#fff;}
+
+    /* ---------- three in's ---------- */
+    .ins{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 0;}
+    .in{background:var(--sage);border:1px solid var(--sage-line);padding:16px 16px 14px;}
+    .in .w{font-family:var(--serif);font-size:23px;color:var(--ink);margin-bottom:6px;}
+    .in .w span{color:var(--accent-deep);font-weight:600;}
+    .in p{font-size:14.5px;line-height:1.5;}
+
+
+
+    /* ---------- borrowable lines ---------- */
+    .borrow-line{margin:12px 0 16px;padding:14px 18px;background:var(--peach);border:1px solid var(--peach-line);border-left:3px solid var(--accent);font-family:var(--serif);font-size:19.5px;line-height:1.4;color:var(--ink);}
+    .card .borrow-line{margin:6px 0 12px;}
+    .biggest .wise{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.4;color:#fff;border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin-top:4px;}
+    .biggest .ans .big{color:#F7B08E;}
+
+
+    /* ---------- objection move ---------- */
+    .ex.solo{margin:6px 0 0;}
+    .move{margin:30px 0 4px;}
+    .move-h{font-family:var(--serif);font-size:20px;line-height:1.35;color:var(--ink);margin-bottom:12px;}
+    .move-steps{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .move .step{display:flex;gap:14px;align-items:flex-start;background:var(--sage);border:1px solid var(--sage-line);padding:16px 18px;font-size:15.5px;line-height:1.5;}
+    .move .step b{display:block;font-family:var(--serif);font-size:21px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+    .mv{flex:none;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font:800 12px var(--sans);margin-right:8px;position:relative;top:-2px;}
+    .move .step .mv{width:30px;height:30px;font-size:14px;margin:2px 0 0;top:0;}
+    .bub.you .seg{display:block;}
+    .bub.you .seg + .seg{margin-top:6px;}
+    @media (max-width:600px){.move-steps{grid-template-columns:1fr;}}
+
+    /* ---------- toolkit ---------- */
+    .kit-head{margin:0 0 8px;}
+    .kit-head .k{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);}
+    .kit-head h2{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.1;color:var(--ink);margin:6px 0 10px;}
+    .kit-head p{font-size:17px;line-height:1.56;max-width:62ch;}
+    .tool{margin:28px 0 0;border-top:2px solid var(--ink);padding-top:18px;}
+    .tool h3{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--ink);line-height:1.15;}
+    .tool .for{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);margin:6px 0 12px;}
+    .tool p{font-size:16.5px;line-height:1.56;margin-bottom:10px;}
+    .tool p b{color:var(--ink);}
+    .steps{list-style:none;display:grid;gap:10px;margin:12px 0 12px;}
+    .steps li{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;font-size:16px;line-height:1.5;}
+    .steps .mk{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.1;color:var(--accent-deep);text-align:center;background:var(--peach);border:1px solid var(--peach-line);border-radius:4px;padding:6px 0;}
+    .steps b{display:block;color:var(--ink);font-size:16.5px;}
+    .watch{margin:12px 0 4px;background:var(--sage);border:1px solid var(--sage-line);padding:14px 18px;}
+    .watch .wk{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;}
+    .watch ul{list-style:none;display:grid;gap:8px;}
+    .watch li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.5;}
+    .watch li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--accent);}
+    .watch i{font-family:var(--serif);font-size:16.5px;color:var(--ink);}
+    .kit-link{font-size:14.5px;font-weight:600;}
+    .sheet{display:inline-block;font-size:13.5px;font-weight:700;color:var(--accent-deep);text-decoration:none;margin:-4px 0 12px;}
+    .sheet:hover{text-decoration:underline;}
+
+    /* ---------- start + downloads + close ---------- */
+    .start{margin:46px 0 0;text-align:center;padding:34px 30px;border:1px solid var(--peach-line);background:linear-gradient(180deg,var(--peach),var(--paper));}
+    .start .k{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);}
+    .start .big{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.1;color:var(--ink);margin:8px 0 12px;}
+    .start p{font-size:16.5px;line-height:1.55;max-width:52ch;margin:0 auto;}
+
+    .dl{display:flex;gap:22px;align-items:center;margin:34px 0 0;padding:22px;border:1px solid var(--hair);background:#fff;text-decoration:none;color:inherit;transition:box-shadow .15s,transform .15s;}
+    .dl:hover{box-shadow:0 8px 24px rgba(18,50,47,.12);transform:translateY(-1px);}
+    .dl img{width:110px;height:auto;border:1px solid var(--hair);flex:none;}
+    .dl .k{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);}
+    .dl .name{display:block;font-family:var(--serif);font-weight:600;font-size:23px;color:var(--ink);margin:4px 0 6px;}
+    .dl .desc{font-size:15px;line-height:1.5;}
+    .dl .go{display:inline-block;margin-top:10px;font-weight:700;font-size:13.5px;color:var(--accent-deep);}
+
+    .close{display:flex;gap:24px;align-items:center;margin:40px 0 0;padding:26px 28px;background:var(--sage);border-top:2px solid var(--ink);}
+    .close img{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:50% 4%;flex:none;}
+    .close h2{font-family:var(--serif);font-weight:600;font-size:26px;color:var(--ink);margin-bottom:6px;}
+    .close p{font-size:16px;line-height:1.55;}
+    .close .sig{font-size:14px;color:var(--dim);margin-top:8px;}
+
+    .foot{margin-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--dim);border-top:1px solid var(--hair);padding-top:20px;}
+    .foot .mark{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);}
+    .foot a{text-decoration:none;}
+
+    @media (max-width:600px){
+      body{padding:18px 10px 40px;}
+      .doc{padding:38px 22px 32px;}
+      .title{font-size:36px;}
+      .sub{font-size:19px;}
+      .ph .num{font-size:50px;}
+      .ph h2{font-size:26px;}
+      .lead{font-size:20px;}
+      .emails{grid-template-columns:1fr;}
+      .ladder{grid-template-columns:1fr 1fr;}
+      .rung{min-height:0 !important;}
+      .ins{grid-template-columns:1fr;}
+      .bub{max-width:94%;}
+      .ex .note{max-width:94%;}
+      .biggest .ans{flex-direction:column;align-items:flex-start;}
+      .dl{flex-direction:column;align-items:flex-start;}
+      .close{flex-direction:column;align-items:flex-start;}
+      .borrow .line{font-size:18px;}
+    }
+    @media print{
+      body{background:#fff;padding:0;}
+      .doc{box-shadow:none;border:0;max-width:none;padding:0;}
+      .copy,.toc-tools,.chat-bar .dot{display:none;}
+      .msg{animation:none;opacity:1;transform:none;}
+      .principle,.card,.ex,.borrow,.biggest{break-inside:avoid;}
+      .biggest{background:#fff;color:var(--body);border:2px solid var(--ink);}
+      .biggest .q,.biggest .ans .big,.biggest p b{color:var(--ink);}
+      .biggest p,.biggest .ans .big small{color:var(--body);}
+    }
+  </style>
+</head>
+<body>
+  <main class="doc">
+    <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="188" />
+    <h1 class="title">&ldquo;Associates Don&rsquo;t Want to Work Anymore&rdquo;</h1>
+    <p class="sub-title">Helping Partners Motivate Today&rsquo;s Associates</p>
+    <p class="from">A playbook from the NALP webinar, with Jon Krop of <a href="https://teamflourish.com">Flourish</a></p>
+
+    <div class="chat" aria-label="Chat from the webinar">
+      <div class="chat-bar"><span class="dot" aria-hidden="true"></span>Chat</div>
+      <p class="chat-q">&ldquo;In the past few months, have you heard a partner say some version of &lsquo;Associates just don&rsquo;t want to work anymore&rsquo;? Drop a yes in the chat.&rdquo;</p>
+      <div class="chat-feed">
+        <span class="msg yes" style="animation-delay:.2s">yes</span>
+        <span class="msg yes" style="animation-delay:.35s">Yes!</span>
+        <span class="msg yes" style="animation-delay:.5s">yes</span>
+        <span class="msg yes" style="animation-delay:.6s">YES</span>
+        <span class="msg yes" style="animation-delay:.7s">yes</span>
+        <span class="msg long" style="animation-delay:.9s">&ldquo;Associates want to work as little as they can get away with.&rdquo;</span>
+        <span class="msg yes" style="animation-delay:1.05s">yes</span>
+        <span class="msg yes" style="animation-delay:1.15s">yes</span>
+        <span class="msg long" style="animation-delay:1.35s">&ldquo;Associates don&rsquo;t work weekends anymore.&rdquo;</span>
+        <span class="msg yes" style="animation-delay:1.5s">yep</span>
+        <span class="msg yes" style="animation-delay:1.6s">yes</span>
+      </div>
+    </div>
+
+    <div class="intro">
+      <p class="big">It&rsquo;s not entirely partners&rsquo; imagination. Something has shifted. But associates aren&rsquo;t simply less willing to work. They just need to be engaged differently.</p>
+      <p>Getting partners there takes care, because the topic makes them defensive fast. Here are the five principles we use in our partner program, <b>How to Inspire A-Game Performance</b>, and why they work, so you can use them in all the ways you work with partners.</p>
+      <p class="howto"><span class="chip" aria-hidden="true"></span>Lines in orange are yours to borrow, word for word.</p>
+    </div>
+
+    <nav class="toc" aria-label="Contents">
+      <div class="toc-head">The five principles</div>
+      <ol>
+        <li><a href="#commiserate"><span class="n">1</span><span class="t">Commiserate first</span></a></li>
+        <li><a href="#frameworks"><span class="n">2</span><span class="t">Use simple, memorable frameworks</span></a></li>
+        <li><a href="#blame"><span class="n">3</span><span class="t">Don&rsquo;t blame them</span></a></li>
+        <li><a href="#objections"><span class="n">4</span><span class="t">Address objections. Better yet, preempt them.</span></a></li>
+        <li><a href="#time"><span class="n">5</span><span class="t">Minimize the time commitment</span></a></li>
+        <li><a href="#toolkit"><span class="n">+</span><span class="t">The toolkit: each method in detail</span></a></li>
+      </ol>
+      <div class="toc-tools">
+        <a href="#share">&darr; Cheat sheets to share with partners</a>
+        <button type="button" onclick="window.print()">Print or save as PDF</button>
+      </div>
+    </nav>
+
+    <div class="hr"></div>
+
+    <!-- ============ 1 ============ -->
+    <section class="principle" id="commiserate">
+      <header class="ph"><span class="num">1</span><div><h2>Commiserate first</h2></div></header>
+      <div class="lead">Before you try to teach partners anything, commiserate with them.</div>
+      <ul class="pts">
+        <li>Name their problem, show you see it, and make clear you&rsquo;re here to help. <b>Feeling understood is what makes them receptive.</b> That chat up top is exactly how we open our partner program.</li>
+        <li>Partners don&rsquo;t think they need training. But they know they have problems, so lead with the problem.</li>
+        <li>Not sure how they see it? Ask. Aisha Greene, Deputy Chief Talent Officer at Hogan Lovells Cadwalader, never asks partners what training they want. She asks this, then uses their exact language:</li>
+      </ul>
+      <p class="borrow-line">&ldquo;What could I do to help you be more valuable to your clients?&rdquo;</p>
+      <ul class="pts">
+        <li>Frame everything around their self-interest, down to the title. We built our partner program to help firms keep their midlevel associates. We didn&rsquo;t call it &ldquo;How to Retain Your Associates.&rdquo; We called it <b>How to Inspire A-Game Performance</b>.</li>
+      </ul>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============ 2 ============ -->
+    <section class="principle" id="frameworks">
+      <header class="ph"><span class="num">2</span><div><h2>Use simple, memorable frameworks</h2></div></header>
+      <div class="lead">Partners are very smart. They&rsquo;re also incredibly busy, with a ton already on their minds.</div>
+      <ul class="pts">
+        <li>If you want something to stick, boil it down to a simple, memorable framework.</li>
+        <li>For example, <b>TRIP</b>, for making a difficult ask. Put four things in it, in any order: <b>Thank</b> them. Give a <b>Reason</b>, and why now. Acknowledge the <b>Impact</b> on them. Include some <b>Praise</b>.</li>
+      </ul>
+      <div class="emails">
+        <div class="email before">
+          <div class="bar"><span>New message</span><span class="st">Before</span></div>
+          <div class="meta">To: Associate</div>
+          <div class="body">Need this tonight, thanks.</div>
+        </div>
+        <div class="email after">
+          <div class="bar"><span>New message</span><span class="st">With TRIP</span></div>
+          <div class="meta">To: Associate</div>
+          <div class="body">
+            <span class="seg"><span class="lt" aria-label="Impact">I</span>I know this might mess up your evening,</span>
+            <span class="seg"><span class="lt" aria-label="Reason">R</span>but the client moved up their deadline and it took us by surprise.</span>
+            <span class="seg"><span class="lt" aria-label="Praise">P</span>I&rsquo;m coming to you because I know you have the skills to handle this the right way.</span>
+            <span class="seg"><span class="lt" aria-label="Thank">T</span>Thanks for your help.</span>
+          </div>
+        </div>
+      </div>
+      <p class="cap">An example partners can use with associates. Same ask, a couple of extra minutes, and it lands completely differently.</p>
+      <ul class="pts" style="margin-top:16px">
+        <li>The rest are in the <a href="#toolkit">toolkit below</a>: the Recognition Ladder, the Three In&rsquo;s, and one before speaking, three before sending.</li>
+      </ul>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============ 3 ============ -->
+    <section class="principle" id="blame">
+      <header class="ph"><span class="num">3</span><div><h2>Don&rsquo;t blame them</h2></div></header>
+      <div class="lead">Partners complain about associates&rsquo; work. But show them how to get better work, and they hear: &ldquo;Oh, so you&rsquo;re saying it&rsquo;s my fault.&rdquo;</div>
+      <ul class="pts">
+        <li>So avoid anything that could even be <b>construed</b> as blaming them. Here are the two places they&rsquo;re most likely to feel blamed, and how we frame each.</li>
+      </ul>
+
+      <div class="cards">
+        <div class="card">
+          <h3>When their approach isn&rsquo;t landing</h3>
+          <p class="hears">What they might hear: &ldquo;It&rsquo;s your fault the associates aren&rsquo;t responding.&rdquo;</p>
+          <p>We teach partners to <b>invest before you withdraw</b>: today&rsquo;s associates see their work through their working relationships, so treat each relationship as an account, and make deposits before a withdrawal like a weekend or a difficult ask. Then, right away:</p>
+          <p class="borrow-line">&ldquo;If this doesn&rsquo;t feel intuitive, we completely understand. It wasn&rsquo;t like that for you. It&rsquo;s not your fault. But if you learn to speak this language, it will help you get what you want.&rdquo;</p>
+        </div>
+        <div class="card">
+          <h3>When they&rsquo;ve been harsh</h3>
+          <p class="hears">What they might hear: &ldquo;You were too harsh with your associate.&rdquo;</p>
+          <p>A curt email, a short answer in a meeting. Raise it directly and they get defensive. So we frame it as <b>stress spillover</b>:</p>
+          <p class="borrow-line">&ldquo;We understand you&rsquo;re almost always under pressure, and sometimes that stress just spills over. It&rsquo;s not malice. It&rsquo;s very human.&rdquo;</p>
+          <p>That softens it enough to land. Then we offer the fix: <a href="#tool-pause">one before speaking, three before sending</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============ 4 ============ -->
+    <section class="principle" id="objections">
+      <header class="ph"><span class="num">4</span><div><h2>Address objections. Better yet, preempt them.</h2></div></header>
+      <div class="lead">The best time to answer an objection is before anyone raises it.</div>
+      <div class="move">
+        <p class="move-h">When an objection does come up, never argue head-on. Make two moves:</p>
+        <div class="move-steps">
+          <div class="step"><span class="mv">1</span><div><b>Commiserate</b>Agree with what&rsquo;s true. There&rsquo;s almost always a kernel of truth in what they&rsquo;re saying.</div></div>
+          <div class="step"><span class="mv">2</span><div><b>Go to their self-interest</b>Focus on what&rsquo;s in it for them.</div></div>
+        </div>
+      </div>
+
+      <div class="dialog">
+        <div class="ex">
+          <div class="bub they"><span class="who">Partner</span>&ldquo;I already pay them. Shouldn&rsquo;t I just get the work?&rdquo;</div>
+          <div class="bub you"><span class="who">You</span>&ldquo;That&rsquo;s totally reasonable; you do pay them well. But pay will get you compliance. If compliance is all you want, pay is all you need. But if you want their A-game, that&rsquo;s not the currency that gets it.&rdquo;</div>
+        </div>
+        <div class="ex">
+          <div class="bub they"><span class="who">Partner</span>&ldquo;Why is this all on me? Are you talking to the associates too?&rdquo;</div>
+          <div class="bub you"><span class="who">You</span>&ldquo;You&rsquo;re right, it&rsquo;s not just on you. We&rsquo;re working with the associates too.&rdquo;</div>
+          <p class="note">Partners always ask this one, and this is the only answer that keeps their buy-in. If your firm does associate programming on managing up, <b>say so, early and often,</b> before they ask.</p>
+        </div>
+        <div class="ex">
+          <div class="bub they"><span class="who">Senior partner</span>&ldquo;It&rsquo;s the nature of the game.&rdquo;</div>
+          <div class="bub you"><span class="who">You</span>&ldquo;You&rsquo;re right. Late nights are part of the job. So when you need one, do you want their A-game, or their B, C, or D game?&rdquo;</div>
+        </div>
+        <div class="ex">
+          <div class="bub they"><span class="who">Partner</span>&ldquo;Clients don&rsquo;t coddle us. Why should we coddle associates?&rdquo;</div>
+          <div class="bub you"><span class="who">You</span>&ldquo;You&rsquo;re right that they need to be ready for how clients treat us. Could we prepare them another way, like bringing them onto client calls earlier?&rdquo;</div>
+        </div>
+        <div class="ex">
+          <div class="bub they"><span class="who">Partner</span>&ldquo;One strike and you&rsquo;re out.&rdquo;</div>
+          <div class="bub you"><span class="who">You</span>&ldquo;Look, clients pay for excellence, and high standards matter. But every associate you cut shrinks your bench and puts more work on your desk. What if you tried one round of feedback first? I&rsquo;m happy to workshop it with you. If that doesn&rsquo;t work, no one&rsquo;s going to stand in your way.&rdquo;</div>
+        </div>
+      </div>
+
+      <div class="biggest">
+        <p class="q">The biggest objection: &ldquo;So you&rsquo;re asking me to lower my standards?&rdquo;</p>
+        <div class="ans">
+          <img src="/images/partners-listen/urs-koenig.webp" alt="Leadership coach Urs Koenig" width="480" height="480" loading="lazy" />
+          <p class="big">Tough on results, tender on people.<small>A line we stole from my friend Urs Koenig, a leadership coach</small></p>
+        </div>
+        <p>Kill the &ldquo;coddling&rdquo; reading before it comes up. Nobody&rsquo;s lowering standards. <b>Hollow praise isn&rsquo;t a deposit.</b> Thoughtful critique, from someone trying to help you do better next time, is.</p>
+        <p>One sentence partners can add to their critiques. In &ldquo;wise feedback&rdquo; studies (mostly with students), critique was acted on far more often with it:</p>
+        <p class="wise">&ldquo;I&rsquo;m giving you these comments because I have very high expectations and I know that you can reach them.&rdquo;</p>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============ 5 ============ -->
+    <section class="principle" id="time">
+      <header class="ph"><span class="num">5</span><div><h2>Minimize the time commitment</h2></div></header>
+      <div class="lead">&ldquo;I know you&rsquo;re busy. I&rsquo;m here to deliver simplicity.&rdquo;</div>
+      <ul class="pts">
+        <li>&ldquo;I don&rsquo;t have time&rdquo; is the objection you&rsquo;ll hear most. That line is how we open with partners.</li>
+        <li>Ask for small adjustments to things they already do. If a change can&rsquo;t be done in two minutes, shrink it until it can.</li>
+        <li>Offload the remembering: a recurring calendar reminder, ideally set up by their assistant. <b>Assistants are often your best allies.</b> Our partner program also includes an app that drafts TRIP asks and recognition notes.</li>
+      </ul>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- ============ Toolkit ============ -->
+    <section id="toolkit">
+      <div class="kit-head">
+        <h2>The toolkit: each method, in detail</h2>
+        <p>The way we teach them to partners. Each is also a one-page cheat sheet you can forward.</p>
+      </div>
+
+      <a class="dl" id="share" href={HANDOUTS_PDF} target="_blank" rel="noopener">
+        <img src="/images/partners-listen/thumb-cheat-sheets.jpg" alt="" width="560" height="725" loading="lazy" />
+        <div>
+          <span class="name">Cheat sheets to share with partners</span>
+          <span class="desc">All five methods, one page each.</span>
+          <span class="go">Download the PDF &rarr;</span>
+        </div>
+      </a>
+
+      <div class="tool" id="tool-invest">
+        <h3>Invest before you withdraw</h3>
+        <span class="for">The principle underneath everything</span>
+        <a class="sheet" href="/uploads/flourish_relationshipbuilding.pdf" target="_blank" rel="noopener">One-page cheat sheet (PDF) &rarr;</a>
+        <p>Every interaction is a deposit or a withdrawal. Before a hard ask, make sure there are enough deposits to absorb it. Small, frequent deposits compound.</p>
+        <p>A deposit is anything that makes the associate feel <b>seen</b> as a person, <b>valued</b> for their contribution, or <b>trusted</b> with responsibility. It only counts if they perceive it. And it isn&rsquo;t the same as being nice: hollow praise lands as patronizing, while honest, specific critique can be a deposit.</p>
+      </div>
+
+      <div class="tool" id="tool-pause">
+        <h3>One before speaking, three before sending</h3>
+        <span class="for">For keeping stress from spilling over</span>
+        <a class="sheet" href="/uploads/flourish_stressspillover.pdf" target="_blank" rel="noopener">One-page cheat sheet (PDF) &rarr;</a>
+        <p>Feeling stressed or keyed up, even a little? Take <b>one breath before speaking</b> and <b>three before sending an email.</b> One, because three breaths mid-conversation would be odd. Three, because no one&rsquo;s watching, and email leaves a record.</p>
+      </div>
+
+      <div class="tool" id="tool-trip">
+        <h3>TRIP</h3>
+        <span class="for">For making a difficult ask</span>
+        <a class="sheet" href="/uploads/flourish_trip.pdf" target="_blank" rel="noopener">One-page cheat sheet (PDF) &rarr;</a>
+        <ul class="steps">
+          <li><span class="mk">T</span><span><b>Thank them</b>It goes a long way.</span></li>
+          <li><span class="mk">R</span><span><b>Give a reason</b>Why are you asking for this, and why now?</span></li>
+          <li><span class="mk">I</span><span><b>Acknowledge the impact</b>Show that you see what this costs them.</span></li>
+          <li><span class="mk">P</span><span><b>Include praise</b>Affirm what makes them right for this ask.</span></li>
+        </ul>
+        <div class="watch"><div class="wk">Common misses</div><ul>
+          <li><b>Praise that insults everyone else.</b> <i>&ldquo;You&rsquo;re the most thorough researcher on the team&rdquo;</i> just demoted the rest of the team.</li>
+          <li><b>Over-apologizing.</b> Five sentences of &ldquo;I feel awful&rdquo; makes the ask about the partner.</li>
+          <li><b>&ldquo;Get back to me if you can.&rdquo;</b> Don&rsquo;t give them an option you don&rsquo;t want them to have. Give a deadline.</li>
+        </ul></div>
+      </div>
+
+      <div class="tool" id="tool-ladder">
+        <h3>The Recognition Ladder</h3>
+        <span class="for">For recognizing effort</span>
+        <a class="sheet" href="/uploads/flourish_ladder.pdf" target="_blank" rel="noopener">One-page cheat sheet (PDF) &rarr;</a>
+        <p>Work that gets no recognition can land as a withdrawal: the partner has moved on, but the associate hasn&rsquo;t. Each rung asks a little more of the partner.</p>
+        <ul class="steps">
+          <li><span class="mk">1</span><span><b>Praise privately</b>Thirty seconds. Be specific: &ldquo;The way you structured the estoppel argument in section III, that was sharp&rdquo; beats &ldquo;great work.&rdquo;</span></li>
+          <li><span class="mk">2</span><span><b>Praise publicly</b>The deal-close email, the practice group meeting. Skip it if others contributed equally and aren&rsquo;t named.</span></li>
+          <li><span class="mk">3</span><span><b>Praise upwardly</b>To the practice group leader or the client. CC the associate so they know.</span></li>
+          <li><span class="mk">4</span><span><b>Entrust with responsibility</b>&ldquo;I want you to take the next depo.&rdquo; You&rsquo;re showing trust by handing them something real.</span></li>
+        </ul>
+        <div class="watch"><div class="wk">Check the fit</div><ul>
+          <li>Higher isn&rsquo;t always better. A shy associate may dread public praise. Someone who just worked four straight weekends may hear &ldquo;more responsibility&rdquo; as punishment.</li>
+        </ul></div>
+      </div>
+
+      <div class="tool" id="tool-ins">
+        <h3>The Three In&rsquo;s</h3>
+        <span class="for">For small, steady deposits</span>
+        <a class="sheet" href="/uploads/flourish_smallmoves.pdf" target="_blank" rel="noopener">One-page cheat sheet (PDF) &rarr;</a>
+        <ul class="steps">
+          <li><span class="mk">In</span><span><b>Introduction</b>Connect them to someone worth knowing: another partner, a mentor, someone at the client.</span></li>
+          <li><span class="mk">In</span><span><b>Invitation</b>Bring them into a client call, a strategy meeting, witness prep, or just lunch.</span></li>
+          <li><span class="mk">In</span><span><b>Interest</b>No need to memorize their hobbies. &ldquo;I know the last week&rsquo;s been busy. How are you holding up?&rdquo; is a partner-sized display of interest.</span></li>
+        </ul>
+        <div class="watch"><div class="wk">The move isn&rsquo;t the thing. How it lands is the thing.</div><ul>
+          <li>Forward an article on &ldquo;ten habits of successful lawyers,&rdquo; and they may hear: my partner thinks I need to improve.</li>
+          <li>Invite them to a client call, then do all the talking, and they spend an hour feeling invisible.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ============ Start ============ -->
+    <div class="start">
+      <div class="big">Where to start: one partner, one principle, this week.</div>
+      <p>You don&rsquo;t have to do all of this at once. Take one principle into your next partner conversation, or pass along one tool.</p>
+    </div>
+
+    <!-- ============ Close ============ -->
+    <section class="close" aria-label="Let's keep talking">
+      <img src="/images/jon-headshot-botanical.webp" alt="Jon Krop" width="600" height="744" loading="lazy" />
+      <div>
+        <h2>Let&rsquo;s keep talking</h2>
+        <p>Questions down the line, ideas to bounce around, or any way I can be helpful? Never hesitate to drop me a line: <a href="mailto:jon@teamflourish.com">jon@teamflourish.com</a></p>
+        <p class="sig">Jon Krop &middot; Founder and CEO, Flourish Legal Well-Being</p>
+      </div>
+    </section>
+
+    <div class="foot">
+      <span class="mark">Flourish Legal Well-Being</span>
+      <a href="https://teamflourish.com">teamflourish.com</a>
+    </div>
+  </main>
+</body>
+</html>
