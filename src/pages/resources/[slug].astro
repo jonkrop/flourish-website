@@ -8,7 +8,8 @@ import { topicKey, topicPathSlug } from '../../lib/topicUrl';
 export async function getStaticPaths() {
   const topics = await getCollection('topics');
 
-  return topics.map((topic) => ({
+  // Topics with a `playbook` render from [playbookSlug].astro instead.
+  return topics.filter((topic) => !topic.data.playbook).map((topic) => ({
     params: { slug: topicPathSlug(topic) },
     props: { entry: topic },
   }));

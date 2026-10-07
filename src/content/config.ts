@@ -9,6 +9,9 @@ const topics = defineCollection({
     urlSuffix: z.string().regex(/^[a-z0-9]*$/).nullish(),
     // false = never rotate this topic's URL (webinar pages, shared links).
     rotate: z.boolean().default(true),
+    // Name of a web-native playbook in src/playbooks/<name>.astro. When set, the topic
+    // page renders that playbook instead of the resource-list layout.
+    playbook: z.string().optional(),
     title: z.string(),
     subtitle: z.string().optional(),
     intro: z.string().optional(),
@@ -22,7 +25,7 @@ const topics = defineCollection({
         type: z.enum(['pdf', 'audio', 'video', 'link']),
         url: z.string(),
       })).default([]),
-    })),
+    })).default([]),
   }),
 });
 

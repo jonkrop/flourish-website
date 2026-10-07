@@ -1,0 +1,27 @@
+---
+// Topic pages that set `playbook: <name>` render the web-native playbook in
+// src/playbooks/<name>.astro instead of the resource list ([slug].astro).
+// Separate route so neither page type loads the other's CSS.
+// Process: ../../../../playbook-guide.md
+import { getCollection } from 'astro:content';
+import { topicPathSlug } from '../../lib/topicUrl';
+
+export async function getStaticPaths() {
+  const topics = await getCollection('topics', (t) => !!t.data.playbook);
+  return topics.map((topic) => ({
+    params: { playbookSlug: topicPathSlug(topic) },
+    props: { entry: topic },
+  }));
+}
+
+const { entry } = Astro.props;
+const playbooks = import.meta.glob('../../playbooks/*.astro', { eager: true }) as Record<string, { default: any }>;
+const name = entry.data.playbook as string;
+const Playbook = playbooks[`../../playbooks/${name}.astro`]?.default;
+if (!Playbook) throw new Error(`Topic ${entry.data.slug || entry.slug}: playbook "${name}" not found in src/playbooks/`);
+
+// { clientSlug: clientName } for the ?client=<slug> back link.
+const clientLookup: Record<string, string> = {};
+for (const c of await getCollection('clients')) clientLookup[c.data.slug || c.slug] = c.data.name;
+---
+<Playbook entry={entry} clientLookup={clientLookup} />
