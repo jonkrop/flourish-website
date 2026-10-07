@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta name="robots" content="noindex, nofollow">
-<meta name="flourish-build" content="a7bc5e8026796253">
+<meta name="flourish-build" content="c60695a7f3ab4e94">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Benesch — 30-Second Stress Busters &amp; Mood Boosters — Evaluation Results</title>
@@ -154,17 +154,18 @@
 
   /* ---------- What your people want next ---------- */
   .next-wrap { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 24px 24px 20px; box-shadow: var(--shadow); }
-  .next-base { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 16px; }
+  .of-all { display: block; font-family: 'Karla', sans-serif; font-weight: 500; font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; letter-spacing: 0; }
+  .more-topics .of-all { display: inline; font-size: 12px; margin: 0 0 0 4px; }
   .top-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 18px; }
   .top-topic { border-top: 3px solid var(--leaf-bright); padding-top: 10px; }
   .top-pct { font-family: 'Fraunces', serif; font-weight: 700; font-size: 40px; line-height: 1; color: var(--leaf); }
   .top-name { font-weight: 700; font-size: 15px; margin-top: 6px; line-height: 1.3; }
   .more-topics { border-top: 1px dashed var(--hairline); padding-top: 12px; }
-  .more-topics .cat-item { grid-template-columns: 1fr 160px 44px; padding: 5px 0; }
+  .more-topics .cat-item { grid-template-columns: 1fr 140px 150px; padding: 5px 0; }
   .more-topics .cat-label { font-weight: 500; font-size: 14px; }
   .more-topics .cat-bar { height: 10px; }
   .cat-fill.topic { background: var(--leaf-bright); opacity: .7; }
-  @media (max-width: 520px) { .more-topics .cat-item { grid-template-columns: 1fr 80px 40px; } }
+  @media (max-width: 520px) { .more-topics .cat-item { grid-template-columns: 1fr auto; row-gap: 4px; padding: 7px 0; } .more-topics .cat-label { grid-column: 1 / -1; } }
 </style>
 </head>
 <body>
@@ -267,17 +268,16 @@
   <section id="next" class="reveal" data-q="What your people want next">
     <h2>What your people want next</h2>
     <div class="next-wrap">
-      <div class="next-base">Topics they'd want a session on, as a share of all 11 respondents</div>
       <div class="top-topics">
-        <div class="top-topic"><div class="top-pct">55%</div><div class="top-name">Difficult conversations and working relationships</div></div>
-        <div class="top-topic"><div class="top-pct">45%</div><div class="top-name">Handling stress and pressure</div></div>
-        <div class="top-topic"><div class="top-pct">45%</div><div class="top-name">Sleep</div></div>
+        <div class="top-topic"><div class="top-pct">55%<span class="of-all">of all respondents</span></div><div class="top-name">Difficult conversations and working relationships</div></div>
+        <div class="top-topic"><div class="top-pct">45%<span class="of-all">of all respondents</span></div><div class="top-name">Handling stress and pressure</div></div>
+        <div class="top-topic"><div class="top-pct">45%<span class="of-all">of all respondents</span></div><div class="top-name">Sleep</div></div>
       </div>
       <div class="more-topics">
-        <div class="cat-item"><span class="cat-label">Focus and digital distraction</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
-        <div class="cat-item"><span class="cat-label">Mental health, for yourself or colleagues</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
-        <div class="cat-item"><span class="cat-label">Small habits for energy and mood</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
-        <div class="cat-item"><span class="cat-label">Leading, managing, or mentoring others</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
+        <div class="cat-item"><span class="cat-label">Focus and digital distraction</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%<span class="of-all">of all respondents</span></span></div>
+        <div class="cat-item"><span class="cat-label">Mental health, for yourself or colleagues</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%<span class="of-all">of all respondents</span></span></div>
+        <div class="cat-item"><span class="cat-label">Small habits for energy and mood</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%<span class="of-all">of all respondents</span></span></div>
+        <div class="cat-item"><span class="cat-label">Leading, managing, or mentoring others</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%<span class="of-all">of all respondents</span></span></div>
       </div>
     </div>
   </section>
