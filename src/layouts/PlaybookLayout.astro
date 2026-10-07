@@ -86,6 +86,17 @@ const { title, description = '', chapters, noindex = true, clientLookup = {} } =
     .hero .from{font-size:14.5px;color:#9FB3AD;margin-top:26px;}
     .hero .from a{color:#fff;text-decoration-color:var(--accent);text-underline-offset:3px;}
 
+    /* Foliage variant (opt-in: <section class="hero foliage"> + PlaybookFoliage): the main site's hero photo and orange frame. */
+    .hero.foliage{background:#0B1A17;}
+    .hero.foliage::before{display:none;}
+    .pf-bg,.pf-fg{position:absolute;inset:0;pointer-events:none;}
+    .pf-bg img,.pf-fg img{width:100%;height:100%;object-fit:cover;display:block;}
+    .pf-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 32% 48%,rgba(5,5,5,.55) 0%,transparent 72%),linear-gradient(to bottom,rgba(5,5,5,.3) 0%,rgba(5,5,5,.06) 40%,rgba(5,5,5,.45) 100%);}
+    .pf-frame{position:absolute;top:22px;left:3.5%;right:3.5%;bottom:5%;border:2px solid var(--accent);pointer-events:none;}
+    /* Leaves cross only the frame's bottom line, at the lower left. */
+    .pf-fg{clip-path:polygon(3% 74%,30% 74%,30% 100%,3% 100%);}
+    .hero.foliage .hero-in{z-index:1;max-width:min(calc(var(--wide) + 2*var(--gutter)),calc(93% - 72px));padding-top:64px;padding-bottom:104px;}
+
     .chat{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(0,0,0,.35),0 2px 0 rgba(255,255,255,.4) inset;}
     .chat-bar{display:flex;align-items:center;gap:8px;padding:12px 18px;background:#F3F1EC;border-bottom:1px solid var(--hair);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
     .chat-bar .dot{width:9px;height:9px;border-radius:50%;background:#E05A4E;box-shadow:14px 0 0 #E8B54A,28px 0 0 #6BBF6A;margin-right:34px;}
@@ -294,6 +305,9 @@ const { title, description = '', chapters, noindex = true, clientLookup = {} } =
     }
     @media (max-width:700px){
       :root{--gutter:18px;}
+      .pf-frame{top:12px;left:12px;right:12px;bottom:12px;}
+      .pf-fg{display:none;}
+      .hero.foliage .hero-in{max-width:none;padding:44px 34px 56px;}
       .bar-in{height:52px;gap:12px;}
       .bar-home{display:none;}
       .bar ol{margin-left:0;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);}
@@ -343,6 +357,7 @@ const { title, description = '', chapters, noindex = true, clientLookup = {} } =
       body{background:#fff;}
       .hero,.biggest,.close,.toolkit,.principle.alt,.start{background:#fff !important;color:var(--body) !important;}
       .hero::before,.biggest::before{display:none;}
+      .pf-bg,.pf-frame,.pf-fg{display:none;}
       .hero h1,.biggest .q,.close h2{color:var(--ink) !important;}
       .hero .sub-title,.hero .from,.hero .from a,.biggest p,.biggest p b,.close p,.close p a,.close .sig,.foot-in,.foot a{color:var(--body) !important;}
       .email .ebar,.email .st,.email .lt,.mv{-webkit-print-color-adjust:exact;print-color-adjust:exact;}

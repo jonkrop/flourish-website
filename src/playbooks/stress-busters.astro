@@ -7,6 +7,7 @@
 // Copy is Jon's wording; check jon-voice.md before changing it.
 // Orange/peach is reserved for the exact words to say (out loud or in your head).
 import PlaybookLayout from '../layouts/PlaybookLayout.astro';
+import PlaybookFoliage from '../components/PlaybookFoliage.astro';
 
 const { entry, clientLookup = {} } = Astro.props;
 const title = entry.data.title;
@@ -53,7 +54,8 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   clientLookup={clientLookup}
 >
   {/* ============ Hero ============ */}
-  <section class="hero" id="top">
+  <section class="hero foliage" id="top">
+    <PlaybookFoliage />
     <div class="wide hero-in">
       <div>
         <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="168" />
