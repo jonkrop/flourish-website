@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta name="robots" content="noindex, nofollow">
-<meta name="flourish-build" content="4a8b67eab09a0865">
+<meta name="flourish-build" content="0436f07a62105d8d">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Benesch — 30-Second Stress Busters &amp; Mood Boosters — Evaluation Results</title>
@@ -46,15 +46,6 @@
   .rule::before, .rule::after { content: ''; height: 1px; width: 120px; background: linear-gradient(90deg, transparent, var(--hairline)); }
   .rule::after { background: linear-gradient(90deg, var(--hairline), transparent); }
 
-  /* ---------- At a glance ---------- */
-  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 30px 0 18px; animation: rise .55s .07s ease both; }
-  .glance-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 20px 18px 16px; text-align: center; box-shadow: var(--shadow); }
-  .glance-card.hero { background: linear-gradient(160deg, var(--leaf) 0%, #234a2f 100%); border-color: transparent; color: #f3f1e8; }
-  .glance-num { font-family: 'Fraunces', serif; font-weight: 700; font-size: 38px; line-height: 1.05; }
-  .glance-card.hero .glance-num { font-size: 44px; color: #fff; }
-  .glance-num .of { font-size: 16px; font-weight: 400; opacity: .75; }
-  .glance-label { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-top: 6px; color: var(--ink-soft); }
-  .glance-card.hero .glance-label { color: #cfe0c6; }
 
   /* ---------- Sticky section nav ---------- */
   nav.jump { position: sticky; top: 0; z-index: 5; display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
@@ -143,6 +134,10 @@
     border-radius: 12px 0 0 12px; box-shadow: -3px 2px 8px rgba(34,48,31,.18); transition: background .15s ease, width .15s ease; }
   #panel-tab:hover { background: var(--leaf-bright); width: 40px; left: -40px; }
   .hidden-q { display: none !important; }
+  .q { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 15.5px; line-height: 1.35; color: var(--ink); text-transform: none; letter-spacing: 0; }
+  .q-block { margin: 4px 0 12px; }
+  h2.qh { font-style: italic; font-weight: 500; }
+  .also { margin-top: 14px; font-size: 14px; color: var(--ink-soft); }
 
   /* ---------- Print / PDF ---------- */
   @media print {
@@ -152,7 +147,7 @@
     #panel, nav.jump { display: none !important; }
     .reveal { opacity: 1 !important; transform: none !important; }
     .cat-fill, .dist .db i { transition: none !important; }
-    .glance, .rating-row { page-break-inside: avoid; }
+    .rating-row { page-break-inside: avoid; }
     .quote { page-break-inside: avoid; }
     .rating-card:hover { transform: none; }
   }
@@ -194,25 +189,6 @@
     <div class="rule">❦</div>
   </header>
 
-  <div class="glance" data-q="At a glance">
-    <div class="glance-card hero">
-      <div class="glance-num">4.5<span class="of"> / 5</span></div>
-      <div class="glance-label">Overall rating</div>
-    </div>
-    <div class="glance-card">
-      <div class="glance-num">4.5<span class="of"> / 5</span></div>
-      <div class="glance-label">Instructor</div>
-    </div>
-    <div class="glance-card">
-      <div class="glance-num">4<span class="of"> / 5</span></div>
-      <div class="glance-label">Content</div>
-    </div>
-    <div class="glance-card">
-      <div class="glance-num">91<span class="of">%</span></div>
-      <div class="glance-label">Learned something they'll use</div>
-    </div>
-  </div>
-
   <nav class="jump" aria-label="Sections">
     <a href="#ratings">Ratings</a>
     <a href="#impact">Impact</a>
@@ -226,7 +202,7 @@
       <div class="rating-card" data-q="Overall rating">
         <div class="rating-top"><div class="big">4.5<span class="of"> / 5</span></div></div>
         <div class="stars">★★★★★<span class="fill" style="width:89%">★★★★★</span></div>
-        <div class="rating-label">Overall</div>
+        <div class="rating-label q">“Overall, how would you rate the program?”</div>
         <div class="dist">
           <span class="dl">5 ★</span><span class="db"><i data-w="55%"></i></span><span class="dn">6</span>
           <span class="dl">4 ★</span><span class="db"><i data-w="36%"></i></span><span class="dn">4</span>
@@ -236,7 +212,7 @@
       <div class="rating-card" data-q="Instructor">
         <div class="rating-top"><div class="big">4.5<span class="of"> / 5</span></div></div>
         <div class="stars">★★★★★<span class="fill" style="width:91%">★★★★★</span></div>
-        <div class="rating-label">Instructor</div>
+        <div class="rating-label q">“How would you rate the instructor?”</div>
         <div class="dist">
           <span class="dl">5 ★</span><span class="db"><i data-w="64%"></i></span><span class="dn">7</span>
           <span class="dl">4 ★</span><span class="db"><i data-w="27%"></i></span><span class="dn">3</span>
@@ -246,7 +222,7 @@
       <div class="rating-card" data-q="Content">
         <div class="rating-top"><div class="big">4<span class="of"> / 5</span></div></div>
         <div class="stars">★★★★★<span class="fill" style="width:80%">★★★★★</span></div>
-        <div class="rating-label">Content</div>
+        <div class="rating-label q">“And how would you rate the content of the program?”</div>
         <div class="dist">
           <span class="dl">5 ★</span><span class="db"><i data-w="45%"></i></span><span class="dn">5</span>
           <span class="dl">4 ★</span><span class="db"><i data-w="36%"></i></span><span class="dn">4</span>
@@ -261,6 +237,7 @@
     <h2>Impact</h2>
 
     <div class="cat-group" data-q="Expectations">
+      <div class="q q-block">“So, did the program live up to your expectations?”</div>
       <div class="cat-item">
         <span class="cat-label">Exceeded expectations</span>
         <span class="cat-bar"><i class="cat-fill exceeded" data-w="55%"></i></span>
@@ -276,13 +253,13 @@
     <div class="binary-row">
       <div class="binary-card" data-q="Learned something useful">
         <div class="binary-big">91%</div>
-        <div class="binary-label">Learned something they'll use</div>
-        <div class="binary-detail">10 of 11 respondents</div>
+        <div class="binary-label q">“Did you learn anything you think you’ll use?”</div>
+        <div class="binary-detail">10 of 11 said yes</div>
       </div>
       <div class="binary-card" data-q="Interested in another program">
         <div class="binary-big">64%</div>
-        <div class="binary-label">Interested in another program</div>
-        <div class="binary-detail">7 of 11 respondents</div>
+        <div class="binary-label q">“Are you interested in attending another program like this one (on this topic or a different one)?”</div>
+        <div class="binary-detail">7 of 11 said yes</div>
       </div>
     </div>
   </section>
@@ -305,8 +282,8 @@
     </div>
   </section>
 
-  <section id="feedback" class="reveal" data-q="What participants said">
-    <h2>What participants said</h2>
+  <section id="feedback" class="reveal" data-q="What did you think of the program overall?">
+    <h2 class="qh">“What did you think of the program overall?”</h2>
     <div class="quotes">
       <div class="quote"><p>Liked it a lot. Very calming and the breathing and reframing exercises helped break up the day</p></div>
       <div class="quote"><p>I loved the final activity. Made it all worth it.</p></div>
@@ -319,8 +296,8 @@
     </div>
   </section>
 
-  <section class="reveal" data-q="What they liked most">
-    <h2>What they liked most</h2>
+  <section class="reveal" data-q="What did you like most?">
+    <h2 class="qh">“What did you like most about it?”</h2>
     <div class="quotes">
       <div class="quote"><p>That activity at the end and that we will have access to the material so I didn't have to try to memorize, I could be present.</p></div>
       <div class="quote"><p>instructor was engaging</p></div>
@@ -330,13 +307,14 @@
     </div>
   </section>
 
-  <section class="reveal" data-q="Suggestions">
-    <h2>Suggestions</h2>
+  <section class="reveal" data-q="How could we make the program better?">
+    <h2 class="qh">“And how could we make the program better?”</h2>
     <div class="quotes">
       <div class="quote"><p>I think there was bit of toxic positivity in there, at times life sucks and I feel like that was not acknowledged in a way that made space for the reality of that.</p></div>
       <div class="quote"><p>great program</p></div>
       <div class="quote"><p>Maybe offer to turn cameras off for the last exercise (closing eyes - goodwill technique)</p></div>
     </div>
+    <div class="also">Also answered: “N/A”</div>
   </section>
 
   <footer>
