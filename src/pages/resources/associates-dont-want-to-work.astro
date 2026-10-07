@@ -158,6 +158,8 @@ const CHAPTERS = [
 
     /* ---------- TRIP email before/after ---------- */
     .emails{display:grid;grid-template-columns:1fr 1.35fr;gap:20px;margin:36px 0 0;align-items:start;}
+    .ba-label{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1;color:var(--dim);margin:0 0 12px;padding-bottom:10px;border-bottom:3px solid var(--hair);}
+    .ba-label.after{color:var(--ink);border-bottom-color:var(--accent);}
     .email{background:#fff;border:1px solid var(--hair);border-radius:10px;overflow:hidden;box-shadow:0 14px 36px rgba(18,50,47,.10);}
     .email .ebar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#2F3A38;color:#fff;font-size:12.5px;font-weight:600;}
     .email .st{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:3px;}
@@ -472,13 +474,15 @@ const CHAPTERS = [
     </div>
     <div class="wide" style="max-width:calc(900px + 2*var(--gutter))">
       <div class="emails">
+        <div class="ba-col"><p class="ba-label">Before</p>
         <div class="email before">
-          <div class="ebar"><span>New message</span><span class="st">Before</span></div>
+          <div class="ebar"><span>New message</span></div>
           <div class="meta">To: Associate</div>
           <div class="ebody">Need this tonight, thanks.</div>
-        </div>
+        </div></div>
+        <div class="ba-col"><p class="ba-label after">After</p>
         <div class="email after">
-          <div class="ebar"><span>New message</span><span class="st">With TRIP</span></div>
+          <div class="ebar"><span>New message</span></div>
           <div class="meta">To: Associate</div>
           <div class="ebody">
             <span class="seg"><span class="lt">I: Impact</span><span>I know this might mess up your evening,</span></span>
@@ -486,7 +490,7 @@ const CHAPTERS = [
             <span class="seg"><span class="lt">P: Praise</span><span>I&rsquo;m coming to you because I know you have the skills to handle this the right way.</span></span>
             <span class="seg"><span class="lt">T: Thanks</span><span>Thanks for your help.</span></span>
           </div>
-        </div>
+        </div></div>
       </div>
       <p class="cap">An example partners can use with associates. It&rsquo;s an extra two minutes, and it makes all the difference in the world.</p>
     </div>
