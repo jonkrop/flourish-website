@@ -8,6 +8,7 @@
 // (no eyebrows, no copy buttons, no print button, no downloads of our one-pagers;
 // orange/peach only for lines a partner would say word for word).
 import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+import PlaybookFoliage from '../../components/PlaybookFoliage.astro';
 
 const CHAPTERS = [
   { id: 'invest', n: '1', short: 'Invest first', title: 'Invest before you withdraw' },
@@ -129,7 +130,8 @@ const CHAPTERS = [
   </style>
 
   {/* ============ Hero ============ */}
-  <section class="hero" id="top">
+  <section class="hero foliage" id="top">
+    <PlaybookFoliage />
     <div class="wide hero-in">
       <div>
         <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="168" />
