@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta name="flourish-build" content="4a8b67eab09a0865">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benesch — 30-Second Stress Busters &amp; Mood Boosters — Evaluation Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f4ee;
+    --ink: #22301f;
+    --ink-soft: #5c6656;
+    --leaf: #2e5d3b;
+    --leaf-bright: #3f7d50;
+    --leaf-wash: #e4ecdd;
+    --gold: #c9a227;
+    --hairline: #d9d3c5;
+    --card: #fffdf8;
+    --shadow: 0 1px 2px rgba(34,48,31,.05), 0 4px 14px rgba(34,48,31,.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 8% -6%, #edf2e2 0%, transparent 42%),
+      radial-gradient(circle at 104% 24%, #f3eee1 0%, transparent 38%),
+      radial-gradient(circle at -4% 78%, #eef0e3 0%, transparent 30%);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.55;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 56px 28px 110px; }
+
+  /* ---------- Masthead ---------- */
+  header.masthead { text-align: center; margin-bottom: 26px; animation: rise .55s ease both; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--leaf-bright); }
+  h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(34px, 5.2vw, 52px); letter-spacing: -.015em; line-height: 1.08; margin: 10px auto 12px; max-width: 18ch; }
+  .sub { color: var(--ink-soft); font-size: 16.5px; }
+  .sub b { color: var(--ink); font-weight: 700; }
+  .rule { display: flex; align-items: center; gap: 12px; justify-content: center; margin: 22px 0 0; color: var(--gold); }
+  .rule::before, .rule::after { content: ''; height: 1px; width: 120px; background: linear-gradient(90deg, transparent, var(--hairline)); }
+  .rule::after { background: linear-gradient(90deg, var(--hairline), transparent); }
+
+  /* ---------- At a glance ---------- */
+  .glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 30px 0 18px; animation: rise .55s .07s ease both; }
+  .glance-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 20px 18px 16px; text-align: center; box-shadow: var(--shadow); }
+  .glance-card.hero { background: linear-gradient(160deg, var(--leaf) 0%, #234a2f 100%); border-color: transparent; color: #f3f1e8; }
+  .glance-num { font-family: 'Fraunces', serif; font-weight: 700; font-size: 38px; line-height: 1.05; }
+  .glance-card.hero .glance-num { font-size: 44px; color: #fff; }
+  .glance-num .of { font-size: 16px; font-weight: 400; opacity: .75; }
+  .glance-label { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-top: 6px; color: var(--ink-soft); }
+  .glance-card.hero .glance-label { color: #cfe0c6; }
+
+  /* ---------- Sticky section nav ---------- */
+  nav.jump { position: sticky; top: 0; z-index: 5; display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
+    padding: 10px 8px; margin: 8px -8px 34px; border-radius: 0 0 14px 14px;
+    background: color-mix(in srgb, var(--paper) 82%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--hairline); animation: rise .55s .12s ease both; }
+  nav.jump a { text-decoration: none; color: var(--ink-soft); font-size: 13.5px; font-weight: 700; letter-spacing: .02em;
+    padding: 6px 13px; border-radius: 999px; transition: all .15s ease; }
+  nav.jump a:hover { color: var(--leaf); background: var(--leaf-wash); }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 52px; scroll-margin-top: 70px; }
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+  h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; margin-bottom: 18px; display: flex; align-items: baseline; gap: 12px; }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+
+  /* ---------- Rating cards with distributions ---------- */
+  .rating-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+  .rating-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 22px; box-shadow: var(--shadow);
+    transition: transform .18s ease, box-shadow .18s ease; }
+  .rating-card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(34,48,31,.06), 0 10px 26px rgba(34,48,31,.1); }
+  .rating-top { display: flex; align-items: baseline; gap: 10px; }
+  .big { font-family: 'Fraunces', serif; font-weight: 700; font-size: 44px; line-height: 1; }
+  .big .of { font-size: 17px; font-weight: 400; color: var(--ink-soft); }
+  .stars { position: relative; display: inline-block; color: #ddd6c4; font-size: 16px; letter-spacing: 2px; margin: 8px 0 2px; }
+  .stars .fill { position: absolute; top: 0; left: 0; white-space: nowrap; overflow: hidden; color: var(--gold); }
+  .rating-label { font-weight: 700; font-size: 15.5px; margin: 2px 0 12px; }
+  .dist { display: grid; grid-template-columns: 34px 1fr 26px; gap: 6px 8px; align-items: center; }
+  .dist .dl { font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
+  .dist .db { height: 8px; background: #ece7da; border-radius: 999px; overflow: hidden; }
+  .dist .db i { display: block; height: 100%; width: 0; background: var(--leaf-bright); border-radius: 999px; transition: width .7s cubic-bezier(.2,.7,.3,1); }
+  .dist .dn { font-size: 12px; color: var(--ink-soft); text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Categorical bars (expectations) ---------- */
+  .cat-group { margin-bottom: 24px; }
+  .cat-item { display: grid; grid-template-columns: 200px 1fr 50px; gap: 10px; align-items: center; padding: 7px 0; }
+  .cat-label { font-weight: 700; font-size: 14.5px; }
+  .cat-bar { height: 14px; background: #ece7da; border-radius: 999px; overflow: hidden; }
+  .cat-fill { display: block; height: 100%; width: 0; border-radius: 999px; transition: width .7s cubic-bezier(.2,.7,.3,1); }
+  .cat-fill.exceeded { background: var(--leaf-bright); }
+  .cat-fill.met { background: var(--gold); }
+  .cat-pct { font-size: 14px; color: var(--ink-soft); font-variant-numeric: tabular-nums; text-align: right; }
+  @media (max-width: 520px) { .cat-item { grid-template-columns: 140px 1fr 44px; } }
+
+  /* ---------- Binary stat cards ---------- */
+  .binary-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .binary-card { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 22px 22px 18px; box-shadow: var(--shadow); }
+  .binary-big { font-family: 'Fraunces', serif; font-weight: 700; font-size: 40px; line-height: 1; color: var(--leaf); }
+  .binary-label { font-weight: 700; font-size: 15px; margin-top: 6px; }
+  .binary-detail { font-size: 13px; color: var(--ink-soft); margin-top: 3px; }
+
+  /* ---------- Quotes ---------- */
+  .quotes { column-width: 250px; column-gap: 14px; }
+  .quote { break-inside: avoid; page-break-inside: avoid; margin: 0 0 14px; background: var(--card); border: 1px solid var(--hairline);
+    border-radius: 12px; padding: 18px 18px 16px 20px; font-size: 15.5px; box-shadow: var(--shadow); position: relative; }
+  .quote::before { content: '\201C'; position: absolute; top: 2px; left: 8px; font-family: 'Fraunces', serif; font-size: 34px; line-height: 1;
+    color: var(--leaf-bright); opacity: .35; }
+  .quote p { position: relative; }
+
+  footer { margin-top: 70px; color: var(--ink-soft); font-size: 12.5px; text-align: center; }
+  footer .rule { margin-bottom: 14px; }
+
+  /* ---------- Hideable question panel (web-only) ---------- */
+  #panel { position: fixed; top: 0; right: 0; height: 100vh; width: 316px;
+    background: var(--card); border-left: 1px solid var(--hairline);
+    box-shadow: -6px 0 24px rgba(34,48,31,.08);
+    transform: translateX(100%); transition: transform .25s ease; z-index: 10; }
+  #panel.open { transform: none; }
+  #panel-body { height: 100%; overflow-y: auto; padding: 26px 22px; }
+  #panel h3 { font-family: 'Fraunces', serif; font-size: 17px; margin-bottom: 4px; }
+  .panel-actions { display: flex; gap: 8px; margin: 10px 0 12px; }
+  .panel-actions button { flex: 1; font-family: 'Karla', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--leaf);
+    background: var(--leaf-wash); border: none; border-radius: 999px; padding: 7px 0; cursor: pointer; transition: background .15s ease; }
+  .panel-actions button:hover { background: #d6e2cc; }
+  #panel label { display: flex; gap: 9px; align-items: flex-start; font-size: 13.5px; padding: 8px 0; border-bottom: 1px dashed var(--hairline); cursor: pointer; }
+  #panel label:hover { color: var(--leaf); }
+  #panel input { accent-color: var(--leaf); margin-top: 3px; flex-shrink: 0; }
+  #panel-tab { position: absolute; top: 50%; left: -36px; transform: translateY(-50%);
+    width: 36px; height: 72px; background: var(--leaf); border: none; cursor: pointer;
+    border-radius: 12px 0 0 12px; box-shadow: -3px 2px 8px rgba(34,48,31,.18); transition: background .15s ease, width .15s ease; }
+  #panel-tab:hover { background: var(--leaf-bright); width: 40px; left: -40px; }
+  .hidden-q { display: none !important; }
+
+  /* ---------- Print / PDF ---------- */
+  @media print {
+    @page { margin: 0; }
+    body { background: var(--paper) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    main { padding: 48px 44px 60px; max-width: none; }
+    #panel, nav.jump { display: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .cat-fill, .dist .db i { transition: none !important; }
+    .glance, .rating-row { page-break-inside: avoid; }
+    .quote { page-break-inside: avoid; }
+    .rating-card:hover { transform: none; }
+  }
+
+  /* ---------- What your people want next ---------- */
+  .next-wrap { background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 24px 24px 20px; box-shadow: var(--shadow); }
+  .next-base { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 16px; }
+  .top-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 18px; }
+  .top-topic { border-top: 3px solid var(--leaf-bright); padding-top: 10px; }
+  .top-pct { font-family: 'Fraunces', serif; font-weight: 700; font-size: 40px; line-height: 1; color: var(--leaf); }
+  .top-name { font-weight: 700; font-size: 15px; margin-top: 6px; line-height: 1.3; }
+  .more-topics { border-top: 1px dashed var(--hairline); padding-top: 12px; }
+  .more-topics .cat-item { grid-template-columns: 1fr 160px 44px; padding: 5px 0; }
+  .more-topics .cat-label { font-weight: 500; font-size: 14px; }
+  .more-topics .cat-bar { height: 10px; }
+  .cat-fill.topic { background: var(--leaf-bright); opacity: .7; }
+  @media (max-width: 520px) { .more-topics .cat-item { grid-template-columns: 1fr 80px 40px; } }
+</style>
+</head>
+<body>
+
+<aside id="panel" aria-label="Question visibility panel">
+  <button id="panel-tab" type="button" aria-label="Toggle question panel"></button>
+  <div id="panel-body">
+    <h3>Show / hide questions</h3>
+    <div class="panel-actions">
+      <button type="button" id="show-all">Show all</button>
+      <button type="button" id="hide-all">Hide all</button>
+    </div>
+    <div id="panel-list"></div>
+  </div>
+</aside>
+
+<main>
+  <header class="masthead">
+    <div class="kicker">Flourish Legal Well-Being · Evaluation Results</div>
+    <h1>30-Second Stress Busters &amp; Mood Boosters</h1>
+    <div class="sub"><b>Benesch</b> · October 5, 2026 · 11 responses, all from associates</div>
+    <div class="rule">❦</div>
+  </header>
+
+  <div class="glance" data-q="At a glance">
+    <div class="glance-card hero">
+      <div class="glance-num">4.5<span class="of"> / 5</span></div>
+      <div class="glance-label">Overall rating</div>
+    </div>
+    <div class="glance-card">
+      <div class="glance-num">4.5<span class="of"> / 5</span></div>
+      <div class="glance-label">Instructor</div>
+    </div>
+    <div class="glance-card">
+      <div class="glance-num">4<span class="of"> / 5</span></div>
+      <div class="glance-label">Content</div>
+    </div>
+    <div class="glance-card">
+      <div class="glance-num">91<span class="of">%</span></div>
+      <div class="glance-label">Learned something they'll use</div>
+    </div>
+  </div>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#ratings">Ratings</a>
+    <a href="#impact">Impact</a>
+    <a href="#next">What's next</a>
+    <a href="#feedback">Feedback</a>
+  </nav>
+
+  <section id="ratings" class="reveal">
+    <h2>Ratings</h2>
+    <div class="rating-row">
+      <div class="rating-card" data-q="Overall rating">
+        <div class="rating-top"><div class="big">4.5<span class="of"> / 5</span></div></div>
+        <div class="stars">★★★★★<span class="fill" style="width:89%">★★★★★</span></div>
+        <div class="rating-label">Overall</div>
+        <div class="dist">
+          <span class="dl">5 ★</span><span class="db"><i data-w="55%"></i></span><span class="dn">6</span>
+          <span class="dl">4 ★</span><span class="db"><i data-w="36%"></i></span><span class="dn">4</span>
+          <span class="dl">3 ★</span><span class="db"><i data-w="9%"></i></span><span class="dn">1</span>
+        </div>
+      </div>
+      <div class="rating-card" data-q="Instructor">
+        <div class="rating-top"><div class="big">4.5<span class="of"> / 5</span></div></div>
+        <div class="stars">★★★★★<span class="fill" style="width:91%">★★★★★</span></div>
+        <div class="rating-label">Instructor</div>
+        <div class="dist">
+          <span class="dl">5 ★</span><span class="db"><i data-w="64%"></i></span><span class="dn">7</span>
+          <span class="dl">4 ★</span><span class="db"><i data-w="27%"></i></span><span class="dn">3</span>
+          <span class="dl">3 ★</span><span class="db"><i data-w="9%"></i></span><span class="dn">1</span>
+        </div>
+      </div>
+      <div class="rating-card" data-q="Content">
+        <div class="rating-top"><div class="big">4<span class="of"> / 5</span></div></div>
+        <div class="stars">★★★★★<span class="fill" style="width:80%">★★★★★</span></div>
+        <div class="rating-label">Content</div>
+        <div class="dist">
+          <span class="dl">5 ★</span><span class="db"><i data-w="45%"></i></span><span class="dn">5</span>
+          <span class="dl">4 ★</span><span class="db"><i data-w="36%"></i></span><span class="dn">4</span>
+          <span class="dl">2 ★</span><span class="db"><i data-w="9%"></i></span><span class="dn">1</span>
+          <span class="dl">1 ★</span><span class="db"><i data-w="9%"></i></span><span class="dn">1</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact" class="reveal" data-q="Impact">
+    <h2>Impact</h2>
+
+    <div class="cat-group" data-q="Expectations">
+      <div class="cat-item">
+        <span class="cat-label">Exceeded expectations</span>
+        <span class="cat-bar"><i class="cat-fill exceeded" data-w="55%"></i></span>
+        <span class="cat-pct">55%</span>
+      </div>
+      <div class="cat-item">
+        <span class="cat-label">Met expectations</span>
+        <span class="cat-bar"><i class="cat-fill met" data-w="45%"></i></span>
+        <span class="cat-pct">45%</span>
+      </div>
+    </div>
+
+    <div class="binary-row">
+      <div class="binary-card" data-q="Learned something useful">
+        <div class="binary-big">91%</div>
+        <div class="binary-label">Learned something they'll use</div>
+        <div class="binary-detail">10 of 11 respondents</div>
+      </div>
+      <div class="binary-card" data-q="Interested in another program">
+        <div class="binary-big">64%</div>
+        <div class="binary-label">Interested in another program</div>
+        <div class="binary-detail">7 of 11 respondents</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="next" class="reveal" data-q="What your people want next">
+    <h2>What your people want next</h2>
+    <div class="next-wrap">
+      <div class="next-base">Topics they'd want a session on, as a share of all 11 respondents</div>
+      <div class="top-topics">
+        <div class="top-topic"><div class="top-pct">55%</div><div class="top-name">Difficult conversations and working relationships</div></div>
+        <div class="top-topic"><div class="top-pct">45%</div><div class="top-name">Handling stress and pressure</div></div>
+        <div class="top-topic"><div class="top-pct">45%</div><div class="top-name">Sleep</div></div>
+      </div>
+      <div class="more-topics">
+        <div class="cat-item"><span class="cat-label">Focus and digital distraction</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
+        <div class="cat-item"><span class="cat-label">Mental health, for yourself or colleagues</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
+        <div class="cat-item"><span class="cat-label">Small habits for energy and mood</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
+        <div class="cat-item"><span class="cat-label">Leading, managing, or mentoring others</span><span class="cat-bar"><i class="cat-fill topic" data-w="27%"></i></span><span class="cat-pct">27%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback" class="reveal" data-q="What participants said">
+    <h2>What participants said</h2>
+    <div class="quotes">
+      <div class="quote"><p>Liked it a lot. Very calming and the breathing and reframing exercises helped break up the day</p></div>
+      <div class="quote"><p>I loved the final activity. Made it all worth it.</p></div>
+      <div class="quote"><p>great instructor!</p></div>
+      <div class="quote"><p>It was great, I appreciate different techniques for the set goal or perspective.</p></div>
+      <div class="quote"><p>I'm curious, generally, about the role of religion and religious teaching in this talk. A lot of teachings in Buddhism have similar teachings within Christian meditation (like the Jesuit Examen)</p></div>
+      <div class="quote"><p>I thought the pacing of the program was great and made it very easy to follow along.</p></div>
+      <div class="quote"><p>I really enjoyed the program!</p></div>
+      <div class="quote"><p>If you're going to teach aspects of Buddhism, it's important to be able to pronounce things correctly. Would also like to know your credentials for such teaching.</p></div>
+    </div>
+  </section>
+
+  <section class="reveal" data-q="What they liked most">
+    <h2>What they liked most</h2>
+    <div class="quotes">
+      <div class="quote"><p>That activity at the end and that we will have access to the material so I didn't have to try to memorize, I could be present.</p></div>
+      <div class="quote"><p>instructor was engaging</p></div>
+      <div class="quote"><p>I like the motto shared with us, short time, many times</p></div>
+      <div class="quote"><p>The practical exercises</p></div>
+      <div class="quote"><p>The subject matter</p></div>
+    </div>
+  </section>
+
+  <section class="reveal" data-q="Suggestions">
+    <h2>Suggestions</h2>
+    <div class="quotes">
+      <div class="quote"><p>I think there was bit of toxic positivity in there, at times life sucks and I feel like that was not acknowledged in a way that made space for the reality of that.</p></div>
+      <div class="quote"><p>great program</p></div>
+      <div class="quote"><p>Maybe offer to turn cameras off for the last exercise (closing eyes - goodwill technique)</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="rule">❦</div>
+    Flourish Legal Well-Being · Evaluation collected via post-program survey · 11 responses
+  </footer>
+</main>
+
+<script>
+  // ----- Question panel -----
+  const panel = document.getElementById('panel');
+  const tab = document.getElementById('panel-tab');
+  const list = document.getElementById('panel-list');
+  const qs = () => [...document.querySelectorAll('[data-q]')];
+  const seen = new Set();
+  const boxes = [];
+  for (const b of qs()) {
+    const q = b.getAttribute('data-q');
+    if (seen.has(q)) continue; seen.add(q);
+    const label = document.createElement('label');
+    const cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = true;
+    cb.addEventListener('change', () => {
+      qs().forEach((el) => { if (el.getAttribute('data-q') === q) el.classList.toggle('hidden-q', !cb.checked); });
+    });
+    boxes.push(cb);
+    label.appendChild(cb);
+    label.appendChild(document.createTextNode(q));
+    list.appendChild(label);
+  }
+  const setAll = (on) => boxes.forEach((cb) => { if (cb.checked !== on) { cb.checked = on; cb.dispatchEvent(new Event('change')); } });
+  document.getElementById('show-all').addEventListener('click', () => setAll(true));
+  document.getElementById('hide-all').addEventListener('click', () => setAll(false));
+  tab.addEventListener('click', () => panel.classList.toggle('open'));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') panel.classList.remove('open'); });
+  document.addEventListener('click', (e) => {
+    if (panel.classList.contains('open') && !panel.contains(e.target)) panel.classList.remove('open');
+  });
+
+  // ----- Animate bars & sections on scroll -----
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fill = (root) => root.querySelectorAll('.cat-fill, .dist .db i').forEach((el) => { el.style.width = el.dataset.w; });
+  if (reduced || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach((s) => s.classList.add('in'));
+    fill(document);
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        if (!en.isIntersecting) continue;
+        en.target.classList.add('in');
+        fill(en.target);
+        io.unobserve(en.target);
+      }
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach((s) => io.observe(s));
+  }
+  addEventListener('beforeprint', () => { document.querySelectorAll('.reveal').forEach((s) => s.classList.add('in')); fill(document); });
+</script>
+</body>
+</html>
