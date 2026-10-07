@@ -1,8 +1,9 @@
 ---
 // Web-native playbook: 30-Second Stress Busters and Mood Boosters (presenter: Jon).
 // Process: ../../../playbook-guide.md. Renders inside PlaybookLayout via the topic page.
-// Sources, in order of trust: Jon's Benesch delivery (Wispr transcript, 2026-10-05; client not named here),
-// the program script.md, then the six Flourish cheat sheets (designer PDFs, now web sections below).
+// A reference, not a recap: the six Flourish cheat sheets are the backbone (structure and wording),
+// checked against Jon's 2026-10-05 delivery (Wispr transcript; client not named here) for what was taught.
+// Gratitude and Generosity have no cheat sheet: same shape, from the delivery.
 // Copy is Jon's wording; check jon-voice.md before changing it.
 // Orange/peach is reserved for the exact words to say (out loud or in your head).
 import PlaybookLayout from '../layouts/PlaybookLayout.astro';
@@ -51,7 +52,7 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   chapters={CHAPTERS}
   clientLookup={clientLookup}
 >
-  <!-- ============ Hero ============ -->
+  {/* ============ Hero ============ */}
   <section class="hero" id="top">
     <div class="wide hero-in">
       <div>
@@ -78,12 +79,10 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   </section>
 
   <main>
-  <!-- ============ Intro ============ -->
+  {/* ============ Intro + contents ============ */}
   <section class="intro">
-    <div class="col">
-      <p class="big">Taking care of yourself doesn’t always need to be time-intensive. That’s good news, because at a law firm, sometimes you won’t have the time.</p>
-      <p class="txt">If you have 15 minutes to meditate or an hour for a massage, I encourage that. For the rest of the time, here are the six methods from the workshop: three <b>stress busters</b> for the difficult stuff, and three <b>mood boosters</b> for getting more of the good stuff. Each one is doable in as little as 30 seconds, if that’s all the time you’ve got.</p>
-      <p class="legend"><span class="chip" aria-hidden="true"></span>Lines in orange boxes like this are the exact words to say, out loud or in your head.</p>
+    <div class="wide">
+      <p class="big">Taking care of yourself doesn’t always need to be time-intensive. Each of these six methods is doable in as little as 30 seconds, if that’s all the time you’ve got.</p>
     </div>
   </section>
 
@@ -107,15 +106,19 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
           </ol>
         </div>
       </div>
+      <div class="also-row">
       <p class="also">Plus two more tools, <a href="#tool-noting">deconstructing anxiety</a> and <a href="#tool-sleep">getting to sleep</a>, and some <a href="#reading">further reading</a>.</p>
+      <p class="legend"><span class="chip" aria-hidden="true"></span>Lines in orange boxes like this are the exact words to say, out loud or in your head.</p>
+      </div>
     </div>
   </nav>
 
-  <!-- ============ 1: Cognitive reframing ============ -->
+  {/* ============ 1: Cognitive reframing (cheat sheet: Cognitive Reframing) ============ */}
   <section class="principle alt" id="reframe">
     <div class="col">
       <header class="ph"><span class="num" aria-hidden="true">1</span><h2>Reframe anxiety as excitement</h2></header>
-      <p class="lead">When we get anxious, our natural response is to try to calm down. That’s hard to do, because being anxious and being calm are basically opposites.</p>
+      <p class="lead">One simple, powerful way to manage anxiety is to reinterpret it as a more positive emotion: excitement.</p>
+      <p class="body">This works because anxiety and excitement are physiologically similar: both are “high arousal” states. Anxiety and calm are basically opposites.</p>
     </div>
     <div class="wide" style="max-width:calc(940px + 2*var(--gutter))">
       <div class="arousal" role="group" aria-label="Calm, anxiety and excitement compared">
@@ -139,60 +142,34 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
       </div>
     </div>
     <div class="col">
-      <ul class="pts" style="margin-top:36px">
-        <li>Excitement feels in the body a lot like anxiety. That gives us an opportunity: <b>we can reinterpret the physical feelings of anxiety as feelings of excitement.</b></li>
-      </ul>
-      <div class="finding">
-        <p>The idea comes from Alison Wood Brooks, a professor at Harvard Business School, who did a number of studies on this. When people reframed their anxiety as excitement, they:</p>
-        <ul class="checks">
-          <li>Performed better on anxiety-provoking tasks</li>
-          <li>Felt more excited</li>
-          <li>Tended to see challenges as opportunities rather than threats</li>
-        </ul>
-      </div>
-      <ul class="pts">
-        <li>Getting those benefits can be as simple as saying the words:</li>
-      </ul>
+      <p class="body" style="margin-top:32px">Research shows that when people reframe anxiety as excitement, they perform better at anxiety-provoking tasks, feel more excited, and tend to see issues as opportunities rather than as threats.</p>
+      <p class="body">This can be as simple as saying the words, out loud or in your head, when you’re facing an anxiety-provoking situation:</p>
       <p class="borrow-line">“I’m excited.”</p>
-      <ul class="pts">
-        <li>Out loud works if no one’s around (or if you’re feeling very bold). It works just as well if you say it quietly to yourself.</li>
-        <li>Try it before a client meeting, or a feedback meeting you’re nervous about.</li>
-      </ul>
-      <aside class="jon">
-        <img src="/images/jon-headshot-botanical.webp" alt="" width="600" height="744" loading="lazy" />
-        <p>I do this before every presentation I give. I’ve been doing this for a long time, but I still get a little anxiety about public speaking. So I take a second, feel the little knot in the pit of my stomach, and say, “Oh, okay. I’m excited.” It’s not like I’m tricking myself. I know exactly what I’m doing. But as a technique, it’s effective.</p>
-      </aside>
     </div>
   </section>
 
-  <!-- ============ 2: Paced breathing ============ -->
+  {/* ============ 2: Paced breathing (cheat sheet: Calming the Nervous System) ============ */}
   <section class="principle" id="breathe">
     <div class="col">
       <header class="ph"><span class="num" aria-hidden="true">2</span><h2>Paced breathing</h2></header>
-      <p class="lead">It calms the mind and the body. It’s fast-acting, and it’s discreet: no one will know you’re doing it.</p>
-      <ul class="pts">
-        <li>You make a couple of simple adjustments to your breathing, and that stimulates a cranial nerve called the <b>vagus nerve</b>, which triggers a physiological relaxation response and calms the fight-or-flight response.</li>
-        <li>There are just two core elements:</li>
-      </ul>
+      <p class="lead">This simple breathing exercise can reduce stress and anxiety, sometimes within minutes. It’s discreet: no one will know you’re doing it.</p>
+      <p class="body">Research suggests that it works by stimulating a cranial nerve called the vagus nerve, which activates the parasympathetic nervous system and calms the fight-or-flight response.</p>
       <div class="core2">
         <div class="core">
-          <span class="mv">1</span>
           <h3>Breathe from the belly</h3>
-          <p>When we’re stressed, we tend to breathe so that just the chest expands. Breathe all the way down instead, so your belly expands when you inhale. To check, rest a hand on your stomach and push it out with each inhale.</p>
+          <p>Expand your lower abdomen, not just your chest, as you breathe. To ensure you’re doing this, rest a hand on your stomach.</p>
         </div>
         <div class="core">
-          <span class="mv">2</span>
-          <h3>Slow it down</h3>
-          <p>On average, people take 10 to 14 breaths a minute. Slowing to about six or fewer further stimulates the vagus nerve.</p>
+          <h3>Breathe slowly</h3>
+          <p>Research indicates that around six breaths per minute is an effective rate. On average, people take 10 to 14.</p>
           <div class="rate" aria-hidden="true">
             <div class="rate-row"><span class="dots">{Array.from({ length: 14 }, (_, i) => <i class={i >= 10 ? 'maybe' : ''}></i>)}</span><span class="rl">10 to 14 a minute</span></div>
             <div class="rate-row slow"><span class="dots">{Array.from({ length: 6 }, () => <i></i>)}</span><span class="rl">about 6</span></div>
           </div>
         </div>
       </div>
-
       <h3 class="sub">Three patterns to try</h3>
-      <p class="body">Which one feels most relaxing is a personal thing, so experiment. Keep the belly breathing going throughout, and count in seconds.</p>
+      <p class="body">Count in seconds. Which one feels most relaxing is a personal thing, so experiment.</p>
     </div>
     <div class="wide" style="max-width:calc(820px + 2*var(--gutter))">
       <div class="patterns">
@@ -210,7 +187,7 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
             <span class="seg in"><em>In</em>{Array.from({ length: 4 }, () => <i></i>)}</span>
             <span class="seg out"><em>Out</em>{Array.from({ length: 7 }, () => <i></i>)}</span>
           </div>
-          <p class="pat-n">Many people (not everyone) find a longer exhale deepens the calming effect.</p>
+          <p class="pat-n">Many people (not everyone) find a longer exhale deepens the calming effect. Just not to a degree that feels uncomfortable.</p>
         </div>
         <div class="pat boxpat">
           <div class="pat-h"><b>Box breathing</b><span>4 in, 4 hold, 4 out, 4 hold</span></div>
@@ -225,99 +202,55 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
       </div>
     </div>
     <div class="col">
-      <p class="body" style="margin-top:28px">Once you have the basics, you can add a short, comfortable pause between the inhale and exhale, or bring some attention to the sensations of breathing, at either the nostrils or the abdomen.</p>
-      <div class="watch">
-        <p><b>How long does it take?</b> Many people find it works quickly, sometimes in as little as 30 seconds. The research appears to confirm shifts in how you feel in as little as five minutes.</p>
-      </div>
-
-      <div class="scene">
-        <h3>Use it while your attention is somewhere else</h3>
-        <p>Because it’s a purely physical practice, you can do it while you’re involved in things that require your attention. Say you’re in a meeting with opposing counsel, they’re being ridiculous, and you find yourself getting angry. You can’t turn inward and do a mindfulness exercise. You have to pay attention.</p>
-        <p>But you can shift your breathing down into your belly, slow it down, and do a little paced breathing while keeping your focus on the conversation.</p>
-      </div>
+      <p class="body" style="margin-top:24px">Once you have the basics, you can add a short, comfortable pause between the inhale and exhale, or bring some attention to the bodily sensations of breathing, at either the nostrils or the abdomen.</p>
     </div>
   </section>
 
-  <!-- ============ 3: Am I sure that's true? ============ -->
+  {/* ============ 3: Am I sure that's true? (cheat sheet: Seeing Through Negative Thoughts) ============ */}
   <section class="principle alt" id="sure">
     <div class="col">
       <header class="ph"><span class="num" aria-hidden="true">3</span><h2>“Am I sure that’s true?”</h2></header>
-      <p class="lead">Emotions involve both thoughts in the mind and feelings in the body, and those two things feed one another.</p>
-    </div>
-    <div class="wide" style="max-width:calc(900px + 2*var(--gutter))">
-      <div class="loop" role="group" aria-label="The thought-emotion loop">
-        <div class="lp">An anxious or angry thought</div>
-        <span class="la" aria-hidden="true"></span>
-        <div class="lp">A feeling of anxiety or anger in the body</div>
-        <span class="la" aria-hidden="true"></span>
-        <div class="lp">Another flurry of thoughts about the feeling</div>
-        <div class="lback"><span>And around you go</span></div>
-      </div>
-    </div>
-    <div class="col">
-      <ul class="pts" style="margin-top:36px">
-        <li>What we often don’t realize is that our thoughts, especially our emotionally charged thoughts, are often distorted. <b>They feel true, but they’re not.</b></li>
-        <li>If you can recognize that in the moment, you can break the loop. The emotions don’t go away. They just stop being disturbing and overwhelming.</li>
-        <li>The next time you’re caught up in a negative or overwhelming thought, ask yourself:</li>
-      </ul>
+      <p class="lead">We have a tendency to take our thoughts as true. In fact, they’re often distorted or simply false.</p>
+      <p class="body">When a negative thought is troubling you, ask yourself:</p>
       <p class="borrow-line">“Am I sure that’s true?”</p>
-      <ul class="pts">
-        <li>Merely asking is often enough to loosen the thought’s hold, because it punctures the reflexive belief that our thoughts are always telling us the truth.</li>
-        <li>If it’s not enough, add a follow-up question. Here are some good ones. They’re quite lawyerly:</li>
-      </ul>
-      <ol class="qs">
-        <li>What evidence do I have that this thought is true?</li>
-        <li>Is there any evidence this thought might not be true?</li>
-        <li>Are there any assumptions hidden in this thought?</li>
-        <li>Is there an alternative scenario that’s just as plausible?</li>
-      </ol>
+      <p class="body">Merely asking is often enough to loosen the thought’s hold, because it punctures the reflexive belief that our thoughts are always telling us the truth.</p>
     </div>
 
     <div class="wide" style="max-width:calc(940px + 2*var(--gutter))">
       <div class="story">
         <div class="story-txt">
           <h3>“Come to my office now.”</h3>
-          <p>When I was a junior associate, I came into the office one morning and my phone buzzed in my pocket. It was an email from a partner on a case I was working on. It just said, “Come to my office now.”</p>
-          <p>I started freaking out a little, and I managed to pack quite a lot of rumination into a short time.</p>
+          <p>When I was a junior associate, my phone buzzed one morning with an email from a partner on a case I was working on. It just said, “Come to my office now.”</p>
+          <p>I managed to pack quite a lot of rumination into a short time.</p>
+          <p class="story-end"><b>It was an absolute nothing.</b> The partner just sent the email off quickly. If I’d been able to stop and say, “Wait, wait, wait. Am I sure that’s true?” it would’ve saved me a lot of completely unnecessary anguish.</p>
         </div>
         <div class="story-vis" aria-hidden="true">
           <div class="phone">
             <div class="note"><span class="from">Partner</span><span class="msg-t">Come to my office now.</span></div>
           </div>
           <div class="thoughts">
-            <span>What did I do?</span>
             <span>What did I mess up?</span>
             <span>I’m off the case.</span>
-            <span>I’m never gonna make partner now.</span>
             <span>What if I’m fired?</span>
           </div>
-        </div>
-        <div class="story-end">
-          <p><b>It was an absolute nothing.</b> Nothing was wrong. The partner just sent the email off quickly and didn’t think about how it would land with me. If I’d been able to stop and say, “Wait, wait, wait. Am I sure that’s true?” it would’ve saved me a lot of completely unnecessary anguish.</p>
         </div>
       </div>
     </div>
 
     <div class="col">
-      <h3 class="sub">Other moments it helps</h3>
-      <ul class="pts">
-        <li>You’re about to give feedback, and you’re expecting a ton of pushback.</li>
-        <li>You gave feedback, and now you feel like you said all the wrong things.</li>
-        <li>You just turned in a brief, and you’re terrified you missed a crucial case.</li>
-      </ul>
+      <p class="body" style="margin-top:36px">For extra power, follow up with any of these questions:</p>
+      <ol class="qs">
+        <li>What evidence do I have that this thought is true?</li>
+        <li>Is there any evidence this thought might not be true?</li>
+        <li>Are there any assumptions hidden in this thought?</li>
+        <li>Is there an alternative scenario that’s just as plausible?</li>
+      </ol>
 
-      <div class="yes">
-        <h3>What if the answer is yes?</h3>
-        <p>Sometimes there really is a problem. Then this technique won’t help much, because it is true. That’s why there are other techniques: paced breathing may help more. You can also ask another question:</p>
-        <p class="borrow-line">“Am I sure this is as big a deal as it feels?”</p>
-        <p>The answer to that one is often no. We human beings tend to catastrophize: we take an admittedly real problem and multiply it in our minds into a world-ending calamity that it is not.</p>
-      </div>
-
-      <details class="fold">
-      <summary><span class="fold-in">Going further</span></summary>
+      <details class="fold" id="going-further">
+      <summary><span class="fold-in">Going further: name the distortion, replace the thought</span></summary>
       <ul class="pts">
         <li><b>Name the distortion.</b> A cognitive behavioral therapy (CBT) app, like Quirk CBT (iPhone) or What’s Up? (Android), lists the main cognitive distortions and walks you through the process.</li>
-        <li><b>Replace the thought.</b> After challenging it, swap in a more helpful and less distorted one. For example:</li>
+        <li><b>Replace the thought.</b> After challenging it, swap in a more helpful and less distorted one:</li>
       </ul>
       <div class="swap">
         <p class="old"><s>“I’m going to mess up this presentation.”</s></p>
@@ -328,143 +261,70 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
     </div>
   </section>
 
-  <!-- ============ Part 2 band ============ -->
+  {/* ============ Part 2 band ============ */}
   <section class="part" aria-labelledby="part2">
     <div class="wide" style="max-width:calc(940px + 2*var(--gutter))">
       <h2 id="part2">30-second mood boosters</h2>
-      <p class="part-lead">How do we get more of the good stuff? Here are three mental habits that research has shown to increase the experience of positive emotions and cultivate overall well-being. Conveniently, they all start with G.</p>
-      <ol class="gs">
-        <li><a href="#gratitude"><span class="g">G</span>ratitude</a></li>
-        <li><a href="#generosity"><span class="g">G</span>enerosity</a></li>
-        <li><a href="#goodwill"><span class="g">G</span>oodwill</a></li>
-      </ol>
-      <p class="part-txt">The same mental habits that bring us happiness and well-being also turn us into the sorts of people who bring others happiness and well-being.</p>
+      <p class="part-lead">Three mental habits that research has shown to increase the experience of positive emotions and cultivate overall well-being. Conveniently, they all start with G.</p>
     </div>
   </section>
 
-  <!-- ============ 4: Gratitude ============ -->
+  {/* ============ 4: Gratitude (no cheat sheet; from the delivery) ============ */}
   <section class="principle" id="gratitude">
     <div class="col">
       <header class="ph"><span class="num" aria-hidden="true">4</span><h2>Gratitude</h2></header>
-      <p class="lead">Studies indicate grateful people are happier, less stressed, and less prone to anxiety and depression. They cope better with problems, they’re more satisfied in their relationships, and they even sleep better. (That last one is the big draw for me.)</p>
-      <ul class="pts">
-        <li>You can cultivate gratitude through practice. Here are two simple methods, both popularized by Dr. Martin Seligman, the founder of positive psychology.</li>
-      </ul>
+      <p class="lead">Studies indicate grateful people are happier, less stressed, and less prone to anxiety and depression. You can cultivate gratitude through practice.</p>
 
       <h3 class="sub">The gratitude journal</h3>
-      <ul class="pts">
-        <li>At the end of each day, write down <b>three things that went well</b> that day. Each one can be just a sentence.</li>
-        <li>To make it more effective, also write down <b>why</b> each one happened, in a way that connects it to something positive about yourself.</li>
-      </ul>
-      <div class="journal" role="group" aria-label="Example journal entry">
-        <div class="jl"><span class="jn">1</span><div><span class="tag">Went well</span>I cooked a really nice dinner with my wife today.</div></div>
-        <div class="jl why"><span class="jn"></span><div><span class="tag">Why</span>Because I made an intentional effort recently to find activities that we could do together.</div></div>
-      </div>
-      <ul class="pts">
-        <li>Keep it up and it rewires your brain: you become more prone to noticing and appreciating the positive things in your life, and less prone to dwelling on the negative things.</li>
-      </ul>
-      <aside class="jon">
-        <img src="/images/jon-headshot-botanical.webp" alt="" width="600" height="744" loading="lazy" />
-        <p>I started keeping a gratitude journal during lockdown, and I’ve kept it up because the benefits were so obvious. I do it a little differently, in real time: a list in my phone’s notes app, broken up by day. Whenever something good happens, I jot it down right then, and I don’t limit myself to three. That’s not sanctioned by Dr. Seligman, but for me it’s been even better at training me to appreciate the good things as they happen.</p>
-      </aside>
+      <p class="body">At the end of each day, write down <b>three things that went well</b> that day. Each one can be just a sentence. To make it more effective, also write down <b>why</b> each one happened, in a way that connects it to something positive about yourself.</p>
       <p class="quick"><b>The 30-second version:</b> whenever something good happens, jot it down right then.</p>
 
       <h3 class="sub">The gratitude visit</h3>
-      <p class="body">This one isn’t as well known. It traditionally means visiting someone in person, which is probably the most powerful, but it works well over Zoom or the phone too.</p>
     </div>
     <div class="wide" style="max-width:calc(940px + 2*var(--gutter))">
       <ol class="steps4">
         <li><span class="mk">1</span><span>Think of someone who has shown you incredible kindness, ideally someone you’ve never fully thanked.</span></li>
-        <li><span class="mk">2</span><span>Write them a short letter: what they did for you, how it affected you, how it made your life better. Try to express the full measure of your gratitude.</span></li>
+        <li><span class="mk">2</span><span>Write them a short letter: what they did for you, how it affected you, how it made your life better.</span></li>
         <li><span class="mk">3</span><span>Reach out and say you’d like to get together or catch up. You don’t have to explain why.</span></li>
-        <li><span class="mk">4</span><span>When you’re together, tell them you have something you’d like to read to them. Then read the letter aloud.</span></li>
+        <li><span class="mk">4</span><span>When you’re together, read the letter aloud. In person is probably the most powerful, but Zoom or the phone works well too.</span></li>
       </ol>
-    </div>
-    <div class="col">
-      <p class="fair">Fair warning: many people start crying, you or them. That’s okay. It’s a very powerful practice.</p>
-
-      <p class="cmp-lead">Here’s what the studies suggest:</p>
-      <div class="compare">
-        <div class="cmp">
-          <svg viewBox="0 0 120 50" aria-hidden="true"><path d="M4 46 L4 46 Q20 46 26 6 Q32 46 116 46" /></svg>
-          <b>The visit</b><span>leads to a bigger boost in happiness</span>
-        </div>
-        <div class="cmp">
-          <svg viewBox="0 0 120 50" aria-hidden="true"><path d="M4 46 Q14 22 30 22 L116 22" /></svg>
-          <b>The journal</b><span>has longer-lasting benefits</span>
-        </div>
-        <p class="cmp-end">Luckily, you can just do both.</p>
-      </div>
     </div>
   </section>
 
-  <!-- ============ 5: Generosity ============ -->
+  {/* ============ 5: Generosity (no cheat sheet; from the delivery) ============ */}
   <section class="principle alt" id="generosity">
     <div class="col">
       <header class="ph"><span class="num" aria-hidden="true">5</span><h2>Generosity</h2></header>
-      <p class="lead">There are ancient roots to the understanding that being generous toward other people is good not just for them, but for you.</p>
-      <blockquote class="old-q">
-        <p>“If beings knew, as I know, the results of giving and sharing, they would not eat without having given.”</p>
-        <footer>Siddhartha Gautama, the Buddha. Whenever he taught ordinary people, his first lesson was never about meditation. It was always about generosity.</footer>
-      </blockquote>
-      <ul class="pts">
-        <li>Modern science reinforces this. Giving time, effort, money, or items is associated with <b>better physical health and even a longer lifespan</b>, and a large body of research shows it improves well-being and even mental health.</li>
-        <li>I give to nonprofits and causes that need financial support. I also try to give to someone specific, because it comes with a nice little bonus:</li>
-      </ul>
+      <p class="lead">Being generous toward other people is good not just for them, but for you.</p>
+      <p class="body">Giving time, effort, money, or items is associated with better physical health and even a longer lifespan, and a large body of research shows it improves well-being and even mental health.</p>
       <div class="card bonus">
         <h3>Give to someone specific</h3>
         <p>Research indicates that <b>targeted giving</b>, to identifiable individuals rather than a broad class of people, yields an additional benefit: it’s associated with reduced activity in the amygdala, and with decreases in anxiety.</p>
+        <p><b>Pro bono</b> is an incredible way to engage in targeted giving, using your skills as an attorney.</p>
       </div>
-      <aside class="jon" style="margin-top:32px">
-        <img src="/images/jon-headshot-botanical.webp" alt="" width="600" height="744" loading="lazy" />
-        <p>I live in New York City, and when I take the subway, there are a lot of people who are having a hard time and might need something to eat. So I buy a 30-pack of Clif Bars and make sure I always have two in my bag. If I meet someone asking for help, I always have something I can give. Is that going to solve homelessness in New York City? No. That’s why I also give to organizations. I do both the systemic stuff and the individual stuff.</p>
-      </aside>
-      <p class="quick"><b>The 30-second version:</b> one small act of giving, like handing someone a Clif Bar.</p>
-      <ul class="pts">
-        <li><b>Pro bono</b> is an incredible way to engage in targeted giving, combining it with your work at the firm and using your skills as an attorney.</li>
-        <li>Sharing what you do gives other people ideas, so sharing is itself an act of generosity. A few from the chat at a recent session:</li>
-      </ul>
-      <div class="chat2" role="group" aria-label="Acts of generosity shared in a session chat">
-        <div class="chat-bar"><span class="dot" aria-hidden="true"></span>Chat</div>
-        <div class="feed">
-          <span class="m">I make sure to either make tea for my wife in the morning or at least boil the jug before I leave.</span>
-          <span class="m">I cook and share meals with others.</span>
-          <span class="m">I donate blood.</span>
-          <span class="m">I sometimes pay for the groceries of the person behind me just randomly.</span>
-        </div>
-      </div>
-
-      <div class="yes">
-        <h3>What about burnout?</h3>
-        <p>You never want to practice generosity at the expense of your own well-being. You can’t pour from an empty cup. Joseph Goldstein, one of the great living meditation teachers in the West, describes a sweet spot: <b>give a little more than is easy, and stop there.</b></p>
-        <p>He also suggests an experiment. Take one day where, whenever you think about giving (grabbing something from the printer for someone, giving a buck to someone on the street), you stop thinking and just do it. I’ve tried it. It’s kind of fun.</p>
-      </div>
+      <p class="quick"><b>The 30-second version:</b> one small act of giving, like grabbing something from the printer for someone, or giving a buck to someone on the street.</p>
     </div>
   </section>
 
-  <!-- ============ 6: Goodwill ============ -->
+  {/* ============ 6: Goodwill (cheat sheet: Goodwill Meditation) ============ */}
   <section class="principle" id="goodwill">
     <div class="col">
       <header class="ph"><span class="num" aria-hidden="true">6</span><h2>Goodwill</h2></header>
       <p class="lead">By goodwill, I mean a specific mental state: the heartfelt wish for others to be happy.</p>
-      <ul class="pts">
-        <li>Research indicates that goodwill practices increase positive emotions and appear to improve well-being, <b>even when you’re confronted with the distress of others.</b></li>
-      </ul>
-
-      <h3 class="sub">On the go</h3>
-      <ul class="pts">
-        <li>Whenever you encounter people, in person or virtually, silently wish them well by saying in your mind:</li>
-      </ul>
+      <p class="body">Research indicates that goodwill practices increase positive emotions and appear to improve well-being, even when you’re confronted with the distress of others.</p>
+      <p class="body">Whenever you encounter people, in person or virtually, silently wish them well by saying in your mind:</p>
       <p class="borrow-line">“May you be happy.”</p>
-      <ul class="pts">
-        <li>In a meeting or on a video call, say it in your mind for the people in it. Walking down the hallway past colleagues, or past total strangers on the street: “May you be happy.”</li>
-        <li>It takes two seconds each time and won’t interrupt your day. But encounter by encounter, day by day, you’re making it more your default.</li>
-      </ul>
-      <div class="watch" style="margin-top:24px"><div class="wk">When to use it</div><ul>
-        <li>Before or after a contentious call, meeting, or negotiation</li>
-        <li>When you find yourself getting angry or frustrated with adversaries, clients, or colleagues</li>
-        <li>When your mood is low or you’re feeling down</li>
-      </ul></div>
+      <p class="body">It takes two seconds each time and won’t interrupt your day.</p>
+
+      <div class="gw2">
+      <div class="uses">
+        <h3>When to use it</h3>
+        <ul>
+          <li>Before or after a contentious call, meeting, or negotiation</li>
+          <li>When you find yourself getting angry or frustrated with adversaries, clients, or colleagues</li>
+          <li>When your mood is low or you’re feeling down</li>
+        </ul>
+      </div>
 
       <div class="listen">
         <div class="listen-h"><b>Guided goodwill meditation</b><span>About 11 minutes, guided by Jon</span></div>
@@ -472,118 +332,67 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
           <a href="/uploads/goodwill-meditation-guided.mp3">Play the guided goodwill meditation</a>
         </audio>
       </div>
-    </div>
+      </div>
 
-    <details class="fold fold-full" id="full-practice">
-      <summary class="col"><span class="fold-in">The full practice, step by step</span></summary>
-      <div class="col">
-        <p class="body">Practice this even occasionally and it will deepen your capacity for goodwill. You don’t have to feel any particular way while you do it. It’s more about planting seeds in the mind that ripen in time.</p>
-        <p class="body">Sit comfortably, and close your eyes if you like. Bring each person to mind in turn, reflect that they’re a human being just like you, doing their best to find some happiness and doing their best not to suffer, and silently repeat:</p>
+      <details class="fold" id="full-practice">
+        <summary><span class="fold-in">The full practice, step by step</span></summary>
+        <p class="body">Bring to mind someone you love. Reflect that this person is a human being like you: seeking happiness, wishing not to suffer, enduring hardships. Then mentally recite these phrases, using them as anchors for attention:</p>
         <p class="borrow-line phrases">{PHRASES.map((p) => <span>“{p}”</span>)}</p>
-        <p class="body">Then drop the words and just sit for a moment with the attitude of well-wishing.</p>
-      </div>
-      <div class="wide" style="max-width:calc(940px + 2*var(--gutter))">
-        <ol class="steps4 who">
-          <li><span class="mk">1</span><span><b>Someone you love.</b> Someone who brings up a lot of warm feelings. A cute baby works well. So do pets.</span></li>
-          <li><span class="mk">2</span><span><b>Someone neutral.</b> A coworker you don’t know well, or the person who hands you your coffee in the morning.</span></li>
-          <li><span class="mk">3</span><span><b>Someone you’ve had challenges with.</b> You don’t need to pick your worst enemy. Just someone you’ve had some issues with from time to time.</span></li>
-          <li><span class="mk">4</span><span><b>Yourself.</b> It can help to imagine yourself as a small child.</span></li>
-        </ol>
-      </div>
-      <div class="col">
-        <p class="body" style="margin-top:28px">For yourself, the words change:</p>
-        <p class="borrow-line">“As I am no less deserving than anyone else, may I be happy. May I be healthy. May I be safe. May I be at peace.”</p>
+        <p class="body">Repeat for any or all of the following:</p>
         <ul class="pts">
-          <li>You can also add a round for everyone on earth.</li>
+          <li>A neutral person</li>
+          <li>A difficult person</li>
+          <li>Everyone on earth</li>
+          <li>Yourself (highly recommended)</li>
         </ul>
-      </div>
-    </details>
-
-    <div class="col">
-      <figure class="wq">
-        <figcaption>The Dalai Lama likes to say:</figcaption>
-        <blockquote>“If you want to be selfish, be wisely selfish: care for others.”</blockquote>
-      </figure>
+      </details>
     </div>
   </section>
 
-  <!-- ============ More tools ============ -->
+  {/* ============ More tools ============ */}
   <section class="toolkit" id="more">
-    <div class="wide" style="max-width:calc(980px + 2*var(--gutter))">
-      <details class="fold fold-big">
-      <summary><h2 class="fold-in">Two more tools: for anxiety and for sleep</h2></summary>
+    <div class="col">
+      <h2 class="more-h">Two more tools, and further reading</h2>
 
-      <div class="tool" id="tool-noting">
-        <div class="tool-meta">
-          <h3>Deconstructing anxiety</h3>
-          <p class="meta-d">A simple, powerful mindfulness practice that doubles as a method for working with anxiety.</p>
-        </div>
-        <div class="tool-body">
-          <p>Let your attention float freely. As it drifts, various sights, sounds, sensations, and thoughts will grab it and stand out. As this happens, notice whatever stands out most, and give it a light mental label:</p>
-          <ul class="labels">
-            <li><b>“Seeing”</b><span>for sights</span></li>
-            <li><b>“Hearing”</b><span>for sounds</span></li>
-            <li><b>“Feeling”</b><span>for physical sensations</span></li>
-            <li><b>“Thinking”</b><span>for anything mental</span></li>
-            <li><b>“Don’t know”</b><span>when you’re not sure what’s standing out</span></li>
-          </ul>
-        </div>
-        <div class="tool-wide two">
-          <div class="watch"><div class="wk">Why it helps</div><ul>
-            <li>Accessible even when the mind is agitated or unable to focus</li>
-            <li>Easy to do</li>
-            <li>Well suited to short bursts of on-the-go practice</li>
-          </ul></div>
-          <div class="watch"><div class="wk">When to use it</div><ul>
-            <li>Any time you feel anxious or overwhelmed: before depositions, court appearances, client pitches, business development opportunities, high-pressure calls or meetings</li>
-          </ul></div>
-        </div>
-      </div>
-
-      <div class="tool" id="tool-sleep">
-        <div class="tool-meta">
-          <h3>Getting to sleep</h3>
-          <p class="meta-d">As with anxiety, resisting sleeplessness only makes it worse.</p>
-        </div>
-        <div class="tool-body">
-          <ul class="principles3">
-            <li>Being less concerned with falling asleep will help you sleep better.</li>
-            <li>You can’t will yourself to become sleepy.</li>
-          </ul>
-          <h4 class="rule-h">The half-hour rule</h4>
-          <ol class="cycle">
-            <li>If you’re not falling asleep, don’t lie there and “keep trying.” It will only stress you.</li>
-            <li>After roughly 20 to 30 minutes (don’t watch a clock), get up.</li>
-            <li>Go into a different room, do something relaxing for 20 to 30 minutes, then go back to bed.</li>
-            <li>If you become sleepy, great. If not, don’t worry about it. Just repeat as many times as you need.</li>
-          </ol>
-          <p class="remember"><b>Remember:</b> missing sleep is very common and isn’t a big deal.</p>
-        </div>
-      </div>
+      <details class="fold" id="tool-noting">
+        <summary><span class="fold-in">Deconstructing anxiety</span></summary>
+        <p class="body">A simple, powerful mindfulness practice that doubles as a method for working with anxiety. Let your attention float freely. As it drifts, various sights, sounds, sensations, and thoughts may grab your attention and stand out. As this happens, notice whatever stands out most, and give it a light mental label:</p>
+        <ul class="labels">
+          <li><b>“Seeing”</b><span>for sights</span></li>
+          <li><b>“Hearing”</b><span>for sounds</span></li>
+          <li><b>“Feeling”</b><span>for physical sensations</span></li>
+          <li><b>“Thinking”</b><span>for anything mental</span></li>
+          <li><b>“Don’t know”</b><span>when you’re not sure what’s standing out</span></li>
+        </ul>
+        <p class="body">It’s accessible even when the mind is agitated or unable to focus, and well suited to short bursts of on-the-go practice. Use it any time you feel anxious or overwhelmed: before depositions, court appearances, client pitches, business development opportunities, high-pressure calls or meetings.</p>
       </details>
 
-      <div class="reading" id="reading">
-        <h3>Further reading</h3>
-        <p>Research and outside resources behind the workshop, to download.</p>
-        <ul>
+      <details class="fold" id="tool-sleep">
+        <summary><span class="fold-in">Getting to sleep</span></summary>
+        <p class="body">As with anxiety, resisting sleeplessness only exacerbates it. Being less concerned with falling asleep will help you sleep better, and you can’t will yourself to become sleepy. So use the half-hour rule:</p>
+        <ol class="cycle">
+          <li>If you’re not falling asleep, don’t lie there and “keep trying.” It will only stress you.</li>
+          <li>After roughly 20 to 30 minutes (don’t watch a clock), get up.</li>
+          <li>Go into a different room, do something relaxing for 20 to 30 minutes, then go back to bed.</li>
+          <li>If you become sleepy, great. If not, don’t worry about it. Just repeat the process as many times as you need.</li>
+        </ol>
+        <p class="remember"><b>Remember:</b> missing sleep is very common and isn’t a big deal.</p>
+      </details>
+
+      <details class="fold" id="reading">
+        <summary><span class="fold-in">Further reading</span></summary>
+        <ul class="reading">
           {READING.map((r) => (
             <li><a href={r.url} target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M3 13h10"/></svg><span>{r.name}</span><em>PDF</em></a></li>
           ))}
         </ul>
-      </div>
+      </details>
     </div>
   </section>
 
-  <!-- ============ Start ============ -->
-  <section class="start">
-    <div class="col">
-      <p class="big">Short moments, many times.</p>
-      <p>Not every technique is for everybody. Try these out and see which ones feel like a fit.</p>
-    </div>
-  </section>
   </main>
 
-  <!-- ============ Close ============ -->
+  {/* ============ Close ============ */}
   <footer class="close" aria-label="Let's keep talking">
     <div class="wide close-in" style="max-width:calc(880px + 2*var(--gutter))">
       <img src="/images/jon-headshot-botanical.webp" alt="Jon Krop" width="600" height="744" loading="lazy" />
@@ -627,14 +436,25 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
 </PlaybookLayout>
 
 <style>
+  /* A reference page: tighter rhythm than the layout's default sections. */
+  .principle{padding:40px 0;}
+  .hero-in{padding-top:40px;padding-bottom:56px;}
+  .hero .logo{margin-bottom:30px;}
+  .close{padding-top:56px;}
+  .lead{font-size:21px;margin-bottom:16px;}
+  .ph{margin-bottom:16px;}
+  .intro{padding:40px 0 0;}
+  .intro .big{font-size:24px;max-width:50ch;}
+  .contents{padding-top:24px;padding-bottom:48px;}
+
   /* ---------- hero dial ---------- */
-  .dial{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:26px;margin:0;}
-  .dial-ring{position:relative;width:260px;height:260px;}
+  .dial{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:20px;margin:0;}
+  .dial-ring{position:relative;width:210px;height:210px;}
   .dial-ring svg{width:100%;height:100%;transform:rotate(-90deg);}
   .dial-track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:14;}
   .dial-dash{fill:none;stroke:var(--accent-soft);stroke-width:14;stroke-dasharray:0.62 0.38;opacity:.9;}
   .dial-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-  .dial-n{font-family:var(--serif);font-weight:600;font-size:84px;line-height:.9;color:#fff;}
+  .dial-n{font-family:var(--serif);font-weight:600;font-size:72px;line-height:.9;color:#fff;}
   .dial-u{font-size:14px;font-weight:700;letter-spacing:.06em;color:#9FB3AD;margin-top:6px;}
   .dial figcaption{text-align:center;max-width:30ch;}
   .dial-q{display:block;font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.2;color:#fff;}
@@ -644,35 +464,25 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   .groups{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
   .grp{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.2;color:var(--ink);margin:0 0 14px;}
   .cards3{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-  .cards3 a{display:flex;flex-direction:column;justify-content:space-between;gap:20px;height:100%;min-height:140px;padding:16px 16px 14px;background:var(--paper-2);border-top:3px solid var(--ink);text-decoration:none;color:var(--ink);transition:transform .18s ease,box-shadow .18s ease,border-color .18s;}
+  .cards3 a{display:flex;flex-direction:column;justify-content:space-between;gap:16px;height:100%;min-height:88px;padding:14px 16px 12px;background:var(--paper-2);border-top:3px solid var(--ink);text-decoration:none;color:var(--ink);transition:transform .18s ease,box-shadow .18s ease,border-color .18s;}
   .cards3 a:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(18,50,47,.12);border-top-color:var(--accent);}
   .cards3 .n{font-family:var(--serif);font-size:40px;line-height:.8;color:var(--accent);}
   .cards3 .t{font-family:var(--serif);font-size:18.5px;line-height:1.2;font-weight:500;text-wrap:balance;}
-  .also{margin-top:22px;font-size:16px;color:var(--dim);}
+  .also-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-top:18px;}
+  .also{font-size:16px;color:var(--dim);}
+  .also-row .legend{margin-top:0;}
 
   /* ---------- shared bits ---------- */
-  .sub{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.15;color:var(--ink);margin:52px 0 16px;}
-  .body{font-size:18px;line-height:1.6;margin:0 0 14px;}
-  ul.checks{list-style:none;display:grid;gap:10px;}
-  ul.checks li{position:relative;padding-left:30px;font-size:16.5px;line-height:1.5;color:var(--body);}
-  ul.checks li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);}
-  ul.checks li::after{content:"";position:absolute;left:6px;top:7px;width:6px;height:9px;border:solid var(--ink);border-width:0 2px 2px 0;transform:rotate(45deg);}
-  .mv{flex:none;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font:800 14px var(--sans);}
-
-  .jon{display:flex;gap:18px;align-items:flex-start;margin:30px 0 8px;padding:20px 22px;background:#fff;border:1px solid var(--hair);border-left:3px solid var(--ink);}
-  .jon img{flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 4%;}
-  .jon p{font-size:16.5px;line-height:1.6;color:var(--body);}
-
-  .watch .wk{font-size:13px;}
-  .watch p{font-size:16px;line-height:1.55;}
-  .watch p b{color:var(--ink);}
+  .sub{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.15;color:var(--ink);margin:28px 0 10px;}
+  .body{font-size:17px;line-height:1.58;margin:0 0 12px;}
+  .body b{color:var(--ink);}
 
   /* The 30-second version of a practice (sage, not peach: it describes, it isn't a line to say). */
-  .quick{margin:24px 0 8px;padding:14px 18px;background:var(--sage);border:1px solid var(--sage-line);font-size:17px;line-height:1.5;color:var(--body);}
+  .quick{margin:20px 0 4px;padding:14px 18px;background:var(--sage);border:1px solid var(--sage-line);font-size:17px;line-height:1.5;color:var(--body);}
   .quick b{color:var(--ink);}
 
   /* Collapsible extras: native details, closed by default. */
-  .fold{margin:40px 0 0;}
+  .fold{margin:28px 0 0;}
   .fold > summary{display:block;list-style:none;cursor:pointer;}
   .fold > summary::-webkit-details-marker{display:none;}
   .fold-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 18px;background:#fff;border:1px solid var(--hair);border-left:3px solid var(--ink);font-family:var(--sans);font-weight:700;font-size:17px;line-height:1.3;color:var(--ink);transition:border-color .15s;}
@@ -681,35 +491,29 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   .fold > summary:hover .fold-in{border-left-color:var(--accent);}
   .fold > summary:focus-visible{outline:none;}
   .fold > summary:focus-visible .fold-in{outline:2px solid var(--accent);outline-offset:2px;}
-  .fold[open] > summary{margin-bottom:22px;}
-  .fold-full{margin-top:14px;}
-  .fold-big .fold-in{margin:0;padding:22px 26px;font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.15;border-color:var(--sage-line);border-left-color:var(--ink);}
-  .fold-big[open] > summary{margin-bottom:0;}
+  .fold[open] > summary{margin-bottom:20px;}
 
   /* ---------- 1: arousal diagram ---------- */
-  .arousal{display:grid;grid-template-columns:1fr 110px 1fr 96px 1fr;align-items:start;margin:36px 0 0;}
+  .arousal{display:grid;grid-template-columns:1fr 110px 1fr 96px 1fr;align-items:start;margin:24px 0 0;}
   .st{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:18px 18px 16px;box-shadow:0 10px 30px rgba(18,50,47,.06);}
   .st b{display:block;font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.1;color:var(--ink);}
   .st .lvl{display:inline-block;margin:8px 0 10px;font-size:12.5px;font-weight:700;color:var(--dim);background:var(--sage);padding:3px 9px;border-radius:999px;}
   .st p{font-size:15px;line-height:1.5;}
-  .st.calm{margin-top:96px;}
+  .st.calm{margin-top:72px;}
   .st.exc{border-top-color:var(--accent);}
   .hop{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 8px;text-align:center;font-size:13.5px;font-weight:700;line-height:1.3;color:var(--ink);}
   .hop .ar{position:relative;display:block;width:100%;height:2px;background:var(--ink);}
-  .hop.far{margin-top:150px;}
+  .hop.far{margin-top:124px;}
   .hop.far .ar{background:repeating-linear-gradient(90deg,var(--dim) 0 6px,transparent 6px 11px);}
   .hop.far .ar::before{content:"";position:absolute;left:-2px;top:-5px;border:6px solid transparent;border-right:9px solid var(--dim);border-left:0;}
-  .hop.near{margin-top:56px;}
+  .hop.near{margin-top:50px;}
   .hop.near .ar{background:var(--accent);}
   .hop.near .ar::after{content:"";position:absolute;right:-2px;top:-5px;border:6px solid transparent;border-left:9px solid var(--accent);border-right:0;}
 
-  .finding{margin:26px 0 22px;padding:20px 22px;background:var(--sage);border:1px solid var(--sage-line);}
-  .finding p{font-size:16.5px;line-height:1.55;margin-bottom:12px;color:var(--ink);}
-
   /* ---------- 2: breathing ---------- */
-  .core2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 0;}
+  .core2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 0;}
   .core{background:var(--paper-2);border-top:3px solid var(--ink);padding:20px 20px 18px;}
-  .core h3{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin:12px 0 8px;}
+  .core h3{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin:0 0 8px;}
   .core p{font-size:15.5px;line-height:1.55;}
   .rate{margin-top:14px;display:grid;gap:8px;}
   .rate-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;}
@@ -719,7 +523,7 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   .rate-row.slow .dots i{background:var(--accent);opacity:.9;width:11px;height:11px;margin:0 3px 0 0;}
   .rl{font-size:13px;font-weight:700;color:var(--dim);}
 
-  .patterns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:22px 0 0;align-items:stretch;}
+  .patterns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:8px 0 0;align-items:stretch;}
   .pat{background:#fff;border:1px solid var(--hair);padding:18px 18px 16px;box-shadow:0 10px 30px rgba(18,50,47,.05);}
   .pat-h b{display:block;font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);}
   .pat-h span{display:block;font-size:14px;font-weight:700;color:var(--dim);margin:2px 0 14px;}
@@ -730,35 +534,22 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   .seg.in i{background:var(--ink);}
   .seg.out i{background:#8FB0A6;}
   .pat-n{font-size:14.5px;line-height:1.45;color:var(--dim);margin-top:12px;}
-  .box{position:relative;width:118px;height:118px;margin:12px auto 18px;border:3px solid var(--ink);}
+  .box{position:relative;width:100px;height:100px;margin:10px auto 16px;border:3px solid var(--ink);}
   .box .side{position:absolute;font-size:11.5px;font-weight:800;color:var(--ink);white-space:nowrap;background:#fff;padding:0 4px;}
   .box .t{top:-9px;left:50%;transform:translateX(-50%);}
   .box .b{bottom:-9px;left:50%;transform:translateX(-50%);}
   .box .r{right:-9px;top:50%;transform:translate(50%,-50%) rotate(90deg);}
   .box .l{left:-9px;top:50%;transform:translate(-50%,-50%) rotate(-90deg);}
 
-  .scene{margin:40px 0 0;background:var(--ink);color:#DCE5E1;padding:26px 28px;}
-  .scene h3{font-family:var(--serif);font-weight:600;font-size:24px;color:#fff;margin-bottom:12px;line-height:1.2;}
-  .scene p{font-size:16.5px;line-height:1.6;margin-bottom:10px;}
-  .scene p:last-child{margin-bottom:0;color:#fff;}
+  /* ---------- 3: questions + story ---------- */
+  ol.qs{list-style:none;counter-reset:q;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 0;}
+  ol.qs li{counter-increment:q;position:relative;background:#fff;border:1px solid var(--hair);padding:11px 14px 11px 42px;font-family:var(--serif);font-size:17px;line-height:1.35;color:var(--ink);}
+  ol.qs li::before{content:counter(q);position:absolute;left:15px;top:12px;font:800 13px var(--sans);color:var(--dim);}
 
-  /* ---------- 3: loop + story ---------- */
-  .loop{position:relative;display:grid;grid-template-columns:1fr 56px 1fr 56px 1fr;align-items:center;margin:34px 0 0;padding-bottom:58px;}
-  .lp{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:16px 16px;font-family:var(--serif);font-size:19px;line-height:1.3;color:var(--ink);text-align:center;box-shadow:0 10px 30px rgba(18,50,47,.06);}
-  .la{position:relative;display:block;height:2px;background:var(--ink);margin:0 8px;}
-  .la::after{content:"";position:absolute;right:-2px;top:-5px;border:6px solid transparent;border-left:9px solid var(--ink);border-right:0;}
-  .lback{position:absolute;left:16%;right:16%;bottom:8px;height:34px;border:2px solid var(--ink);border-top:0;border-radius:0 0 18px 18px;display:flex;justify-content:center;}
-  .lback::before{content:"";position:absolute;left:-7px;top:-8px;border:6px solid transparent;border-bottom:9px solid var(--ink);border-top:0;}
-  .lback span{position:relative;top:24px;background:var(--paper-2);padding:0 12px;font-size:14px;font-weight:700;color:var(--ink);height:max-content;}
-
-  ol.qs{list-style:none;counter-reset:q;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 0;}
-  ol.qs li{counter-increment:q;position:relative;background:#fff;border:1px solid var(--hair);padding:14px 16px 14px 46px;font-family:var(--serif);font-size:18px;line-height:1.35;color:var(--ink);}
-  ol.qs li::before{content:counter(q);position:absolute;left:16px;top:14px;font:800 13px var(--sans);color:var(--dim);}
-
-  .story{display:grid;grid-template-columns:1.1fr 1fr;gap:12px 40px;margin:56px 0 0;background:#fff;border:1px solid var(--hair);padding:34px 36px;box-shadow:0 14px 36px rgba(18,50,47,.08);}
-  .story-txt h3{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.15;color:var(--ink);margin-bottom:14px;}
-  .story-txt p{font-size:17px;line-height:1.6;margin-bottom:12px;}
-  .story-vis{display:flex;flex-direction:column;gap:14px;}
+  .story{display:grid;grid-template-columns:1.25fr 1fr;gap:12px 36px;align-items:start;margin:28px 0 0;background:#fff;border:1px solid var(--hair);padding:26px 30px;box-shadow:0 14px 36px rgba(18,50,47,.08);}
+  .story-txt h3{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.15;color:var(--ink);margin-bottom:14px;}
+  .story-txt p{font-size:16.5px;line-height:1.55;margin-bottom:10px;}
+  .story-vis{display:flex;flex-direction:column;gap:14px;padding-top:52px;}
   .phone{background:#2F3A38;border-radius:18px;padding:16px;}
   .note{display:block;background:#fff;border-radius:10px;padding:10px 14px;}
   .note .from{display:block;font-size:12px;font-weight:800;color:var(--dim);}
@@ -766,17 +557,8 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   .thoughts{display:flex;flex-wrap:wrap;gap:8px;}
   .thoughts span{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--ink);background:var(--paper-2);border:1px solid var(--hair);padding:6px 12px;border-radius:16px 16px 16px 4px;}
   .thoughts span:nth-child(2){margin-left:14px;}
-  .thoughts span:nth-child(4){margin-left:28px;}
-  .story-end{grid-column:1 / -1;border-top:1px dashed var(--hair);padding-top:16px;margin-top:8px;}
-  .story-end p{font-size:17px;line-height:1.6;}
+  .story-txt .story-end{border-top:1px dashed var(--hair);padding-top:12px;margin:4px 0 0;}
   .story-end b{color:var(--ink);}
-
-  .yes{margin:40px 0 0;background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:24px 26px 22px;}
-  .yes h3{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);margin-bottom:10px;}
-  .yes p{font-size:16.5px;line-height:1.6;margin-bottom:12px;}
-  .yes p:last-child{margin-bottom:0;}
-  .yes b{color:var(--ink);}
-  .yes .borrow-line{font-size:20px;margin:6px 0 14px;}
 
   .swap{margin:14px 0 0 28px;display:flex;flex-direction:column;gap:6px;}
   .swap p{font-family:var(--serif);font-size:18px;line-height:1.4;padding:12px 16px;}
@@ -785,85 +567,52 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   .swap-ar{font-size:20px;color:var(--ink);padding-left:16px;}
 
   /* ---------- part band ---------- */
-  .part{background:var(--ink);color:#DCE5E1;padding:96px 0 100px;position:relative;overflow:hidden;}
+  .part{background:var(--ink);color:#DCE5E1;padding:30px 0 34px;position:relative;overflow:hidden;}
   .part::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 100% 0%,rgba(240,93,35,.14),transparent 60%);pointer-events:none;}
   .part .wide{position:relative;}
-  .part h2{font-family:var(--serif);font-weight:600;font-size:48px;line-height:1.05;color:#fff;letter-spacing:-.01em;}
-  .part-lead{font-family:var(--serif);font-size:23px;line-height:1.4;color:#C9D8D3;margin:16px 0 34px;max-width:40ch;}
-  .gs{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-  .gs a{display:block;padding:22px 22px 20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-top:3px solid #fff;text-decoration:none;font-family:var(--serif);font-size:30px;font-weight:500;color:#fff;transition:background .15s;}
-  .gs a:hover{background:rgba(255,255,255,.12);}
-  .gs .g{font-size:64px;line-height:.9;font-weight:600;color:var(--accent-soft);}
-  .part-txt{font-size:17.5px;line-height:1.62;margin-top:30px;max-width:62ch;}
+  .part h2{font-family:var(--serif);font-weight:600;font-size:36px;line-height:1.05;color:#fff;letter-spacing:-.01em;}
+  .part-lead{font-family:var(--serif);font-size:19px;line-height:1.4;color:#C9D8D3;margin:8px 0 0;max-width:60ch;}
 
   /* ---------- 4: gratitude ---------- */
-  .journal{margin:18px 0 18px;background:#fff;border:1px solid var(--hair);padding:10px 22px;box-shadow:0 10px 30px rgba(18,50,47,.06);background-image:linear-gradient(var(--hair) 1px,transparent 1px);background-size:100% 100%;}
-  .jl{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--hair);font-family:var(--serif);font-size:18.5px;line-height:1.4;color:var(--ink);}
-  .jl:last-child{border-bottom:0;}
-  .jl.why{padding-top:0;}
-  .jn{font:800 14px var(--sans);color:var(--dim);}
-  .tag{display:inline-block;margin-right:10px;padding:1px 8px;border-radius:4px;background:var(--ink);color:#fff;font:800 11.5px/1.6 var(--sans);vertical-align:2px;}
-  .jl.why .tag{background:var(--sage);color:var(--ink);}
-
-  .steps4{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 0;}
+  .steps4{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0;}
   .steps4 li{display:flex;flex-direction:column;gap:10px;background:var(--paper-2);border-top:3px solid var(--ink);padding:16px 16px 18px;font-size:15.5px;line-height:1.5;color:var(--body);}
-  .principle.alt .steps4 li{background:#fff;}
   .steps4 .mk{font-family:var(--serif);font-weight:600;font-size:34px;line-height:.9;color:var(--ink);}
-  .steps4 b{color:var(--ink);}
-  .fair{margin:20px 0 0;font-size:16.5px;line-height:1.55;color:var(--dim);}
-
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:40px 0 0;}
-  .cmp{background:var(--sage);border:1px solid var(--sage-line);padding:18px 20px;}
-  .cmp svg{display:block;width:120px;height:50px;margin-bottom:10px;}
-  .cmp path{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
-  .cmp b{display:block;font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);}
-  .cmp span{font-size:15.5px;line-height:1.45;}
-  .cmp-end{grid-column:1 / -1;font-family:var(--serif);font-size:21px;color:var(--ink);text-align:center;margin-top:4px;}
 
   /* ---------- 5: generosity ---------- */
-  .old-q{margin:6px 0 30px;padding:4px 0 4px 22px;border-left:3px solid var(--ink);}
-  .old-q p{font-family:var(--serif);font-size:24px;line-height:1.35;color:var(--ink);}
-  .old-q footer{font-size:15px;line-height:1.5;color:var(--dim);margin-top:12px;}
-  .card.bonus{border-top-color:var(--accent);margin-top:14px;}
-  .chat2{margin:16px 0 0;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--hair);box-shadow:0 14px 36px rgba(18,50,47,.08);}
-  .chat2 .chat-bar{border-bottom:1px solid var(--hair);}
-  .feed{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:16px 18px 18px;}
-  .feed .m{max-width:90%;font-size:15.5px;line-height:1.4;padding:8px 13px;border-radius:14px 14px 14px 4px;background:var(--sage);color:var(--ink);}
+  .card.bonus{border-top-color:var(--accent);margin-top:22px;}
+  .card.bonus p:last-child{margin-bottom:0;}
 
   /* ---------- 6: goodwill ---------- */
   .phrases{display:flex;flex-direction:column;gap:2px;}
-  .steps4.who li{background:var(--paper-2);}
-  .listen{margin:30px 0 0;background:var(--sage);border:1px solid var(--sage-line);padding:20px 22px;}
-  .listen-h b{display:block;font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);}
-  .listen-h span{display:block;font-size:14.5px;color:var(--dim);margin:2px 0 14px;}
+  .gw2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 0;align-items:stretch;}
+  .uses{margin:0;background:var(--sage);border-left:3px solid var(--ink);padding:16px 20px;}
+  .uses h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin-bottom:8px;}
+  .uses ul{list-style:none;display:grid;gap:8px;}
+  .uses li{position:relative;padding-left:20px;font-size:16px;line-height:1.5;}
+  .uses li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:2px;background:var(--ink);}
+  .listen{margin:0;background:#fff;border:1px solid var(--hair);padding:18px 20px;}
+  .listen-h b{display:block;font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);}
+  .listen-h span{display:block;font-size:14.5px;color:var(--dim);margin:2px 0 12px;}
   .listen audio{display:block;width:100%;}
-  .wq{margin:56px 0 0;}
-  .wq figcaption{font-size:16.5px;color:var(--dim);margin-bottom:10px;}
-  .wq blockquote{margin:0;padding:4px 0 4px 22px;border-left:3px solid var(--ink);font-family:var(--serif);font-size:26px;line-height:1.3;color:var(--ink);}
-  /* Layout's .start uses a peach gradient; peach is reserved for borrowable lines. */
-  .start{background:linear-gradient(180deg,var(--sage),var(--paper));}
 
   /* ---------- more tools ---------- */
-  .meta-d{font-size:16px;line-height:1.5;margin-top:10px;color:var(--body);}
+  .toolkit{padding:40px 0 48px;}
+  .more-h{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.1;color:var(--ink);margin-bottom:4px;}
+  .toolkit .fold{margin-top:14px;}
+  .toolkit .fold-in{border-color:var(--sage-line);border-left-color:var(--ink);}
   ul.labels{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 16px;}
-  ul.labels li{display:flex;flex-direction:column;gap:2px;background:var(--paper-2);padding:10px 14px;border-top:3px solid var(--ink);min-width:120px;flex:1 1 120px;}
+  ul.labels li{display:flex;flex-direction:column;gap:2px;background:#fff;padding:10px 14px;border-top:3px solid var(--ink);min-width:120px;flex:1 1 120px;}
   ul.labels b{font-family:var(--serif);font-size:19px;color:var(--ink);}
   ul.labels span{font-size:13.5px;line-height:1.35;color:var(--dim);}
-  .tool-wide.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  ul.principles3{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 20px;}
-  ul.principles3 li{background:var(--paper-2);padding:14px 16px;font-family:var(--serif);font-size:18px;line-height:1.35;color:var(--ink);}
-  .rule-h{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin:0 0 10px;}
   ol.cycle{list-style:none;counter-reset:c;display:grid;gap:8px;}
   ol.cycle li{counter-increment:c;position:relative;padding:10px 14px 10px 50px;background:#fff;border:1px solid var(--sage-line);font-size:16px;line-height:1.5;}
   ol.cycle li::before{content:counter(c);position:absolute;left:12px;top:9px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font:800 13px/26px var(--sans);text-align:center;}
   .remember{margin-top:14px;font-size:16.5px;}
   .remember b{color:var(--ink);}
 
-  .reading{margin:22px 0 0;background:#fff;border:1px solid var(--sage-line);padding:34px 36px;}
-  .reading h3{font-family:var(--serif);font-weight:600;font-size:28px;color:var(--ink);}
-  .reading > p{font-size:16px;color:var(--dim);margin:6px 0 16px;}
-  .reading ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
-  .reading a{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid var(--hair);text-decoration:none;color:var(--ink);font-size:15.5px;line-height:1.4;}
+  ul.reading{list-style:none;display:grid;gap:0;background:#fff;border:1px solid var(--sage-line);padding:8px 20px;}
+  .reading a{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--hair);text-decoration:none;color:var(--ink);font-size:15.5px;line-height:1.4;}
+  .reading li:last-child a{border-bottom:0;}
   .reading a:hover span{text-decoration:underline;text-decoration-color:var(--accent);}
   .reading svg{flex:none;width:14px;height:14px;position:relative;top:2px;color:var(--ink);}
   .reading a span{flex:1;}
@@ -890,41 +639,31 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
     .hop.near{border-left:3px solid var(--accent);padding:4px 0 4px 18px;min-height:0;}
     .hop .ar{display:none;}
     .patterns{grid-template-columns:1fr;}
-    .loop{grid-template-columns:1fr;gap:0;padding-bottom:0;}
-    .la{width:2px;height:26px;margin:0 auto;}
-    .la::after{right:auto;left:-5px;top:auto;bottom:-2px;border:6px solid transparent;border-top:9px solid var(--ink);border-bottom:0;}
-    .lback{position:static;height:auto;border:0;margin-top:12px;}
-    .lback::before{display:none;}
-    .lback span{top:0;background:none;}
-    .lback span::before{content:"\21BA\00a0";}
     .story{grid-template-columns:1fr;padding:26px 22px;}
+    .story-vis{padding-top:0;}
+    .gw2{grid-template-columns:1fr;}
     .steps4{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:700px){
+    .principle{padding:40px 0;}
+    .lead{font-size:20px;}
+    .intro{padding-top:40px;}
+    .intro .big{font-size:23px;}
     .dial{flex-direction:column;align-items:flex-start;}
     .dial-ring{width:150px;height:150px;}
     .dial-q{font-size:24px;}
     .grp{font-size:22px;}
-    .sub{font-size:24px;margin-top:44px;}
+    .sub{font-size:23px;margin-top:36px;}
     .body{font-size:17px;}
-    .core2,.compare,.tool-wide.two,ul.principles3,.reading ul{grid-template-columns:1fr;}
+    .core2{grid-template-columns:1fr;}
     ol.qs{grid-template-columns:1fr;}
     .steps4{grid-template-columns:1fr;}
     .swap{margin-left:0;}
-    .part{padding:64px 0 72px;}
-    .part h2{font-size:36px;}
-    .part-lead{font-size:20px;}
-    .gs{grid-template-columns:1fr;}
-    .gs a{font-size:26px;}
-    .gs .g{font-size:48px;}
-    .scene{padding:22px 20px;}
-    .reading{padding:26px 20px;}
-    .story-txt h3{font-size:26px;}
-    .jon{padding:16px 16px;gap:14px;}
-    .jon img{width:44px;height:44px;}
-    .old-q p{font-size:21px;}
-    .wq blockquote{font-size:22px;}
-    .fold-big .fold-in{font-size:24px;padding:18px 18px;}
+    .part{padding:52px 0 56px;}
+    .part h2{font-size:34px;}
+    .part-lead{font-size:19px;}
+    .story-txt h3{font-size:25px;}
+    .more-h{font-size:28px;}
   }
 
   @media print{
@@ -932,18 +671,13 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
     .dial-n,.dial-q{color:var(--ink) !important;}
     .dial-u,.dial-src{color:var(--body) !important;}
     .dial-dash{stroke:var(--accent);}
-    .part,.scene{background:#fff !important;color:var(--body) !important;border:2px solid var(--ink);}
+    .part{background:#fff !important;color:var(--body) !important;border:2px solid var(--ink);}
     .part::before{display:none;}
-    .part h2,.part-lead,.gs a,.scene h3,.scene p{color:var(--ink) !important;}
-    .part-txt{color:var(--body) !important;}
-    .gs a{background:#fff;border-color:var(--ink);}
-    .gs .g{color:var(--ink);}
+    .part h2,.part-lead{color:var(--ink) !important;}
     .listen audio{display:none;}
-    .seg i,.dots i,.tag,.mv,ol.cycle li::before,.lback,.hop .ar{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-    .story,.yes,.arousal,.loop,.patterns,.journal,.steps4,.compare,.chat2,.core2,.reading li,.scene,.finding,.jon{break-inside:avoid;}
+    .seg i,.dots i,ol.cycle li::before,.hop .ar{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .story,.arousal,.patterns,.steps4,.core2,.uses,.card{break-inside:avoid;}
     .cards3 a:hover{transform:none;}
-    .ph,.part,.tool-meta,.sub{break-inside:avoid;break-after:avoid;}
-    .start{background:#fff !important;}
+    .ph,.part,.sub{break-inside:avoid;break-after:avoid;}
   }
-  .cmp-lead{font-size:17px;line-height:1.6;margin:22px 0 10px;}
 </style>
