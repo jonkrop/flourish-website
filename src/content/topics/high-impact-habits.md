@@ -61,10 +61,10 @@ sections:
         url: /uploads/Bentley-Breathing-Stress-Anxiety.pdf
         name: Bentley et al, Breathing Practices for Stress and Anxiety Reduction
       - type: pdf
-        name: Birdee at al, Slow breathing for reducing stress
+        name: Birdee et al, Slow breathing for reducing stress
         url: /uploads/birdee-et-al-slow-breathing-for-reducing-stress-the-effect-of-extending-exhale.pdf
       - type: pdf
-        name: Canzei et al, Impact of repeated morning bright white light exposures on
+        name: Canazei et al, Impact of repeated morning bright white light exposures on
           attention
         url: /uploads/canazei-et-al-impact-of-repeated-morning-bright-white-light-exposures-on-attention-in-a-simulated-office-environment.pdf
       - type: pdf
@@ -72,7 +72,7 @@ sections:
         name: Fincham et al, Effect of breathwork on stress and mental health
       - type: pdf
         url: /uploads/fredrickson-the-role-of-positive-emotions-in-positive-psychology-the-broaden-and-build-theory-of-positive-emotions.pdf
-        name: Frederickson, The Role of Positive Emotions in Positive Psychology
+        name: Fredrickson, The Role of Positive Emotions in Positive Psychology
       - type: pdf
         url: /uploads/george-the-cure-for-the-distracted-mind.pdf
         name: George, The Cure for the Distracted Mind
@@ -83,20 +83,20 @@ sections:
         url: /uploads/Capitalizing-Healthy-Lawyers.pdf
         name: Reich, Capitalizing on Healthy Lawyers
       - type: pdf
-        name: "Reibl et al, The Hydration Equation: Update on Water Balance and
+        name: "Riebl et al, The Hydration Equation: Update on Water Balance and
           Cognitive Performance"
         url: /uploads/riebl-et-al-the-hydration-equation-update-on-water-balance-and-cognitive-performance.pdf
       - type: pdf
         url: /uploads/seligman-et-al-why-lawyers-are-unhappy.pdf
-        name: Seligman et al - Why Lawyers Are Unhappy
+        name: Seligman et al, Why Lawyers Are Unhappy
       - type: pdf
-        name: Singh et al - Effectiveness of exercise for improving cognition, memory
-          and executive function
+        name: Singh et al, Effectiveness of exercise for improving cognition, memory and
+          executive function
         url: /uploads/singh-et-al-effectiveness-of-exercise-for-improving-cognition-memory-and-executive-function-a-systematic-umbrella-review-and-meta-meta-analysisfull.pdf
       - type: pdf
         url: /uploads/Path-To-Lawyer-Well-Being.pdf
         name: National Task Force on Lawyer Well-Being, The Path to Lawyer Well-Being
       - type: pdf
         url: /uploads/ward-et-al-brain-drain.pdf
-        name: Ward et al - Brain Drain
+        name: Ward et al, Brain Drain
 ---
