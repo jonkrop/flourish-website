@@ -5,8 +5,8 @@
 // sleep-drip-sample-installment/); composed labels are listed in that task's report.
 // Video slot: storyboard key frames rendered from video/scene.html (same task folder).
 // Poll and "Coming up" vote run in DEMO MODE: client-side only, no network requests, nothing stored.
-// Rules: ../../../../playbook-guide.md (no eyebrows, no copy buttons, orange/peach only for the
-// word-for-word line to say, ~660px measure, only the chapter bar floats).
+// Rules: ../../../../playbook-guide.md (no eyebrows, no copy buttons, no orange/peach here since the
+// page has no word-for-word line to say, ~660px measure, only the chapter bar floats).
 import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
 import PlaybookFoliage from '../../components/PlaybookFoliage.astro';
 
@@ -19,29 +19,30 @@ const CHAPTERS = [
 
 const UP = '/uploads/sleep-sample-54764c';
 const FRAMES = [
-  { src: `${UP}/frame-1.webp`, time: '0:08', at: 7.6, alt: 'A dark bedroom drawn in thin cream lines: a bed, a nightstand, and a window with a crescent moon. A small glowing dot, you, rests on the bed.' },
-  { src: `${UP}/frame-2.webp`, time: '0:24', at: 24.2, alt: 'The same bedroom. The clock on the nightstand is blurred so it can’t be read, and a faint arc around the bed slowly fills.' },
-  { src: `${UP}/frame-3.webp`, time: '0:41', at: 41.0, alt: 'Both rooms. The dot has crossed the doorway, leaving a fine trail, and sits in an armchair in the next room under a warm lamp, with an open book.' },
-  { src: `${UP}/frame-4.webp`, time: '0:50', at: 50.2, alt: 'The lamp is off and the dot is back in bed. Its trail has closed into a loop between the two rooms.' },
-  { src: `${UP}/frame-5.webp`, time: '1:24', at: 84.0, alt: 'Both rooms, the window glowing with first light, under the closing line: By giving up on falling asleep right this second, you give yourself more of a chance to fall asleep later.' },
+  { cap: 'When you’re lying in bed and just can’t fall asleep.', src: `${UP}/frame-1.webp`, time: '0:08', at: 7.6, alt: 'A dark bedroom drawn in thin cream lines: a bed, a nightstand, and a window with a crescent moon. A small glowing dot, you, rests on the bed.' },
+  { cap: 'Don’t watch a clock. You’ll have a rough sense when it’s been 20 to 30 minutes.', src: `${UP}/frame-2.webp`, time: '0:24', at: 24.2, alt: 'The same bedroom. The clock on the nightstand is blurred so it can’t be read, and a faint arc around the bed slowly fills.' },
+  { cap: 'Get up, go into the next room, and do something relaxing.', src: `${UP}/frame-3.webp`, time: '0:41', at: 41.0, alt: 'Both rooms. The dot has crossed the doorway, leaving a fine trail, and sits in an armchair in the next room under a warm lamp, with an open book.' },
+  { cap: 'Go back to bed when you’re drowsy. Still awake? Repeat.', src: `${UP}/frame-4.webp`, time: '0:50', at: 50.2, alt: 'The lamp is off and the dot is back in bed. Its trail has closed into a loop between the two rooms.' },
+  { cap: 'By giving up on falling asleep right this second, you give yourself more of a chance to fall asleep later.', src: `${UP}/frame-5.webp`, time: '1:24', at: 84.0, alt: 'Both rooms, the window glowing with first light, under the closing line: By giving up on falling asleep right this second, you give yourself more of a chance to fall asleep later.' },
 ];
-const VIDEO_LEN = 87;
+const VIDEO_LEN = 87; // scene.html DURATION (seconds)
+const VIDEO_TOTAL = '1:27';
 
 const STEPS = [
   { n: '1', area: 's1', lead: 'After lying awake for 20 to 30 minutes, get out of bed.', rest: 'Don’t watch a clock: when you have a rough sense it’s been 20 to 30 minutes, get up.' },
-  { n: '2', area: 's2', lead: 'Go into the next room and do something relaxing.', rest: 'Read a book, or listen to an audiobook or a podcast. If doing some dishes is relaxing for you, do that. It’s best not to look at your phone or check your email.' },
-  { n: '3', area: 's3', lead: 'Go back to bed', rest: 'after 20 to 30 minutes or as soon as you start to get drowsy, whichever comes first, and see what happens.', inline: true },
-  { n: '4', area: 's4', lead: 'Still awake after 20 to 30 minutes? Get up again.', rest: 'Repeat as many times as you need to. Even if it takes you a few cycles, you’ll still probably fall asleep sooner than you would have otherwise.' },
+  { n: '2', area: 's2', lead: 'Go into the next room and do something relaxing.', rest: 'Maybe read a book, or listen to an audiobook or a podcast. If doing some dishes is relaxing for you, do that. It’s best not to look at your phone or check your email.' },
+  { n: '3', area: 's3', lead: 'Go back to bed.', rest: 'After 20 to 30 minutes, or as soon as you start to get drowsy, whichever comes first. Then see what happens.' },
+  { n: '4', area: 's4', lead: 'Still awake after roughly 20 to 30 minutes? Get up again.', rest: 'Repeat as many times as you need to. Even if it takes you a few cycles, you’ll still probably fall asleep sooner than you would have otherwise.' },
 ];
 
 const TILES = [
   { n: 2, t: 'Keeping your cool when the pressure is on' },
   { n: 3, t: 'Getting people’s best work without burning them out' },
-  { n: 4, t: 'Feedback associates actually take in' },
-  { n: 5, t: 'Saying no without saying no' },
+  { n: 4, t: 'Feedback associates take to heart' },
+  { n: 5, t: 'Saying no while keeping the goodwill' },
   { n: 6, t: 'A 30-second fix for a distracting phone' },
-  { n: 7, t: 'Two-minute resets for a stressful day' },
-  { n: 8, t: 'A small morning habit with a big lift' },
+  { n: 7, t: '30-second resets for a stressful day' },
+  { n: 8, t: 'A small morning habit worth trying' },
   { n: 9, t: 'A 30-second ritual before you speak' },
   { n: 10, t: 'Riding out a craving' },
   { n: 11, t: 'Handing one thing off this week' },
@@ -61,19 +62,20 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     <PlaybookFoliage />
     <div class="wide hero-in">
       <div>
-        <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="168" />
+        <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="168" height="46" />
         <h1>Sleep</h1>
         <p class="sub-title">One technique to try tonight</p>
         <p class="from">From Jon Krop, <a href="https://teamflourish.com">Flourish Legal Well-Being</a></p>
       </div>
-      <figure class="inst" aria-label="Installment 1 of 13">
+      <figure class="inst">
         <div class="inst-ring">
           <svg viewBox="0 0 200 200" aria-hidden="true">
             <circle class="inst-track" cx="100" cy="100" r="86" pathLength="13" />
             <circle class="inst-on" cx="100" cy="100" r="86" pathLength="13" />
           </svg>
-          <div class="inst-mid"><span class="inst-n">1</span><span class="inst-of">of 13</span></div>
+          <div class="inst-mid" aria-hidden="true"><span class="inst-n">1</span></div>
         </div>
+        <figcaption><span class="sr-only">1 </span>of 13 weekly techniques</figcaption>
       </figure>
     </div>
   </section>
@@ -86,7 +88,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
       <p class="lead">What to do when you’re lying in bed and just can’t fall asleep, or you wake up in the middle of the night and can’t get back to sleep.</p>
       <div class="trust">
         <img src="/images/jon-headshot-botanical.webp" alt="" width="600" height="744" loading="lazy" />
-        <p>I struggled with insomnia for many years. This is the single most useful thing I got from CBTi, cognitive behavioral therapy for insomnia: a set of evidence-based strategies devised by sleep psychologists.</p>
+        <p>I struggled with insomnia for many years. This is the single most useful thing I’ve gotten from CBTi, cognitive behavioral therapy for insomnia: a set of evidence-based strategies devised by sleep psychologists.</p>
       </div>
       <h3 class="sub">How it works</h3>
     </div>
@@ -108,9 +110,9 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
             <path class="ring-moon" d="M161 132 a22 22 0 1 0 0 36 a18 18 0 1 1 0 -36 z" />
           </svg>
         </div>
-        <ol class="steps">
+        <ol class="steps" role="list">
           {STEPS.map((s) => (
-            <li class={`step-c ${s.area}`}>
+            <li class={`step-c ${s.area}`} role="listitem">
               <span class="step-n" aria-hidden="true">{s.n}</span>
               <p><b>{s.lead}</b> {s.rest}</p>
             </li>
@@ -127,52 +129,39 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
         <p>By giving up on falling asleep right this second, you give yourself more of a chance to fall asleep later.</p>
       </blockquote>
 
-      <p class="say-h">A line to say to yourself:</p>
-      <p class="borrow-line">“I’m not sleepy right now. No big deal.”</p>
-
-      <div class="watch misses"><div class="wk">Common misses</div><ul>
-        <li>Checking the clock to see if it’s been 30 minutes.</li>
-        <li>Picking up your phone or checking email while you’re up.</li>
-        <li>Staying in bed “just a little longer” to see if sleep comes.</li>
-      </ul></div>
     </div>
   </section>
 
-  {/* ============ Video (storyboard for the early look) + narration placeholder ============ */}
+  {/* ============ Video (storyboard for the early look) ============ */}
   <section class="night" id="video">
     <div class="wide night-in">
-      <h2 class="night-h">The half-hour rule, in 85 seconds</h2>
+      <h2 class="night-h">The half-hour rule, in about a minute and a half</h2>
       <div class="player" data-player>
         <div class="stage">
           {FRAMES.map((f, i) => (
-            <img src={f.src} alt={f.alt} width="1600" height="900" loading={i === 0 ? 'eager' : 'lazy'} class={i === 0 ? 'on' : ''} data-frame={i} />
+            <img src={f.src} alt={f.alt} width="1600" height="900" loading={i === 0 ? 'eager' : 'lazy'} class={i === 0 ? 'on' : ''} aria-hidden={i === 0 ? undefined : 'true'} data-frame={i} />
           ))}
           <span class="badge">Storyboard</span>
         </div>
+        <p class="frame-cap" data-cap>{FRAMES[0].cap}</p>
+        <p class="sr-only" aria-live="polite" data-announce></p>
         <div class="controls">
-          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
           <div class="track" aria-hidden="true">
             <span class="fill" data-fill style={`width:${(FRAMES[0].at / VIDEO_LEN * 100).toFixed(2)}%`}></span>
             {FRAMES.map((f, i) => <span class={`tick${i === 0 ? ' on' : ''}`} style={`left:${(f.at / VIDEO_LEN * 100).toFixed(2)}%`} data-tick={i}></span>)}
           </div>
-          <span class="clock" data-clock>{FRAMES[0].time}</span>
+          <span class="clock"><span data-clock>{FRAMES[0].time}</span> / {VIDEO_TOTAL}</span>
         </div>
         <div class="strip" role="group" aria-label="Storyboard key frames">
           {FRAMES.map((f, i) => (
-            <button type="button" class={`thumb${i === 0 ? ' on' : ''}`} aria-pressed={i === 0 ? 'true' : 'false'} data-go={i} data-at={(f.at / VIDEO_LEN * 100).toFixed(2)} data-time={f.time}>
+            <button type="button" class={`thumb${i === 0 ? ' on' : ''}`} aria-pressed={i === 0 ? 'true' : 'false'} data-go={i} data-at={(f.at / VIDEO_LEN * 100).toFixed(2)} data-time={f.time} data-cap={f.cap}>
               <img src={f.src} alt="" width="1600" height="900" loading="lazy" />
               <span class="sr-only">Frame {i + 1} of 5, at </span><span class="t">{f.time}</span>
             </button>
           ))}
         </div>
       </div>
-      <p class="night-cap">The storyboard for the 85-second video: five key frames. The finished video will play right here.</p>
-
-      <div class="narr" aria-disabled="true">
-        <button type="button" class="narr-play" disabled aria-label="Play narration (not available yet)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" /></svg></button>
-        <div class="narr-txt">Narration in Jon’s voice: coming</div>
-        <div class="narr-wave" aria-hidden="true">{Array.from({ length: 36 }, (_, i) => <i style={`height:${(4 + Math.round(10 * Math.abs(Math.sin(i * 1.7) * Math.cos(i * .45))))}px`}></i>)}</div>
-      </div>
+      <p class="night-cap">Storyboard. The finished video, narrated, plays here.</p>
     </div>
   </section>
 
@@ -183,6 +172,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
 
       <div class="poll" data-poll>
         <h2 class="poll-q" id="poll-q">Could you use more support with this?</h2>
+        <p class="poll-anon">Anonymous. We only see totals.</p>
         <div class="choices" role="group" aria-labelledby="poll-q">
           {['Yes', 'Maybe', 'Not right now'].map((c) => (
             <button type="button" class="choice" aria-pressed="false" data-choice={c}>
@@ -195,7 +185,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
 
         <div class="share">
           <div class="comment" data-comment>
-            <label for="poll-comment">Anything you’d like to share? It’s anonymous: no name, no email.</label>
+            <label for="poll-comment">Anything you’d like to share? It’s anonymous: we don’t collect your name or email.</label>
             <textarea id="poll-comment" rows="4" maxlength="1000" data-comment-box></textarea>
             <div class="comment-row">
               <button type="button" class="send" disabled data-send>Send</button>
@@ -217,7 +207,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
       <div class="coming-head">
         <h2>Coming up</h2>
         <p class="vote-q" data-vote-q>Which of these would help you most?</p>
-        <p class="vote-thanks" data-vote-thanks aria-live="polite" hidden>Thanks for voting.</p>
+        <p class="vote-thanks" data-vote-thanks aria-live="polite"></p>
       </div>
       <ol class="tiles" aria-label="Coming up: tap the one that would help you most">
         {TILES.map((x) => (
@@ -226,7 +216,6 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
               <span class="tile-top">
                 <span class="tile-n">{x.n}</span>
                 <span class="tile-ico" aria-hidden="true">
-                  <svg class="lock" viewBox="0 0 20 20"><rect x="4.5" y="9" width="11" height="8" rx="1.5" /><path d="M7 9V6.5a3 3 0 0 1 6 0V9" /></svg>
                   <svg class="chk" viewBox="0 0 20 20"><path d="M4.5 10.5l3.5 3.5 7.5-8" /></svg>
                 </span>
               </span>
@@ -254,7 +243,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     </div>
     <div class="foot">
       <div class="wide foot-in">
-        <img src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="120" />
+        <img src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="120" height="33" />
         <a href="https://teamflourish.com">teamflourish.com</a>
       </div>
     </div>
@@ -269,16 +258,20 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
       if (player) {
         var imgs = player.querySelectorAll('[data-frame]'), thumbs = player.querySelectorAll('[data-go]'), ticks = player.querySelectorAll('[data-tick]');
         var fill = player.querySelector('[data-fill]'), clock = player.querySelector('[data-clock]');
+        var cap = player.querySelector('[data-cap]'), announce = player.querySelector('[data-announce]');
         function show(i){
-          imgs.forEach(function(im, k){ im.classList.toggle('on', k === i); });
+          imgs.forEach(function(im, k){ im.classList.toggle('on', k === i); if (k === i) im.removeAttribute('aria-hidden'); else im.setAttribute('aria-hidden', 'true'); });
           thumbs.forEach(function(b, k){ b.classList.toggle('on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
           ticks.forEach(function(t, k){ t.classList.toggle('on', k <= i); });
           fill.style.width = thumbs[i].dataset.at + '%';
           clock.textContent = thumbs[i].dataset.time;
+          cap.textContent = thumbs[i].dataset.cap;
+          announce.textContent = 'Frame ' + (i + 1) + ' of ' + thumbs.length;
         }
         thumbs.forEach(function(b, k){ b.addEventListener('click', function(){ show(k); }); });
         player.addEventListener('keydown', function(e){
-          var cur = [].findIndex.call(thumbs, function(b){ return b.classList.contains('on'); });
+          var cur = [].indexOf.call(thumbs, document.activeElement);
+          if (cur < 0) cur = [].findIndex.call(thumbs, function(b){ return b.classList.contains('on'); });
           if (e.key === 'ArrowRight' && cur < thumbs.length - 1) { show(cur + 1); thumbs[cur + 1].focus(); e.preventDefault(); }
           if (e.key === 'ArrowLeft' && cur > 0) { show(cur - 1); thumbs[cur - 1].focus(); e.preventDefault(); }
         });
@@ -293,7 +286,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
             choices.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
             poll.classList.add('answered');
             thanks.textContent = '';
-            requestAnimationFrame(function(){ thanks.textContent = 'Thanks. Got it.'; });
+            requestAnimationFrame(function(){ thanks.textContent = 'Thanks, got it.'; });
           });
         });
         var box = poll.querySelector('[data-comment-box]'), send = poll.querySelector('[data-send]'), sent = poll.querySelector('[data-sent]');
@@ -312,7 +305,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
         t.addEventListener('click', function(){
           tiles.forEach(function(o){ o.setAttribute('aria-pressed', o === t ? 'true' : 'false'); });
           q.hidden = true;
-          vt.hidden = false;
+          vt.textContent = 'Thanks for voting.';
         });
       });
     })();
@@ -321,7 +314,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
 
 <style>
   /* Page rhythm: a sample installment, tighter than the layout's default sections. */
-  .hero-in{padding-top:44px;padding-bottom:64px;}
+  .hero.foliage .hero-in{padding-top:44px;padding-bottom:64px;}
   .hero .logo{margin-bottom:34px;}
   .hero h1{font-size:76px;}
   .principle{padding:72px 0 80px;}
@@ -332,14 +325,14 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .body{font-size:18px;line-height:1.6;margin:0 0 12px;}
 
   /* ---------- hero: installment ring ---------- */
-  .inst{justify-self:center;margin:0;}
+  .inst{justify-self:center;margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;}
+  .inst figcaption{font-size:15px;font-weight:700;letter-spacing:.02em;color:#C9D8D3;}
   .inst-ring{position:relative;width:212px;height:212px;}
   .inst-ring svg{width:100%;height:100%;transform:rotate(-90deg);}
   .inst-track{fill:none;stroke:rgba(255,255,255,.16);stroke-width:9;stroke-dasharray:.84 .16;stroke-dashoffset:-.08;}
   .inst-on{fill:none;stroke:var(--accent-soft);stroke-width:9;stroke-dasharray:.84 12.16;stroke-dashoffset:-.08;}
   .inst-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
   .inst-n{font-family:var(--serif);font-weight:600;font-size:78px;line-height:.85;color:#fff;}
-  .inst-of{font-size:15px;font-weight:700;letter-spacing:.06em;color:#B9CAC4;margin-top:8px;}
 
   /* ---------- the card ---------- */
   .tech .ph h2{font-size:48px;}
@@ -366,8 +359,6 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .step-c{position:relative;background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:18px 20px 18px 20px;box-shadow:0 10px 30px rgba(18,50,47,.06);}
   .step-c p{font-size:16px;line-height:1.55;color:var(--body);}
   .step-c b{display:block;font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.25;color:var(--ink);margin-bottom:6px;}
-  .step-c.s3 b{display:inline;font-size:inherit;font-family:inherit;margin:0;}
-  .step-c.s3 p{font-family:var(--serif);font-size:20px;line-height:1.3;color:var(--ink);}
   .step-n{display:none;}
   .s1{grid-area:s1;margin:0 -60px;}
   .s3{grid-area:s3;margin:0 -60px;}
@@ -375,11 +366,9 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .s4{grid-area:s4;}
 
   /* pull quote: serif, ink (not orange: it isn't a line to say) */
-  .pull{margin:40px 0 36px;padding:30px 0 4px;border-top:1px solid var(--hair);position:relative;}
+  .pull{margin:40px 0 8px;padding:30px 0 4px;border-top:1px solid var(--hair);position:relative;}
   .pull::before{content:"\201C";position:absolute;top:-6px;left:-4px;font-family:var(--serif);font-size:96px;line-height:1;color:var(--sage-line);}
   .pull p{position:relative;font-family:var(--serif);font-weight:500;font-size:31px;line-height:1.28;color:var(--ink);text-wrap:balance;padding-left:46px;}
-  .say-h{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 -6px;}
-  .misses{margin-top:28px;}
 
   /* ---------- video: night band ---------- */
   .night{background:#0B1A18;color:#DCE5E1;padding:76px 0 84px;position:relative;overflow:hidden;}
@@ -390,15 +379,14 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .stage{position:relative;aspect-ratio:16/9;background:#091513;}
   .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease;}
   .stage img.on{opacity:1;}
-  .badge{position:absolute;top:14px;left:14px;font-size:12px;font-weight:700;letter-spacing:.04em;color:#DCE5E1;background:rgba(5,11,10,.6);border:1px solid rgba(255,255,255,.14);padding:5px 10px;border-radius:999px;}
+  .badge{position:absolute;top:14px;right:14px;font-size:12px;font-weight:700;letter-spacing:.04em;color:#DCE5E1;background:rgba(5,11,10,.6);border:1px solid rgba(255,255,255,.14);padding:5px 10px;border-radius:999px;}
   .controls{display:flex;align-items:center;gap:16px;padding:12px 18px;border-top:1px solid rgba(255,255,255,.06);}
-  .play{flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.22);opacity:.5;}
-  .play svg{width:15px;height:15px;fill:#DCE5E1;margin-left:2px;}
+  .frame-cap{min-height:58px;display:flex;align-items:center;margin:0;padding:12px 20px;font-family:var(--serif);font-size:19px;line-height:1.35;color:#F1E9DB;border-top:1px solid rgba(255,255,255,.06);}
   .track{position:relative;flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.12);}
   .track .fill{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:#E9E1D2;transition:width .45s ease;}
   .track .tick{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#2A3B37;border:2px solid #050B0A;transition:background .3s;}
   .track .tick.on{background:#E9E1D2;}
-  .clock{flex:none;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:#9FB3AD;min-width:34px;text-align:right;}
+  .clock{flex:none;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:#9FB3AD;text-align:right;}
   .strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:4px 18px 18px;}
   .thumb{position:relative;display:block;padding:0;border:0;background:none;cursor:pointer;border-radius:6px;overflow:hidden;outline:2px solid transparent;outline-offset:2px;transition:outline-color .2s,opacity .2s;opacity:.62;}
   .thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;}
@@ -407,18 +395,13 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .thumb.on{opacity:1;outline-color:#E9E1D2;}
   .thumb:focus-visible{outline-color:var(--accent-soft);}
   .night-cap{font-size:15px;line-height:1.5;color:#9FB3AD;margin:14px 2px 0;}
-  .narr{display:flex;align-items:center;gap:16px;margin:30px 0 0;max-width:620px;padding:12px 20px 12px 12px;border:1px dashed rgba(255,255,255,.2);border-radius:999px;}
-  .narr-play{flex:none;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.08);cursor:not-allowed;}
-  .narr-play svg{width:16px;height:16px;fill:#6F827C;margin-left:2px;}
-  .narr-txt{flex:none;font-size:15px;font-weight:600;color:#B9CAC4;}
-  .narr-wave{flex:1;display:flex;align-items:center;gap:3px;height:22px;overflow:hidden;opacity:.35;}
-  .narr-wave i{display:block;flex:none;width:3px;border-radius:2px;background:#6F827C;}
 
   /* ---------- your take: poll ---------- */
   .take{padding:80px 0 72px;background:var(--sage);}
   .thirst{font-family:var(--serif);font-size:23px;line-height:1.38;color:var(--ink);margin:0 0 26px;text-wrap:pretty;}
   .poll{background:#fff;border:1px solid var(--sage-line);border-top:3px solid var(--ink);padding:30px 30px 28px;box-shadow:0 14px 36px rgba(18,50,47,.08);}
-  .poll-q{font-family:var(--serif);font-weight:600;font-size:32px;line-height:1.12;color:var(--ink);margin:0 0 20px;text-wrap:balance;}
+  .poll-q{font-family:var(--serif);font-weight:600;font-size:32px;line-height:1.12;color:var(--ink);margin:0 0 6px;text-wrap:balance;}
+  .poll-anon{font-size:14.5px;color:var(--dim);margin:0 0 18px;}
   .choices{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:10px;}
   .choice{display:flex;align-items:center;justify-content:center;gap:9px;min-height:56px;padding:12px 16px;font:700 17px var(--sans);color:var(--ink);background:var(--paper);border:1.5px solid var(--sage-line);border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .12s,opacity .25s;}
   .choice:hover{border-color:var(--ink);}
@@ -429,7 +412,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .choice[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff;}
   .choice[aria-pressed="true"] .tick-mark{width:18px;}
   .choice[aria-pressed="true"] .tick-mark svg{animation:draw .35s .08s ease forwards;}
-  .poll.answered .choice[aria-pressed="false"]{opacity:.55;}
+  .poll.answered .choice[aria-pressed="false"]{opacity:.7;}
   @keyframes draw{to{stroke-dashoffset:0;}}
   .thanks{min-height:26px;margin:12px 2px 0;font-family:var(--serif);font-size:19px;color:var(--ink);}
   .thanks:not(:empty){animation:rise .4s ease both;}
@@ -445,9 +428,9 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .send:disabled{opacity:.35;cursor:default;}
   .sent{font-family:var(--serif);font-size:17px;color:var(--ink);}
   .sent:not(:empty){animation:rise .4s ease both;}
-  .crisis{background:var(--sage);border-left:3px solid var(--ink);padding:16px 18px;}
-  .crisis p{font-size:15px;line-height:1.55;color:var(--body);}
-  .crisis b{color:var(--ink);}
+  .crisis{background:var(--paper);border-left:2px solid var(--sage-line);padding:12px 14px;margin-top:28px;}
+  .crisis p{font-size:13.5px;line-height:1.55;color:var(--body);}
+  .crisis b{font-weight:700;color:var(--ink);}
   .demo{display:flex;align-items:center;gap:9px;margin:16px 2px 0;font-size:14px;color:var(--dim);}
   .demo span{flex:none;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--dim);font:italic 700 11px/1 var(--serif);}
 
@@ -456,24 +439,25 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .coming-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px;margin-bottom:22px;}
   .coming-head h2{font-family:var(--serif);font-weight:600;font-size:40px;line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
   .vote-q,.vote-thanks{font-family:var(--serif);font-size:22px;line-height:1.3;color:var(--body);}
-  .vote-thanks{color:var(--ink);animation:rise .4s ease both;}
+  .vote-thanks{color:var(--ink);}
+  .vote-thanks:not(:empty){animation:rise .4s ease both;}
   .tiles{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
   .tile{display:flex;flex-direction:column;justify-content:space-between;gap:20px;width:100%;height:100%;min-height:132px;padding:14px 16px 16px;text-align:left;background:var(--paper-2);border:1px solid transparent;border-top:3px solid #C9D2CE;color:var(--dim);cursor:pointer;font:inherit;transition:transform .18s ease,box-shadow .18s ease,border-color .18s,background .18s,color .18s;}
   .tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(18,50,47,.10);border-top-color:var(--ink);color:var(--body);}
   .tile:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
   .tile-top{display:flex;align-items:center;justify-content:space-between;}
-  .tile-n{font-family:var(--serif);font-size:32px;line-height:.9;color:#A9B6B1;}
-  .tile-ico svg{width:18px;height:18px;fill:none;stroke:#A9B6B1;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .tile-n{font-family:var(--serif);font-size:32px;line-height:.9;color:#7D8C86;}
+  .tile-ico svg{width:18px;height:18px;fill:none;stroke-linecap:round;stroke-linejoin:round;}
   .tile-ico .chk{display:none;}
   .tile-t{font-family:var(--serif);font-size:18.5px;line-height:1.25;font-weight:500;text-wrap:balance;}
   .tile[aria-pressed="true"]{background:#fff;border-color:var(--ink);border-top-color:var(--ink);color:var(--ink);box-shadow:0 12px 28px rgba(18,50,47,.12);}
   .tile[aria-pressed="true"] .tile-n{color:var(--ink);}
-  .tile[aria-pressed="true"] .lock{display:none;}
   .tile[aria-pressed="true"] .chk{display:block;stroke:var(--ink);stroke-width:2.4;stroke-dasharray:20;stroke-dashoffset:20;animation:draw .35s ease forwards;}
 
   /* ---------- responsive ---------- */
   @media (max-width:1000px){
     .inst{justify-self:start;}
+    .inst{flex-direction:row;align-items:center;gap:20px;}
     .inst-ring{width:170px;height:170px;}
     .inst-n{font-size:62px;}
     .tiles{grid-template-columns:repeat(3,1fr);}
@@ -488,6 +472,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   }
   @media (max-width:700px){
     .hero h1{font-size:56px;}
+    .crisis{margin-top:4px;}
     .principle{padding:52px 0 60px;}
     .tech .ph h2{font-size:36px;}
     .lead{font-size:20px;}
@@ -495,18 +480,19 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .body{font-size:17px;}
     .inst-ring{width:118px;height:118px;}
     .inst-n{font-size:44px;}
-    .inst-of{font-size:12.5px;margin-top:4px;}
+    .inst{flex-direction:row;align-items:center;gap:16px;}
+    .inst figcaption{font-size:14px;}
     .hero-in{gap:26px;}
+    .ring{display:none;}
     .pull p{font-size:25px;padding-left:34px;}
     .pull::before{font-size:76px;}
     .night{padding:56px 0 60px;}
     .night-h{font-size:30px;}
     .strip{gap:6px;padding:4px 10px 12px;}
     .thumb .t{display:none;}
+    .thumb img{aspect-ratio:auto;height:44px;}
+    .frame-cap{font-size:16.5px;min-height:64px;padding:10px 14px;}
     .controls{padding:10px 12px;gap:12px;}
-    .narr{border-radius:16px;flex-wrap:wrap;gap:12px;}
-    .narr-wave{display:none;}
-    .narr-txt{flex:1;white-space:normal;}
     .take{padding:56px 0 56px;}
     .thirst{font-size:20px;}
     .poll{padding:22px 18px 20px;}
@@ -524,11 +510,11 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   @media print{
     .inst-track{stroke:var(--hair);}
     .inst-n{color:var(--ink) !important;}
-    .inst-of{color:var(--body) !important;}
+    .inst figcaption{color:var(--body) !important;}
     .night{background:#fff !important;color:var(--body) !important;}
     .night-h{color:var(--ink) !important;}
     .night-cap{color:var(--body);}
-    .controls,.strip,.narr,.ring-orbit,.badge{display:none !important;}
+    .controls,.strip,.ring-orbit,.badge{display:none !important;}
     .player{box-shadow:none;}
     .take{background:#fff;}
     .poll,.step-c,.loop,.pull,.tiles{break-inside:avoid;}
