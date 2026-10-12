@@ -1,9 +1,11 @@
 ---
-// DRAFT (2026-10-09), hidden: unguessable slug, noindex (PlaybookLayout default), linked from nowhere.
-// Early look at installment 1 of the drip-format tasting menu (Sleep: the half-hour rule).
+// DRAFT (2026-10-09, full build 2026-10-12), hidden: unguessable slug, noindex (PlaybookLayout default),
+// linked from nowhere. Installment 1 of the drip-format tasting menu (Sleep: the half-hour rule).
 // Copy comes verbatim from the task's card-draft.md (head-of-sales-and-marketing/tasks/
 // sleep-drip-sample-installment/); composed labels are listed in that task's report.
-// Video slot: storyboard key frames rendered from video/scene.html (same task folder).
+// Video: rendered in code from that task's video/ folder (README.md there: re-time + render).
+// Narration: Jon records it (recording-script.md); the same file is the video's voice and the
+// standalone audio below.
 // Poll and "Coming up" vote run in DEMO MODE: client-side only, no network requests, nothing stored.
 // Rules: ../../../../playbook-guide.md (no eyebrows, no copy buttons, no orange/peach here since the
 // page has no word-for-word line to say, ~660px measure, only the chapter bar floats).
@@ -18,15 +20,14 @@ const CHAPTERS = [
 ];
 
 const UP = '/uploads/sleep-sample-54764c';
-const FRAMES = [
-  { cap: 'When you’re lying in bed and just can’t fall asleep.', src: `${UP}/frame-1.webp`, time: '0:08', at: 7.6, alt: 'A dark bedroom drawn in thin cream lines: a bed, a nightstand, and a window with a crescent moon. A small glowing dot, you, rests on the bed.' },
-  { cap: 'Don’t watch a clock. You’ll have a rough sense when it’s been 20 to 30 minutes.', src: `${UP}/frame-2.webp`, time: '0:24', at: 24.2, alt: 'The same bedroom. The clock on the nightstand is blurred so it can’t be read, and a faint arc around the bed slowly fills.' },
-  { cap: 'Get up, go into the next room, and do something relaxing.', src: `${UP}/frame-3.webp`, time: '0:41', at: 41.0, alt: 'Both rooms. The dot has crossed the doorway, leaving a fine trail, and sits in an armchair in the next room under a warm lamp, with an open book.' },
-  { cap: 'Go back to bed when you’re drowsy. Still awake? Repeat.', src: `${UP}/frame-4.webp`, time: '0:50', at: 50.2, alt: 'The lamp is off and the dot is back in bed. Its trail has closed into a loop between the two rooms.' },
-  { cap: 'By giving up on falling asleep right this second, you give yourself more of a chance to fall asleep later.', src: `${UP}/frame-5.webp`, time: '1:24', at: 84.0, alt: 'Both rooms, the window glowing with first light, under the closing line: By giving up on falling asleep right this second, you give yourself more of a chance to fall asleep later.' },
-];
-const VIDEO_LEN = 87; // scene.html DURATION (seconds)
-const VIDEO_TOTAL = '1:27';
+// TODO(narration): Jon records the narration after Oct 16. Until then the video is the silent
+// render with captions on by default. When the recording lands: render the narrated MP4 (task
+// video/README.md), swap VIDEO_SRC to it, and set AUDIO_SRC to the narration file. Setting
+// AUDIO_SRC is the only switch the "Listen" player needs: it isn't rendered while it's empty.
+const VIDEO_SRC = `${UP}/half-hour-rule-silent.mp4`;
+const VIDEO_POSTER = `${UP}/half-hour-rule-poster.jpg`;
+const VIDEO_CAPTIONS = `${UP}/half-hour-rule.vtt`;
+const AUDIO_SRC = ''; // e.g. `${UP}/half-hour-rule-narration.m4a`
 
 const STEPS = [
   { n: '1', area: 's1', lead: 'After lying awake for 20 to 30 minutes, get out of bed.', rest: 'Don’t watch a clock: when you have a rough sense it’s been 20 to 30 minutes, get up.' },
@@ -90,11 +91,27 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
         <img src="/images/jon-headshot-botanical.webp" alt="" width="600" height="744" loading="lazy" />
         <p>I struggled with insomnia for many years. This is the single most useful thing I’ve gotten from CBTi, cognitive behavioral therapy for insomnia: a set of evidence-based strategies devised by sleep psychologists.</p>
       </div>
+      {AUDIO_SRC && (
+        <div class="listen" data-listen>
+          <audio preload="metadata" src={AUDIO_SRC} data-audio></audio>
+          <button type="button" class="listen-btn" aria-label="Play the audio version" data-audio-toggle>
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" /></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.5h3v13h-3zM13.5 5.5h3v13h-3z" /></svg>
+          </button>
+          <div class="listen-main">
+            <p class="listen-label" id="listen-label">Listen <span>(about 90 seconds)</span></p>
+            <div class="listen-row">
+              <input type="range" class="listen-seek" min="0" max="1000" step="1" value="0" aria-labelledby="listen-label" aria-valuetext="0:00" data-audio-seek />
+              <span class="listen-time" aria-hidden="true" data-audio-time>0:00</span>
+            </div>
+          </div>
+        </div>
+      )}
       <h3 class="sub">How it works</h3>
     </div>
 
     <div class="wide loop-wrap">
-      <div class="loop">
+      <div class="loop" data-loop>
         <div class="ring" aria-hidden="true">
           <svg viewBox="0 0 300 300">
             <circle class="ring-track" cx="150" cy="150" r="118" />
@@ -132,36 +149,17 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     </div>
   </section>
 
-  {/* ============ Video (storyboard for the early look) ============ */}
+  {/* ============ Video ============ */}
   <section class="night" id="video">
     <div class="wide night-in">
-      <h2 class="night-h">The half-hour rule, in about a minute and a half</h2>
-      <div class="player" data-player>
-        <div class="stage">
-          {FRAMES.map((f, i) => (
-            <img src={f.src} alt={f.alt} width="1600" height="900" loading={i === 0 ? 'eager' : 'lazy'} class={i === 0 ? 'on' : ''} aria-hidden={i === 0 ? undefined : 'true'} data-frame={i} />
-          ))}
-          <span class="badge">Storyboard</span>
-        </div>
-        <p class="frame-cap" data-cap>{FRAMES[0].cap}</p>
-        <p class="sr-only" aria-live="polite" data-announce></p>
-        <div class="controls">
-          <div class="track" aria-hidden="true">
-            <span class="fill" data-fill style={`width:${(FRAMES[0].at / VIDEO_LEN * 100).toFixed(2)}%`}></span>
-            {FRAMES.map((f, i) => <span class={`tick${i === 0 ? ' on' : ''}`} style={`left:${(f.at / VIDEO_LEN * 100).toFixed(2)}%`} data-tick={i}></span>)}
-          </div>
-          <span class="clock"><span data-clock>{FRAMES[0].time}</span> / {VIDEO_TOTAL}</span>
-        </div>
-        <div class="strip" role="group" aria-label="Storyboard key frames">
-          {FRAMES.map((f, i) => (
-            <button type="button" class={`thumb${i === 0 ? ' on' : ''}`} aria-pressed={i === 0 ? 'true' : 'false'} data-go={i} data-at={(f.at / VIDEO_LEN * 100).toFixed(2)} data-time={f.time} data-cap={f.cap}>
-              <img src={f.src} alt="" width="1600" height="900" loading="lazy" />
-              <span class="sr-only">Frame {i + 1} of 5, at </span><span class="t">{f.time}</span>
-            </button>
-          ))}
-        </div>
+      <h2 class="night-h" id="video-h">The half-hour rule, in about a minute and a half</h2>
+      <div class="player">
+        {/* TODO(narration): silent until Jon's recording; captions are on by default (track default). */}
+        <video controls playsinline preload="metadata" poster={VIDEO_POSTER} width="1920" height="1080" aria-labelledby="video-h" data-video>
+          <source src={VIDEO_SRC} type="video/mp4" />
+          <track kind="captions" src={VIDEO_CAPTIONS} srclang="en" label="English" default />
+        </video>
       </div>
-      <p class="night-cap">Storyboard. The finished video, narrated, plays here.</p>
     </div>
   </section>
 
@@ -253,28 +251,43 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     (function(){
       // DEMO MODE: everything below is client-side only. No network requests, nothing stored.
 
-      // Storyboard player: pick a key frame.
-      var player = document.querySelector('[data-player]');
-      if (player) {
-        var imgs = player.querySelectorAll('[data-frame]'), thumbs = player.querySelectorAll('[data-go]'), ticks = player.querySelectorAll('[data-tick]');
-        var fill = player.querySelector('[data-fill]'), clock = player.querySelector('[data-clock]');
-        var cap = player.querySelector('[data-cap]'), announce = player.querySelector('[data-announce]');
-        function show(i){
-          imgs.forEach(function(im, k){ im.classList.toggle('on', k === i); if (k === i) im.removeAttribute('aria-hidden'); else im.setAttribute('aria-hidden', 'true'); });
-          thumbs.forEach(function(b, k){ b.classList.toggle('on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
-          ticks.forEach(function(t, k){ t.classList.toggle('on', k <= i); });
-          fill.style.width = thumbs[i].dataset.at + '%';
-          clock.textContent = thumbs[i].dataset.time;
-          cap.textContent = thumbs[i].dataset.cap;
-          announce.textContent = 'Frame ' + (i + 1) + ' of ' + thumbs.length;
-        }
-        thumbs.forEach(function(b, k){ b.addEventListener('click', function(){ show(k); }); });
-        player.addEventListener('keydown', function(e){
-          var cur = [].indexOf.call(thumbs, document.activeElement);
-          if (cur < 0) cur = [].findIndex.call(thumbs, function(b){ return b.classList.contains('on'); });
-          if (e.key === 'ArrowRight' && cur < thumbs.length - 1) { show(cur + 1); thumbs[cur + 1].focus(); e.preventDefault(); }
-          if (e.key === 'ArrowLeft' && cur > 0) { show(cur - 1); thumbs[cur - 1].focus(); e.preventDefault(); }
-        });
+      // The loop graphic: "you" goes around once when it scrolls into view, then holds still.
+      // No motion at all with prefers-reduced-motion (the CSS holds it at rest).
+      var loop = document.querySelector('[data-loop]');
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (loop && !still && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){ if (en.isIntersecting) { loop.classList.add('go'); io.disconnect(); } });
+        }, { threshold: 0.6 });
+        io.observe(loop);
+      }
+
+      // "Listen" player (only rendered once AUDIO_SRC is set). Video and audio never play at once.
+      var video = document.querySelector('[data-video]');
+      var listen = document.querySelector('[data-listen]');
+      if (listen) {
+        var au = listen.querySelector('[data-audio]'), btn = listen.querySelector('[data-audio-toggle]');
+        var seek = listen.querySelector('[data-audio-seek]'), time = listen.querySelector('[data-audio-time]');
+        var fmt = function(x){ x = Math.max(0, Math.floor(x || 0)); return Math.floor(x / 60) + ':' + String(x % 60).padStart(2, '0'); };
+        var sync = function(){
+          var d = au.duration || 0, c = au.currentTime || 0;
+          if (!seek.matches(':active')) seek.value = d ? Math.round(c / d * 1000) : 0;
+          time.textContent = fmt(c);
+          seek.setAttribute('aria-valuetext', fmt(c) + ' of ' + fmt(d));
+        };
+        var state = function(){
+          var on = !au.paused;
+          listen.classList.toggle('playing', on);
+          btn.setAttribute('aria-label', on ? 'Pause the audio version' : 'Play the audio version');
+        };
+        btn.addEventListener('click', function(){ if (au.paused) { if (video) video.pause(); var pr = au.play(); if (pr && pr.catch) pr.catch(function(){}); } else au.pause(); });
+        seek.addEventListener('input', function(){ if (au.duration) { au.currentTime = seek.value / 1000 * au.duration; sync(); } });
+        au.addEventListener('timeupdate', sync);
+        au.addEventListener('loadedmetadata', sync);
+        au.addEventListener('play', state);
+        au.addEventListener('pause', state);
+        au.addEventListener('ended', function(){ au.currentTime = 0; state(); sync(); });
+        if (video) video.addEventListener('play', function(){ au.pause(); });
       }
 
       // Poll: one tap, then a short thank-you. Tapping again changes the answer.
@@ -350,16 +363,18 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .ring-node{fill:var(--ink);}
   .ring-num{font-family:var(--serif);font-size:22px;font-weight:600;fill:#fff;}
   .ring-moon{fill:var(--sage-line);}
-  .ring-orbit{transform-origin:150px 150px;animation:orbit 24s linear infinite;}
+  /* "you" rests just past step 1 (clear of its node and the first arrow); goes around once when the loop scrolls into view (JS adds .go), then holds. */
+  .ring-orbit{transform-origin:150px 150px;transform:rotate(28deg);}
+  .loop.go .ring-orbit{animation:orbit-once 6.5s cubic-bezier(.45,0,.3,1) .3s both;}
   .ring-you{fill:var(--ink);}
   .ring-you-glow{fill:var(--ink);opacity:.12;}
-  @keyframes orbit{to{transform:rotate(360deg);}}
-  @media (prefers-reduced-motion:reduce){.ring-orbit{animation:none;transform:rotate(18deg);}}
+  @keyframes orbit-once{from{transform:rotate(28deg);}to{transform:rotate(388deg);}}
+  @media (prefers-reduced-motion:reduce){.loop.go .ring-orbit{animation:none;}}
   .steps{display:contents;list-style:none;}
-  .step-c{position:relative;background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:18px 20px 18px 20px;box-shadow:0 10px 30px rgba(18,50,47,.06);}
+  .step-c{position:relative;background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:18px 20px 18px 62px;box-shadow:0 10px 30px rgba(18,50,47,.06);}
   .step-c p{font-size:16px;line-height:1.55;color:var(--body);}
   .step-c b{display:block;font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.25;color:var(--ink);margin-bottom:6px;}
-  .step-n{display:none;}
+  .step-n{position:absolute;left:16px;top:17px;display:flex;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font:600 18px/1 var(--serif);}
   .s1{grid-area:s1;margin:0 -60px;}
   .s3{grid-area:s3;margin:0 -60px;}
   .s2{grid-area:s2;}
@@ -376,25 +391,25 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .night-in{position:relative;max-width:calc(1000px + 2*var(--gutter));}
   .night-h{font-family:var(--serif);font-weight:600;font-size:40px;line-height:1.08;color:#fff;margin:0 0 26px;letter-spacing:-.01em;text-wrap:balance;}
   .player{background:#050B0A;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);}
-  .stage{position:relative;aspect-ratio:16/9;background:#091513;}
-  .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease;}
-  .stage img.on{opacity:1;}
-  .badge{position:absolute;top:14px;right:14px;font-size:12px;font-weight:700;letter-spacing:.04em;color:#DCE5E1;background:rgba(5,11,10,.6);border:1px solid rgba(255,255,255,.14);padding:5px 10px;border-radius:999px;}
-  .controls{display:flex;align-items:center;gap:16px;padding:12px 18px;border-top:1px solid rgba(255,255,255,.06);}
-  .frame-cap{min-height:58px;display:flex;align-items:center;margin:0;padding:12px 20px;font-family:var(--serif);font-size:19px;line-height:1.35;color:#F1E9DB;border-top:1px solid rgba(255,255,255,.06);}
-  .track{position:relative;flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.12);}
-  .track .fill{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:#E9E1D2;transition:width .45s ease;}
-  .track .tick{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#2A3B37;border:2px solid #050B0A;transition:background .3s;}
-  .track .tick.on{background:#E9E1D2;}
-  .clock{flex:none;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:#9FB3AD;text-align:right;}
-  .strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:4px 18px 18px;}
-  .thumb{position:relative;display:block;padding:0;border:0;background:none;cursor:pointer;border-radius:6px;overflow:hidden;outline:2px solid transparent;outline-offset:2px;transition:outline-color .2s,opacity .2s;opacity:.62;}
-  .thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;}
-  .thumb .t{position:absolute;right:6px;bottom:5px;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;color:#F1E9DB;background:rgba(5,11,10,.7);padding:1px 6px;border-radius:4px;}
-  .thumb:hover{opacity:.9;}
-  .thumb.on{opacity:1;outline-color:#E9E1D2;}
-  .thumb:focus-visible{outline-color:var(--accent-soft);}
-  .night-cap{font-size:15px;line-height:1.5;color:#9FB3AD;margin:14px 2px 0;}
+  .player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#091513;}
+  .player video:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px;}
+  video::cue{font-family:var(--serif);font-size:.95em;line-height:1.35;color:#F1E9DB;background:rgba(5,11,10,.74);}
+
+  /* ---------- "Listen" player (rendered only once AUDIO_SRC is set) ---------- */
+  .listen{display:flex;align-items:center;gap:16px;margin:14px 0 0;padding:14px 18px;background:#fff;border:1px solid var(--hair);border-left:3px solid var(--ink);}
+  .listen-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:#fff;cursor:pointer;transition:background .2s;}
+  .listen-btn:hover{background:var(--accent-deep);}
+  .listen-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .listen-btn svg{width:22px;height:22px;fill:currentColor;}
+  .listen .i-pause,.listen.playing .i-play{display:none;}
+  .listen.playing .i-pause{display:block;}
+  .listen-main{flex:1;min-width:0;}
+  .listen-label{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.2;color:var(--ink);margin:0 0 6px;}
+  .listen-label span{font-family:var(--sans);font-weight:500;font-size:14.5px;color:var(--dim);}
+  .listen-row{display:flex;align-items:center;gap:12px;}
+  .listen-seek{flex:1;min-width:0;height:22px;margin:0;accent-color:var(--ink);cursor:pointer;}
+  .listen-seek:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .listen-time{flex:none;min-width:34px;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--dim);text-align:right;}
 
   /* ---------- your take: poll ---------- */
   .take{padding:80px 0 72px;background:var(--sage);}
@@ -467,8 +482,6 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .loop{grid-template-columns:1fr;grid-template-rows:none;grid-template-areas:"ring" "s1" "s2" "s3" "s4";gap:12px;}
     .ring{justify-self:center;width:220px;height:220px;margin-bottom:6px;}
     .s1,.s3{margin:0;}
-    .step-c{padding-left:62px;}
-    .step-n{display:flex;position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font:600 18px var(--serif);}
   }
   @media (max-width:700px){
     .hero h1{font-size:56px;}
@@ -488,11 +501,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .pull::before{font-size:76px;}
     .night{padding:56px 0 60px;}
     .night-h{font-size:30px;}
-    .strip{gap:6px;padding:4px 10px 12px;}
-    .thumb .t{display:none;}
-    .thumb img{aspect-ratio:auto;height:44px;}
-    .frame-cap{font-size:16.5px;min-height:64px;padding:10px 14px;}
-    .controls{padding:10px 12px;gap:12px;}
+    .player{border-radius:10px;}
     .take{padding:56px 0 56px;}
     .thirst{font-size:20px;}
     .poll{padding:22px 18px 20px;}
@@ -511,13 +520,9 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .inst-track{stroke:var(--hair);}
     .inst-n{color:var(--ink) !important;}
     .inst figcaption{color:var(--body) !important;}
-    .night{background:#fff !important;color:var(--body) !important;}
-    .night-h{color:var(--ink) !important;}
-    .night-cap{color:var(--body);}
-    .controls,.strip,.ring-orbit,.badge{display:none !important;}
-    .player{box-shadow:none;}
+    .night,.listen,.ring-orbit{display:none !important;}
     .take{background:#fff;}
     .poll,.step-c,.loop,.pull,.tiles{break-inside:avoid;}
-    .ring-node,.ring-num{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .ring-node,.ring-num,.step-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   }
 </style>
