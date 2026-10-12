@@ -220,12 +220,14 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
         </div>
         <div class="pat boxpat">
           <div class="pat-h"><b>Box breathing</b><span>4 in, 4 hold, 4 out, 4 hold</span></div>
-          <div class="box" aria-hidden="true">
-            <span class="side t">Inhale 4</span>
-            <span class="side r">Hold 4</span>
-            <span class="side b">Exhale 4</span>
-            <span class="side l">Hold 4</span>
-          </div>
+          {/* The square's sides break where each label sits, so no label box covers the line. */}
+          <svg class="box" viewBox="0 0 160 160" aria-hidden="true">
+            <path d="M30 56V30H50M110 30H130V56M130 104V130H110M50 130H30V104" />
+            <text x="80" y="30">Inhale 4</text>
+            <text x="80" y="130">Exhale 4</text>
+            <text x="130" y="80" transform="rotate(90 130 80)">Hold 4</text>
+            <text x="30" y="80" transform="rotate(-90 30 80)">Hold 4</text>
+          </svg>
         </div>
       </div>
     </div>
@@ -802,12 +804,9 @@ const PHRASES = ['May you be happy.', 'May you be healthy.', 'May you be safe.',
   .seg.in i{background:var(--ink);}
   .seg.out i{background:#8FB0A6;}
   .pat-n{font-size:14.5px;line-height:1.45;color:var(--dim);margin-top:12px;}
-  .box{position:relative;width:100px;height:100px;margin:10px auto 16px;border:3px solid var(--ink);}
-  .box .side{position:absolute;font-size:11.5px;font-weight:800;color:var(--ink);white-space:nowrap;background:#fff;padding:0 4px;}
-  .box .t{top:-9px;left:50%;transform:translateX(-50%);}
-  .box .b{bottom:-9px;left:50%;transform:translateX(-50%);}
-  .box .r{right:-9px;top:50%;transform:translate(50%,-50%) rotate(90deg);}
-  .box .l{left:-9px;top:50%;transform:translate(-50%,-50%) rotate(-90deg);}
+  .box{display:block;width:140px;height:140px;margin:4px auto 10px;}
+  .box path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linejoin:miter;}
+  .box text{font:800 12px var(--sans);fill:var(--ink);text-anchor:middle;dominant-baseline:central;}
 
   /* Breathe-along pacer. The orb's scale carries the breath; JS sets the timing per phase. */
   .pacer{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:center;margin:22px 0 8px;padding:26px 28px;background:var(--ink);color:#DCE5E1;position:relative;overflow:hidden;}
