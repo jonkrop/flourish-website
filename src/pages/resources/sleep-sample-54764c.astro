@@ -29,11 +29,14 @@ const VIDEO_POSTER = `${UP}/half-hour-rule-poster.jpg`;
 const VIDEO_CAPTIONS = `${UP}/half-hour-rule.vtt`;
 const AUDIO_SRC = ''; // e.g. `${UP}/half-hour-rule-narration.m4a`
 
+// Each step: one instruction line; tags, a tip, or a side note carry the rest (playbook-guide.md, "Cards carry one instruction line").
+const CLOCK_OFF = '<circle cx="16" cy="16" r="11"/><path d="M16 9.5v6.5l4.5 3"/>';
+const PHONE_OFF = '<rect x="10" y="4" width="12" height="24" rx="2.5"/><path d="M14.5 24h3M5 5l22 22"/>';
 const STEPS = [
-  { n: '1', area: 's1', lead: 'After lying awake for 20 to 30 minutes, get out of bed.', rest: 'Don’t watch a clock: when you have a rough sense it’s been 20 to 30 minutes, get up.' },
-  { n: '2', area: 's2', lead: 'Go into the next room and do something relaxing.', rest: 'Maybe read a book, or listen to an audiobook or a podcast. If doing some dishes is relaxing for you, do that. It’s best not to look at your phone or check your email.' },
-  { n: '3', area: 's3', lead: 'Go back to bed.', rest: 'After 20 to 30 minutes, or as soon as you start to get drowsy, whichever comes first. Then see what happens.' },
-  { n: '4', area: 's4', lead: 'Still awake after roughly 20 to 30 minutes? Get up again.', rest: 'Repeat as many times as you need to. Even if it takes you a few cycles, you’ll still probably fall asleep sooner than you would have otherwise.' },
+  { n: '1', area: 's1', lead: 'After lying awake for 20 to 30 minutes, get out of bed.', tip: 'Don’t watch a clock. A rough sense is enough.', icon: CLOCK_OFF },
+  { n: '2', area: 's2', lead: 'Go into the next room and do something relaxing.', chips: ['A book', 'An audiobook or podcast', 'Dishes, if that relaxes you'], tip: 'It’s best not to look at your phone or check your email.', icon: PHONE_OFF },
+  { n: '3', area: 's3', lead: 'Go back to bed.', line: 'After 20 to 30 minutes, or as soon as you start to get drowsy, whichever comes first. Then see what happens.' },
+  { n: '4', area: 's4', lead: 'Still awake after roughly 20 to 30 minutes? Get up again.', line: 'Repeat as many times as you need to.', aside: 'Even if it takes you a few cycles, you’ll still probably fall asleep sooner than you would have otherwise.' },
 ];
 
 const TILES = [
@@ -131,7 +134,10 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
           {STEPS.map((s) => (
             <li class={`step-c ${s.area}`} role="listitem">
               <span class="step-n" aria-hidden="true">{s.n}</span>
-              <p><b>{s.lead}</b> {s.rest}</p>
+              <p><b>{s.lead}</b>{s.line && ` ${s.line}`}</p>
+              {s.chips && <ul class="step-chips" role="list">{s.chips.map((c) => <li>{c}</li>)}</ul>}
+              {s.tip && <p class="step-tip"><svg viewBox="0 0 32 32" aria-hidden="true" set:html={s.icon} />{s.tip}</p>}
+              {s.aside && <p class="step-aside">{s.aside}</p>}
             </li>
           ))}
         </ol>
@@ -139,8 +145,13 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     </div>
 
     <div class="col">
-      <h3 class="sub">Why it works</h3>
-      <p class="body">When we lie in bed trying to will ourselves to become sleepy, all that does is create anxiety. The more we resist sleeplessness, the more we entrench it. So the best thing is to stop resisting.</p>
+      <h3 class="sub" id="why-h">Why it works</h3>
+      <ol class="why" role="list" aria-labelledby="why-h">
+        <li><b>When we lie in bed trying to will ourselves to become sleepy</b></li>
+        <li><span>all that does is</span><b>create anxiety</b></li>
+        <li class="end"><span>The more we resist sleeplessness,</span><b>the more we entrench it</b></li>
+      </ol>
+      <p class="body why-so">So the best thing is to stop resisting.</p>
 
       <blockquote class="pull">
         <p>By giving up on falling asleep right this second, you give yourself more of a chance to fall asleep later.</p>
@@ -355,7 +366,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
 
   /* the loop: four steps around a ring */
   .loop-wrap{max-width:calc(1000px + 2*var(--gutter));}
-  .loop{display:grid;grid-template-columns:1fr 300px 1fr;grid-template-rows:auto 300px auto;grid-template-areas:". s1 ." "s4 ring s2" ". s3 .";gap:18px 34px;align-items:center;margin:6px 0 0;}
+  .loop{display:grid;grid-template-columns:1fr 300px 1fr;grid-template-rows:auto minmax(300px,auto) auto;grid-template-areas:". s1 ." "s4 ring s2" ". s3 .";gap:18px 34px;align-items:center;margin:6px 0 0;}
   .ring{grid-area:ring;width:300px;height:300px;}
   .ring svg{width:100%;height:100%;overflow:visible;}
   .ring-track{fill:none;stroke:var(--ink);stroke-width:1.6;opacity:.32;}
@@ -374,6 +385,24 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .step-c{position:relative;background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:18px 20px 18px 62px;box-shadow:0 10px 30px rgba(18,50,47,.06);}
   .step-c p{font-size:16px;line-height:1.55;color:var(--body);}
   .step-c b{display:block;font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.25;color:var(--ink);margin-bottom:6px;}
+  .step-chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0;}
+  .step-chips li{font-family:var(--serif);font-size:15.5px;color:var(--ink);background:var(--paper-2);border-left:3px solid var(--ink);padding:4px 10px;}
+  .step-c .step-tip{display:flex;align-items:center;gap:9px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--hair);font-size:14.5px;font-weight:600;color:var(--ink);}
+  .step-tip svg{flex:none;width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .step-c .step-aside{margin-top:10px;padding-left:12px;border-left:3px solid var(--sage-line);font-size:14.5px;line-height:1.5;color:var(--body);}
+  /* Why it works: trying creates anxiety (linked), then the separate point about resisting (no arrow into it). */
+  .why{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin:6px 0 14px;}
+  .why li{position:relative;display:flex;flex-direction:column;justify-content:center;gap:3px;min-height:96px;padding:14px 26px 14px 18px;background:#fff;border:1px solid var(--hair);border-right:0;}
+  .why li:first-child{background:var(--ink);border-color:var(--ink);}
+  .why li:first-child b{color:#fff;}
+  .why li.end{border-right:1px solid var(--hair);}
+  .why li:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;z-index:1;width:22px;height:22px;transform:translateY(-50%) rotate(45deg);background:inherit;border-top:1px solid var(--hair);border-right:1px solid var(--hair);}
+  .why li:first-child::after{border-color:var(--ink);}
+  .why li:nth-child(2)::after{display:none;}
+  .why li.end{margin-left:12px;border-left:1px solid var(--hair);}
+  .why span{font-size:13px;font-weight:700;color:var(--dim);}
+  .why b{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.25;color:var(--ink);}
+  .body.why-so{font-family:var(--serif);font-size:21px;color:var(--ink);}
   .step-n{position:absolute;left:16px;top:17px;display:flex;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font:600 18px/1 var(--serif);}
   .s1{grid-area:s1;margin:0 -60px;}
   .s3{grid-area:s3;margin:0 -60px;}
@@ -498,6 +527,11 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .hero-in{gap:26px;}
     .ring{display:none;}
     .pull p{font-size:25px;padding-left:34px;}
+    .why{grid-template-columns:1fr;}
+    .why li{border-right:1px solid var(--hair);min-height:0;padding:14px 18px 18px;}
+    .why li + li{padding-top:22px;}
+    .why li.end{margin:12px 0 0;padding-top:14px;}
+    .why li:not(:last-child)::after{right:auto;left:26px;top:auto;bottom:-12px;transform:rotate(135deg);}
     .pull::before{font-size:76px;}
     .night{padding:56px 0 60px;}
     .night-h{font-size:30px;}
@@ -522,7 +556,8 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .inst figcaption{color:var(--body) !important;}
     .night,.listen,.ring-orbit{display:none !important;}
     .take{background:#fff;}
-    .poll,.step-c,.loop,.pull,.tiles{break-inside:avoid;}
+    .poll,.step-c,.loop,.pull,.tiles,.why{break-inside:avoid;}
+    .why li:first-child{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     .ring-node,.ring-num,.step-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   }
 </style>
