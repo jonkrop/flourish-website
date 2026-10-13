@@ -381,11 +381,12 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .ring-num{font-family:var(--serif);font-size:22px;font-weight:600;fill:#fff;}
   .ring-moon{fill:#F2E6D0;}
   /* "you" rests just past step 1 (clear of its node and the first arrow); goes around once when the loop scrolls into view (JS adds .go), then holds. */
-  .ring-orbit{transform-origin:150px 150px;transform:rotate(28deg);}
+  /* The dot sits under marker 1 at rest (drawn before the markers), makes one lap on scroll-in, and ends hidden there again. */
+  .ring-orbit{transform-origin:150px 150px;transform:rotate(0deg);}
   .loop.go .ring-orbit{animation:orbit-once 6.5s cubic-bezier(.45,0,.3,1) .3s both;}
   .ring-you{fill:var(--accent-deep);}
   .ring-you-glow{fill:var(--accent);opacity:.18;}
-  @keyframes orbit-once{from{transform:rotate(28deg);}to{transform:rotate(388deg);}}
+  @keyframes orbit-once{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
   @media (prefers-reduced-motion:reduce){.loop.go .ring-orbit{animation:none;}}
   .steps{display:contents;list-style:none;}
   .step-c{position:relative;background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:18px 20px 18px 62px;box-shadow:0 10px 30px rgba(18,50,47,.06);}
