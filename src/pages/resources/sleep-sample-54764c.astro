@@ -123,7 +123,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
       <div class="loop" data-loop>
         <div class="ring" aria-hidden="true">
           <svg viewBox="0 0 300 300">
-            <circle class="ring-track" cx="150" cy="150" r="118" />
+            <circle class="ring-halo" cx="150" cy="150" r="100" /><circle class="ring-disc" cx="150" cy="150" r="92" /><circle class="ring-track" cx="150" cy="150" r="118" />
             {[45, 135, 225, 315].map((a) => (
               <g transform={`rotate(${a} 150 150)`}><path class="ring-chev" d="M144 26 L152 32 L144 38" /></g>
             ))}
@@ -373,15 +373,18 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .ring{grid-area:ring;width:300px;height:300px;}
   .ring svg{width:100%;height:100%;overflow:visible;}
   .ring-track{fill:none;stroke:var(--ink);stroke-width:1.6;opacity:.32;}
-  .ring-chev{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.55;}
-  .ring-node{fill:var(--ink);}
+  .ring-chev{fill:none;stroke:var(--accent-deep);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  /* Night disc in the middle of the loop: the page stays light, the diagram carries the contrast. */
+  .ring-disc{fill:var(--ink);}
+  .ring-halo{fill:var(--ink);opacity:.08;}
+  .ring-node{fill:var(--accent-deep);}
   .ring-num{font-family:var(--serif);font-size:22px;font-weight:600;fill:#fff;}
-  .ring-moon{fill:var(--sage-line);}
+  .ring-moon{fill:#F2E6D0;}
   /* "you" rests just past step 1 (clear of its node and the first arrow); goes around once when the loop scrolls into view (JS adds .go), then holds. */
   .ring-orbit{transform-origin:150px 150px;transform:rotate(28deg);}
   .loop.go .ring-orbit{animation:orbit-once 6.5s cubic-bezier(.45,0,.3,1) .3s both;}
-  .ring-you{fill:var(--ink);}
-  .ring-you-glow{fill:var(--ink);opacity:.12;}
+  .ring-you{fill:var(--accent-deep);}
+  .ring-you-glow{fill:var(--accent);opacity:.18;}
   @keyframes orbit-once{from{transform:rotate(28deg);}to{transform:rotate(388deg);}}
   @media (prefers-reduced-motion:reduce){.loop.go .ring-orbit{animation:none;}}
   .steps{display:contents;list-style:none;}
@@ -395,9 +398,9 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .step-c .step-aside{margin-top:10px;padding-left:12px;border-left:3px solid var(--sage-line);font-size:14.5px;line-height:1.5;color:var(--body);}
   /* Why it works: the presenter's two points, side by side, then the conclusion. */
   .why{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 14px;}
-  .why p{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:16px 18px;font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--ink);}
+  .why p{background:var(--ink);border-top:3px solid var(--accent-soft);padding:18px 20px;font-family:var(--serif);font-size:19px;line-height:1.4;color:#F2EFE8;}
   .body.why-so{font-family:var(--serif);font-size:21px;color:var(--ink);}
-  .step-n{position:absolute;left:16px;top:17px;display:flex;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font:600 18px/1 var(--serif);}
+  .step-n{position:absolute;left:16px;top:17px;display:flex;width:32px;height:32px;border-radius:50%;background:var(--accent-deep);color:#fff;align-items:center;justify-content:center;font:600 18px/1 var(--serif);}
   .s1{grid-area:s1;margin:0 -60px;}
   .s3{grid-area:s3;margin:0 -60px;}
   .s2{grid-area:s2;}
@@ -405,7 +408,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
 
   /* pull quote: serif, ink (not orange: it isn't a line to say) */
   .pull{margin:40px 0 8px;padding:30px 0 4px;border-top:1px solid var(--hair);position:relative;}
-  .pull::before{content:"\201C";position:absolute;top:-6px;left:-4px;font-family:var(--serif);font-size:96px;line-height:1;color:var(--sage-line);}
+  .pull::before{content:"\201C";position:absolute;top:-6px;left:-4px;font-family:var(--serif);font-size:96px;line-height:1;color:var(--accent);}
   .pull p{position:relative;font-family:var(--serif);font-weight:500;font-size:31px;line-height:1.28;color:var(--ink);text-wrap:balance;padding-left:46px;}
 
   /* ---------- video: night band ---------- */
@@ -540,6 +543,6 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .night,.listen,.ring-orbit{display:none !important;}
     .take{background:#fff;}
     .poll,.step-c,.loop,.pull,.tiles,.why{break-inside:avoid;}
-    .ring-node,.ring-num,.step-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .ring-node,.ring-num,.step-n,.ring-disc,.why p{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   }
 </style>
