@@ -152,11 +152,10 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
 
     <div class="col">
       <h3 class="sub" id="why-h">Why it works</h3>
-      <ol class="why" role="list" aria-labelledby="why-h">
-        <li><b>When we lie in bed trying to will ourselves to become sleepy</b></li>
-        <li><span>all that does is</span><b>create anxiety</b></li>
-        <li class="end"><span>The more we resist sleeplessness,</span><b>the more we entrench it</b></li>
-      </ol>
+      <div class="why">
+        <p>When we lie in bed trying to will ourselves to become sleepy, all that does is create anxiety.</p>
+        <p>The more we resist sleeplessness, the more we entrench it.</p>
+      </div>
       <p class="body why-so">So the best thing is to stop resisting.</p>
 
       <blockquote class="pull">
@@ -394,18 +393,9 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .step-c .step-tip{display:flex;align-items:center;gap:9px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--hair);font-size:14.5px;font-weight:600;color:var(--ink);}
   .step-tip svg{flex:none;width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
   .step-c .step-aside{margin-top:10px;padding-left:12px;border-left:3px solid var(--sage-line);font-size:14.5px;line-height:1.5;color:var(--body);}
-  /* Why it works: trying creates anxiety (linked), then the separate point about resisting (no arrow into it). */
-  .why{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin:6px 0 14px;}
-  .why li{position:relative;display:flex;flex-direction:column;justify-content:center;gap:3px;min-height:96px;padding:14px 26px 14px 18px;background:#fff;border:1px solid var(--hair);border-right:0;}
-  .why li:first-child{background:var(--ink);border-color:var(--ink);}
-  .why li:first-child b{color:#fff;}
-  .why li.end{border-right:1px solid var(--hair);}
-  .why li:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;z-index:1;width:22px;height:22px;transform:translateY(-50%) rotate(45deg);background:inherit;border-top:1px solid var(--hair);border-right:1px solid var(--hair);}
-  .why li:first-child::after{border-color:var(--ink);}
-  .why li:nth-child(2)::after{display:none;}
-  .why li.end{margin-left:12px;border-left:1px solid var(--hair);}
-  .why span{font-size:13px;font-weight:700;color:var(--dim);}
-  .why b{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.25;color:var(--ink);}
+  /* Why it works: the presenter's two points, side by side, then the conclusion. */
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 14px;}
+  .why p{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--ink);padding:16px 18px;font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--ink);}
   .body.why-so{font-family:var(--serif);font-size:21px;color:var(--ink);}
   .step-n{position:absolute;left:16px;top:17px;display:flex;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font:600 18px/1 var(--serif);}
   .s1{grid-area:s1;margin:0 -60px;}
@@ -527,10 +517,6 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .ring{display:none;}
     .pull p{font-size:25px;padding-left:34px;}
     .why{grid-template-columns:1fr;}
-    .why li{border-right:1px solid var(--hair);min-height:0;padding:14px 18px 18px;}
-    .why li + li{padding-top:22px;}
-    .why li.end{margin:12px 0 0;padding-top:14px;}
-    .why li:not(:last-child)::after{right:auto;left:26px;top:auto;bottom:-12px;transform:rotate(135deg);}
     .pull::before{font-size:76px;}
     .night{padding:56px 0 60px;}
     .night-h{font-size:30px;}
@@ -554,7 +540,6 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .night,.listen,.ring-orbit{display:none !important;}
     .take{background:#fff;}
     .poll,.step-c,.loop,.pull,.tiles,.why{break-inside:avoid;}
-    .why li:first-child{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     .ring-node,.ring-num,.step-n{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   }
 </style>
