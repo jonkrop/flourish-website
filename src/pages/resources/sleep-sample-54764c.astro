@@ -29,6 +29,11 @@ const VIDEO_POSTER = `${UP}/half-hour-rule-poster.jpg`;
 const VIDEO_CAPTIONS = `${UP}/half-hour-rule.vtt`;
 const AUDIO_SRC = ''; // e.g. `${UP}/half-hour-rule-narration.m4a`
 
+// Hero: a bedside clock at 3:07 AM, drawn as seven-segment digits (no clock font to load).
+const SEG = { a: [8, 0, 48, 11], b: [53, 8, 11, 46], c: [53, 62, 11, 46], d: [8, 105, 48, 11], e: [0, 62, 11, 46], f: [0, 8, 11, 46], g: [8, 52.5, 48, 11] };
+const LIT = { '3': 'abcdg', '0': 'abcdef', '7': 'abc' };
+const CLOCK = [['3', 0], ['0', 104], ['7', 184]];
+
 // Each step: one instruction line; tags, a tip, or a side note carry the rest (playbook-guide.md, "Cards carry one instruction line").
 const CLOCK_OFF = '<circle cx="16" cy="16" r="11"/><path d="M16 9.5v6.5l4.5 3"/>';
 const PHONE_OFF = '<rect x="10" y="4" width="12" height="24" rx="2.5"/><path d="M14.5 24h3M5 5l22 22"/>';
@@ -67,19 +72,20 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     <div class="wide hero-in">
       <div>
         <img class="logo" src="/images/logo-orange.png" alt="Flourish Legal Well-Being" width="168" height="46" />
-        <h1>Sleep</h1>
+        <h1>What to do when you can’t sleep</h1>
         <p class="sub-title">One technique to try tonight</p>
         <p class="from">From Jon Krop, <a href="https://teamflourish.com">Flourish Legal Well-Being</a></p>
       </div>
-      <figure class="inst">
-        <div class="inst-ring">
-          <svg viewBox="0 0 200 200" aria-hidden="true">
-            <circle class="inst-track" cx="100" cy="100" r="86" pathLength="13" />
-            <circle class="inst-on" cx="100" cy="100" r="86" pathLength="13" />
+      <figure class="clk" role="img" aria-label="A bedside clock reading 3:07 AM">
+        <div class="clk-body">
+          <svg viewBox="0 0 300 116" aria-hidden="true">
+            {CLOCK.map(([d, x]) => Object.entries(SEG).map(([k, [sx, sy, w, h]]) => (
+              <rect class={LIT[d].includes(k) ? 'on' : 'off'} x={x + sx} y={sy} width={w} height={h} rx="5" />
+            )))}
+            <rect class="on" x="82" y="30" width="11" height="11" rx="3" /><rect class="on" x="82" y="75" width="11" height="11" rx="3" />
+            <text class="on" x="262" y="20">AM</text>
           </svg>
-          <div class="inst-mid" aria-hidden="true"><span class="inst-n">1</span></div>
         </div>
-        <figcaption><span class="sr-only">1 </span>of 13 weekly techniques</figcaption>
       </figure>
     </div>
   </section>
@@ -340,7 +346,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   /* Page rhythm: a sample installment, tighter than the layout's default sections. */
   .hero.foliage .hero-in{padding-top:44px;padding-bottom:64px;}
   .hero .logo{margin-bottom:34px;}
-  .hero h1{font-size:76px;}
+  .hero h1{font-size:58px;}
   .principle{padding:72px 0 80px;}
   .ph{margin-bottom:16px;}
   .lead{font-size:23px;margin-bottom:22px;}
@@ -348,15 +354,13 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
   .sub{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.15;color:var(--ink);margin:44px 0 14px;}
   .body{font-size:18px;line-height:1.6;margin:0 0 12px;}
 
-  /* ---------- hero: installment ring ---------- */
-  .inst{justify-self:center;margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;}
-  .inst figcaption{font-size:15px;font-weight:700;letter-spacing:.02em;color:#C9D8D3;}
-  .inst-ring{position:relative;width:212px;height:212px;}
-  .inst-ring svg{width:100%;height:100%;transform:rotate(-90deg);}
-  .inst-track{fill:none;stroke:rgba(255,255,255,.16);stroke-width:9;stroke-dasharray:.84 .16;stroke-dashoffset:-.08;}
-  .inst-on{fill:none;stroke:var(--accent-soft);stroke-width:9;stroke-dasharray:.84 12.16;stroke-dashoffset:-.08;}
-  .inst-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-  .inst-n{font-family:var(--serif);font-weight:600;font-size:78px;line-height:.85;color:#fff;}
+  /* ---------- hero: the 3 AM bedside clock ---------- */
+  .clk{justify-self:center;margin:0;width:400px;}
+  .clk-body{padding:34px 32px;background:linear-gradient(#151c1b,#0a0f0e);border-radius:22px;box-shadow:inset 0 0 0 2px #26302e,0 30px 50px rgba(0,0,0,.6),0 40px 90px -30px rgba(255,110,50,.35);}
+  .clk svg{display:block;width:100%;filter:drop-shadow(0 0 9px rgba(255,110,50,.7));}
+  .clk .on{fill:#FF7A3D;}
+  .clk .off{fill:#FF7A3D;opacity:.06;}
+  .clk text{font:800 17px var(--sans);}
 
   /* ---------- the card ---------- */
   .tech .ph h2{font-size:48px;}
@@ -500,10 +504,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
 
   /* ---------- responsive ---------- */
   @media (max-width:1000px){
-    .inst{justify-self:start;}
-    .inst{flex-direction:row;align-items:center;gap:20px;}
-    .inst-ring{width:170px;height:170px;}
-    .inst-n{font-size:62px;}
+    .clk{justify-self:start;width:340px;}
     .tiles{grid-template-columns:repeat(3,1fr);}
   }
   @media (max-width:900px){
@@ -513,17 +514,15 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .s1,.s3{margin:0;}
   }
   @media (max-width:700px){
-    .hero h1{font-size:56px;}
+    .hero h1{font-size:42px;}
     .crisis{margin-top:4px;}
     .principle{padding:52px 0 60px;}
     .tech .ph h2{font-size:36px;}
     .lead{font-size:20px;}
     .sub{font-size:24px;margin-top:36px;}
     .body{font-size:17px;}
-    .inst-ring{width:118px;height:118px;}
-    .inst-n{font-size:44px;}
-    .inst{flex-direction:row;align-items:center;gap:16px;}
-    .inst figcaption{font-size:14px;}
+    .clk{width:min(260px,100%);}
+    .clk-body{padding:20px 20px;border-radius:16px;}
     .hero-in{gap:26px;}
     .ring{display:none;}
     .pull p{font-size:25px;padding-left:34px;}
@@ -551,9 +550,7 @@ const ASA = 'https://www.americanbar.org/groups/lawyer_assistance/resources/lap_
     .tile-t{font-size:16px;}
   }
   @media print{
-    .inst-track{stroke:var(--hair);}
-    .inst-n{color:var(--ink) !important;}
-    .inst figcaption{color:var(--body) !important;}
+    .clk{display:none;}
     .night,.listen,.ring-orbit{display:none !important;}
     .take{background:#fff;}
     .poll,.step-c,.loop,.pull,.tiles,.why{break-inside:avoid;}
