@@ -6,7 +6,7 @@ defaultPresenters:
   - jon
 sections:
   - collapsed: false
-    title: The A-Game AI Tool
+    title: The A-Game App
     items:
       - type: link
         name: Open the tool

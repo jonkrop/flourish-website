@@ -12,11 +12,11 @@ intro: "The midlevel years are a genuine hinge point: more autonomy, less
 defaultPresenters:
   - jon
 sections:
-  - title: "AI Tool: The Midlevel Toolkit"
+  - title: "App: The Midlevel Toolkit"
     collapsed: false
     items:
       - name: Open the Midlevel Toolkit
-        description: "Your AI-powered companion for the frameworks in this program:
+        description: "Your companion app for the frameworks in this program:
           draft a capacity-protecting reply to a partner (Yes And), TRIP-ify an
           ask to a junior, rehearse a tough conversation, and more. Nothing you
           type is stored or visible to your firm."
