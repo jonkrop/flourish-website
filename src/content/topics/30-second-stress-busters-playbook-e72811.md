@@ -1,6 +1,7 @@
 ---
 # HIDDEN DRAFT of the web-native playbook for 30-Second Stress Busters and Mood Boosters.
-# Not linked from any client page. The live topic (30-second-stress-busters-and-mood-boosters.md)
+# Linked only from Benesch's page (Jon approved 2026-10-16: free six-month upgrade, swap back to
+# the old topic ~2027-04-16). Not on any other client page. The live topic (30-second-stress-busters-and-mood-boosters.md)
 # is untouched; set `playbook:` there only after Jon (and Vic) approve. Process: ../../../../playbook-guide.md
 slug: "30-second-stress-busters-playbook-e72811"
 rotate: false
